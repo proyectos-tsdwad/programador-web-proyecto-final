@@ -77,37 +77,37 @@
 
 /* Font Family - Weight -Style */
 
-.text-light {
+.font-light {
   font-style: normal;
-  font-weight: light;
+  font-weight: 300;
   font-family: "Mulish", sans-serif;
 }
 
-.text-regular {
+.font-regular {
   font-style: normal;
-  font-weight: light;
+  font-weight: 400;
   font-family: "Mulish", sans-serif;
 }
 
-.text-medium {
+.font-medium {
   font-style: normal;
-  font-weight: medium;
+  font-weight: 500;
   font-family: "Mulish", sans-serif;
 }
 
-.text-semi-bold {
+.font-semi-bold {
   font-style: normal;
   font-weight: 600;
   font-family: "Mulish", sans-serif;
 }
 
-.text-bold {
+.font-bold {
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   font-family: "Mulish", sans-serif;
 }
 
-.text-extra-bold {
+.font-extra-bold {
   font-style: normal;
   font-weight: 900;
   font-family: "Mulish", sans-serif;
