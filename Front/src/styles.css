@@ -1,1 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap");
+
 /* You can add global styles to this file, and also import other style files */
+
+/* Font Sizes */
+
+.fs-sm {
+  font-size: 14px;
+}
+
+.fs-sm-1 {
+  font-size: 18px;
+}
+
+.fs-sm-2 {
+  font-size: 20px;
+}
+
+.fs-md {
+  font-size: 22px;
+}
+
+.fs-md-1 {
+  font-size: 24px;
+}
+
+.fs-md-2 {
+  font-size: 26px;
+}
+
+.fs-lg {
+  font-size: 32px;
+}
+
+.fs-lg-1 {
+  font-size: 48px;
+}
+
+/* Font Colors */
+
+.fc-primary {
+  color: #5D5E5F;
+}
+
+.fc-primary-light {
+  color: #5D5E5F;
+  /* (5D5E5F 90%) */
+}
+
+.fc-secondary {
+  color: #041E41;
+}
+
+.fc-basic-1 {
+  color: #C6C9CC;
+}
+
+.fc-basic-2 {
+  color: #FFFFFF;
+}
+
+.fc-basic-3 {
+  color: #A1A1A5;
+}
+
+.fc-basic-4 {
+  color: #A02A44;
+}
+
+.fc-basic-5 {
+  color: #73C255;
+}
+
+.fc-basic-6 {
+  color: #E35352;
+}
+
+/* Font Family - Weight -Style */
+
+.font-light {
+  font-style: normal;
+  font-weight: 300;
+  font-family: "Mulish", sans-serif;
+}
+
+.font-regular {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Mulish", sans-serif;
+}
+
+.font-medium {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Mulish", sans-serif;
+}
+
+.font-semi-bold {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Mulish", sans-serif;
+}
+
+.font-bold {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Mulish", sans-serif;
+}
+
+.font-extra-bold {
+  font-style: normal;
+  font-weight: 900;
+  font-family: "Mulish", sans-serif;
+}
