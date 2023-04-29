@@ -58,7 +58,7 @@ mat-typography {
 
 .fc-primary-light {
   color: #5D5E5F;
-  /* (5D5E5F 90%) */
+  color: rgba(93, 94, 95, 0.9);
 }
 
 .fc-secondary {
