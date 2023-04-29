@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonLayoutsModule }from './modules/common-layouts/common-layouts.module'
-import { HomeModule } from './pages/home/home.module';
+import { PagesModule } from './pages/pages.module';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HomeModule } from './pages/home/home.module';
     NgbModule,
     BrowserAnimationsModule,
     CommonLayoutsModule,
-    HomeModule
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
