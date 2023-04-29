@@ -5,15 +5,18 @@
 html,
 body {
   height: 100%;
+  font-family: "Mulish", sans-serif !important;
+  font-weight: 400;
+  color: var(--primary-black) ;
 }
 
 body,
-mat-typography {
+.mat-typography {
   margin: 0;
 }
 
 .mat-typography {
-  font-family: "Mulish", sans-serif;
+  font-family: "Mulish", sans-serif !important;
 }
 
 /* Font Sizes */
@@ -89,40 +92,39 @@ mat-typography {
   color: #E35352;
 }
 
+
+/*COLORS*/
+:root {
+  --primary-blue: #0B67E5;
+  --secondary-blue: #041E41;
+  --primary-yellow: #DAF275;
+  --primary-green: #73C255;
+  --primary-black: #5D5E5F;
+  --primary-black-opac: rgba(93, 94, 95, 0.9);
+  --secondary-black: #303754;
+  --primary-grey: #a1a1a5;
+  --primary-white: #F5F5F5;
+  --secondary-white: #FFFFFF;
+}
+
 /* Font Family - Weight -Style */
 
 .font-light {
-  font-style: normal;
   font-weight: 300;
-  font-family: "Mulish", sans-serif;
-}
-
-.font-regular {
-  font-style: normal;
-  font-weight: 400;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-medium {
-  font-style: normal;
   font-weight: 500;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-semi-bold {
-  font-style: normal;
   font-weight: 600;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-bold {
-  font-style: normal;
   font-weight: 700;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-extra-bold {
-  font-style: normal;
-  font-weight: 900;
-  font-family: "Mulish", sans-serif;
+  font-weight: 800;
 }
