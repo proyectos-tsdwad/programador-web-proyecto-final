@@ -13,8 +13,7 @@ export interface Book {
   language: string;
   genre: string;
   releaseDate: Date;
-  score: number;
   stock: number;
-  rentedTotal: number;
+  totalSold: number;
   tags: string[];
 }
