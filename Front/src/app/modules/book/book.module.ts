@@ -12,6 +12,9 @@ import { BooksRowCardsComponent } from './books-row-cards/books-row-cards.compon
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [
+    BookCardComponent,
+    BooksRowCardsComponent]
 })
 export class BookModule { }
