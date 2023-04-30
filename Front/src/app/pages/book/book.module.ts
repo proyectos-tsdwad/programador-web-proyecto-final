@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './footer/footer.component';
+import { BookDetailComponent } from './book-detail-page/book-detail.component';
+
 
 
 @NgModule({
   declarations: [
-    FooterComponent
+    BookDetailComponent
   ],
   imports: [
     CommonModule
-  ],
-  exports: [
-    FooterComponent
   ]
 })
-export class CommonLayoutsModule { }
+export class BookModule { }
