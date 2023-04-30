@@ -1,4 +1,6 @@
 import { Book } from "../../models/book/book-model";
+import { TAG } from "../../utils/enums/book.enum";
+import { CATEGORY } from "../../utils/enums/book.enum";
 
 export const allBooks: Book[] =
   [
@@ -20,7 +22,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.TOP_VENDIDOS]
     },
     {
       id: 2,
@@ -40,7 +42,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.TOP_VENDIDOS]
     },
     {
       id: 3,
@@ -60,7 +62,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.TOP_VENDIDOS]
     },
     {
       id: 4,
@@ -80,7 +82,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.TOP_VENDIDOS]
     },
     {
       id: 5,
@@ -100,7 +102,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.TOP_VENDIDOS]
     },
     {
       id: 6,
@@ -120,7 +122,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.RECOMENDADOS]
     },
     {
       id: 7,
@@ -140,7 +142,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.NOVEDADES]
     },
     {
       id: 8,
@@ -160,7 +162,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.NOVEDADES]
     },
     {
       id: 9,
@@ -180,7 +182,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.NOVEDADES]
     },
     {
       id: 10,
@@ -200,7 +202,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.NOVEDADES]
     },
     {
       id: 11,
@@ -220,7 +222,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.NOVEDADES]
     },
     {
       id: 12,
@@ -240,7 +242,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: ['recomendados']
+      tags: [TAG.RECOMENDADOS]
     },
     {
       id: 13,
@@ -260,7 +262,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.RECOMENDADOS]
     },
     {
       id: 14,
@@ -280,7 +282,7 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.RECOMENDADOS]
     },
     {
       id: 15,
@@ -300,6 +302,6 @@ export const allBooks: Book[] =
       releaseDate: new Date(),
       stock: 100,
       totalSold: 10,
-      tags: []
+      tags: [TAG.RECOMENDADOS]
     }
   ]
