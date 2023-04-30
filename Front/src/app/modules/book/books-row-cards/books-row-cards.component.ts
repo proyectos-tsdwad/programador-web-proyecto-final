@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Book } from 'src/app/models/book/book-model';
 
 @Component({
   selector: 'app-books-row-cards',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class BooksRowCardsComponent {
 
+  @Input() books: Book[] = [];
 }
