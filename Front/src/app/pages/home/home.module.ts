@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component'
 import { HeaderComponent } from './header/header.component';
+import { BookModule } from '../book/book.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BookModule
   ],
   exports: [
     HomePageComponent,
