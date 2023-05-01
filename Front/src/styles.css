@@ -5,9 +5,9 @@
 html,
 body {
   height: 100%;
-  font-family: "Mulish", sans-serif !important;
   font-weight: 400;
-  color: var(--primary-black) ;
+  overflow-x: hidden;
+  font-family: "Mulish", sans-serif !important;
 }
 
 body,
@@ -17,6 +17,21 @@ body,
 
 .mat-typography {
   font-family: "Mulish", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: currentColor;
+  color: #E35352;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 /* Font Sizes */

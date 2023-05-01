@@ -11,6 +11,7 @@ export const allBooks: Book[] =
         name: "Elísabet Benavent"
       },
       img: "./assets/img/book-cover/un-cuento-perfecto.png",
+      price: 6.677,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -31,6 +32,7 @@ export const allBooks: Book[] =
         name: "Julia Cameron"
       },
       img: "./assets/img/book-cover/el-camino-del-artista.png",
+      price: 8.637,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -51,6 +53,7 @@ export const allBooks: Book[] =
         name: "Isabel Allende"
       },
       img: "./assets/img/book-cover/violeta.png",
+      price: 6.472,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -71,6 +74,7 @@ export const allBooks: Book[] =
         name: "Le Yen Mai"
       },
       img: "./assets/img/book-cover/pensar-a-la-japonesa.png",
+      price: 7.567,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -91,6 +95,7 @@ export const allBooks: Book[] =
         name: "Alice Oseman"
       },
       img: "./assets/img/book-cover/heartstopper.png",
+      price: 10.499,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -111,6 +116,7 @@ export const allBooks: Book[] =
         name: "Claudia Luchetti"
       },
       img: "./assets/img/book-cover/sanar-la-herida.png",
+      price: 7.129,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -131,6 +137,7 @@ export const allBooks: Book[] =
         name: "Penelope Douglas"
       },
       img: "./assets/img/book-cover/punk-57.png",
+      price: 3.698,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -151,6 +158,7 @@ export const allBooks: Book[] =
         name: "Roma Damned"
       },
       img: "./assets/img/book-cover/prisionero.png",
+      price: 8.268,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -171,6 +179,7 @@ export const allBooks: Book[] =
         name: "Flor M. Salvador"
       },
       img: "./assets/img/book-cover/boulevard.png",
+      price: 9.478,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -191,6 +200,7 @@ export const allBooks: Book[] =
         name: "Krystal Sutherland"
       },
       img: "./assets/img/book-cover/la-casa-de-las-grietas.png",
+      price: 6.788,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -211,6 +221,7 @@ export const allBooks: Book[] =
         name: "Victoria Vilchez"
       },
       img: "./assets/img/book-cover/un-linaje-oscuro.png",
+      price: 7.792,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -231,6 +242,7 @@ export const allBooks: Book[] =
         name: "Florencia Vercellone"
       },
       img: "./assets/img/book-cover/todo-por-volver-a-verte.png",
+      price: 5.098,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -251,6 +263,7 @@ export const allBooks: Book[] =
         name: "Elizabeth Letts"
       },
       img: "./assets/img/book-cover/buscando-a-dorothy.png",
+      price: 9.929,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -271,6 +284,7 @@ export const allBooks: Book[] =
         name: "Ariana Godoy"
       },
       img: "./assets/img/book-cover/sigue-mi-voz.png",
+      price: 5.067,
       description: "",
       publisher: {
         name: "Ivrea"
@@ -291,6 +305,7 @@ export const allBooks: Book[] =
         name: "Sophie Gonzalez"
       },
       img: "./assets/img/book-cover/la-teoria-de-lo-perfecto.png",
+      price: 4.367,
       description: "",
       publisher: {
         name: "Ivrea"

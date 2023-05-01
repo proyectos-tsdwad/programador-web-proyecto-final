@@ -16,25 +16,25 @@ export class BookService {
   }
 
   getRecomendedBooks() {
-    const recomendedBooks = this.books.filter(book => {
-      book.tags.includes(TAG.RECOMENDADOS);
-    });
+    const recomendedBooks = this.books.filter(book =>
+      book.tags.includes(TAG.RECOMENDADOS)
+    );
 
     return [...recomendedBooks]
   }
 
   getNewAtBooks() {
-    const newAtBooks = this.books.filter(book => {
-      book.tags.includes(TAG.NOVEDADES);
-    });
+    const newAtBooks = this.books.filter(book =>
+      book.tags.includes(TAG.NOVEDADES)
+    );
 
     return [...newAtBooks]
   }
 
   getTopSellerBooks() {
-    const topSellerBooks = this.books.filter(book => {
-      book.tags.includes(TAG.TOP_VENDIDOS);
-    });
+    const topSellerBooks = this.books.filter(book =>
+      book.tags.includes(TAG.TOP_VENDIDOS)
+    );
 
     return [...topSellerBooks]
   }

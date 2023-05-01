@@ -1,9 +1,8 @@
-<div class="col-6 col-md-4 col-lg-3 col-xl-2 book-resume">
-  <a href="#">
-    <div class="row ps-4">
-      <img [src]="book.img" alt="imagen de portada de el libro {{ book.title }}" class="img-fluid col-8">
-      <h2 class="fc-secondary font-medium fs-sm-2">{{ book.title }}</h2>
-      <h3 class="fc-primary-light font-semi-bold fs-sm-2">{{ book.author.name }}</h3>
-    </div>
-  </a>
-</div>
+<a href="#">
+  <div class="row ps-4">
+    <img [src]="book.img" alt="imagen de portada de el libro {{ book.title }}" class="img-fluid col-8">
+    <h2 class="fc-secondary font-medium fs-sm-2 pt-3">{{ book.title }}</h2>
+    <h3 class="fc-primary-light font-semi-bold fs-sm-2">{{ book.author.name }}</h3>
+    <h4 class="fc-secondary font-bold fs-md-1">${{ book.price }}</h4>
+  </div>
+</a>

@@ -6,6 +6,7 @@ export interface Book {
   title: string;
   author: Author;
   img: string;
+  price: number;
   description: string;
   publisher: Publisher;
   isbn: string;
