@@ -2,6 +2,38 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+html,
+body {
+  height: 100%;
+  font-weight: 400;
+  overflow-x: hidden;
+  font-family: "Mulish", sans-serif !important;
+}
+
+body,
+.mat-typography {
+  margin: 0;
+}
+
+.mat-typography {
+  font-family: "Mulish", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: currentColor;
+  color: #E35352;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
 /* Font Sizes */
 
 .fs-sm {
@@ -44,7 +76,7 @@
 
 .fc-primary-light {
   color: #5D5E5F;
-  /* (5D5E5F 90%) */
+  color: rgba(93, 94, 95, 0.9);
 }
 
 .fc-secondary {
@@ -75,40 +107,37 @@
   color: #E35352;
 }
 
+
+/*COLORS*/
+:root {
+  --primary-blue: #0B67E5;
+  --secondary-blue: #041E41;
+  --primary-yellow: #DAF275;
+  --primary-green: #73C255;
+  --primary-black: #5D5E5F;
+  --primary-grey: #C6C9CC;
+  --primary-white: #F5F5F5;
+  --secondary-white: #FFFFFF;
+}
+
 /* Font Family - Weight -Style */
 
 .font-light {
-  font-style: normal;
   font-weight: 300;
-  font-family: "Mulish", sans-serif;
-}
-
-.font-regular {
-  font-style: normal;
-  font-weight: 400;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-medium {
-  font-style: normal;
   font-weight: 500;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-semi-bold {
-  font-style: normal;
   font-weight: 600;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-bold {
-  font-style: normal;
   font-weight: 700;
-  font-family: "Mulish", sans-serif;
 }
 
 .font-extra-bold {
-  font-style: normal;
-  font-weight: 900;
-  font-family: "Mulish", sans-serif;
+  font-weight: 800;
 }

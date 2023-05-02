@@ -5,10 +5,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonLayoutsModule } from './modules/common-layouts/common-layouts.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, CommonComponentsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    CommonLayoutsModule,
+    PagesModule,
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
