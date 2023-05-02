@@ -1,4 +1,4 @@
-import { CommonComponentsModule } from './common-components/common-components.module';
+import { CommonComponentsModule } from './modules/common-components/common-components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +19,7 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule,
     CommonLayoutsModule,
     PagesModule,
+    CommonComponentsModule,
   ],
 
   providers: [],
