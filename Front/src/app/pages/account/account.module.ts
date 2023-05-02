@@ -1,16 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartButtonComponent } from './cart-button/cart-button.component';
 
 @NgModule({
-  declarations: [CartButtonComponent],
+  declarations: [],
   imports: [CommonModule],
-  exports: [
-    CartButtonComponent, // Agrega esto para exportar el componente
-  ],
+  exports: [],
 })
-<<<<<<< HEAD:Front/src/app/common-components/common-components.module.ts
-export class CommonComponentsModule {}
-=======
-export class AccountModule { }
->>>>>>> dev:Front/src/app/pages/account/account.module.ts
+export class AccountModule {}
