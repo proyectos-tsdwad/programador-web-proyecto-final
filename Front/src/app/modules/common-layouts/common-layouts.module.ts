@@ -15,7 +15,9 @@ import { SearchComponent } from './search/search.component';
     CommonModule
   ],
   exports: [
-    FooterComponent
+    FooterComponent,
+    HeaderMenuComponent,
+    SearchComponent
   ]
 })
 export class CommonLayoutsModule { }
