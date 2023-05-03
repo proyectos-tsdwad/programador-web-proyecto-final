@@ -19,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   exports: [
     FooterComponent,
     HeaderMenuComponent,
-    SearchComponent
+    SearchComponent,
+    NavbarComponent
   ]
 })
 export class CommonLayoutsModule { }
