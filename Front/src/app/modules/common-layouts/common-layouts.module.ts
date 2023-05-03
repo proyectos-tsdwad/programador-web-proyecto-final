@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { SearchComponent } from './search/search.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
     HeaderMenuComponent,
-    SearchComponent
+    SearchComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule
@@ -17,7 +19,8 @@ import { SearchComponent } from './search/search.component';
   exports: [
     FooterComponent,
     HeaderMenuComponent,
-    SearchComponent
+    SearchComponent,
+    NavbarComponent
   ]
 })
 export class CommonLayoutsModule { }
