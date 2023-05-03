@@ -1,0 +1,40 @@
+.bg-dark{
+  background: #041E41 !important;
+  }
+
+.nav-link {
+    color: white;
+  }
+  .menu-left a:first-child {
+    margin-right: 0px;
+  }
+
+  @media all and (min-width: 992px) {
+    nav{
+      height: 121px;
+    }
+
+     .width-nav{
+      width: 100%;
+     }
+
+     .padding-nav{
+      padding: 0px 25px;
+     }
+    .menu-left{
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    .menu-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 60px;
+    }
+
+    ul a:first-child {
+      margin-right: 100px;
+    }
+  }
