@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Book } from '../../../models/book/book-model'
+import { SelectedBookDto } from 'src/app/models/book/selected-book.dto';
 
 @Component({
   selector: 'app-selected-book-detail',
@@ -8,6 +8,6 @@ import { Book } from '../../../models/book/book-model'
 })
 export class SelectedBookDetailComponent {
 
-  @Input() book!: Book;
+  @Input() book!: SelectedBookDto;
 
 }
