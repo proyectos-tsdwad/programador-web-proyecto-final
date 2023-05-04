@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { PagesRoutingModule } from './pages-routing.module';
-
+import { BookModule } from './book/book.module';
 
 
 @NgModule({
@@ -11,10 +11,12 @@ import { PagesRoutingModule } from './pages-routing.module';
   imports: [
     CommonModule,
     HomeModule,
+    BookModule,
     PagesRoutingModule
   ],
   exports: [
-    HomeModule
+    HomeModule,
+    BookModule
   ]
 })
 export class PagesModule { }
