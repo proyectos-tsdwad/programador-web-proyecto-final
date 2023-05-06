@@ -7,13 +7,13 @@ export interface Book {
   author: Author;
   img: string;
   price: number;
-  description: string;
+  sinopsis: string;
   publisher: Publisher;
   isbn: string;
   pageAmount: number;
   language: string;
   genre: string;
-  releaseDate: Date;
+  releaseDate: string;
   stock: number;
   totalSold: number;
   tags: string[];

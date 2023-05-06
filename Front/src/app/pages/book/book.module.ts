@@ -10,6 +10,9 @@ import { BookDetailComponent } from './book-detail-page/book-detail.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    BookDetailComponent
   ]
 })
 export class BookModule { }
