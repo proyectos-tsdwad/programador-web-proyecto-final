@@ -2,21 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { BookModule } from './book/book.module';
-
+import { BookModule2 } from './book/book.module';
 
 @NgModule({
-  declarations: [
-  ],
-  imports: [
-    CommonModule,
-    HomeModule,
-    BookModule,
-    PagesRoutingModule
-  ],
-  exports: [
-    HomeModule,
-    BookModule
-  ]
+  declarations: [],
+  imports: [CommonModule, HomeModule, BookModule2, PagesRoutingModule],
+  exports: [HomeModule, BookModule2],
 })
-export class PagesModule { }
+export class PagesModule {}
