@@ -3,23 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { BookModule } from './book/book.module';
-
+import { BookModule2 } from './book/book.module';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     HomeModule,
-    BookModule,
+    BookModule2,
     BookDashboardModule,
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
-  exports: [
-    HomeModule,
-    BookModule,
-    BookDashboardModule
-  ]
+  exports: [HomeModule, BookModule2, BookDashboardModule],
 })
-export class PagesModule { }
+export class PagesModule {}
