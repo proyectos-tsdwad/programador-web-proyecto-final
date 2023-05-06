@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { allBooks } from './book-simulation-data';
 import { TAG } from 'src/app/utils/enums/book.enum';
+import { Book } from 'src/app/models/book/book-model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,16 @@ export class BookService {
     );
 
     return [...topSellerBooks]
+  }
+
+  getBookByIsbn(isbn: string) {
+
+      const book = this.books.find(book =>
+        book.isbn === isbn
+      );
+
+      return {...book as Book}
+
+
   }
 }
