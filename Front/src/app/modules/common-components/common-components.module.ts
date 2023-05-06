@@ -7,4 +7,4 @@ import { ButtonCartComponent } from './button-cart/button-cart.component';
   imports: [CommonModule],
   exports: [ButtonCartComponent],
 })
-export class CommonComponentsModule {}
+export class CommonComponentsModule { }
