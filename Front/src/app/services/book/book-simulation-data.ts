@@ -1,4 +1,5 @@
 import { Book } from "../../models/book/book-model";
+import { SelectedBookDto } from "../../models/book/selected-book.dto";
 import { TAG } from "../../utils/enums/book.enum";
 import { CATEGORY } from "../../utils/enums/book.enum";
 
@@ -320,3 +321,17 @@ export const allBooks: Book[] =
       tags: [TAG.RECOMENDADOS]
     }
   ]
+
+export const selectedBooks: SelectedBookDto[] = [
+  {
+    id: 1,
+    title: "Un cuento perfecto",
+    author: {
+      name: "Elísabet Benavent"
+    },
+    img: "./assets/img/book-cover/un-cuento-perfecto.png",
+    price: 10.499,
+    isbn: "9789877391695",
+    selectedAmount: 5
+  },
+]
