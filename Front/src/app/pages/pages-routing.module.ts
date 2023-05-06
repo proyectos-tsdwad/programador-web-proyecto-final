@@ -2,12 +2,14 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomePageComponent } from "./home/home-page/home-page.component";
 import { BookDetailComponent } from "./book/book-detail-page/book-detail.component";
+import { CartDetailPageComponent } from "./cart/cart-detail-page/cart-detail-page.component";
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent } ,
   { path: 'home', component: HomePageComponent },
   { path: 'book-detail/:isbn', component: BookDetailComponent },
-  { path: 'book-detail', component: BookDetailComponent }
+  { path: 'book-detail', component: BookDetailComponent },
+  { path: 'cart-detail', component: CartDetailPageComponent },
+  { path: '**', component: HomePageComponent }
 ];
 
 @NgModule({
