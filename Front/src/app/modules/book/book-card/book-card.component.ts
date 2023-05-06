@@ -17,7 +17,7 @@ export class BookCardComponent implements OnInit{
 
   }
 
-  navegar() {
-    this.router.navigate(['/book-detail'])
+  navegar(isbn:string) {
+    this.router.navigate(['/book-detail', isbn])
   }
 }
