@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
+import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 
 
@@ -11,10 +12,12 @@ import { PagesRoutingModule } from './pages-routing.module';
   imports: [
     CommonModule,
     HomeModule,
+    BookDashboardModule,
     PagesRoutingModule
   ],
   exports: [
-    HomeModule
+    HomeModule,
+    BookDashboardModule
   ]
 })
 export class PagesModule { }
