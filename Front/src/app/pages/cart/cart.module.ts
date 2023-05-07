@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SelectedBooksComponent } from './selected-books/selected-books.component';
 import { SelectedBookDetailComponent } from './selected-book-detail/selected-book-detail.component';
 import { CartDetailPageComponent } from './cart-detail-page/cart-detail-page.component';
+import { DeliveryHelperComponent } from './delivery-helper/delivery-helper.component';
 
 
 
@@ -11,7 +12,8 @@ import { CartDetailPageComponent } from './cart-detail-page/cart-detail-page.com
   declarations: [
     SelectedBookDetailComponent,
     SelectedBooksComponent,
-    CartDetailPageComponent
+    CartDetailPageComponent,
+    DeliveryHelperComponent
   ],
   imports: [
     CommonModule
