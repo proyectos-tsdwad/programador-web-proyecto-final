@@ -5,6 +5,7 @@ import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.modul
 import { PagesRoutingModule } from './pages-routing.module';
 import { BookDetailModule } from './book/book.module';
 import { CartModule } from './cart/cart.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [],
@@ -15,9 +16,15 @@ import { CartModule } from './cart/cart.module';
     CartModule,
     PagesRoutingModule,
     BookDashboardModule,
+    AccountModule,
     PagesRoutingModule,
   ],
-  exports: [HomeModule, BookDetailModule,
-    CartModule, BookDashboardModule],
+  exports: [
+    HomeModule,
+    BookDetailModule,
+    CartModule,
+    BookDashboardModule,
+    AccountModule
+  ]
 })
 export class PagesModule { }
