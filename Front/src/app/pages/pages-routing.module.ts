@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'book-dashboard', component: BookDashboardPageComponent },
   { path: 'cart-detail', component: CartDetailPageComponent },
-  { path: '**', component: HomePageComponent }
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

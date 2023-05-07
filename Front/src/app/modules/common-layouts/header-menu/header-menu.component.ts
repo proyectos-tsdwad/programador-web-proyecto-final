@@ -11,7 +11,7 @@ export class HeaderMenuComponent {
   constructor(private router: Router) { }
 
   onClickNavigateToHome() {
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
 }
