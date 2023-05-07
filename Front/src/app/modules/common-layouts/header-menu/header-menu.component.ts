@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-menu',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-menu.component.css']
 })
 export class HeaderMenuComponent {
+
+  constructor(private router: Router) { }
+
+  onClickNavigateToHome() {
+    this.router.navigate(['home']);
+  }
 
 }

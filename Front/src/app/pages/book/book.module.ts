@@ -8,4 +8,4 @@ import { BookModule } from 'src/app/modules/book/book.module';
   imports: [CommonModule, BookModule],
   exports: [BookDetailComponent],
 })
-export class BookModule2 {}
+export class BookDetailModule { }
