@@ -334,4 +334,15 @@ export const selectedBooks: SelectedBookDto[] = [
     isbn: "9789877391695",
     selectedAmount: 5
   },
+  {
+    id: 15,
+    title: "La teoría de lo perfecto",
+    author: {
+      name: "Sophie Gonzalez"
+    },
+    img: "./assets/img/book-cover/la-teoria-de-lo-perfecto.png",
+    price: 4.699,
+    isbn: "9789877478655",
+    selectedAmount: 10
+  }
 ]
