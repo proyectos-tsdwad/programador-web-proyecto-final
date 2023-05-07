@@ -1,0 +1,42 @@
+.pedidos__title {
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.accordion-item {
+  border-radius: 20px;
+}
+
+.accordion-button {
+  background-color: rgba(234, 234, 234, 0.4);
+}
+
+.fechas {
+  margin-left: auto;
+}
+
+h2 button {
+  display: flex;
+
+}
+
+.accordion-button::after {
+  margin-left: 30px;
+}
+
+table {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-style: hidden;
+}
