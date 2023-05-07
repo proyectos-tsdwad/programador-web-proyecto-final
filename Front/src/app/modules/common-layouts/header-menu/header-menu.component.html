@@ -1,15 +1,12 @@
 <div class="header__menu">
   <div class="header__menu__logo">
-    <a href="./index.html" class="">
-      <img
-        src="../../../../assets/img/header-menu/Logo biblioteca franklin.png "
-        alt="Logo Libreria Franklin"
-    /></a>
+    <a (click)="onClickNavigateToHome()">
+      <img src="../../../../assets/img/header-menu/Logo biblioteca franklin.png " alt="Logo Libreria Franklin" /></a>
   </div>
 
-   <div class="header__menu__item">
+  <div class="header__menu__item">
     <app-search></app-search>
-   </div>
+  </div>
 
   <ul class="header__menu__social">
     <li class="fw-400 social__menu__item">
@@ -19,15 +16,14 @@
     </li>
 
     <li class="fw-400 social__menu__item">
-      <a href="./index.html" class="">
+      <a (click)="onClickNavigateToHome()">
         <img src="../../../../assets/img/header-menu/twitter.png" alt="twitter" />
       </a>
     </li>
 
     <li class="fw-400 social__menu__item">
-      <a href="./index.html" class="">
-        <img src="../../../../assets/img/header-menu/facebook.png" alt="facebook"
-      /></a>
+      <a (click)="onClickNavigateToHome()">
+        <img src="../../../../assets/img/header-menu/facebook.png" alt="facebook" /></a>
     </li>
   </ul>
 </div>
