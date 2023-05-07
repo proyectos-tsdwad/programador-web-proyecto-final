@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from '../../login/login-page/login-page.component';
+import { RegisterPageComponent } from '../../login/register-page/register-page.component';
 
 @Component({
   selector: 'app-navbar',
@@ -13,5 +14,9 @@ export class NavbarComponent {
 
   onClickLogIn() {
     const modalRef = this.modalService.open(LoginPageComponent, { fullscreen: true});
+  }
+
+  onClickRegister() {
+    const modalRef = this.modalService.open(RegisterPageComponent, { fullscreen: true });
   }
 }
