@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-button-cart',
@@ -8,9 +9,9 @@ import { Router } from '@angular/router';
 })
 export class ButtonCartComponent {
 
-  constructor(private router: Router) { }
+  constructor(private navigationService: NavigationService) { }
 
   onClickCartButton() {
-    this.router.navigate(['/cart-detail']);
+    this.navigationService.navigateToCartDetail();
   }
 }

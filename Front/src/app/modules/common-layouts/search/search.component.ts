@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-search',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
 
+  constructor(private navigationService: NavigationService) { }
+
+  onClickSearch() {
+    this.navigationService.navigateToCatalogue();
+  }
 }

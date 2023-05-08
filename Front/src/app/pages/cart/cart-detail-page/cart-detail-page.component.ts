@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-cart-detail-page',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CartDetailPageComponent {
 
+  constructor(private navigationService: NavigationService) { }
+
+  onClickConfirmPurchase() {
+    this.navigationService.navigateToCheckout();
+  }
 }

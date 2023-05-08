@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
 import { BookService } from 'src/app/services/book/book.service';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HomePageComponent implements OnInit {
   newAtBooks: Book[] = [];
   topSellingBooks: Book[] = [];
 
-  constructor(bookService: BookService) {
+  constructor(bookService: BookService, private navigationService: NavigationService) {
     this.bookService = bookService;
   }
 
@@ -24,6 +25,10 @@ export class HomePageComponent implements OnInit {
     this.recomendedBooks = this.bookService.getRecomendedBooks();
     this.newAtBooks = this.bookService.getNewAtBooks();
     this.topSellingBooks = this.bookService.getTopSellerBooks();
+  }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
   }
 
 }
