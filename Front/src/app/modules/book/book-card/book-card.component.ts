@@ -10,6 +10,7 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 export class BookCardComponent implements OnInit {
 
   @Input() book!: Book;
+  @Input() showPrice = true;
 
   constructor(private navigationService: NavigationService) { }
 
