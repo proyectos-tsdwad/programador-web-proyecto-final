@@ -6,7 +6,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { BookDetailModule } from './book/book.module';
 import { CartModule } from './cart/cart.module';
-import { AccountModule } from './account/account.module';
+import { AccountModule } from './account/account.module';import { CatalogueModule } from './catalogue/catalogue.module';
+
 
 @NgModule({
   declarations: [],
@@ -18,6 +19,7 @@ import { AccountModule } from './account/account.module';
     PagesRoutingModule,
     BookDashboardModule,
     AccountModule,
+    CatalogueModule,
     PagesRoutingModule,
     CheckoutModule
   ],
@@ -27,7 +29,8 @@ import { AccountModule } from './account/account.module';
     CartModule,
     BookDashboardModule,
     AccountModule,
-    CheckoutModule
+    CheckoutModule,
+    CatalogueModule
   ]
 })
 export class PagesModule { }
