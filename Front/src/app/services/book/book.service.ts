@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { allBooks } from './book-simulation-data';
+import { selectedBooks } from './book-simulation-data';
 import { TAG } from 'src/app/utils/enums/book.enum';
 import { Book } from 'src/app/models/book/book-model';
 
@@ -9,11 +10,16 @@ import { Book } from 'src/app/models/book/book-model';
 export class BookService {
 
   private books = allBooks;
+  private seletedBooks = selectedBooks;
 
   constructor() { }
 
   getAllBooks() {
     return [...this.books];
+  }
+
+  getSelectedBooks() {
+    return [...this.seletedBooks];
   }
 
   getRecomendedBooks() {
@@ -42,11 +48,11 @@ export class BookService {
 
   getBookByIsbn(isbn: string) {
 
-      const book = this.books.find(book =>
-        book.isbn === isbn
-      );
+    const book = this.books.find(book =>
+      book.isbn === isbn
+    );
 
-      return {...book as Book}
+    return { ...book as Book }
 
 
   }

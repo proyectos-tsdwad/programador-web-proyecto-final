@@ -45,3 +45,9 @@
   right: 30px;
   transform: translateY(-50%);
 }
+
+.cart {
+  color: white;
+  border: none;
+  background-color: transparent;
+}
