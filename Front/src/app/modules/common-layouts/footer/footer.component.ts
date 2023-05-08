@@ -10,11 +10,19 @@ export class FooterComponent {
 
   constructor(private navigationService: NavigationService) { }
 
-  onClickNavigateToHome() {
+  onClickHome() {
     this.navigationService.navigateToHome();
   }
 
-  onClickGoToCartDetail() {
+  onClickCartDetail() {
     this.navigationService.navigateToCartDetail();
+  }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
+  }
+
+  onClickMyAccount() {
+    this.navigationService.navigateToProfile();
   }
 }
