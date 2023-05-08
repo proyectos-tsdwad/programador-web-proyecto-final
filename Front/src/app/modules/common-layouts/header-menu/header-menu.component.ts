@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-header-menu',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class HeaderMenuComponent {
 
-  constructor(private router: Router) { }
+  constructor(private navigationService: NavigationService) { }
 
   onClickNavigateToHome() {
-    this.router.navigate(['home']);
+    this.navigationService.navigateToHome();
   }
 
 }

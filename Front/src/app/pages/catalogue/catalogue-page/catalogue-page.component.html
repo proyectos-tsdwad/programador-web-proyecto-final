@@ -1,36 +1,30 @@
 <section class="container mt-5 pt-5">
   <ul class="nav nav-fill justify-content-center catalog-menu">
     <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="#" id="all-genres">Todos</a>
+      <a class="nav-link" aria-current="page" id="all-genres">Todos</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="art-genre">Arte</a>
+      <a class="nav-link" id="art-genre">Arte</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="scyfy-genre">Ficción</a>
+      <a class="nav-link" id="scyfy-genre">Ficción</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="gastronomy-genre">Gastronomia</a>
+      <a class="nav-link" id="gastronomy-genre">Gastronomia</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="childrens-genre">Infantil</a>
+      <a class="nav-link" id="childrens-genre">Infantil</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="youth -genre">Juvenil</a>
+      <a class="nav-link" id="youth -genre">Juvenil</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" id="bussines -genre">Negocio</a>
+      <a class="nav-link" id="bussines -genre">Negocio</a>
     </li>
   </ul>
   <hr>
+
+  <div class="row">
+    <app-books-row-cards [books]="Books" [showPrice]="false" [justify]="'start'"></app-books-row-cards>
+  </div>
 </section>
-
-<section class="my-5 pb-5" id="books-catalog">
-</section>
-
-<div>
-<app-books-row-cards [books]="Books"></app-books-row-cards>
-</div>
-
-
-

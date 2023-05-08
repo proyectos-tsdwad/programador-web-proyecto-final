@@ -8,21 +8,20 @@ import { CommonComponentsModule } from "../common-components/common-components.m
 
 
 @NgModule({
-    declarations: [
-        FooterComponent,
-        HeaderMenuComponent,
-        SearchComponent,
-        NavbarComponent
-    ],
-    exports: [
-        FooterComponent,
-        HeaderMenuComponent,
-        SearchComponent,
-        NavbarComponent
-    ],
-    imports: [
-        CommonModule,
-        CommonComponentsModule
-    ]
+  declarations: [
+    FooterComponent,
+    HeaderMenuComponent,
+    SearchComponent,
+    NavbarComponent
+  ],
+  exports: [
+    FooterComponent,
+    HeaderMenuComponent,
+    NavbarComponent
+  ],
+  imports: [
+    CommonModule,
+    CommonComponentsModule
+  ]
 })
 export class CommonLayoutsModule { }

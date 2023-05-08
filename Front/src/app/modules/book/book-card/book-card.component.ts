@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../../../models/book/book-model'
-import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-book-card',
@@ -10,14 +10,15 @@ import { Router } from '@angular/router';
 export class BookCardComponent implements OnInit {
 
   @Input() book!: Book;
+  @Input() showPrice = true;
 
-  constructor(private router: Router) { }
+  constructor(private navigationService: NavigationService) { }
 
   ngOnInit(): void {
 
   }
 
   navegar(isbn: string) {
-    this.router.navigate(['/book-detail', isbn]);
+    this.navigationService.navigateToBookDetail(isbn);
   }
 }

@@ -16,4 +16,4 @@ import { BooksRowCardsComponent } from './books-row-cards/books-row-cards.compon
   exports: [
     BooksRowCardsComponent]
 })
-export class BookModule { }
+export class BookCardModule { }

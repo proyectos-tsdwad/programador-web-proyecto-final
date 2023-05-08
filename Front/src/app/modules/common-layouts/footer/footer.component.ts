@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +8,21 @@ import { Router } from '@angular/router';
 })
 export class FooterComponent {
 
-  constructor(private router: Router) { }
+  constructor(private navigationService: NavigationService) { }
 
-  onClickNavigateToHome() {
-    this.router.navigate(['home']);
+  onClickHome() {
+    this.navigationService.navigateToHome();
   }
 
-  onClickGoToCartDetail() {
-    this.router.navigate(['/cart-detail']);
+  onClickCartDetail() {
+    this.navigationService.navigateToCartDetail();
+  }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
+  }
+
+  onClickMyAccount() {
+    this.navigationService.navigateToProfile();
   }
 }

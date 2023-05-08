@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CataloguePageComponent } from './catalogue-page/catalogue-page.component';
-import { BookModule } from '../../modules/book/book.module';
+import { BookCardModule } from '../../modules/book/book-card.module';
 
 
 
@@ -11,9 +11,9 @@ import { BookModule } from '../../modules/book/book.module';
   ],
   imports: [
     CommonModule,
-    BookModule
+    BookCardModule
   ],
-  exports : [
+  exports: [
     CataloguePageComponent
   ]
 })
