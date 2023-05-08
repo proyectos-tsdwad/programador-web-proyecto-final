@@ -1,0 +1,232 @@
+<mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+
+
+    <mat-step [stepControl]="firstFormGroup"  label="">
+        
+        <div class="container-fluid pt-5">
+            <div class="row">
+
+                <div class="col-5">
+
+                    <div class="col-12 col-lg-11 col-xl-9">
+                        <h4 class="font-bold fs-md-1 fc-primary py-4">Datos personales</h4>
+                    </div>
+
+                    <div class="col-12 pb-3">
+                        <input type="text" class="form-control fw-300 py-3"
+                            title="Sólo acepta letras y espacios en blanco" placeholder="Nombre y apellido" />
+                    </div>
+
+                    <div class="col-12 py-3">
+                        <input type="text" class="form-control fw-300 py-3"
+                            title="DNI debe tener 7-8 dígitos (con o sin puntos)"
+                            placeholder="Documento de identidad" />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4 py-3">
+                            <input type="text" class="form-control fw-300 py-3" title="Solo acepta números"
+                                placeholder="Código de área" />
+                        </div>
+                        <div class="col-8 py-3">
+                            <input type="tel" class="form-control fw-300 py-3" title="Solo acepta números"
+                                placeholder="Número de teléfono" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 py-3">
+                        <input type="email" class="form-control fw-300 py-3" title="Ingrese un correo válido"
+                            placeholder="Correo electronico" />
+                    </div>
+                </div>
+
+                <div class="col-1">
+                </div>
+
+                <div class="col-5 justify-content-end">
+
+                    <div class="col-12 col-lg-11 col-xl-9">
+                        <h4 class="font-bold fs-md-1 fc-primary py-3">Envío</h4>
+                    </div>
+
+
+                    <mat-radio-group aria-label="Select an option">
+                        <div class="mb-3">
+                            <mat-radio-button value="1" class="font-bold fs-md fc-primary ">Correo
+                                argentino</mat-radio-button>
+
+                        </div>
+                        <div class="col-12 pb-3">
+                            <input type="text" class="form-control fw-300 py-3"
+                                title="Acepta letras, números y espacios en blanco" placeholder="Calle y número" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 py-3">
+                                <input type="text" class="form-control fw-300 py-3" title="Solo acepta letras"
+                                    placeholder="Localidad" />
+                            </div>
+
+                            <div class="col-6 py-3">
+                                <input type="text" class="form-control fw-300 py-3" title="Solo acepta letras"
+                                    placeholder="Provincia" />
+                            </div>
+                        </div>
+
+                        <div class="col-8 py-3">
+                            <input type="number" class="form-control fw-300 py-3" title="Solo acepta números"
+                                placeholder="Código postal" />
+                        </div>
+
+                        <div class="mt-3">
+                            <mat-radio-button value="2">Retiro por local</mat-radio-button>
+                        </div>
+
+                    </mat-radio-group>
+
+                    <div class="row pt-5 mt-3 align-items-center justify-content-end text-end">
+
+                        <div class="col-auto">
+                            <a type="button" class="fc-primary-light fs-sm-2 font-light">Volver al carrito</a>
+                        </div>
+
+                        <div class="col-6">
+                            <button mat-button matStepperNext
+                                class="col-9 py-2 text-sm-center fs-sm-2 font-bold secondary-button ">Ir a
+                                pagar</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <mat-radio-group>
+            <div class="container-fluid pt-5">
+                <div class="row">
+
+                    <div class="col-12 col-lg-11 col-xl-9">
+                        <h4 class="font-bold fs-md-1 fc-primary py-4">Metodos de pago</h4>
+                    </div>
+
+                    <div class="col-5">
+
+
+                        <mat-radio-button value="1" class="font-bold fs-md fc-primary ">Pago online</mat-radio-button>
+
+                        <div class="row py-4">
+                            <div class="col-2">
+                                <img src="./assets/img/stepper/visa-color.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2">
+                                <img src="./assets/img/stepper/master-color.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-2">
+                                <img src="./assets/img/stepper/american-color.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="col-12 pb-3 pt-3">
+                            <input type="text" class="form-control fw-300 py-3"
+                                placeholder="Nombre como figura en la tarjeta" />
+                        </div>
+
+                        <div class="col-12 py-3">
+                            <input type="text" class="form-control fw-300 py-3" placeholder="Número de tarjeta" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4 py-3">
+                                <input type="date" class="form-control fw-300 py-3" placeholder="Fecha de expiración" />
+                            </div>
+                            <div class="col-8 py-3">
+                                <input type="tel" class="form-control fw-300 py-3" placeholder="CVV" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-1">
+
+                    </div>
+
+                    <div class="col-5">
+                        <mat-radio-button value="1" class="font-bold fs-md fc-primary ">Pago en local</mat-radio-button>
+
+                        <section class="row gy-2 ps-4 mb-5 pb-5">
+
+                            <div class="col-12">
+                                <span class="font-light fs-sm-1 fc-primary">- Humberto Primo 680</span>
+                            </div>
+
+                            <div class="col-12">
+                                <span class="font-light fs-sm-1 fc-primary">Complejo Capitalinas. Edificio Suquía</span>
+                            </div>
+
+                            <div class="col-12">
+                                <span class="font-light fs-sm-1 fc-primary">Piso 2, oficina 22</span>
+                            </div>
+
+                            <div class="col-12">
+                                <span class="font-light fs-sm-1 fc-primary">Córdoba, Argentina</span>
+                            </div>
+                        </section>
+
+                        <div class="row pt-5 mt-5 align-items-center justify-content-end">
+
+                            <div class="col-auto">
+                                <button matStepperPrevious type="button"
+                                    class="fc-primary-light fs-sm-2 font-light back-button">Volver al paso
+                                    anterior</button>
+                            </div>
+
+                            <div class="col-6">
+                                <button matStepperNext
+                                    class="col-9 py-2 text-sm-center fs-sm-2 font-bold secondary-button">Confirmar
+                                    compra</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </mat-radio-group>
+
+    </mat-step>
+
+    <mat-step>
+
+        <div class="container pt-5">
+            <div class="row gy-4 justify-content-center">
+
+                <div class="col-3 text-center">
+                    <img src="./assets/img/stepper/check-sale.png" alt="" class="img-fluid">
+                </div>
+
+                <div class="col-12 text-center">
+                    <span class="font-bold fs-md-1 fc-primary">El pago fue realizado con éxito</span>
+                </div>
+
+                <div class="col-12 text-center">
+                    <span class="font-light fs-sm-2 fc-primary">Número de orden:<span
+                            class="font-bold fs-sm-2 fc-primary">1324</span></span>
+
+                </div>
+
+                <div class="col-12 text-center">
+                    <span class="font-light fs-sm-2 fc-primary">Muchas gracias por tu compra</span>
+                </div>
+
+                <div class="col-12 text-center mt-3">
+                    <button class="col-2 py-2 text-sm-center fs-sm-2 font-bold secondary-button mt-3">Volver al
+                        catalogo</button>
+                </div>
+            </div>
+        </div>
+    </mat-step>
+</mat-stepper>
