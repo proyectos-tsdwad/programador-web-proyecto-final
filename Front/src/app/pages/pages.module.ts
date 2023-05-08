@@ -4,6 +4,7 @@ import { HomeModule } from './home/home.module';
 import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { BookModule } from './book/book.module';
+import { CatalogueModule } from './catalogue/catalogue.module';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { BookModule } from './book/book.module';
     HomeModule,
     BookModule,
     BookDashboardModule,
+    CatalogueModule,
     PagesRoutingModule
   ],
   exports: [
     HomeModule,
     BookModule,
-    BookDashboardModule
+    BookDashboardModule,
+    CatalogueModule
   ]
 })
 export class PagesModule { }
