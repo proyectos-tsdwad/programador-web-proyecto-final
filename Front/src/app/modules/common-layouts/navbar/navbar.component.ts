@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from '../../login/login-page/login-page.component';
 import { RegisterPageComponent } from '../../login/register-page/register-page.component';
-import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-  constructor(private modalService: NgbModal, private router: Router) { }
+  constructor(private modalService: NgbModal, private navigationService: NavigationService) { }
 
   onClickLogIn() {
     const modalRef = this.modalService.open(LoginPageComponent, { fullscreen: true });
@@ -22,10 +22,10 @@ export class NavbarComponent {
   }
 
   onClickNavigateToHome() {
-    this.router.navigate(['home']);
+    this.navigationService.navigateToHome();
   }
 
   onClickNavigateToCatalogue() {
-    this.router.navigate(['home']);
+    this.navigationService.navigateToCatalogue();
   }
 }
