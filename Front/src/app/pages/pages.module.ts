@@ -21,16 +21,13 @@ import { AccountModule } from './account/account.module';
     PagesRoutingModule,
     CheckoutModule
   ],
-<<<<<<< HEAD
-  exports: [HomeModule, BookModule2, BookDashboardModule, CheckoutModule],
-=======
   exports: [
     HomeModule,
     BookDetailModule,
     CartModule,
     BookDashboardModule,
-    AccountModule
+    AccountModule,
+    CheckoutModule
   ]
->>>>>>> dev
 })
 export class PagesModule { }
