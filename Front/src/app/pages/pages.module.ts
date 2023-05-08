@@ -3,25 +3,30 @@ import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { BookModule } from './book/book.module';
-import { CatalogueModule } from './catalogue/catalogue.module';
+import { BookDetailModule } from './book/book.module';
+import { CartModule } from './cart/cart.module';
+import { AccountModule } from './account/account.module';import { CatalogueModule } from './catalogue/catalogue.module';
 
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     HomeModule,
-    BookModule,
+    BookDetailModule,
+    CartModule,
+    PagesRoutingModule,
     BookDashboardModule,
+    AccountModule,
     CatalogueModule,
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
   exports: [
     HomeModule,
-    BookModule,
+    BookDetailModule,
+    CartModule,
     BookDashboardModule,
+    AccountModule,
     CatalogueModule
   ]
 })

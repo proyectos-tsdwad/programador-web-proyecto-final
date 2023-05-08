@@ -7,17 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.css']
 })
-export class BookCardComponent implements OnInit{
+export class BookCardComponent implements OnInit {
 
   @Input() book!: Book;
 
-  constructor (private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
-  navegar(isbn:string) {
-    this.router.navigate(['/book-detail', isbn])
+  navegar(isbn: string) {
+    this.router.navigate(['/book-detail', isbn]);
   }
 }
