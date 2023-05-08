@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'book-detail/:isbn', component: BookDetailComponent },
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'book-dashboard', component: BookDashboardPageComponent },
-  { path: 'checkout', component: CheckoutPageComponent }
+  { path: 'checkout', component: CheckoutPageComponent },
   { path: 'cart-detail', component: CartDetailPageComponent },
   { path: 'profile', component: AccountDetailsComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
