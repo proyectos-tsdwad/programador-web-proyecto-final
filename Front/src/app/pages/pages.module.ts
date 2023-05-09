@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
-import { BookDashboardModule } from './admin/book-dashboard/book-dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { BookDetailModule } from './book/book-detail.module';
@@ -17,18 +16,15 @@ import { CatalogueModule } from './catalogue/catalogue.module';
     HomeModule,
     BookDetailModule,
     CartModule,
-    PagesRoutingModule,
-    BookDashboardModule,
     AccountModule,
     CatalogueModule,
-    PagesRoutingModule,
-    CheckoutModule
+    CheckoutModule,
+    PagesRoutingModule
   ],
   exports: [
     HomeModule,
     BookDetailModule,
     CartModule,
-    BookDashboardModule,
     AccountModule,
     CheckoutModule,
     CatalogueModule
