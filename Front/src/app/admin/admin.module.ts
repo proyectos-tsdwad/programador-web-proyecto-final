@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BookDashboardPageComponent } from './book-dashboard-page/book-dashboard-page.component';
+import { AdminRoutingModule } from './admin-routing.module';
+
+import { BookDashboardPageComponent } from './pages/book-dashboard-page/book-dashboard-page.component';
 
 
 
@@ -11,10 +12,10 @@ import { BookDashboardPageComponent } from './book-dashboard-page/book-dashboard
   ],
   imports: [
     CommonModule,
-    BrowserModule
+    AdminRoutingModule
   ],
-  exports : [
+  exports: [
     BookDashboardPageComponent
   ]
 })
-export class BookDashboardModule { }
+export class AdminModule { }
