@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectedBookDto } from 'src/app/models/book/selected-book.dto';
+import { SelectedBookDto } from 'src/app/models/book/book-model';
 import { BookService } from 'src/app/services/book/book.service';
 
 @Component({

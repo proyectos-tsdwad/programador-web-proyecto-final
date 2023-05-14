@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SelectedBookDto } from 'src/app/models/book/selected-book.dto';
+import { SelectedBookDto } from 'src/app/models/book/book-model';
 
 @Component({
   selector: 'app-selected-book-detail',

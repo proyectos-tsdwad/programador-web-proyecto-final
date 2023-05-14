@@ -1,5 +1,5 @@
 import { Book } from "../../models/book/book-model";
-import { SelectedBookDto } from "../../models/book/selected-book.dto";
+import { SelectedBookDto } from "../../models/book/book-model";
 import { TAG } from "../../utils/enums/book.enum";
 import { CATEGORY } from "../../utils/enums/book.enum";
 
