@@ -79,7 +79,7 @@
       "authorId": 4,
       "authorName": "Le Yen Mai",
       "img": "./assets/img/book-cover/pensar-a-la-japonesa.png",
-      "price": 3.390,
+      "price": 3.39,
       "sinopsis": "Quince conceptos fundamentales del pensamiento japonés; quince lugares emblemáticos del país nipón y un único objetivo: sumergirse en los principios esenciales de la filosofía; la espiritualidad; la cultura y la sociedad japonesa.",
       "publisherId": 4,
       "publisherName": "Urano",
@@ -151,7 +151,7 @@
       "authorId": 7,
       "authorName": "Penelope Douglas",
       "img": "./assets/img/book-cover/punk-57.png",
-      "price": 6.400,
+      "price": 6.4,
       "sinopsis": "Eran perfectos el uno para el otro hasta que se conocieron. La novela que ha arrasado en Tik Tok. MISHA. Mi profesora creyó que Ryen era un chico; la suya que Misha era nombre de chica y las dos; completamente equivocadas; nos juntaron para ser amigos por correspondencia. A nosotros no nos costó mucho darnos cuenta del error; pero antes ya habíamos discutido sobre cualquier tema posible: ¿la mejor pizza de la ciudad? ¿iPhone o Android? ¿Es Eminem el mejor rapero de todos los tiempos?",
       "publisherId": 7,
       "publisherName": "CrossBooks Argentina",
@@ -224,7 +224,7 @@
       "authorId": 10,
       "authorName": "Krystal Sutherland",
       "img": "./assets/img/book-cover/la-casa-de-las-grietas.png",
-      "price": 5.150,
+      "price": 5.15,
       "sinopsis": "Iris; Grey y Vivi Hollow son tres hermanas incuestionablemente extrañas. Cuando eran niñas; desaparecieron en una calle de Edimburgo y regresaron un mes más tarde sin recordar lo sucedido. A partir de ese momento comenzaron a experimentar cambios espeluznantes. Primero; su cabello oscuro se volvió blanco. Luego; sus ojos azules se tornaron negros. Y aunque nunca aumentan de peso; comen sin mesura; incapaces de aplacar su insaciable apetito. La gente las encuentra insoportablemente bellas; inquietantemente excitantes e inexplicablemente peligrosas. Pero ahora; diez años después; Grey desaparece dejando unas pistas confusas sobre su paradero e Iris y Vivi comienzan su búsqueda.",
       "publisherId": 10,
       "publisherName": "Oceano Travesia",
@@ -247,7 +247,7 @@
       "authorId": 11,
       "authorName": "Victoria Vilchez",
       "img": "./assets/img/book-cover/un-linaje-oscuro.png",
-      "price": 6.650,
+      "price": 6.65,
       "sinopsis": "En 1692; una serie de personas fueron arrestadas y acusadas de practicar brujería en Salem. Tras los juicios que se llevaron a cabo; se condenó a veintinueve de ellas y; finalmente; diecinueve murieron ahorcadas. Aunque nadie sabía que; en realidad; los que propiciaron las acusaciones eran brujos blancos; y los condenados a la horca pertenecían a su vez a linajes de brujos oscuros. Hasta ese momento; los aquelarres de ambos bandos habían convivido en equilibro. Danielle Good es una excepción. Ella es una bruja blanca a pesar de que su antepasada; Sarah Good; fue juzgada y condenada siglos atrás.",
       "publisherId": 4,
       "publisherName": "Urano",
@@ -271,7 +271,7 @@
       "authorId": 12,
       "authorName": "Florencia Vercellone",
       "img": "./assets/img/book-cover/todo-por-volver-a-verte.png",
-      "price": 3.820,
+      "price": 3.82,
       "sinopsis": "Ana vuelve a la Argentina después de 31 años. Ese regreso despierta memorias guardadas bajo llave; recuerdos de una militancia y un amor por los que se había animado a todo. Conoció a Juan en tiempos turbulentos; con una causa en común. Se amaron a pesar del abismo entre sus mundos: ella; contra los mandatos que la ataban a una vida que ya no la representaba; él; cuyo espíritu aguerrido lo animaba a luchar sin reparar en los riesgos.",
       "publisherId": 11,
       "publisherName": "El Ateneo",
@@ -295,7 +295,7 @@
       "authorId": 13,
       "authorName": "Elizabeth Letts",
       "img": "./assets/img/book-cover/buscando-a-dorothy.png",
-      "price": 3.950,
+      "price": 3.95,
       "sinopsis": "Hollywood; 1938. Cuando Maud Gage Baum; la viuda de L. Frank Baum; reconocido autor de El mago de Oz; se entera de que una productora va a llevar a la gran pantalla la obra de su difunto marido; hace todo lo posible por llegar hasta el set de rodaje. Todo indica que Maud es la única persona que puede ayudar a los productores a mantenerse fieles al espíritu del libro; porque solo ella conoce sus secretos. Pero en cuanto oye a Judy Garland ensayar las primeras notas de Over the Rainbow; Maud reconoce el anhelo que ha definido la historia de su vida.",
       "publisherId": 12,
       "publisherName": "Umbtriel Editores",
@@ -476,17 +476,17 @@
   ],
   "users": [
     {
-      "id": 1,
-      "name": "John doe",
-      "email": "John-doe@gmail.com",
-      "password": "John-doe",
+      "email": "carla@gmail.com",
+      "password": "$2a$10$TmavgZy2Ej/ZD6IHQOIeOOMronArH1S30FBqI4bGG7uJGjAWAvp6e",
+      "name": "Carla Rios",
       "areaCode": "11",
-      "telephone": "27743475",
-      "document": "27743475",
-      "location": "",
-      "province": "",
+      "telephone": "23432123",
+      "document": "34543212",
+      "location": "CABA",
+      "province": "CABA",
       "address": "",
-      "roleId": "1"
+      "roleId": 1,
+      "id": 1
     }
   ],
   "roles": [
@@ -497,6 +497,12 @@
     {
       "id": 2,
       "name": "admin"
+    }
+  ],
+  "login": [
+    {
+      "email": "linero@gmail.com",
+      "password": "12345"
     }
   ]
 }

@@ -5,6 +5,7 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonComponentsModule } from "../common-components/common-components.module";
+import { LoginModule } from '../login/login.module';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { CommonComponentsModule } from "../common-components/common-components.m
     HeaderMenuComponent,
     SearchComponent,
     NavbarComponent
-  ],
+    ],
   exports: [
     FooterComponent,
     HeaderMenuComponent,
@@ -21,6 +22,7 @@ import { CommonComponentsModule } from "../common-components/common-components.m
   ],
   imports: [
     CommonModule,
+    LoginModule,
     CommonComponentsModule
   ]
 })
