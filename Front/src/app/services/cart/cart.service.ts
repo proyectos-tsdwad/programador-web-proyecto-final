@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Book, SelectedBookDto } from "src/app/models/book/book-model";
-import { Subject } from "rxjs";
-
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +22,25 @@ export class CartService {
       selectedAmount: 0
     }
 
-    selectedBook = this.cart.find(item => book.id === item.id) || selectedBook;
-    selectedBook.selectedAmount += 1;
-    this.cart.push(selectedBook);
+    selectedBook = this.cart.find(item => item.id === book.id) || selectedBook;
+
+    if (selectedBook.selectedAmount > 0) {
+      selectedBook.selectedAmount += 1;
+    } else {
+      selectedBook.selectedAmount += 1;
+      this.cart.push(selectedBook);
+    }
+
+    console.log('dd', this.cart);
+
     this.cartUpdated.next([...this.cart]);
   }
 
-  getcarttUpdatedListener() {
+  updateCart() {
+    this.cartUpdated.next([...this.cart]);
+  }
+
+  getcartUpdatedListener() {
     return this.cartUpdated.asObservable();
   }
 

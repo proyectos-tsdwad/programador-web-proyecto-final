@@ -11,16 +11,18 @@ import { CartService } from 'src/app/services/cart/cart.service';
 })
 export class SelectedBooksComponent implements OnInit, OnDestroy {
 
-  books!: SelectedBookDto[];
+  books: SelectedBookDto[] = [];
   cartSub!: Subscription;
 
-  constructor(private cartService: CartService) {
-    this.cartService = cartService;
-  }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartSub = this.cartService.getcarttUpdatedListener().
+    console.log('entro onint');
+    this.cartService.updateCart();
+    this.cartSub = this.cartService.getcartUpdatedListener().
       subscribe((books: SelectedBookDto[]) => {
+        console.log('entro se', books);
+
         this.books = books;
       });
   }
