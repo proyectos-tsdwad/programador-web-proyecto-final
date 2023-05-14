@@ -1,23 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from "rxjs";
+
 import { SelectedBookDto } from 'src/app/models/book/book-model';
-import { BookService } from 'src/app/services/book/book.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-selected-books',
   templateUrl: './selected-books.component.html',
   styleUrls: ['./selected-books.component.css']
 })
-export class SelectedBooksComponent implements OnInit {
+export class SelectedBooksComponent implements OnInit, OnDestroy {
 
   books!: SelectedBookDto[];
-  bookService: BookService;
+  cartSub!: Subscription;
 
-  constructor(bookService: BookService) {
-    this.bookService = bookService;
+  constructor(private cartService: CartService) {
+    this.cartService = cartService;
   }
 
   ngOnInit(): void {
-    this.books = this.bookService.getSelectedBooks();
+    this.cartSub = this.cartService.getcarttUpdatedListener().
+      subscribe((books: SelectedBookDto[]) => {
+        this.books = books;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.cartSub.unsubscribe();
   }
 
 }
