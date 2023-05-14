@@ -1,6 +1,7 @@
 import { CommonComponentsModule } from './modules/common-components/common-components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { AdminModule } from './admin/admin.module';
     PagesModule,
     AdminModule,
     CommonComponentsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
 
   providers: [],
