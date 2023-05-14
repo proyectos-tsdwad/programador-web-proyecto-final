@@ -473,5 +473,30 @@
       "id": 12,
       "name": "Umbtriel Editores"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John doe",
+      "email": "John-doe@gmail.com",
+      "password": "John-doe",
+      "areaCode": "11",
+      "telephone": "27743475",
+      "document": "27743475",
+      "location": "",
+      "province": "",
+      "address": "",
+      "roleId": "1"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "client"
+    },
+    {
+      "id": 2,
+      "name": "admin"
+    }
   ]
 }
