@@ -13,7 +13,7 @@ export interface Book {
   pageAmount: number;
   language: string;
 
-  genre: string;
+  genre: string[];
   releaseDate: string;
 
   stock: number;
