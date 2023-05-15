@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <div class="mt-5 pt-5">
   <div class="container-fluid px-md-5">
     <div class="row px-4 index-book-title">
@@ -10,7 +9,9 @@
         Encontrá todos esos libros que debes leer
       </p>
       <div class="col-2">
-        <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
+        <a class="font-medium fc-secondary fs-md-1 ps-4" (click)="onClickCatalogue()">
+          Ver todos <span class="fs-sm-2">></span>
+        </a>
       </div>
     </div>
   </div>
@@ -27,7 +28,9 @@
         Encontrá acá los nuevos lanzamientos
       </p>
       <div class="col-2">
-        <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
+        <a class="font-medium fc-secondary fs-md-1 ps-4" (click)="onClickCatalogue()">
+          Ver todos <span class="fs-sm-2">></span>
+        </a>
       </div>
     </div>
   </div>
@@ -44,7 +47,9 @@
         Encontrá acá lo más vendido del mes
       </p>
       <div class="col-2">
-        <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
+        <a class="font-medium fc-secondary fs-md-1 ps-4" (click)="onClickCatalogue()">
+          Ver todos <span class="fs-sm-2">></span>
+        </a>
       </div>
     </div>
   </div>

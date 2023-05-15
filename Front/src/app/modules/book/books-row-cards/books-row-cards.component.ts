@@ -9,4 +9,6 @@ import { Book } from 'src/app/models/book/book-model';
 export class BooksRowCardsComponent {
 
   @Input() books: Book[] = [];
+  @Input() showPrice = true;
+  @Input() justify: 'evenly' | 'center' | 'start' = 'evenly';
 }
