@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { SelectedBookDto } from 'src/app/models/book/book-model';
+import { Book, SelectedBookDto } from 'src/app/models/book/book-model';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-selected-book-detail',
@@ -9,5 +10,11 @@ import { SelectedBookDto } from 'src/app/models/book/book-model';
 export class SelectedBookDetailComponent {
 
   @Input() book!: SelectedBookDto;
+
+  constructor(private CartService: CartService) { }
+
+  onAddBook() {
+    this.CartService.addBook(this.book);
+  }
 
 }

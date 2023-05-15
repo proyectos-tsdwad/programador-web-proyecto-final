@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Book, SelectedBookDto } from "src/app/models/book/book-model";
-import { Observable, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +8,9 @@ import { Observable, Subject } from "rxjs";
 export class CartService {
 
   private cart: SelectedBookDto[] = [];
-  private cartUpdated = new Subject<SelectedBookDto[]>();
+  private cartUpdated = new BehaviorSubject<SelectedBookDto[]>([]);
 
-  addBook(book: Book) {
+  addBook(book: Book | SelectedBookDto) {
 
     let selectedBook: SelectedBookDto = {
       id: book.id,
