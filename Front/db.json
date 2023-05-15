@@ -13,16 +13,11 @@
       "isbn": "9789877391695",
       "pageAmount": 640,
       "language": "Español",
-      "genre": [
-        "Romantico",
-        "infantil"
-      ],
+      "genre": ["Romantico", "infantil"],
       "releaseDate": "2021",
       "stock": 35,
       "totalSold": 25,
-      "tags": [
-        "mas vendidos"
-      ]
+      "tags": ["mas vendidos"]
     },
     {
       "id": 2,
@@ -37,17 +32,11 @@
       "isbn": "9789877352306",
       "pageAmount": 320,
       "language": "Español",
-      "genre": [
-        "arte",
-        "gastronomia",
-        "Auto Ayuda"
-      ],
+      "genre": ["arte", "gastronomia", "Auto Ayuda"],
       "releaseDate": "2019",
       "stock": 20,
       "totalSold": 20,
-      "tags": [
-        "mas vendidos"
-      ]
+      "tags": ["mas vendidos"]
     },
     {
       "id": 3,
@@ -62,16 +51,11 @@
       "isbn": " 9789500766647",
       "pageAmount": 400,
       "language": "Español",
-      "genre": [
-        "Ficción",
-        "juvenil"
-      ],
+      "genre": ["Ficción", "juvenil"],
       "releaseDate": "2022",
       "stock": 50,
       "totalSold": 20,
-      "tags": [
-        "mas vendidos"
-      ]
+      "tags": ["mas vendidos"]
     },
     {
       "id": 4,
@@ -79,24 +63,18 @@
       "authorId": 4,
       "authorName": "Le Yen Mai",
       "img": "./assets/img/book-cover/pensar-a-la-japonesa.png",
-      "price": 3.390,
+      "price": 3.39,
       "sinopsis": "Quince conceptos fundamentales del pensamiento japonés; quince lugares emblemáticos del país nipón y un único objetivo: sumergirse en los principios esenciales de la filosofía; la espiritualidad; la cultura y la sociedad japonesa.",
       "publisherId": 4,
       "publisherName": "Urano",
       "isbn": "9789507883569",
       "pageAmount": 240,
       "language": "Español",
-      "genre": [
-        "negocio",
-        "Auto Ayuda",
-        "gastronomia"
-      ],
+      "genre": ["negocio", "Auto Ayuda", "gastronomia"],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 18,
-      "tags": [
-        "mas vendidos"
-      ]
+      "tags": ["mas vendidos"]
     },
     {
       "id": 5,
@@ -111,15 +89,11 @@
       "isbn": "9789877475876",
       "pageAmount": 296,
       "language": "Español",
-      "genre": [
-        "Juvenil"
-      ],
+      "genre": ["Juvenil"],
       "releaseDate": "2020",
       "stock": 50,
       "totalSold": 30,
-      "tags": [
-        "mas vendidos"
-      ]
+      "tags": ["mas vendidos"]
     },
     {
       "id": 6,
@@ -134,16 +108,11 @@
       "isbn": "9789502815206",
       "pageAmount": 256,
       "language": "Español",
-      "genre": [
-        "juvenil",
-        "Auto Ayuda"
-      ],
+      "genre": ["juvenil", "Auto Ayuda"],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 8,
-      "tags": [
-        "recomendados"
-      ]
+      "tags": ["recomendados"]
     },
     {
       "id": 7,
@@ -151,23 +120,18 @@
       "authorId": 7,
       "authorName": "Penelope Douglas",
       "img": "./assets/img/book-cover/punk-57.png",
-      "price": 6.400,
+      "price": 6.4,
       "sinopsis": "Eran perfectos el uno para el otro hasta que se conocieron. La novela que ha arrasado en Tik Tok. MISHA. Mi profesora creyó que Ryen era un chico; la suya que Misha era nombre de chica y las dos; completamente equivocadas; nos juntaron para ser amigos por correspondencia. A nosotros no nos costó mucho darnos cuenta del error; pero antes ya habíamos discutido sobre cualquier tema posible: ¿la mejor pizza de la ciudad? ¿iPhone o Android? ¿Es Eminem el mejor rapero de todos los tiempos?",
       "publisherId": 7,
       "publisherName": "CrossBooks Argentina",
       "isbn": " 9789507325502",
       "pageAmount": 384,
       "language": "Español",
-      "genre": [
-        "arte",
-        "Juvenil"
-      ],
+      "genre": ["arte", "Juvenil"],
       "releaseDate": "2022",
       "stock": 40,
       "totalSold": 10,
-      "tags": [
-        "novedades"
-      ]
+      "tags": ["novedades"]
     },
     {
       "id": 8,
@@ -182,16 +146,11 @@
       "isbn": "9789878960005",
       "pageAmount": 656,
       "language": "Español",
-      "genre": [
-        "juvenil",
-        "ciencia ficción"
-      ],
+      "genre": ["juvenil", "ciencia ficción"],
       "releaseDate": "2022",
       "stock": 27,
       "totalSold": 8,
-      "tags": [
-        "novedades"
-      ]
+      "tags": ["novedades"]
     },
     {
       "id": 9,
@@ -206,17 +165,11 @@
       "isbn": "9789874924995",
       "pageAmount": 360,
       "language": "Español",
-      "genre": [
-        "juvenil",
-        "gastronomia",
-        "ciencia ficción"
-      ],
+      "genre": ["juvenil", "gastronomia", "ciencia ficción"],
       "releaseDate": "2022",
       "stock": 32,
       "totalSold": 11,
-      "tags": [
-        "novedades"
-      ]
+      "tags": ["novedades"]
     },
     {
       "id": 10,
@@ -224,22 +177,18 @@
       "authorId": 10,
       "authorName": "Krystal Sutherland",
       "img": "./assets/img/book-cover/la-casa-de-las-grietas.png",
-      "price": 5.150,
+      "price": 5.15,
       "sinopsis": "Iris; Grey y Vivi Hollow son tres hermanas incuestionablemente extrañas. Cuando eran niñas; desaparecieron en una calle de Edimburgo y regresaron un mes más tarde sin recordar lo sucedido. A partir de ese momento comenzaron a experimentar cambios espeluznantes. Primero; su cabello oscuro se volvió blanco. Luego; sus ojos azules se tornaron negros. Y aunque nunca aumentan de peso; comen sin mesura; incapaces de aplacar su insaciable apetito. La gente las encuentra insoportablemente bellas; inquietantemente excitantes e inexplicablemente peligrosas. Pero ahora; diez años después; Grey desaparece dejando unas pistas confusas sobre su paradero e Iris y Vivi comienzan su búsqueda.",
       "publisherId": 10,
       "publisherName": "Oceano Travesia",
       "isbn": "9788412365597",
       "pageAmount": 344,
       "language": "Español",
-      "genre": [
-        "Juvenil"
-      ],
+      "genre": ["Juvenil"],
       "releaseDate": "2022",
       "stock": 42,
       "totalSold": 10,
-      "tags": [
-        "novedades"
-      ]
+      "tags": ["novedades"]
     },
     {
       "id": 11,
@@ -247,23 +196,18 @@
       "authorId": 11,
       "authorName": "Victoria Vilchez",
       "img": "./assets/img/book-cover/un-linaje-oscuro.png",
-      "price": 6.650,
+      "price": 6.65,
       "sinopsis": "En 1692; una serie de personas fueron arrestadas y acusadas de practicar brujería en Salem. Tras los juicios que se llevaron a cabo; se condenó a veintinueve de ellas y; finalmente; diecinueve murieron ahorcadas. Aunque nadie sabía que; en realidad; los que propiciaron las acusaciones eran brujos blancos; y los condenados a la horca pertenecían a su vez a linajes de brujos oscuros. Hasta ese momento; los aquelarres de ambos bandos habían convivido en equilibro. Danielle Good es una excepción. Ella es una bruja blanca a pesar de que su antepasada; Sarah Good; fue juzgada y condenada siglos atrás.",
       "publisherId": 4,
       "publisherName": "Urano",
       "isbn": "9789878454498",
       "pageAmount": 480,
       "language": "Español",
-      "genre": [
-        "romantico",
-        "ciencia ficción"
-      ],
+      "genre": ["romantico", "ciencia ficción"],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 9,
-      "tags": [
-        "novedades"
-      ]
+      "tags": ["novedades"]
     },
     {
       "id": 12,
@@ -271,23 +215,18 @@
       "authorId": 12,
       "authorName": "Florencia Vercellone",
       "img": "./assets/img/book-cover/todo-por-volver-a-verte.png",
-      "price": 3.820,
+      "price": 3.82,
       "sinopsis": "Ana vuelve a la Argentina después de 31 años. Ese regreso despierta memorias guardadas bajo llave; recuerdos de una militancia y un amor por los que se había animado a todo. Conoció a Juan en tiempos turbulentos; con una causa en común. Se amaron a pesar del abismo entre sus mundos: ella; contra los mandatos que la ataban a una vida que ya no la representaba; él; cuyo espíritu aguerrido lo animaba a luchar sin reparar en los riesgos.",
       "publisherId": 11,
       "publisherName": "El Ateneo",
       "isbn": "9789500212922",
       "pageAmount": 320,
       "language": "Español",
-      "genre": [
-        "Romantico",
-        "infantil"
-      ],
+      "genre": ["Romantico", "infantil"],
       "releaseDate": "2022",
       "stock": 28,
       "totalSold": 12,
-      "tags": [
-        "recomendados"
-      ]
+      "tags": ["recomendados"]
     },
     {
       "id": 13,
@@ -295,23 +234,18 @@
       "authorId": 13,
       "authorName": "Elizabeth Letts",
       "img": "./assets/img/book-cover/buscando-a-dorothy.png",
-      "price": 3.950,
+      "price": 3.95,
       "sinopsis": "Hollywood; 1938. Cuando Maud Gage Baum; la viuda de L. Frank Baum; reconocido autor de El mago de Oz; se entera de que una productora va a llevar a la gran pantalla la obra de su difunto marido; hace todo lo posible por llegar hasta el set de rodaje. Todo indica que Maud es la única persona que puede ayudar a los productores a mantenerse fieles al espíritu del libro; porque solo ella conoce sus secretos. Pero en cuanto oye a Judy Garland ensayar las primeras notas de Over the Rainbow; Maud reconoce el anhelo que ha definido la historia de su vida.",
       "publisherId": 12,
       "publisherName": "Umbtriel Editores",
       "isbn": "9789878945118",
       "pageAmount": 416,
       "language": "Español",
-      "genre": [
-        "Ficción",
-        "infantil"
-      ],
+      "genre": ["Ficción", "infantil"],
       "releaseDate": "2022",
       "stock": 45,
       "totalSold": 9,
-      "tags": [
-        "recomendados"
-      ]
+      "tags": ["recomendados"]
     },
     {
       "id": 14,
@@ -326,16 +260,11 @@
       "isbn": "9789878940168",
       "pageAmount": 100,
       "language": "Español",
-      "genre": [
-        "Juvenil",
-        "negocio"
-      ],
+      "genre": ["Juvenil", "negocio"],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 10,
-      "tags": [
-        "recomendados"
-      ]
+      "tags": ["recomendados"]
     },
     {
       "id": 15,
@@ -350,16 +279,201 @@
       "isbn": "9789877478655",
       "pageAmount": 360,
       "language": "Español",
-      "genre": [
-        "Juvenil",
-        "negocio"
-      ],
+      "genre": ["Juvenil", "negocio"],
       "releaseDate": "2022",
       "stock": 36,
       "totalSold": 8,
-      "tags": [
-        "recomendados"
-      ]
+      "tags": ["recomendados"]
+    },
+    {
+      "id": 16,
+      "title": "Mi Isla",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/mi-isla.png",
+      "price": 12.499,
+      "sinopsis": "Maggie vive en una isla y regenta una casa de huéspedes... Maggie tiene un huerto y casi siempre va descalza... Maggie no quiere recordar por qué está allí; duele demasiado Maggie ha renunciado al amor y es complicado explicar los motivos...hasta que conoce a Alejandro...la calma da paso a una tormenta de sensaciones...y a la posibilidad de que tal vez sí se puede empezar de nuevo.",
+      "publisherId": 13,
+      "publisherName": "SUMA",
+      "isbn": "9788491290148",
+      "pageAmount": 536,
+      "language": "Español",
+      "genre": ["ficcion"],
+      "releaseDate": "2016",
+      "stock": 20,
+      "totalSold": 5,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 17,
+      "title": " Todas esas cosas que te dire mañana",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/todas-esas-cosas-que-te-dire-mañana.jpg",
+      "price": 13.499,
+      "sinopsis": "Miranda trabaja como subdirectora en una revista de moda. Miranda es feliz junto a Tristán. Por eso no entiende que la este dejando. Ojalá pudiera dar marcha atrás y volver al momento en que se conocieron...Pero ¿y si realmente tuviera la oportunidad de cambiar su historia",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466370554",
+      "pageAmount": 504,
+      "language": "Español",
+      "genre": ["negocios"],
+      "releaseDate": "2023",
+      "stock": 10,
+      "totalSold": 15,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 18,
+      "title": " Toda la verdad de mis mentiras",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/toda-la-verdad-de-mis-mentiras.jpg",
+      "price": 9.499,
+      "sinopsis": "¿Puede mantenerse una amistad a pesar de las mentiras? Una despedida de soltera en autocaravana. Un grupo de amigos...y muchos secretos.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466370578",
+      "pageAmount": 544,
+      "language": "Español",
+      "genre": ["juvenil"],
+      "releaseDate": "2023",
+      "stock": 20,
+      "totalSold": 6,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 19,
+      "title": " Los abrazos lentos",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/los-abrazos-lentos.jpg",
+      "price": 9.999,
+      "sinopsis": "'Las palabras son abrazos y aquí van los míos: Un recopilatorio de lo sentido, imaginado y vivido en los últimos años'.",
+      "publisherId": 13,
+      "publisherName": "SUMA",
+      "isbn": "9788491297192",
+      "pageAmount": 528,
+      "language": "Español",
+      "genre": ["arte"],
+      "releaseDate": "2022",
+      "stock": 20,
+      "totalSold": 16,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 20,
+      "title": " Dentro de casa",
+      "authorId": 16,
+      "authorName": "Lisa jewell",
+      "img": "./assets/img/book-cover/dentro-de-casa.jpg",
+      "price": 19.999,
+      "sinopsis": "En una majestuosa casa del elegante barrio de Chelsea, la policía encuentra a una bebé en su cuna. Bien alimentada, cuidada y feliz, espera a que la cojan en brazos. En la cocina de esa misma casa hay tres cadáveres en estado de descomposición. Junto a ellos, una nota escrita con urgencia. Veinticinco años después, Libby, esa bebé a quien encontraron con vida, regresa a una casa que esconde su origen familiar y el más oscuro de los secretos. Ten cuidado con a quién dejas entrar. Hay personas que nunca se irán.",
+      "publisherId": 3,
+      "publisherName": "Sudamericana",
+      "isbn": "9788408267546",
+      "pageAmount": 368,
+      "language": "Español",
+      "genre": ["juvenil"],
+      "releaseDate": "2023",
+      "stock": 20,
+      "totalSold": 16,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 21,
+      "title": "El viento conoce mi nombre",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/el-viento-conoce-mi-nombre.jpg",
+      "price": 19.999,
+      "sinopsis": "Viena, 1938. Samuel Adler es un niño judío de seis años cuyo padre desaparece durante la Noche de los Cristales Rotos, en la que su familia lo pierde todo. Su madre, desesperada, le consigue una plaza en un tren que le llevará desde la Austria nazi hasta Inglaterra. Samuel emprende una nueva etapa con su fiel violín y con el peso de la soledad y la incertidumbre, que lo acompañarán siempre en su dilatada vida.",
+      "publisherId": 4,
+      "publisherName": "Urano",
+      "isbn": "9788401032004",
+      "pageAmount": 352,
+      "language": "Español",
+      "genre": ["ficcion"],
+      "releaseDate": "2023",
+      "stock": 10,
+      "totalSold": 5,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 22,
+      "title": "Hija de la fortuna",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/hija-de-la-fortuna.jpg",
+      "price": 19.999,
+      "sinopsis": "Eliza Sommers es una joven chilena que vive en Valparaíso en 1849, el  año en que se descubre oro en California. Su amante, Joaquín Andieta,  parte hacia el norte decidido a encontrar fortuna, y ella decide  seguirlo. El viaje infernal, escondida en la cala de un velero, y la  búsqueda de su amante en una tierra de hombres solos y prostitutas  atraídos por la fiebre del oro, transforman a la joven inocente en una  mujer fuera de lo común. Eliza recibe ayuda y afecto de Tao Chi'en, un  médico chino, quien la conducirá de la mano en un itinerario memorable  por los misterios y contradicciones de la condición humana.",
+      "publisherId": 6,
+      "publisherName": "Grigalbo",
+      "isbn": "9788466360685",
+      "pageAmount": 448,
+      "language": "Español",
+      "genre": ["juvenil"],
+      "releaseDate": "2022",
+      "stock": 17,
+      "totalSold": 9,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 23,
+      "title": "La casa de los espiritus",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/la-casa-de-los-espiritus.jpg",
+      "price": 6.999,
+      "sinopsis": "El despótico patriarca Esteban Trueba ha construido con mano de hierro un imperio privado que empieza a tambalearse con el paso del tiempo y un entorno social explosivo. Finalmente, la decadencia personal del patriarca arrastrará a los Trueba a una dolorosa desintegración. Atrapados en unas dramáticas relaciones familiares, los personajes de esta poderosa novela encarnan las tensiones sociales y espirituales de una época que abarca gran parte del siglo XX.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466362085",
+      "pageAmount": 464,
+      "language": "Español",
+      "genre": ["gastronomia"],
+      "releaseDate": "2022",
+      "stock": 40,
+      "totalSold": 9,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 24,
+      "title": "Amor",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/amor.jpg",
+      "price": 8.899,
+      "sinopsis": " 'Mi vida sexual comenzó temprano, más o menos a los cinco años, en el  kindergarten de las monjas ursulinas, en Santiago de Chile.'' Con estas  palabras, Isabel Allende inicia este compendio sobre amor y eros  compuesto por fragmentos escogidos de sus obras, que esbozan a traves de sus personajes la propia trayectoria vital de la autora.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466360678",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": ["negocios"],
+      "releaseDate": "2023",
+      "stock": 12,
+      "totalSold": 1,
+      "tags": ["mas vendidos"]
+    },
+    {
+      "id": 25,
+      "title": "Esperando al diluvio",
+      "authorId": 17,
+      "authorName": "Dolores redondo",
+      "img": "./assets/img/book-cover/retrato-en-sepia.jpg",
+      "price": 6.999,
+      "sinopsis": "Un salvaje asesino en serie. Una búsqueda hasta el último latido. Una ciudad amenazada por un diluvio. Entre los años 1968 y 1969, el asesino al que la prensa bautizaría como John Biblia mató a tres mujeres en Glasgow. Nunca fue identificado y el caso todavía sigue abierto hoy en día. En esta novela, a principios de los años ochenta, el investigador de policía escocés Noah Scott Sherrington logra llegar hasta John Biblia, pero un fallo en su corazón en el último momento le impide arrestarlo. A pesar de su frágil estado de salud, y contra los consejos médicos y la negativa de sus superiores para que continúe con la persecución del asesino en serie, Noah sigue una corazonada que lo llevará hasta el Bilbao de 1983. Justo unos días antes de que un verdadero diluvio arrase la ciudad.",
+      "publisherId": 8,
+      "publisherName": "Shinka",
+      "isbn": "9788423362479",
+      "pageAmount": 576,
+      "language": "Español",
+      "genre": ["juvenil"],
+      "releaseDate": "2022",
+      "stock": 33,
+      "totalSold": 8,
+      "tags": ["mas vendidos"]
     }
   ],
   "authors": [
@@ -422,6 +536,14 @@
     {
       "id": 15,
       "name": "Sophie Gonzalez"
+    },
+    {
+      "id": 16,
+      "name": "Lisa Jewell"
+    },
+    {
+      "id": 17,
+      "name": "Dolores Redondo"
     }
   ],
   "publishers": [
@@ -472,21 +594,29 @@
     {
       "id": 12,
       "name": "Umbtriel Editores"
+    },
+    {
+      "id": 13,
+      "name": "SUMA"
+    },
+    {
+      "id": 14,
+      "name": "DEBOLSILLO"
     }
   ],
   "users": [
     {
-      "id": 1,
-      "name": "John doe",
-      "email": "John-doe@gmail.com",
-      "password": "John-doe",
+      "email": "carla@gmail.com",
+      "password": "$2a$10$TmavgZy2Ej/ZD6IHQOIeOOMronArH1S30FBqI4bGG7uJGjAWAvp6e",
+      "name": "Carla Rios",
       "areaCode": "11",
-      "telephone": "27743475",
-      "document": "27743475",
-      "location": "",
-      "province": "",
+      "telephone": "23432123",
+      "document": "34543212",
+      "location": "CABA",
+      "province": "CABA",
       "address": "",
-      "roleId": "1"
+      "roleId": 1,
+      "id": 1
     }
   ],
   "roles": [
@@ -497,6 +627,12 @@
     {
       "id": 2,
       "name": "admin"
+    }
+  ],
+  "login": [
+    {
+      "email": "linero@gmail.com",
+      "password": "12345"
     }
   ]
 }
