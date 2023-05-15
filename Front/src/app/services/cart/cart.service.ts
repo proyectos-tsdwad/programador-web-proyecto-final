@@ -7,11 +7,12 @@ import { BehaviorSubject } from "rxjs";
 })
 export class CartService {
 
+  private totalItems: number = 0;
   private cart: SelectedBookDto[] = [];
   private cartUpdated = new BehaviorSubject<SelectedBookDto[]>([]);
+  private totalItemsUpdated = new BehaviorSubject<number>(0);
 
   addBook(book: Book | SelectedBookDto) {
-
     let selectedBook: SelectedBookDto = {
       id: book.id,
       author: book.author,
@@ -31,18 +32,58 @@ export class CartService {
       this.cart.push(selectedBook);
     }
 
-    console.log('dd', this.cart);
-
+    this.updatetTotalQuantity();
     this.cartUpdated.next([...this.cart]);
   }
 
-  updateCart() {
+  removeCopy(bookId: number) {
+    let selectedBook = this.cart.find(item => item.id === bookId);
+
+    if (!selectedBook) {
+      return;
+    }
+
+    selectedBook.selectedAmount -= 1;
+
+    if (!selectedBook.selectedAmount) {
+      this.cart = this.cart.filter(item => item.id !== bookId);
+    }
+    this.updatetTotalQuantity();
     this.cartUpdated.next([...this.cart]);
+  }
+
+  removeBook(bookId: number) {
+    let selectedBook = this.cart.find(item => item.id === bookId);
+
+    if (!selectedBook) {
+      return;
+    }
+
+    this.cart = this.cart.filter(item => item.id !== bookId);
+
+    this.updatetTotalQuantity();
+    this.cartUpdated.next([...this.cart]);
+  }
+
+  clearCart() {
+    this.cart = [];
+    this.updatetTotalQuantity();
+    this.cartUpdated.next([...this.cart]);
+  }
+
+  updatetTotalQuantity() {
+    this.totalItems = this.cart.reduce((partialSum, book) => {
+      return partialSum + book.selectedAmount;
+    }, 0);
+
+    this.totalItemsUpdated.next(this.totalItems);
   }
 
   getcartUpdatedListener() {
     return this.cartUpdated.asObservable();
   }
 
-
+  getTotalItemsListener() {
+    return this.totalItemsUpdated.asObservable();
+  }
 }

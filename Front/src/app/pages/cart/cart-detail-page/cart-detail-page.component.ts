@@ -12,7 +12,9 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 export class CartDetailPageComponent implements OnInit, OnDestroy {
 
   cartSub!: Subscription;
+  totalItemSub!: Subscription;
   books: SelectedBookDto[] = [];
+  totalItems: number = 0;
 
   constructor(private navigationService: NavigationService, private cartService: CartService) { }
 
@@ -21,13 +23,30 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.cartSubscribe();
+    this.totalItemSubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.cartSub.unsubscribe();
+    this.totalItemSub.unsubscribe();
+  }
+
+  cartSubscribe() {
     this.cartSub = this.cartService.getcartUpdatedListener().
       subscribe((books: SelectedBookDto[]) => {
         this.books = books;
       });
   }
 
-  ngOnDestroy(): void {
-    this.cartSub.unsubscribe();
+  totalItemSubscribe() {
+    this.totalItemSub = this.cartService.getTotalItemsListener().
+      subscribe((totalItems: number) => {
+        this.totalItems = totalItems;
+      });
+  }
+
+  onClearCart() {
+    this.cartService.clearCart();
   }
 }

@@ -11,7 +11,7 @@ export class BookService {
   private books = allBooks;
   private seletedBooks = selectedBooks;
 
-  constructor() {}
+  constructor() { }
 
   getAllBooks() {
     return [...this.books];
@@ -45,9 +45,9 @@ export class BookService {
     return [...topSellerBooks];
   }
 
-  getRecomendedBooksByCategory(category: string) {
+  getRecomendedBooksByCategory(genre: string) {
     const recomendedBooks = this.books.filter((book) =>
-      book.genre.includes(category)
+      book.genre.includes(genre)
     );
     const randomBooks = recomendedBooks
       .sort(() => Math.random() - 0.5)
