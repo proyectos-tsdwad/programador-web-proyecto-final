@@ -6,10 +6,10 @@
     <div class="col-12">
       <div class="row">
         <div class="col-6">
-          <span>2 times</span>
+          <span>{{books.length}} items</span>
         </div>
-        <div class="col-6">
-          <button class="trash-icon-button">
+        <div class="col-6" *ngIf="books.length">
+          <button class="trash-icon-button" (click)="onClearCart()">
             <div class="row">
               <div class="col-1">
                 <img src="./assets/icons/actions/trash.svg" alt="trash icon" />

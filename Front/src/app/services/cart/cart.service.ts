@@ -11,7 +11,6 @@ export class CartService {
   private cartUpdated = new BehaviorSubject<SelectedBookDto[]>([]);
 
   addBook(book: Book | SelectedBookDto) {
-
     let selectedBook: SelectedBookDto = {
       id: book.id,
       author: book.author,
@@ -31,12 +30,27 @@ export class CartService {
       this.cart.push(selectedBook);
     }
 
-    console.log('dd', this.cart);
+    this.cartUpdated.next([...this.cart]);
+  }
+
+  removeBook(bookId: number) {
+    let selectedBook = this.cart.find(item => item.id === bookId);
+
+    if (!selectedBook) {
+      return;
+    }
+
+    selectedBook.selectedAmount -= 1;
+
+    if (!selectedBook.selectedAmount) {
+      this.cart = this.cart.filter(item => item.id !== bookId);
+    }
 
     this.cartUpdated.next([...this.cart]);
   }
 
-  updateCart() {
+  clearCart() {
+    this.cart = [];
     this.cartUpdated.next([...this.cart]);
   }
 

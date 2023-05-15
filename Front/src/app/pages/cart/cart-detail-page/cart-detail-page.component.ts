@@ -30,4 +30,8 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.cartSub.unsubscribe();
   }
+
+  onClearCart() {
+    this.cartService.clearCart();
+  }
 }

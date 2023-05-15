@@ -17,4 +17,8 @@ export class SelectedBookDetailComponent {
     this.CartService.addBook(this.book);
   }
 
+  onRemoveBook() {
+    this.CartService.removeBook(this.book.id);
+  }
+
 }
