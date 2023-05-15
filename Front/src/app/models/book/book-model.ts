@@ -18,3 +18,7 @@ export interface Book {
   totalSold: number;
   tags: string[];
 }
+
+export interface SelectedBookDto extends Pick<Book, 'id' | 'title' | 'author' | 'img' | 'price' | 'isbn'> {
+  selectedAmount: number;
+}

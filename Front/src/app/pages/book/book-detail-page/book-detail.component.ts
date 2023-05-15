@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BookService } from 'src/app/services/book/book.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-book-detail',
@@ -11,15 +12,13 @@ import { BookService } from 'src/app/services/book/book.service';
 export class BookDetailComponent implements OnInit {
   book!: Book;
   isbn!: string;
-  route: ActivatedRoute;
-  bookService: BookService;
   bookFound = false;
   recomendedBooks: Book[] = [];
 
-  constructor(route: ActivatedRoute, bookService: BookService) {
-    this.route = route;
-    this.bookService = bookService;
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private bookService: BookService,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -32,5 +31,9 @@ export class BookDetailComponent implements OnInit {
       }
     });
     this.recomendedBooks = this.bookService.getRecomendedBooks();
+  }
+
+  onAddBook() {
+    this.cartService.addBook(this.book);
   }
 }

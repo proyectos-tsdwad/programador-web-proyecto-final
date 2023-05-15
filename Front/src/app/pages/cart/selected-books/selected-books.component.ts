@@ -1,23 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { SelectedBookDto } from 'src/app/models/book/selected-book.dto';
-import { BookService } from 'src/app/services/book/book.service';
+import { Component, Input } from '@angular/core';
+import { Subscription } from "rxjs";
+
+import { SelectedBookDto } from 'src/app/models/book/book-model';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-selected-books',
   templateUrl: './selected-books.component.html',
   styleUrls: ['./selected-books.component.css']
 })
-export class SelectedBooksComponent implements OnInit {
+export class SelectedBooksComponent {
 
-  books!: SelectedBookDto[];
-  bookService: BookService;
-
-  constructor(bookService: BookService) {
-    this.bookService = bookService;
-  }
-
-  ngOnInit(): void {
-    this.books = this.bookService.getSelectedBooks();
-  }
+  @Input() books: SelectedBookDto[] = [];
 
 }

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SelectedBookDto } from 'src/app/models/book/book-model';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
@@ -6,11 +9,25 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
   templateUrl: './cart-detail-page.component.html',
   styleUrls: ['./cart-detail-page.component.css']
 })
-export class CartDetailPageComponent {
+export class CartDetailPageComponent implements OnInit, OnDestroy {
 
-  constructor(private navigationService: NavigationService) { }
+  cartSub!: Subscription;
+  books: SelectedBookDto[] = [];
+
+  constructor(private navigationService: NavigationService, private cartService: CartService) { }
 
   onClickConfirmPurchase() {
     this.navigationService.navigateToCheckout();
+  }
+
+  ngOnInit(): void {
+    this.cartSub = this.cartService.getcartUpdatedListener().
+      subscribe((books: SelectedBookDto[]) => {
+        this.books = books;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.cartSub.unsubscribe();
   }
 }
