@@ -36,7 +36,7 @@ export class CartService {
     this.cartUpdated.next([...this.cart]);
   }
 
-  removeBook(bookId: number) {
+  removeCopy(bookId: number) {
     let selectedBook = this.cart.find(item => item.id === bookId);
 
     if (!selectedBook) {
@@ -52,6 +52,19 @@ export class CartService {
     this.cartUpdated.next([...this.cart]);
   }
 
+  removeBook(bookId: number) {
+    let selectedBook = this.cart.find(item => item.id === bookId);
+
+    if (!selectedBook) {
+      return;
+    }
+
+    this.cart = this.cart.filter(item => item.id !== bookId);
+
+    this.updatetTotalQuantity();
+    this.cartUpdated.next([...this.cart]);
+  }
+
   clearCart() {
     this.cart = [];
     this.updatetTotalQuantity();
@@ -62,9 +75,6 @@ export class CartService {
     this.totalItems = this.cart.reduce((partialSum, book) => {
       return partialSum + book.selectedAmount;
     }, 0);
-
-    console.log('total items', this.totalItems);
-
 
     this.totalItemsUpdated.next(this.totalItems);
   }

@@ -17,6 +17,10 @@ export class SelectedBookDetailComponent {
     this.CartService.addBook(this.book);
   }
 
+  onRemoveCopy() {
+    this.CartService.removeCopy(this.book.id);
+  }
+
   onRemoveBook() {
     this.CartService.removeBook(this.book.id);
   }
