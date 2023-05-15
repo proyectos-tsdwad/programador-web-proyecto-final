@@ -11,7 +11,7 @@ export class BookService {
   private books = allBooks;
   private seletedBooks = selectedBooks;
 
-  constructor() { }
+  constructor() {}
 
   getAllBooks() {
     return [...this.books];
@@ -45,25 +45,9 @@ export class BookService {
     return [...topSellerBooks];
   }
 
-  getRecomendedBooksByCategory(genre: string) {
-    const recomendedBooks = this.books.filter((book) =>
-      book.genre.includes(genre)
-    );
-    const randomBooks = recomendedBooks
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-
-    return [...randomBooks];
-  }
-
   getBookByIsbn(isbn: string) {
+    const book = this.books.find((book) => book.isbn === isbn);
 
-    const book = this.books.find(book =>
-      book.isbn === isbn
-    );
-
-    return { ...book as Book }
-
-
+    return { ...(book as Book) };
   }
 }
