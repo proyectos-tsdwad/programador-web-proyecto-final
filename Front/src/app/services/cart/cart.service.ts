@@ -7,8 +7,10 @@ import { BehaviorSubject } from "rxjs";
 })
 export class CartService {
 
+  private totalItems: number = 0;
   private cart: SelectedBookDto[] = [];
   private cartUpdated = new BehaviorSubject<SelectedBookDto[]>([]);
+  private totalItemsUpdated = new BehaviorSubject<number>(0);
 
   addBook(book: Book | SelectedBookDto) {
     let selectedBook: SelectedBookDto = {
@@ -30,6 +32,7 @@ export class CartService {
       this.cart.push(selectedBook);
     }
 
+    this.updatetTotalQuantity();
     this.cartUpdated.next([...this.cart]);
   }
 
@@ -45,18 +48,32 @@ export class CartService {
     if (!selectedBook.selectedAmount) {
       this.cart = this.cart.filter(item => item.id !== bookId);
     }
-
+    this.updatetTotalQuantity();
     this.cartUpdated.next([...this.cart]);
   }
 
   clearCart() {
     this.cart = [];
+    this.updatetTotalQuantity();
     this.cartUpdated.next([...this.cart]);
+  }
+
+  updatetTotalQuantity() {
+    this.totalItems = this.cart.reduce((partialSum, book) => {
+      return partialSum + book.selectedAmount;
+    }, 0);
+
+    console.log('total items', this.totalItems);
+
+
+    this.totalItemsUpdated.next(this.totalItems);
   }
 
   getcartUpdatedListener() {
     return this.cartUpdated.asObservable();
   }
 
-
+  getTotalItemsListener() {
+    return this.totalItemsUpdated.asObservable();
+  }
 }
