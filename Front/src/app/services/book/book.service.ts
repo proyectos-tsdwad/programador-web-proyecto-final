@@ -3,6 +3,8 @@ import { allBooks } from './book-simulation-data';
 import { selectedBooks } from './book-simulation-data';
 import { TAG } from 'src/app/utils/enums/book.enum';
 import { Book } from 'src/app/models/book/book-model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +12,34 @@ import { Book } from 'src/app/models/book/book-model';
 export class BookService {
   private books = allBooks;
   private seletedBooks = selectedBooks;
+  private apiUrl = `${environment.API_URL}/books`;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
+  getRecommendedBooksByCategory(category: string): Promise<Book[]> {
+    return this.http
+      .get<Book[]>(this.apiUrl)
+      .toPromise()
+      .then((books) =>
+        this.filterRecommendedBooksByCategory(books as Book[], category)
+      )
+      .then((recommendedBooks) => this.getRandomBooks(recommendedBooks));
+  }
+  private filterRecommendedBooksByCategory(
+    books: Book[],
+    category: string
+  ): Book[] {
+    return books.filter(
+      (book) =>
+        book.tags.includes('recomendados') && book.genre.includes(category)
+    );
+  }
+  private getRandomBooks(books: Book[]): Book[] {
+    const shuffledBooks = [...books].sort(() => Math.random() - 0.5);
+    return shuffledBooks.slice(0, 3);
+  }
+
+  //
   getAllBooks() {
     return [...this.books];
   }
@@ -49,5 +76,15 @@ export class BookService {
     const book = this.books.find((book) => book.isbn === isbn);
 
     return { ...(book as Book) };
+  }
+
+  getRecomendedBookByCategory(genre: string) {
+    const recomendedBook = this.books.filter((book) =>
+      book.genre.includes(genre)
+    );
+    const randomBooks = recomendedBook
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+    return [...randomBooks];
   }
 }
