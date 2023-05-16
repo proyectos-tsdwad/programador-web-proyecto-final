@@ -14,7 +14,7 @@ export class BookService {
   private seletedBooks = selectedBooks;
   private apiUrl = `${environment.API_URL}/books`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getRecommendedBooksByCategory(category: string): Promise<Book[]> {
     return this.http
@@ -72,12 +72,6 @@ export class BookService {
     return [...topSellerBooks];
   }
 
-  getBookByIsbn(isbn: string) {
-    const book = this.books.find((book) => book.isbn === isbn);
-
-    return { ...(book as Book) };
-  }
-
   getRecomendedBookByCategory(genre: string) {
     const recomendedBook = this.books.filter((book) =>
       book.genre.includes(genre)
@@ -86,5 +80,11 @@ export class BookService {
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
     return [...randomBooks];
+  }
+
+  getBookByIsbn(isbn: string) {
+    const book = this.books.find(book => book.isbn === isbn);
+
+    return { ...book as Book }
   }
 }

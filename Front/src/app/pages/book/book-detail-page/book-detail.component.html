@@ -1,14 +1,14 @@
 <section class="container-fluid row p-4 p-md-5 m-0 detail" *ngIf="bookFound">
-  <div class="col-lg-5 col-xl-4">
+  <div class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3">
     <img [src]="book.img" class="img-fluid" alt="..." />
   </div>
 
-  <div class="col-lg-7 col-xl-8 py-5 py-lg-0 ps-lg-5">
-    <div class="row">
-      <div class="col-md-12 fw-800 fc-secondary fs-lg-2 font-bold">
+  <div class="col-12 col-lg-7 col-xl-8 py-5 py-lg-0 ps-lg-5">
+    <div class="row gy-4">
+      <div class="col-md-12 fw-800 fc-secondary fs-lg-2 font-bold mb-0 pb-0">
         <p class="mb-0">{{ book.title }}</p>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 pt-0 mt-0">
         <p class="fc-basic-4 fs-lg-3 font-medium mb-0">
           {{ book.author.name }}
         </p>
