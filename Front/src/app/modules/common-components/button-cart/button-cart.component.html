@@ -1,4 +1,3 @@
-<button type="button" class="cart fs-sm" (click)="onClickCartButton()">
+<button type="button" [matBadge]="totalItems" matBadgeColor="warn" class="cart fs-sm" (click)="onClickCartButton()">
   <img src="./assets/icons/shopping-cart.svg" alt="Carrito de compra" class="img-fluid pe-2">
-  <span>10</span> - <span>$500.00</span>
 </button>

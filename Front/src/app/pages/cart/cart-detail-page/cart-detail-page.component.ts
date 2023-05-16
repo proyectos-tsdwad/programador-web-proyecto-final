@@ -18,10 +18,6 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
 
   constructor(private navigationService: NavigationService, private cartService: CartService) { }
 
-  onClickConfirmPurchase() {
-    this.navigationService.navigateToCheckout();
-  }
-
   ngOnInit(): void {
     this.cartSubscribe();
     this.totalItemSubscribe();
@@ -48,5 +44,9 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
 
   onClearCart() {
     this.cartService.clearCart();
+  }
+
+  onClickConfirmPurchase() {
+    this.navigationService.navigateToCheckout();
   }
 }
