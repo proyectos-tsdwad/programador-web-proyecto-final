@@ -92,12 +92,13 @@ export class BookService {
   calculateShippingCost(postalCode: number): number {
     const insideFederalCapital = 1000;
     const outsideOfFederalCapital = 2000;
-    let cost = 0;
-    if (postalCode > 1000 && postalCode < 1600) {
-      cost = insideFederalCapital;
-    } else {
-      cost = outsideOfFederalCapital;
-    }
+    
+    const cost = (postalCode > 1000 && postalCode < 1600)
+    ? insideFederalCapital
+    : outsideOfFederalCapital
+    
     return cost;
+                                                         
+                                                         
   }
 }
