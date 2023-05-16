@@ -57,13 +57,10 @@ export class BookService {
   }
 
   getBookByIsbn(isbn: string) {
-
     const book = this.books.find(book =>
       book.isbn === isbn
     );
 
     return { ...book as Book }
-
-
   }
 }
