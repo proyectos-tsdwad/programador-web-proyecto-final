@@ -11,4 +11,11 @@ export enum GENRE {
   INFANTIL = 'infantil',
   JUVENIL = 'juvenil',
   NEGOCIOS = 'negocios',
+  ROMANTICO = 'romantico',
+  AUTO_AYUDA = 'auto ayuda',
+  CIENCIA_FICCION = 'ciencia ficcion',
+  NOVELA_ROSA = 'novela rosa',
+  SUSPENSO = 'suspenso',
+  MISTERIO = 'misterio',
+  NOVELA = 'novela',
 }

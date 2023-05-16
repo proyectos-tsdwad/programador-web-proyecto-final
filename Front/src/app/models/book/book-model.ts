@@ -21,6 +21,7 @@ export interface Book {
   tags: string[];
 }
 
-export interface SelectedBookDto extends Pick<Book, 'id' | 'title' | 'author' | 'img' | 'price' | 'isbn'> {
+export interface SelectedBookDto
+  extends Pick<Book, 'id' | 'title' | 'author' | 'img' | 'price' | 'isbn'> {
   selectedAmount: number;
 }
