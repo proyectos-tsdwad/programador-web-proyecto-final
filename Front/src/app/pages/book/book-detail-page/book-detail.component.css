@@ -5,7 +5,7 @@
   width: 250px;
   height: 55px;
   background-color: var(--secondary-red);
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
 
