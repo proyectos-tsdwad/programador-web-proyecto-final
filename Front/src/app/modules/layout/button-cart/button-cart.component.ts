@@ -25,8 +25,6 @@ export class ButtonCartComponent implements OnInit {
     this.totalItemSub = this.cartService.getTotalItemsListener().
       subscribe((totalItems: number) => {
         this.totalItems = totalItems;
-        console.log('entro', totalItems);
-
       });
   }
 

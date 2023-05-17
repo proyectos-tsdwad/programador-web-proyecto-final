@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { MatBadgeModule } from '@angular/material/badge';
+
 import { FooterComponent } from './footer/footer.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CommonComponentsModule } from "../common-components/common-components.module";
 import { LoginModule } from '../login/login.module';
+import { ButtonCartComponent } from './button-cart/button-cart.component';
 
 
 @NgModule({
@@ -13,17 +16,18 @@ import { LoginModule } from '../login/login.module';
     FooterComponent,
     HeaderMenuComponent,
     SearchComponent,
-    NavbarComponent
-    ],
-  exports: [
-    FooterComponent,
-    HeaderMenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    ButtonCartComponent
   ],
   imports: [
     CommonModule,
     LoginModule,
-    CommonComponentsModule
+    MatBadgeModule
+  ],
+  exports: [
+    FooterComponent,
+    HeaderMenuComponent,
+    NavbarComponent
   ]
 })
 export class CommonLayoutsModule { }
