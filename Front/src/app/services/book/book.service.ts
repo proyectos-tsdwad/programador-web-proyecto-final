@@ -21,23 +21,18 @@ export class BookService {
   getRecommendedBooksByCategory(category: string): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl).pipe(
       map((books) =>
-        this.filterRecommendedBooksByCategory(books as Book[], category)
+        books.filter(
+          (book) =>
+            book.tags.includes('recomendados') && book.genre.includes(category)
+        )
       ),
-      map((recommendedBooks) => this.getRandomBooks(recommendedBooks))
+      map((filteredBooks) => {
+        const shuffledBooks = [...filteredBooks].sort(
+          () => Math.random() - 0.5
+        );
+        return shuffledBooks.slice(0, 3);
+      })
     );
-  }
-  private filterRecommendedBooksByCategory(
-    books: Book[],
-    category: string
-  ): Book[] {
-    return books.filter(
-      (book) =>
-        book.tags.includes('recomendados') && book.genre.includes(category)
-    );
-  }
-  private getRandomBooks(books: Book[]): Book[] {
-    const shuffledBooks = [...books].sort(() => Math.random() - 0.5);
-    return shuffledBooks.slice(0, 3);
   }
 
   //
@@ -73,7 +68,7 @@ export class BookService {
     return [...topSellerBooks];
   }
 
-  getRecomendedBookByCategory(genre: string) {
+  /*   getRecomendedBookByCategory(genre: string) {
     const recomendedBook = this.books.filter((book) =>
       book.genre.includes(genre)
     );
@@ -81,7 +76,7 @@ export class BookService {
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
     return [...randomBooks];
-  }
+  } */
 
   getBookByIsbn(isbn: string) {
     const book = this.books.find((book) => book.isbn === isbn);
@@ -92,13 +87,12 @@ export class BookService {
   calculateShippingCost(postalCode: number): number {
     const insideFederalCapital = 1000;
     const outsideOfFederalCapital = 2000;
-    
-    const cost = (postalCode > 1000 && postalCode < 1600)
-    ? insideFederalCapital
-    : outsideOfFederalCapital
-    
+
+    const cost =
+      postalCode > 1000 && postalCode < 1600
+        ? insideFederalCapital
+        : outsideOfFederalCapital;
+
     return cost;
-                                                         
-                                                         
   }
 }
