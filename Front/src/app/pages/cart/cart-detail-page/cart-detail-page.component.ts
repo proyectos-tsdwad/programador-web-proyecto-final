@@ -7,16 +7,18 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 @Component({
   selector: 'app-cart-detail-page',
   templateUrl: './cart-detail-page.component.html',
-  styleUrls: ['./cart-detail-page.component.css']
+  styleUrls: ['./cart-detail-page.component.css'],
 })
 export class CartDetailPageComponent implements OnInit, OnDestroy {
-
   cartSub!: Subscription;
   totalItemSub!: Subscription;
   books: SelectedBookDto[] = [];
   totalItems: number = 0;
 
-  constructor(private navigationService: NavigationService, private cartService: CartService) { }
+  constructor(
+    private navigationService: NavigationService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.cartSubscribe();
@@ -29,15 +31,17 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   }
 
   cartSubscribe() {
-    this.cartSub = this.cartService.getcartUpdatedListener().
-      subscribe((books: SelectedBookDto[]) => {
+    this.cartSub = this.cartService
+      .getcartUpdatedListener()
+      .subscribe((books: SelectedBookDto[]) => {
         this.books = books;
       });
   }
 
   totalItemSubscribe() {
-    this.totalItemSub = this.cartService.getTotalItemsListener().
-      subscribe((totalItems: number) => {
+    this.totalItemSub = this.cartService
+      .getTotalItemsListener()
+      .subscribe((totalItems: number) => {
         this.totalItems = totalItems;
       });
   }
