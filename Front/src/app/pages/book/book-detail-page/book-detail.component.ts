@@ -18,19 +18,21 @@ export class BookDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
-    private cartService: CartService) { }
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       this.isbn = paramMap.get('isbn') as string;
-
       this.book = this.bookService.getBookByIsbn(this.isbn);
 
       if (this.book.isbn) {
+        this.recomendedBooks = this.bookService.getRecommendedBooksByCategory(
+          this.book.genre[0]
+        );
         this.bookFound = true;
       }
     });
-    this.recomendedBooks = this.bookService.getRecomendedBooks();
   }
 
   onAddBook() {
