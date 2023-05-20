@@ -45,9 +45,9 @@ class Book(models.Model):
     release_year = models.PositiveSmallIntegerField(blank=False)
     synopsis = models.TextField(max_length=1000, blank=False)
     price = models.DecimalField(max_length=100, decimal_places=2, max_digits=50,blank=False)
-    id_author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
-    id_publisher = models.ForeignKey(Publisher, to_field='id_publisher',related_name="publisher", on_delete=models.CASCADE)
-    id_genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publisher, to_field='id_publisher',related_name="publisher", on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
     class Meta:
         db_table = 'Book'
         verbose_name = 'Book'
