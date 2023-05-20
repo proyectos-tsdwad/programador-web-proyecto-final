@@ -39,10 +39,10 @@ class Genre(models.Model):
 class Book(models.Model):
     isbn = models.CharField(primary_key=True, max_length=13)
     title = models.CharField(max_length=50, blank=False)
-    pages = models.PositiveIntegerField(max_length=100, blank=False)
+    pages = models.PositiveIntegerField(blank=False)
     book_cover = models.CharField(max_length=100)
     stock= models.PositiveIntegerField(blank=False, default=0)
-    release_year = models.PositiveSmallIntegerField(max_length=4, max_digits=4, blank=False)
+    release_year = models.PositiveSmallIntegerField(blank=False)
     synopsis = models.TextField(max_length=1000, blank=False)
     price = models.DecimalField(max_length=100, decimal_places=2, max_digits=50,blank=False)
     id_author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
