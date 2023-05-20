@@ -264,5 +264,7 @@ poetry.toml
 pyrightconfig.json
 
 pyvenv.cfg
+Back/Scripts/*
+!Back/Scripts/Libreria/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django
