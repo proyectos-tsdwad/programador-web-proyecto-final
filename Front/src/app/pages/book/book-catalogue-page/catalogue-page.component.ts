@@ -10,13 +10,20 @@ import { BookService } from 'src/app/services/book/book.service';
 })
 export class BookCataloguePageComponent implements OnInit {
   bookService: BookService;
-  Books: Book[] = [];
+  books: Book[] = [];
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
   }
   ngOnInit() {
-    this.Books = this.bookService.getAllBooks();
+    this.getBooks();
+  }
+
+  getBooks() {
+    this.bookService.getAllBooks()
+      .subscribe((result: Book[]) => {
+        this.books = result;
+      });
   }
 }
 

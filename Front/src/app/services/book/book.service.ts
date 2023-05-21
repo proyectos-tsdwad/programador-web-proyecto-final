@@ -17,32 +17,16 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  /*   getRecommendedBooksByCategory(category: string): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl).pipe(
-      map((books) =>
-        books.filter(
-          (book) =>
-            book.tags.includes('recomendados') && book.genre.includes(category)
-        )
-      ),
-      map((filteredBooks) => {
-        const shuffledBooks = [...filteredBooks].sort(
-          () => Math.random() - 0.5
-        );
-        return shuffledBooks.slice(0, 5);
-      })
-    );
-  } */
+
+  getAllBooks() {
+    return this.http.get<Book[]>(`${this.apiUrl}/books`);
+  }
 
   getRecommendedBooksByCategory(genre: string): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`);
   }
 
   //
-  getAllBooks() {
-    return [...this.books];
-  }
-
   getSelectedBooks() {
     return [...this.seletedBooks];
   }
