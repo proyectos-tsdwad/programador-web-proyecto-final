@@ -99,4 +99,8 @@ export class BookService {
 
     return { ...(book as Book) };
   }
+
+  getSearchResults(title: string): Book[] {
+    return this.books.filter((book) => book.title.includes(title));
+  }
 }
