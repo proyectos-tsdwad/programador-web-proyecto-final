@@ -86,9 +86,9 @@ export class CartService {
   }
 
   updatedTotalCost() {
-    this.totalCost = this.cart.reduce((partialSum, book) => {
+    this.totalCost = parseFloat(this.cart.reduce((partialSum, book) => {
       return partialSum + book.price * book.selectedAmount;
-    }, 0);
+    }, 0).toFixed(3));
 
     this.totalCostUpdated.next(this.totalCost);
   }
