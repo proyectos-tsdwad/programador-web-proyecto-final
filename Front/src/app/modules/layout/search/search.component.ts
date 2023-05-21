@@ -17,8 +17,9 @@ export class SearchComponent {
   ) {}
 
   onClickSearch() {
+    // this.bookService.searchTitle = this.title;
     this.bookService.getSearchResults(this.title);
     this.navigationService.navigateToCatalogue();
-    console.log('funciona', this.title);
+    // console.log('funciona', this.title);
   }
 }
