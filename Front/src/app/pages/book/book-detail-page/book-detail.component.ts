@@ -48,7 +48,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   getRecomendations() {
-    this.bookService.getRecommendedBooksByCategory(this.book.genre[0])
+    this.bookService.getBooksByGenre(this.book.genre[0])
       .subscribe((result: Book[]) => {
         result = result.sort(() => Math.random() - 0.5).slice(0, 5);
         this.recomendedBooks = result;

@@ -21,7 +21,7 @@ export class BookService {
     return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher`);
   }
 
-  getRecommendedBooksByCategory(genre: string): Observable<Book[]> {
+  getBooksByGenre(genre: string): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`);
   }
 
