@@ -11,8 +11,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class BookService {
-  private books = allBooks;
-  private seletedBooks = selectedBooks;
+
   private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) { }
