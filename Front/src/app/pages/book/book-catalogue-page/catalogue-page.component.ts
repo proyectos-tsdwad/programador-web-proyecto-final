@@ -9,6 +9,7 @@ import { BookService } from 'src/app/services/book/book.service';
   styleUrls: ['./catalogue-page.component.css']
 })
 export class BookCataloguePageComponent implements OnInit {
+
   bookService: BookService;
   books: Book[] = [];
 

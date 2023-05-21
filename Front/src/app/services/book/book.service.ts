@@ -19,55 +19,18 @@ export class BookService {
 
 
   getAllBooks() {
-    return this.http.get<Book[]>(`${this.apiUrl}/books`);
+    return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher`);
   }
 
   getRecommendedBooksByCategory(genre: string): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`);
   }
 
-  //
-  getSelectedBooks() {
-    return [...this.seletedBooks];
-  }
-
-  getRecomendedBooks() {
-    const recomendedBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.RECOMENDADOS)
-    );
-
-    return [...recomendedBooks];
-  }
-
-  getNewAtBooks() {
-    const newAtBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.NOVEDADES)
-    );
-
-    return [...newAtBooks];
-  }
-
-  getTopSellerBooks() {
-    const topSellerBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.TOP_VENDIDOS)
-    );
-
-    return [...topSellerBooks];
-  }
-
-  /*   getRecomendedBookByCategory(genre: string) {
-    const recomendedBook = this.books.filter((book) =>
-      book.genre.includes(genre)
-    );
-    const randomBooks = recomendedBook
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-    return [...randomBooks];
-  } */
-
   getBookByIsbn(isbn: string) {
-    const book = this.books.find((book) => book.isbn === isbn);
+    return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`);
+  }
 
-    return { ...(book as Book) };
+  getBooksByTag(tag: string) {
+    return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&tags_like=${tag}`);
   }
 }

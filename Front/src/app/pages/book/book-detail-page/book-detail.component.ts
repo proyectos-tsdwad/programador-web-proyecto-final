@@ -11,7 +11,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
 })
 export class BookDetailComponent implements OnInit {
   book!: Book;
-  isbn!: string;
+  isbn: string = '';
   bookFound = false;
   recomendedBooks: Book[] = [];
 
@@ -24,21 +24,34 @@ export class BookDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       this.isbn = paramMap.get('isbn') as string;
-      this.book = this.bookService.getBookByIsbn(this.isbn);
 
-      if (this.book.isbn) {
-        this.bookService.getRecommendedBooksByCategory(this.book.genre[0])
-          .subscribe((result: Book[]) => {
-            result = result.sort(() => Math.random() - 0.5).slice(0, 5);
-            this.recomendedBooks = result;
-          });
-
-        this.bookFound = true;
-      }
+      this.getBook();
     });
   }
 
   onAddBook() {
     this.cartService.addBook(this.book);
+  }
+
+  getBook() {
+    this.bookService.getBookByIsbn(this.isbn)
+      .subscribe((result: Book[]) => {
+        this.book = result[0];
+        console.log('book', this.book);
+
+        if (this.book) {
+          this.bookFound = true;
+          this.getRecomendations();
+        }
+
+      });
+  }
+
+  getRecomendations() {
+    this.bookService.getRecommendedBooksByCategory(this.book.genre[0])
+      .subscribe((result: Book[]) => {
+        result = result.sort(() => Math.random() - 0.5).slice(0, 5);
+        this.recomendedBooks = result;
+      });
   }
 }
