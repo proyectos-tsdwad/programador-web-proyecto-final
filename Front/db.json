@@ -13,11 +13,16 @@
       "isbn": "9789877391695",
       "pageAmount": 640,
       "language": "Español",
-      "genre": ["romantico", "infantil"],
+      "genre": [
+        "romantico",
+        "infantil"
+      ],
       "releaseDate": "2021",
       "stock": 35,
       "totalSold": 25,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 2,
@@ -32,11 +37,17 @@
       "isbn": "9789877352306",
       "pageAmount": 320,
       "language": "Español",
-      "genre": ["arte", "gastronomia", "auto ayuda"],
+      "genre": [
+        "arte",
+        "gastronomia",
+        "auto ayuda"
+      ],
       "releaseDate": "2019",
       "stock": 20,
       "totalSold": 20,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 3,
@@ -51,11 +62,16 @@
       "isbn": " 9789500766647",
       "pageAmount": 400,
       "language": "Español",
-      "genre": ["ficción", "juvenil"],
+      "genre": [
+        "ficción",
+        "juvenil"
+      ],
       "releaseDate": "2022",
       "stock": 50,
       "totalSold": 20,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 4,
@@ -70,11 +86,17 @@
       "isbn": "9789507883569",
       "pageAmount": 240,
       "language": "Español",
-      "genre": ["negocio", "auto ayuda", "gastronomia"],
+      "genre": [
+        "negocio",
+        "auto ayuda",
+        "gastronomia"
+      ],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 18,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 5,
@@ -89,11 +111,15 @@
       "isbn": "9789877475876",
       "pageAmount": 296,
       "language": "Español",
-      "genre": ["juvenil"],
+      "genre": [
+        "juvenil"
+      ],
       "releaseDate": "2020",
       "stock": 50,
       "totalSold": 30,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 6,
@@ -108,11 +134,16 @@
       "isbn": "9789502815206",
       "pageAmount": 256,
       "language": "Español",
-      "genre": ["juvenil", "auto ayuda"],
+      "genre": [
+        "juvenil",
+        "auto ayuda"
+      ],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 8,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 7,
@@ -127,11 +158,16 @@
       "isbn": " 9789507325502",
       "pageAmount": 384,
       "language": "Español",
-      "genre": ["arte", "juvenil"],
+      "genre": [
+        "arte",
+        "juvenil"
+      ],
       "releaseDate": "2022",
       "stock": 40,
       "totalSold": 10,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 8,
@@ -146,11 +182,16 @@
       "isbn": "9789878960005",
       "pageAmount": 656,
       "language": "Español",
-      "genre": ["juvenil", "ciencia ficción"],
+      "genre": [
+        "juvenil",
+        "ciencia ficción"
+      ],
       "releaseDate": "2022",
       "stock": 27,
       "totalSold": 8,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 9,
@@ -165,11 +206,17 @@
       "isbn": "9789874924995",
       "pageAmount": 360,
       "language": "Español",
-      "genre": ["juvenil", "gastronomia", "ciencia ficcion"],
+      "genre": [
+        "juvenil",
+        "gastronomia",
+        "ciencia ficcion"
+      ],
       "releaseDate": "2022",
       "stock": 32,
       "totalSold": 11,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 10,
@@ -184,11 +231,15 @@
       "isbn": "9788412365597",
       "pageAmount": 344,
       "language": "Español",
-      "genre": ["juvenil"],
+      "genre": [
+        "juvenil"
+      ],
       "releaseDate": "2022",
       "stock": 42,
       "totalSold": 10,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 11,
@@ -203,11 +254,16 @@
       "isbn": "9789878454498",
       "pageAmount": 480,
       "language": "Español",
-      "genre": ["romantico", "ciencia ficcion"],
+      "genre": [
+        "romantico",
+        "ciencia ficcion"
+      ],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 9,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 12,
@@ -222,11 +278,16 @@
       "isbn": "9789500212922",
       "pageAmount": 320,
       "language": "Español",
-      "genre": ["romantico", "infantil"],
+      "genre": [
+        "romantico",
+        "infantil"
+      ],
       "releaseDate": "2022",
       "stock": 28,
       "totalSold": 12,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 13,
@@ -241,11 +302,16 @@
       "isbn": "9789878945118",
       "pageAmount": 416,
       "language": "Español",
-      "genre": ["ficcion", "infantil"],
+      "genre": [
+        "ficcion",
+        "infantil"
+      ],
       "releaseDate": "2022",
       "stock": 45,
       "totalSold": 9,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 14,
@@ -260,11 +326,16 @@
       "isbn": "9789878940168",
       "pageAmount": 100,
       "language": "Español",
-      "genre": ["juvenil", "negocio"],
+      "genre": [
+        "juvenil",
+        "negocio"
+      ],
       "releaseDate": "2022",
       "stock": 30,
       "totalSold": 10,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 15,
@@ -279,11 +350,16 @@
       "isbn": "9789877478655",
       "pageAmount": 360,
       "language": "Español",
-      "genre": ["juvenil", "negocio"],
+      "genre": [
+        "juvenil",
+        "negocio"
+      ],
       "releaseDate": "2022",
       "stock": 36,
       "totalSold": 8,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 16,
@@ -298,11 +374,15 @@
       "isbn": "9788491290148",
       "pageAmount": 536,
       "language": "Español",
-      "genre": ["ficcion"],
+      "genre": [
+        "ficcion"
+      ],
       "releaseDate": "2016",
       "stock": 20,
       "totalSold": 5,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 17,
@@ -317,11 +397,16 @@
       "isbn": "9788466370554",
       "pageAmount": 504,
       "language": "Español",
-      "genre": ["ficcion", "novela rosa"],
+      "genre": [
+        "ficcion",
+        "novela rosa"
+      ],
       "releaseDate": "2023",
       "stock": 10,
       "totalSold": 15,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 18,
@@ -336,11 +421,15 @@
       "isbn": "9788466370578",
       "pageAmount": 544,
       "language": "Español",
-      "genre": ["juvenil"],
+      "genre": [
+        "juvenil"
+      ],
       "releaseDate": "2023",
       "stock": 20,
       "totalSold": 6,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 19,
@@ -355,11 +444,15 @@
       "isbn": "9788491297192",
       "pageAmount": 528,
       "language": "Español",
-      "genre": ["romantico"],
+      "genre": [
+        "romantico"
+      ],
       "releaseDate": "2022",
       "stock": 20,
       "totalSold": 16,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 20,
@@ -374,11 +467,17 @@
       "isbn": "9788408267546",
       "pageAmount": 368,
       "language": "Español",
-      "genre": ["ficcion", "suspenso", "misterio"],
+      "genre": [
+        "ficcion",
+        "suspenso",
+        "misterio"
+      ],
       "releaseDate": "2023",
       "stock": 20,
       "totalSold": 16,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 21,
@@ -393,11 +492,15 @@
       "isbn": "9788401032004",
       "pageAmount": 352,
       "language": "Español",
-      "genre": ["ficcion"],
+      "genre": [
+        "ficcion"
+      ],
       "releaseDate": "2023",
       "stock": 10,
       "totalSold": 5,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 22,
@@ -412,11 +515,15 @@
       "isbn": "9788466360685",
       "pageAmount": 448,
       "language": "Español",
-      "genre": ["novela rosa"],
+      "genre": [
+        "novela rosa"
+      ],
       "releaseDate": "2022",
       "stock": 17,
       "totalSold": 9,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 23,
@@ -431,11 +538,15 @@
       "isbn": "9788466362085",
       "pageAmount": 464,
       "language": "Español",
-      "genre": ["novela"],
+      "genre": [
+        "novela"
+      ],
       "releaseDate": "2022",
       "stock": 40,
       "totalSold": 9,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 24,
@@ -450,11 +561,16 @@
       "isbn": "9788466360678",
       "pageAmount": 240,
       "language": "Español",
-      "genre": ["ficcion", "novela rosa"],
+      "genre": [
+        "ficcion",
+        "novela rosa"
+      ],
       "releaseDate": "2023",
       "stock": 12,
       "totalSold": 1,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 25,
@@ -469,11 +585,17 @@
       "isbn": "9788423362479",
       "pageAmount": 576,
       "language": "Español",
-      "genre": ["ficcion", "misterio", "suspenso"],
+      "genre": [
+        "ficcion",
+        "misterio",
+        "suspenso"
+      ],
       "releaseDate": "2022",
       "stock": 33,
       "totalSold": 8,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 26,
@@ -488,11 +610,15 @@
       "isbn": "9788417361099",
       "pageAmount": 368,
       "language": "Español",
-      "genre": ["romantico"],
+      "genre": [
+        "romantico"
+      ],
       "releaseDate": "2018",
       "stock": 5,
       "totalSold": 2,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 27,
@@ -507,11 +633,15 @@
       "isbn": "9788494236365",
       "pageAmount": 224,
       "language": "Español",
-      "genre": ["romantico"],
+      "genre": [
+        "romantico"
+      ],
       "releaseDate": "2014",
       "stock": 21,
       "totalSold": 40,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 28,
@@ -526,11 +656,15 @@
       "isbn": "9788416384938",
       "pageAmount": 368,
       "language": "Español",
-      "genre": ["romantico"],
+      "genre": [
+        "romantico"
+      ],
       "releaseDate": "2018",
       "stock": 0,
       "totalSold": 2,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 29,
@@ -545,11 +679,15 @@
       "isbn": "9788417361242",
       "pageAmount": 320,
       "language": "Español",
-      "genre": ["romantico"],
+      "genre": [
+        "romantico"
+      ],
       "releaseDate": "2019",
       "stock": 22,
       "totalSold": 1,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 30,
@@ -564,11 +702,16 @@
       "isbn": "9789874924773",
       "pageAmount": 448,
       "language": "Español",
-      "genre": ["juvenil", "romantico"],
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
       "releaseDate": "2021",
       "stock": 70,
       "totalSold": 1,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 31,
@@ -583,11 +726,16 @@
       "isbn": "9789878940243",
       "pageAmount": 288,
       "language": "Español",
-      "genre": ["juvenil", "romantico"],
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
       "releaseDate": "2022",
       "stock": 41,
       "totalSold": 20,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 32,
@@ -602,11 +750,16 @@
       "isbn": "9786124442483",
       "pageAmount": 336,
       "language": "Español",
-      "genre": ["juvenil", "romantico"],
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
       "releaseDate": "2022",
       "stock": 22,
       "totalSold": 13,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 33,
@@ -614,18 +767,22 @@
       "authorId": 14,
       "authorName": "Ariana Godoy",
       "img": "./assets/img/book-cover/la-revelacion.png",
-      "price": 12.080,
+      "price": 12.08,
       "sinopsis": "Ella es un vampiro convertido. Él es un vampiro purasangre. Ella aún se aferra a su humanidad, él es un asesino frío. Sus mundos son completamente diferentes, son enemigos naturales. ¿Qué pasará cuando sus caminos se crucen? ¿Y si para ella, él es la clave para descubrir la verdad?",
       "publisherId": 9,
       "publisherName": "Montena",
       "isbn": "9789566184324",
       "pageAmount": 336,
       "language": "Español",
-      "genre": ["juvenil"],
+      "genre": [
+        "juvenil"
+      ],
       "releaseDate": "2023",
       "stock": 1,
       "totalSold": 4,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 34,
@@ -633,18 +790,22 @@
       "authorId": 18,
       "authorName": "J.R.R Tolkien",
       "img": ".assets/img/book-cover/el-silmarillion.jpg",
-      "price": 7.750,
+      "price": 7.75,
       "sinopsis": "El Silmarillion cuenta la historia de la Primera Edad; el antiguo drama del que hablan los personajes de El Señor de los Anillos; y en cuyos acontecimientos algunos de ellos tomaron parte; como Elrond y Galadriel. Una obra de auténtica imaginación; una visión inspirada; legendaria o mítica; del interminable conflicto entre el deseo de poder y la capacidad de crear.",
       "publisherId": 16,
       "publisherName": "Minotauro",
       "isbn": "9789505472611",
       "pageAmount": 552,
       "language": "Español",
-      "genre": ["juvenil, ficcion"],
+      "genre": [
+        "juvenil, ficcion"
+      ],
       "releaseDate": "2023",
       "stock": 10,
       "totalSold": 2,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 35,
@@ -652,18 +813,22 @@
       "authorId": 18,
       "authorName": "J.R.R Tolkien",
       "img": "./assets/img/book-cover/el-hobbit.jpg",
-      "price": 4.950,
+      "price": 4.95,
       "sinopsis": "Smaug parecía profundamente dormido cuando Bilbo espió una vez más desde la entrada. ¡Pero fingía estar dormido! ¡Estaba vigilando la entrada del túnel!... Sacado de su cómodo agujero-hobbit por Gandalf y una banda de enanos, Bilbo se encuentra de pronto en medio de una conspiración que pretende apoderarse del tesoro de Smaug el Magnífico, un enorme y muy peligroso dragón.",
       "publisherId": 16,
       "publisherName": "Minotauro",
       "isbn": "9789566184324",
       "pageAmount": 336,
       "language": "Español",
-      "genre": ["juvenil, ficcion"],
+      "genre": [
+        "juvenil, ficcion"
+      ],
       "releaseDate": "2023",
       "stock": 50,
       "totalSold": 20,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 36,
@@ -671,18 +836,22 @@
       "authorId": 18,
       "authorName": "J.R.R Tolkien",
       "img": "./assets/img/book-cover/el-señor-de-los-anillos.jpg",
-      "price": 6.750,
+      "price": 6.75,
       "sinopsis": "Los Anillos de Poder fueron forjados en antiguos tiempos por los herreros Elfos, y Sauron, el Señor Oscuro, forjó el Anillo Único. Pero en una ocasión se lo quitaron, y aunque lo buscó por toda la Tierra Media nunca pudo encontrarlo. Al cabo de muchos años fue a caer casualmente en manos del hobbit Bilbo Bolsón. Desde la Torre Oscura de Mordor, el poder de Sauron se extendió alrededor. Llegó a reunir todos los Grandes Anillos, pero continuaba buscando el Anillo Único, que completaría el dominio de Mordor.",
       "publisherId": 16,
       "publisherName": "Minotauro",
       "isbn": "9788445000663",
       "pageAmount": 560,
       "language": "Español",
-      "genre": ["juvenil, ficcion"],
+      "genre": [
+        "juvenil, ficcion"
+      ],
       "releaseDate": "2018",
       "stock": 45,
       "totalSold": 25,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 37,
@@ -690,18 +859,22 @@
       "authorId": 18,
       "authorName": "J.R.R Tolkien",
       "img": "./assets/img/book-cover/el-señor-de-los-anillos-2.jpg",
-      "price": 7.750,
+      "price": 7.75,
       "sinopsis": "La Comunidad se ha disuelto y sus integrantes emprenden caminos separados. Frodo y Sam continúan solos su viaje a lo largo del río Anduin, perseguidos por la sombra misteriosa de un ser extraño que también ambiciona la posesión del Anillo. Mientras, hombres, elfos y enanos se preparan para la batalla final contra las fuerzas del Señor del Mal.",
       "publisherId": 16,
       "publisherName": "Minotauro",
       "isbn": "9789505470655",
       "pageAmount": 464,
       "language": "Español",
-      "genre": ["juvenil, ficcion"],
+      "genre": [
+        "juvenil, ficcion"
+      ],
       "releaseDate": "2018",
       "stock": 40,
       "totalSold": 30,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 38,
@@ -709,18 +882,22 @@
       "authorId": 18,
       "authorName": "J.R.R Tolkien",
       "img": "./assets/img/book-cover/el-señor-de-los-anillos-3.jpg",
-      "price": 7.750,
+      "price": 7.75,
       "sinopsis": "Los ejércitos del Señor Oscuro van extendiendo cada vez más su maléfica sombra por la Tierra Media. Hombres, elfos y enanos unen sus fuerzas para presentar batalla a Sauron y sus huestes. Ajenos a estos preparativos, Frodo y Sam siguen adentrándose en el país de Mordor en su heroico viaje para destruir el Anillo de Poder en las Grietas del Destino.",
       "publisherId": 16,
       "publisherName": "Minotauro",
       "isbn": "9789505470662",
       "pageAmount": 416,
       "language": "Español",
-      "genre": ["juvenil, ficcion"],
+      "genre": [
+        "juvenil, ficcion"
+      ],
       "releaseDate": "2018",
       "stock": 47,
       "totalSold": 23,
-      "tags": ["mas vendidos"]
+      "tags": [
+        "mas vendidos"
+      ]
     },
     {
       "id": 39,
@@ -735,11 +912,15 @@
       "isbn": "9789878304625",
       "pageAmount": 616,
       "language": "Español",
-      "genre": ["terror, ficcion"],
+      "genre": [
+        "terror, ficcion"
+      ],
       "releaseDate": "2023",
       "stock": 25,
       "totalSold": 16,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 40,
@@ -747,18 +928,22 @@
       "authorId": 19,
       "authorName": "HP Lovecraft",
       "img": "./assets/img/book-cover/en-las-montañas-de-la-locura.jpg",
-      "price": 5.950,
+      "price": 5.95,
       "sinopsis": "En las montañas de la locura narra la expedición desastrosa que realizan unos grupo de expertos a la Antártida, en el que descubren unos seres biológicamente extraordinarios que llegaron a la tierra desde otro astro mucho antes de la aparición de la humanidad, y que fueron casi extinguidos por una especie de robots de su propia creación.",
       "publisherId": 18,
       "publisherName": "Alma",
       "isbn": "9788417430047",
       "pageAmount": 240,
       "language": "Español",
-      "genre": ["terror, ficcion"],
+      "genre": [
+        "terror, ficcion"
+      ],
       "releaseDate": "2018",
       "stock": 30,
       "totalSold": 10,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     },
     {
       "id": 41,
@@ -766,18 +951,22 @@
       "authorId": 19,
       "authorName": "HP Lovecraft",
       "img": "./assets/img/book-cover/ciclo-onirico.jpg",
-      "price": 6.830,
+      "price": 6.83,
       "sinopsis": "Nos describe las Tierras del Sueño con su proverbial terror cósmico en estado puro, pero le añade una sucesión de escenarios fantásticos a cuál más inolvidable. Dejemonos llevar, pues, por este alarde de imaginación y usemos la llave de plata que nos abre la puerta a ciudades de ensueño como Ulthar o Kadath y territorios míticos como la meseta de Leng; pero seamos precavidos, pues en el camino acechan dioses oscuros e innombrables.",
       "publisherId": 18,
       "publisherName": "Alma",
       "isbn": "9788418395376",
       "pageAmount": 240,
       "language": "Español",
-      "genre": ["terror, ficcion"],
+      "genre": [
+        "terror, ficcion"
+      ],
       "releaseDate": "2022",
       "stock": 15,
       "totalSold": 5,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 42,
@@ -792,11 +981,15 @@
       "isbn": "9788418008047",
       "pageAmount": 240,
       "language": "Español",
-      "genre": ["terror, ficcion"],
+      "genre": [
+        "terror, ficcion"
+      ],
       "releaseDate": "2023",
       "stock": 15,
       "totalSold": 5,
-      "tags": ["novedades"]
+      "tags": [
+        "novedades"
+      ]
     },
     {
       "id": 43,
@@ -811,11 +1004,15 @@
       "isbn": "9789878354453",
       "pageAmount": 2498,
       "language": "Español",
-      "genre": ["terror, ficcion"],
+      "genre": [
+        "terror, ficcion"
+      ],
       "releaseDate": "2021",
       "stock": 20,
       "totalSold": 10,
-      "tags": ["recomendados"]
+      "tags": [
+        "recomendados"
+      ]
     }
   ],
   "authors": [
@@ -983,6 +1180,19 @@
       "address": "",
       "roleId": 1,
       "id": 1
+    },
+    {
+      "email": "jessica@gmail.com",
+      "password": "$2a$10$S7XwXE1HWDTt4BuxS5jdL.scu3.yvLNPldFElf.IL33.A13A8KJke",
+      "name": "Jessica",
+      "areaCode": "11",
+      "telephone": "234567544",
+      "document": "234567543",
+      "location": "Cordoba",
+      "province": "Cordoba",
+      "address": "",
+      "roleId": 1,
+      "id": 2
     }
   ],
   "roles": [

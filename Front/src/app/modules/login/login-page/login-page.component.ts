@@ -39,10 +39,11 @@ export class LoginPageComponent {
   
     loginUser(){
       const credentials = this.getCredencials();
-      this.authService.loginUser(credentials)
+      this.authService.loginAndGet(credentials)
       .pipe(
         tap(response => {
           console.log('Usuario logueado', response);
+          this.authService.updateProfileListener(response);
           this.onClickLogIn();
         }),
         catchError(error => {
