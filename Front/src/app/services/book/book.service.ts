@@ -32,4 +32,12 @@ export class BookService {
   getBooksByTag(tag: string) {
     return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&tags_like=${tag}`);
   }
+
+  getBooksByPublisher(publisherId: string) {
+    return this.http.get<Book[]>(`${this.apiUrl}/publisher/${publisherId}/books?_expand=author&_expand=publisher`);
+  }
+
+  getBooksByauthor(authorId: number) {
+    return this.http.get<Book[]>(`${this.apiUrl}/author/${authorId}/books?_expand=author&_expand=publisher`);
+  }
 }
