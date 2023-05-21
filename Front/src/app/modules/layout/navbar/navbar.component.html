@@ -17,11 +17,18 @@
           </li>
         </ul>
 
-        <a class="nav-link" (click)="onClickRegister()">
-          <img src="./assets/img/navbar/plus-circle.png" alt="crear cuenta" /> Crear cuenta</a>
-        <a class="nav-link" (click)="onClickLogIn()">
-          <img src="./assets/img/navbar/user.png" alt="Iniciar sesion" />
-          Iniciar sesión</a>
+      
+          <a class="nav-link" (click)="onClickRegister()" *ngIf="!profile">
+            <img src="./assets/img/navbar/plus-circle.png" alt="crear cuenta" /> Crear cuenta</a>
+          <a class="nav-link" (click)="onClickLogIn()" *ngIf="!profile">
+            <img src="./assets/img/navbar/user.png" alt="Iniciar sesion" />
+            Iniciar sesión</a>
+
+            <a class="nav-link" (click)="onProfile()" *ngIf="profile">
+              <img src="./assets/img/navbar/user.png" alt="perfil" /> Hola
+              {{ profile.name }}</a>
+          <a class="nav-link" (click)="onLogout()" *ngIf="profile">| Cerrar sesión</a>
+       
 
         <app-button-cart></app-button-cart>
         <!-- <a href="#" class="nav-link menu-right"
