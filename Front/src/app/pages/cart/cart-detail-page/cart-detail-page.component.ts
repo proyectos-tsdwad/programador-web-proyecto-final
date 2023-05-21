@@ -12,8 +12,10 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 export class CartDetailPageComponent implements OnInit, OnDestroy {
   cartSub!: Subscription;
   totalItemSub!: Subscription;
+  totalCostSub!: Subscription;
   books: SelectedBookDto[] = [];
   totalItems: number = 0;
+  totalCost: number = 0;
 
   constructor(
     private navigationService: NavigationService,
@@ -43,6 +45,14 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
       .getTotalItemsListener()
       .subscribe((totalItems: number) => {
         this.totalItems = totalItems;
+      });
+  }
+
+  totalCostSubscribe() {
+    this.totalCostSub = this.cartService
+      .getTotalCostListener()
+      .subscribe((totalCost: number) => {
+        this.totalCost = totalCost;
       });
   }
 
