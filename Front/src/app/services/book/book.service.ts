@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators';
 export class BookService {
   private books = allBooks;
   private seletedBooks = selectedBooks;
-  private apiUrl = `${environment.API_URL}/books`;
+  private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
@@ -40,6 +40,11 @@ export class BookService {
     return shuffledBooks.slice(0, 3);
   }
 
+  getBooksByTag(tag: string){
+    return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&tags_like=${tag}`);
+  }
+
+
   //
   getAllBooks() {
     return [...this.books];
@@ -57,12 +62,13 @@ export class BookService {
     return [...recomendedBooks];
   }
 
-  getNewAtBooks() {
+  getNewAtBooks(){
     const newAtBooks = this.books.filter((book) =>
       book.tags.includes(TAG.NOVEDADES)
     );
 
     return [...newAtBooks];
+
   }
 
   getTopSellerBooks() {
@@ -71,6 +77,7 @@ export class BookService {
     );
 
     return [...topSellerBooks];
+
   }
 
   getRecomendedBookByCategory(genre: string) {
@@ -81,6 +88,7 @@ export class BookService {
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
     return [...randomBooks];
+
   }
 
   getBookByIsbn(isbn: string) {
@@ -92,13 +100,14 @@ export class BookService {
   calculateShippingCost(postalCode: number): number {
     const insideFederalCapital = 1000;
     const outsideOfFederalCapital = 2000;
-    
+
     const cost = (postalCode > 1000 && postalCode < 1600)
     ? insideFederalCapital
     : outsideOfFederalCapital
-    
+
     return cost;
-                                                         
-                                                         
+
+
   }
+
 }
