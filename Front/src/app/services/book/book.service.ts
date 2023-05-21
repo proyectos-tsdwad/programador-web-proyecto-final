@@ -6,97 +6,76 @@ import { Book } from 'src/app/models/book/book-model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  private books = allBooks;
-  private seletedBooks = selectedBooks;
   private apiUrl = environment.API_URL;
+  private booksFound: Book[] = [];
+  private booksFoundUpdated = new BehaviorSubject<Book[]>([]);
+  searchTitle = '';
 
   constructor(private http: HttpClient) {}
 
-  /*   getRecommendedBooksByCategory(category: string): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl).pipe(
-      map((books) =>
-        books.filter(
-          (book) =>
-            book.tags.includes('recomendados') && book.genre.includes(category)
-        )
-      ),
-      map((filteredBooks) => {
-        const shuffledBooks = [...filteredBooks].sort(
-          () => Math.random() - 0.5
-        );
-        return shuffledBooks.slice(0, 5);
-      })
-    );
-  } */
+  getBookSearchListener() {
+    return this.booksFoundUpdated.asObservable();
+  }
 
-  getRecommendedBooksByCategory(genre: string): Book[] {
-    console.log('categoria: ', genre);
-    let books: Book[] = [];
+  getSearchResults(title: string) {
     this.http
       .get<Book[]>(
-        `${this.apiUrl}/books?_expand=publisher&&expand=author&&genre_like=${genre}`
+        `${this.apiUrl}/books?_expand=author&_expand=publisher&title_like=${title}`
       )
       .subscribe((result: Book[]) => {
-        books = result;
-        console.log('resultado ', result);
+        this.booksFound = result;
+        this.booksFoundUpdated.next([...this.booksFound]);
+        console.log('libros encontrados', this.booksFound);
       });
-    /* books = books.sort(() => Math.random() - 0.5).slice(0, 5); */
-    console.log('retorno: ', books);
-    return books;
+    console.log(
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&title_like=${title}`
+    );
   }
 
-  //
+  clearSearchResults() {
+    this.booksFound = [];
+    this.booksFoundUpdated.next([...this.booksFound]);
+  }
+
   getAllBooks() {
-    return [...this.books];
-  }
-
-  getSelectedBooks() {
-    return [...this.seletedBooks];
-  }
-
-  getRecomendedBooks() {
-    const recomendedBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.RECOMENDADOS)
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/books?_expand=author&_expand=publisher`
     );
-
-    return [...recomendedBooks];
   }
 
-  getNewAtBooks() {
-    const newAtBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.NOVEDADES)
+  getBooksByGenre(genre: string): Observable<Book[]> {
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`
     );
-
-    return [...newAtBooks];
   }
-
-  getTopSellerBooks() {
-    const topSellerBooks = this.books.filter((book) =>
-      book.tags.includes(TAG.TOP_VENDIDOS)
-    );
-
-    return [...topSellerBooks];
-  }
-
-  /*   getRecomendedBookByCategory(genre: string) {
-    const recomendedBook = this.books.filter((book) =>
-      book.genre.includes(genre)
-    );
-    const randomBooks = recomendedBook
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-    return [...randomBooks];
-  } */
 
   getBookByIsbn(isbn: string) {
-    const book = this.books.find((book) => book.isbn === isbn);
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`
+    );
+  }
 
-    return { ...(book as Book) };
+  getBooksByTag(tag: string) {
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&tags_like=${tag}`
+    );
+  }
+
+  getBooksByPublisher(publisherId: string) {
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/publisher/${publisherId}/books?_expand=author&_expand=publisher`
+    );
+  }
+
+  getBooksByauthor(authorId: number) {
+    return this.http.get<Book[]>(
+      `${this.apiUrl}/author/${authorId}/books?_expand=author&_expand=publisher`
+    );
   }
 }

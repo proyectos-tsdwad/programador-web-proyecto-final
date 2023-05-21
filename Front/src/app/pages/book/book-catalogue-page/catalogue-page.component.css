@@ -6,6 +6,13 @@
   line-height: 30px;
   color: #A1A1A5;
 }
-  a:hover {
-    color: #E35352;
+
+a:hover {
+  color: #E35352;
+}
+
+.active {
+  font-weight: 700;
+  color: var(--secondary-red);
+  text-decoration: underline;
 }

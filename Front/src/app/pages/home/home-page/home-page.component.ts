@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
 import { BookService } from 'src/app/services/book/book.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { TAG } from 'src/app/utils/enums/book.enum';
 
 
 @Component({
@@ -22,13 +23,44 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recomendedBooks = this.bookService.getRecomendedBooks();
-    this.newAtBooks = this.bookService.getNewAtBooks();
-    this.topSellingBooks = this.bookService.getTopSellerBooks();
+    this.getRecomendedBooks();
+    this.getNewAtBooks();
+    this.getTopSellerBooks();
   }
 
   onClickCatalogue() {
     this.navigationService.navigateToCatalogue();
   }
 
+  getRecomendedBooks() {
+    this.bookService.getBooksByTag(TAG.RECOMENDADOS)
+      .subscribe((result: Book[]) => {
+        this.recomendedBooks = this.sortAndLimit(result);
+      })
+  }
+
+  getNewAtBooks() {
+    this.bookService.getBooksByTag(TAG.NOVEDADES)
+      .subscribe((result: Book[]) => {
+        this.newAtBooks = this.sortAndLimit(result);
+      })
+  }
+
+  getTopSellerBooks() {
+    this.bookService.getBooksByTag(TAG.TOP_VENDIDOS)
+      .subscribe((result: Book[]) => {
+        this.topSellingBooks = this.sortAndLimit(result);
+      })
+  }
+
+  sortAndLimit(books: Book[]) {
+    return books.sort(() => Math.random() - 0.5).slice(0, 5);
+  }
+
 }
+
+
+
+
+
+
