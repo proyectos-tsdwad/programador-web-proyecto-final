@@ -6,7 +6,6 @@ import { Book } from 'src/app/models/book/book-model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,7 @@ export class BookService {
   private seletedBooks = selectedBooks;
   private apiUrl = environment.API_URL;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /*   getRecommendedBooksByCategory(category: string): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl).pipe(
@@ -35,20 +34,8 @@ export class BookService {
     );
   } */
 
-  getRecommendedBooksByCategory(genre: string): Book[] {
-    console.log('categoria: ', genre);
-    let books: Book[] = [];
-    this.http
-      .get<Book[]>(
-        `${this.apiUrl}/books?_expand=publisher&&expand=author&&genre_like=${genre}`
-      )
-      .subscribe((result: Book[]) => {
-        books = result;
-        console.log('resultado ', result);
-      });
-    /* books = books.sort(() => Math.random() - 0.5).slice(0, 5); */
-    console.log('retorno: ', books);
-    return books;
+  getRecommendedBooksByCategory(genre: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`);
   }
 
   //

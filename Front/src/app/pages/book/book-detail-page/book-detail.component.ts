@@ -19,7 +19,7 @@ export class BookDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private bookService: BookService,
     private cartService: CartService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
@@ -27,9 +27,12 @@ export class BookDetailComponent implements OnInit {
       this.book = this.bookService.getBookByIsbn(this.isbn);
 
       if (this.book.isbn) {
-        this.recomendedBooks = this.bookService.getRecommendedBooksByCategory(
-          this.book.genre[0]
-        );
+        this.bookService.getRecommendedBooksByCategory(this.book.genre[0])
+          .subscribe((result: Book[]) => {
+            result = result.sort(() => Math.random() - 0.5).slice(0, 5);
+            this.recomendedBooks = result;
+          });
+
         this.bookFound = true;
       }
     });
