@@ -292,7 +292,7 @@ export const allBooks: Book[] = [
     isbn: '9789878940168',
     pageAmount: 100,
     language: '',
-    genre: [GENRE.NEGOCIOS],
+    genre: [GENRE.ROMANTICO],
     releaseDate: 'string',
     stock: 100,
     totalSold: 10,

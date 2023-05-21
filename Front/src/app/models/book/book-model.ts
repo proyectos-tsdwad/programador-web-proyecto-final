@@ -5,8 +5,6 @@ export interface Book {
   id: number;
   title: string;
   author: Author;
-  authorId?: number;
-  authorName?: string;
   img: string;
   price: number;
   sinopsis: string;
@@ -19,8 +17,6 @@ export interface Book {
   stock: number;
   totalSold: number;
   tags: string[];
-  publisherId?: number;
-  publisherName?: string;
 }
 
 export interface SelectedBookDto
