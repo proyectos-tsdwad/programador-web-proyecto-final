@@ -35,6 +35,7 @@ export class CartService {
     }
 
     this.updatetTotalQuantity();
+    this.updatedTotalCost();
     this.cartUpdated.next([...this.cart]);
   }
 
@@ -51,6 +52,7 @@ export class CartService {
       this.cart = this.cart.filter((item) => item.id !== bookId);
     }
     this.updatetTotalQuantity();
+    this.updatedTotalCost();
     this.cartUpdated.next([...this.cart]);
   }
 
@@ -64,12 +66,14 @@ export class CartService {
     this.cart = this.cart.filter((item) => item.id !== bookId);
 
     this.updatetTotalQuantity();
+    this.updatedTotalCost();
     this.cartUpdated.next([...this.cart]);
   }
 
   clearCart() {
     this.cart = [];
     this.updatetTotalQuantity();
+    this.updatedTotalCost();
     this.cartUpdated.next([...this.cart]);
   }
 
@@ -83,7 +87,7 @@ export class CartService {
 
   updatedTotalCost() {
     this.totalCost = this.cart.reduce((partialSum, book) => {
-      return partialSum + book.selectedAmount;
+      return partialSum + book.price * book.selectedAmount;
     }, 0);
 
     this.totalCostUpdated.next(this.totalCost);

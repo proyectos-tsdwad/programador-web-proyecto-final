@@ -25,11 +25,13 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cartSubscribe();
     this.totalItemSubscribe();
+    this.totalCostSubscribe();
   }
 
   ngOnDestroy(): void {
     this.cartSub.unsubscribe();
     this.totalItemSub.unsubscribe();
+    this.totalCostSub.unsubscribe();
   }
 
   cartSubscribe() {
