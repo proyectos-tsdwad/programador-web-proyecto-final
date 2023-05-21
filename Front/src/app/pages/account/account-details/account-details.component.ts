@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { User } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -13,7 +13,7 @@ export class AccountDetailsComponent implements OnInit{
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    const id = 2; // Reemplaza con el id del usuario del que deseas obtener los datos personales
+    const id = 1; // Reemplaza con el id del usuario del que deseas obtener los datos personales
     this.getUserData(id);
   }
 
