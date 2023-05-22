@@ -56,3 +56,21 @@ class Book(models.Model):
         return self.isbn
     def __str__(self):
         return self.isbn
+
+class Payment(models.Model):
+
+    id_payment = models.AutoField(primary_key=True)
+    card_association = models.IntegerField(max_value =45)
+    number = models. IntegerField(max_value=20)
+    cvv = models.IntegerField(max_value =4)
+    expiration = models.DateField(required=True)
+   
+    class Meta:
+        db_table = 'Payment'
+        verbose_name =  'Payment'
+        verbose_name_plural =  'Payments'
+    def __unicode__(self):
+        return self.card_association
+    def __unicode__(self):
+        return self.card_association
+
