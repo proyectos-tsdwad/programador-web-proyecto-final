@@ -71,6 +71,10 @@ class Profile(models.Model):
         db_table = 'Profile'
         verbose_name = 'Users profile'
         verbose_name_plural = 'Profiles'
+    def __unicode__(self):
+        return self.name
+    def __str__(self):
+        return self.name
 
 class Payment(models.Model):
     id_payment = models.AutoField(primary_key=True)
