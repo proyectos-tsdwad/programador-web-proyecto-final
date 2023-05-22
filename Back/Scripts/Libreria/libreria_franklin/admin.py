@@ -5,6 +5,7 @@ from .models import Genre
 from .models import Book
 from .models import Payment
 from .models import Profile
+from .models import Rol
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('id_author', 'name')
@@ -18,9 +19,12 @@ class PaymentAdmin(admin.ModelAdmin):
     list_display = ('id_payment', 'card_association', 'number', 'cvv', 'expiration')    
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('id_profile', 'name', 'last_name', 'telephone_number', 'telephone_area_code', 'document', 'address_province', 'address_location', 'password')
+class RolAdmin(admin.ModelAdmin):
+    list_display = ('id_rol', 'name')  
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Payment, PaymentAdmin)
+admin.site.register(Rol, RolAdmin)

@@ -91,3 +91,16 @@ class Payment(models.Model):
     def __unicode__(self):
         return self.card_association
 
+class Rol(models.Model):
+    id_rol = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, blank=False)
+    class Meta:
+        db_table = 'Rol'
+        verbose_name =  'Rol'
+        verbose_name_plural =  'Rols'
+    def __unicode__(self):
+        return self.id_rol
+    def __unicode__(self):
+        return self.name
+
+
