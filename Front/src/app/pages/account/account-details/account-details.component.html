@@ -1,27 +1,26 @@
 <div class="wrapper">
   <h1>Mi cuenta</h1>
   <main>
-    <section>
+    <section *ngIf="personalData">
       <h2>Datos</h2>
       <div class="dataCard">
         <div class="title">
           <h3>Datos personales</h3>
           <img src="../../../../assets/edit.png" alt="Editar" />
         </div>
-        Guillermina Ramirez<br />
-        34567876<br />
-        guillerminaramirez@gmail.com <br />
-        1128767654
+        {{personalData.name}}<br />
+        {{personalData.document}}<br />
+        {{personalData.email}}<br />
+        {{personalData.telephone}}
       </div>
       <div class="dataCard">
         <div class="title">
           <h3>Dirección</h3>
           <img src="../../../../assets/edit.png" alt="Editar" />
         </div>
-        Chacabuco<br />
-        1189<br />
-        San Fernando <br />
-        Buenos Aires
+        {{personalData.address}}<br />
+        {{personalData.location}}<br />
+        {{personalData.province}}
       </div>
     </section>
     <section>
