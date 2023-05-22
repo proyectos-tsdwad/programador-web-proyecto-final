@@ -22,4 +22,5 @@ class ProfileAdmin(admin.ModelAdmin):
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Genre, GenreAdmin)
+admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Payment, PaymentAdmin)
