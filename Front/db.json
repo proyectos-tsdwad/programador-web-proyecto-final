@@ -1,0 +1,1214 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Un cuento perfecto",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/un-cuento-perfecto.png",
+      "price": 10.499,
+      "sinopsis": "Érase una vez una mujer que lo tenía todo y un chico que no tenía nada. - Érase una vez una historia de amor entre el éxito y la duda. - Érase una vez un cuento perfecto. Elísabet Benavent; @BetaCoqueta; regresa al panorama de la literatura con una novela que explora el significado del éxito en la vida y reflexiona con ironía y humor acerca de las imposiciones sociales; la presión del grupo y la autoexigencia que; aunque cueste creerlo; no es sinónimo de felicidad.",
+      "publisherId": 1,
+      "publisherName": "Ivrea",
+      "isbn": "9789877391695",
+      "pageAmount": 640,
+      "language": "Español",
+      "genre": [
+        "romantico",
+        "infantil"
+      ],
+      "releaseDate": "2021",
+      "stock": 35,
+      "totalSold": 25,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "El camino del artista",
+      "authorId": 1,
+      "authorName": "Julia Cameron",
+      "img": "./assets/img/book-cover/el-camino-del-artista.png",
+      "price": 7.999,
+      "sinopsis": "La mayoría de nosotros anhelamos ser más creativos y muchos creemos que conseguir serlo es imposible porque en realidad no lo somos. Este planteamiento es erróneo y lo único que provoca es que nuestra creatividad se quede dormida en nuestro interior junto a nuestra verdadera esencia. A menudo nos negamos el placer de soñar; de conseguir lo que siempre hemos deseado; de rechazar nuestros impulsos naturales; nuestra propia personalidad. ",
+      "publisherId": 2,
+      "publisherName": "Aguilar",
+      "isbn": "9789877352306",
+      "pageAmount": 320,
+      "language": "Español",
+      "genre": [
+        "arte",
+        "gastronomia",
+        "auto ayuda"
+      ],
+      "releaseDate": "2019",
+      "stock": 20,
+      "totalSold": 20,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Violeta",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/violeta.png",
+      "price": 8.399,
+      "sinopsis": "Violeta; la primera niña de una familia de cinco bulliciosos hermanos; viene al mundo un tormentoso día de 1920. Desde el principio su vida estará marcada por acontecimientos extraordinarios; pues todavía se sienten las ondas expansivas de la Gran Guerra cuando la gripe española llega a las orillas de su país sudamericano natal; casi en el momento exacto de su nacimiento.",
+      "publisherId": 3,
+      "publisherName": "Sudamericana",
+      "isbn": " 9789500766647",
+      "pageAmount": 400,
+      "language": "Español",
+      "genre": [
+        "ficción",
+        "juvenil"
+      ],
+      "releaseDate": "2022",
+      "stock": 50,
+      "totalSold": 20,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Pensar a la Japonesa",
+      "authorId": 4,
+      "authorName": "Le Yen Mai",
+      "img": "./assets/img/book-cover/pensar-a-la-japonesa.png",
+      "price": 3.399,
+      "sinopsis": "Quince conceptos fundamentales del pensamiento japonés; quince lugares emblemáticos del país nipón y un único objetivo: sumergirse en los principios esenciales de la filosofía; la espiritualidad; la cultura y la sociedad japonesa.",
+      "publisherId": 4,
+      "publisherName": "Urano",
+      "isbn": "9789507883569",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": [
+        "negocio",
+        "auto ayuda",
+        "gastronomia"
+      ],
+      "releaseDate": "2022",
+      "stock": 30,
+      "totalSold": 18,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Heartstopper",
+      "authorId": 5,
+      "authorName": "Alice Oseman",
+      "img": "./assets/img/book-cover/heartstopper.png",
+      "price": 4.099,
+      "sinopsis": "Charlie y Nick van al mismo colegio; aunque nunca se habían cruzado hasta el día en que los hacen sentarse juntos en su grupo de estudio. Muy pronto se vuelven amigos y más pronto aún Charlie comienza a sentir cosas por Nick; aunque sabe que es un imposible. Pero el amor obra de formas inesperadas; y Nick está más interesado en Charlie de lo que ninguno de los dos puede llegar a creer.",
+      "publisherId": 5,
+      "publisherName": "Vrya",
+      "isbn": "9789877475876",
+      "pageAmount": 296,
+      "language": "Español",
+      "genre": [
+        "juvenil"
+      ],
+      "releaseDate": "2020",
+      "stock": 50,
+      "totalSold": 30,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Sanar la herida",
+      "authorId": 6,
+      "authorName": "Claudia Luchetti",
+      "img": "./assets/img/book-cover/sanar-la-herida.png",
+      "price": 6.099,
+      "sinopsis": "¿Qué es la decodificación? ¿Para qué sirve? ¿Cómo puede ayudarme a sanar mis heridas más profundas? ¿Es posible conocerse y modificar lo que nos hace mal a través del estudio y la deconstrucción de nuestros datos personales? El nombre nos manifiesta; así como también lo que pronunciamos (...)",
+      "publisherId": 6,
+      "publisherName": "Grigalbo",
+      "isbn": "9789502815206",
+      "pageAmount": 256,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "auto ayuda"
+      ],
+      "releaseDate": "2022",
+      "stock": 30,
+      "totalSold": 8,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Punk 57",
+      "authorId": 7,
+      "authorName": "Penelope Douglas",
+      "img": "./assets/img/book-cover/punk-57.png",
+      "price": 6.499,
+      "sinopsis": "Eran perfectos el uno para el otro hasta que se conocieron. La novela que ha arrasado en Tik Tok. MISHA. Mi profesora creyó que Ryen era un chico; la suya que Misha era nombre de chica y las dos; completamente equivocadas; nos juntaron para ser amigos por correspondencia. A nosotros no nos costó mucho darnos cuenta del error; pero antes ya habíamos discutido sobre cualquier tema posible: ¿la mejor pizza de la ciudad? ¿iPhone o Android? ¿Es Eminem el mejor rapero de todos los tiempos?",
+      "publisherId": 7,
+      "publisherName": "CrossBooks Argentina",
+      "isbn": " 9789507325502",
+      "pageAmount": 384,
+      "language": "Español",
+      "genre": [
+        "arte",
+        "juvenil"
+      ],
+      "releaseDate": "2022",
+      "stock": 40,
+      "totalSold": 10,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Prisionero",
+      "authorId": 8,
+      "authorName": "Roma Damned",
+      "img": "./assets/img/book-cover/prisionero.png",
+      "price": 8.268,
+      "sinopsis": "Cuando Alois Thompson escuchó la sentencia del jurado, la tierra se abrió y el mundo se desmoronó ante sus ojos cansados y vidriosos. Condenado a cinco años de prisión por un homicidio que no cometió, es trasladado a una penitenciaría de máxima seguridad. Allí conocerá a Hendrik Stone, su compañero de celda y el monarca de la prisión. Un ser mitológico destinado a devorar el mundo, con ojos hambrientos de venganza y manos besadas por la sangre de incontables demonios derrotados. De labios torcidos y una boca que parecía veneno puro, amargo y llameante. ¿Cómo sobrevivirá en aquel ambiente hostil donde rige la ley del más fuerte?",
+      "publisherId": 8,
+      "publisherName": "Shinka",
+      "isbn": "9789878960005",
+      "pageAmount": 656,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "ciencia ficción"
+      ],
+      "releaseDate": "2022",
+      "stock": 27,
+      "totalSold": 8,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Boulevard",
+      "authorId": 9,
+      "authorName": "Flor M. Salvador",
+      "img": "./assets/img/book-cover/boulevard.png",
+      "price": 6.299,
+      "sinopsis": "Luke Howland; lleno de problemas y sumido en una desesperación profunda; y Hasley Weigel; tan despistada como optimista; no se ajustan al prototipo de pareja perfecta. Como si cada uno fuese un cielo; uno es tormenta y el otro; un día soleado: él es oscuridad. Ella; un rayo de sol. Y; sin embargo; juntos decidieron ponerle nombre a lo que habían creado: un boulevard teñido de tonos grisáceos y de azules celestes y eléctricos preparándose para la tormenta. Ella era para él y él era para ella. Los lectores dijeron: «Amé a Hasley; Luke y Neisan.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789874924995",
+      "pageAmount": 360,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "gastronomia",
+        "ciencia ficcion"
+      ],
+      "releaseDate": "2022",
+      "stock": 32,
+      "totalSold": 11,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "La casa de las grietas",
+      "authorId": 10,
+      "authorName": "Krystal Sutherland",
+      "img": "./assets/img/book-cover/la-casa-de-las-grietas.png",
+      "price": 5.159,
+      "sinopsis": "Iris; Grey y Vivi Hollow son tres hermanas incuestionablemente extrañas. Cuando eran niñas; desaparecieron en una calle de Edimburgo y regresaron un mes más tarde sin recordar lo sucedido. A partir de ese momento comenzaron a experimentar cambios espeluznantes. Primero; su cabello oscuro se volvió blanco. Luego; sus ojos azules se tornaron negros. Y aunque nunca aumentan de peso; comen sin mesura; incapaces de aplacar su insaciable apetito. La gente las encuentra insoportablemente bellas; inquietantemente excitantes e inexplicablemente peligrosas. Pero ahora; diez años después; Grey desaparece dejando unas pistas confusas sobre su paradero e Iris y Vivi comienzan su búsqueda.",
+      "publisherId": 10,
+      "publisherName": "Oceano Travesia",
+      "isbn": "9788412365597",
+      "pageAmount": 344,
+      "language": "Español",
+      "genre": [
+        "juvenil"
+      ],
+      "releaseDate": "2022",
+      "stock": 42,
+      "totalSold": 10,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Un linaje oscuro",
+      "authorId": 11,
+      "authorName": "Victoria Vilchez",
+      "img": "./assets/img/book-cover/un-linaje-oscuro.png",
+      "price": 6.659,
+      "sinopsis": "En 1692; una serie de personas fueron arrestadas y acusadas de practicar brujería en Salem. Tras los juicios que se llevaron a cabo; se condenó a veintinueve de ellas y; finalmente; diecinueve murieron ahorcadas. Aunque nadie sabía que; en realidad; los que propiciaron las acusaciones eran brujos blancos; y los condenados a la horca pertenecían a su vez a linajes de brujos oscuros. Hasta ese momento; los aquelarres de ambos bandos habían convivido en equilibro. Danielle Good es una excepción. Ella es una bruja blanca a pesar de que su antepasada; Sarah Good; fue juzgada y condenada siglos atrás.",
+      "publisherId": 4,
+      "publisherName": "Urano",
+      "isbn": "9789878454498",
+      "pageAmount": 480,
+      "language": "Español",
+      "genre": [
+        "romantico",
+        "ciencia ficcion"
+      ],
+      "releaseDate": "2022",
+      "stock": 30,
+      "totalSold": 9,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Todo por volver a verte",
+      "authorId": 12,
+      "authorName": "Florencia Vercellone",
+      "img": "./assets/img/book-cover/todo-por-volver-a-verte.png",
+      "price": 3.829,
+      "sinopsis": "Ana vuelve a la Argentina después de 31 años. Ese regreso despierta memorias guardadas bajo llave; recuerdos de una militancia y un amor por los que se había animado a todo. Conoció a Juan en tiempos turbulentos; con una causa en común. Se amaron a pesar del abismo entre sus mundos: ella; contra los mandatos que la ataban a una vida que ya no la representaba; él; cuyo espíritu aguerrido lo animaba a luchar sin reparar en los riesgos.",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789500212922",
+      "pageAmount": 320,
+      "language": "Español",
+      "genre": [
+        "romantico",
+        "infantil"
+      ],
+      "releaseDate": "2022",
+      "stock": 28,
+      "totalSold": 12,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Buscando a Dorothy",
+      "authorId": 13,
+      "authorName": "Elizabeth Letts",
+      "img": "./assets/img/book-cover/buscando-a-dorothy.png",
+      "price": 3.955,
+      "sinopsis": "Hollywood; 1938. Cuando Maud Gage Baum; la viuda de L. Frank Baum; reconocido autor de El mago de Oz; se entera de que una productora va a llevar a la gran pantalla la obra de su difunto marido; hace todo lo posible por llegar hasta el set de rodaje. Todo indica que Maud es la única persona que puede ayudar a los productores a mantenerse fieles al espíritu del libro; porque solo ella conoce sus secretos. Pero en cuanto oye a Judy Garland ensayar las primeras notas de Over the Rainbow; Maud reconoce el anhelo que ha definido la historia de su vida.",
+      "publisherId": 12,
+      "publisherName": "Umbtriel Editores",
+      "isbn": "9789878945118",
+      "pageAmount": 416,
+      "language": "Español",
+      "genre": [
+        "ficcion",
+        "infantil"
+      ],
+      "releaseDate": "2022",
+      "stock": 45,
+      "totalSold": 9,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Sigue mi voz",
+      "authorId": 14,
+      "authorName": "Ariana Godoy",
+      "img": "./assets/img/book-cover/sigue-mi-voz.png",
+      "price": 5.799,
+      "sinopsis": "Todos conocemos el amor pasional que nos nubla la razón; el amor a primera vista que nos anuda el estómago y el amor platónico que nos llena el corazón de fantasía y admiración. Pero ¿puede una persona enamorarse de otra sin haberla visto? Klara encontrará la respuesta a esta pregunta escuchando con dedicación todos los días su programa favorito de radio Sigue mi voz. Una historia de amor; de superación propia y de aceptación tan preciosa como necesaria.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789878940168",
+      "pageAmount": 100,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "negocio"
+      ],
+      "releaseDate": "2022",
+      "stock": 30,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "La teoría de lo perfecto",
+      "authorId": 15,
+      "authorName": "Sophie Gonzalez",
+      "img": "./assets/img/book-cover/la-teoria-de-lo-perfecto.png",
+      "price": 4.699,
+      "sinopsis": "'Darcy es especialista en relaciones... ... a excepción de las propias. Cuando Brougham la atrapa recolectando las cartas del mítico casillero 89; en el que Darcy opera su negocio secreto de consejos románticos; surge el chantaje: o ella lo ayuda a recuperar a su exnovia o la delatará. Y Darcy no puede permitir que su identidad se haga pública; porque muchas cosas saldrían a la luz y habría muchas chances de que Brooke; su mejor amiga y crush-secreto-que-ama-a-alguien- más; ya no vuelva a hablarle.",
+      "publisherId": 5,
+      "publisherName": "Vrya",
+      "isbn": "9789877478655",
+      "pageAmount": 360,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "negocio"
+      ],
+      "releaseDate": "2022",
+      "stock": 36,
+      "totalSold": 8,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Mi Isla",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/mi-isla.png",
+      "price": 12.499,
+      "sinopsis": "Maggie vive en una isla y regenta una casa de huéspedes... Maggie tiene un huerto y casi siempre va descalza... Maggie no quiere recordar por qué está allí; duele demasiado Maggie ha renunciado al amor y es complicado explicar los motivos...hasta que conoce a Alejandro...la calma da paso a una tormenta de sensaciones...y a la posibilidad de que tal vez sí se puede empezar de nuevo.",
+      "publisherId": 13,
+      "publisherName": "SUMA",
+      "isbn": "9788491290148",
+      "pageAmount": 536,
+      "language": "Español",
+      "genre": [
+        "ficcion"
+      ],
+      "releaseDate": "2016",
+      "stock": 20,
+      "totalSold": 5,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 17,
+      "title": " Todas esas cosas que te dire mañana",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/todas-esas-cosas-que-te-dire-mañana.jpg",
+      "price": 13.499,
+      "sinopsis": "Miranda trabaja como subdirectora en una revista de moda. Miranda es feliz junto a Tristán. Por eso no entiende que la este dejando. Ojalá pudiera dar marcha atrás y volver al momento en que se conocieron...Pero ¿y si realmente tuviera la oportunidad de cambiar su historia",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466370554",
+      "pageAmount": 504,
+      "language": "Español",
+      "genre": [
+        "ficcion",
+        "novela rosa"
+      ],
+      "releaseDate": "2023",
+      "stock": 10,
+      "totalSold": 15,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 18,
+      "title": " Toda la verdad de mis mentiras",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/toda-la-verdad-de-mis-mentiras.jpg",
+      "price": 9.499,
+      "sinopsis": "¿Puede mantenerse una amistad a pesar de las mentiras? Una despedida de soltera en autocaravana. Un grupo de amigos...y muchos secretos.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466370578",
+      "pageAmount": 544,
+      "language": "Español",
+      "genre": [
+        "juvenil"
+      ],
+      "releaseDate": "2023",
+      "stock": 20,
+      "totalSold": 6,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 19,
+      "title": " Los abrazos lentos",
+      "authorId": 2,
+      "authorName": "Elísabet Benavent",
+      "img": "./assets/img/book-cover/los-abrazos-lentos.jpg",
+      "price": 9.999,
+      "sinopsis": "'Las palabras son abrazos y aquí van los míos: Un recopilatorio de lo sentido, imaginado y vivido en los últimos años'.",
+      "publisherId": 13,
+      "publisherName": "SUMA",
+      "isbn": "9788491297192",
+      "pageAmount": 528,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2022",
+      "stock": 20,
+      "totalSold": 16,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 20,
+      "title": " Dentro de casa",
+      "authorId": 16,
+      "authorName": "Lisa jewell",
+      "img": "./assets/img/book-cover/dentro-de-casa.jpg",
+      "price": 19.999,
+      "sinopsis": "En una majestuosa casa del elegante barrio de Chelsea, la policía encuentra a una bebé en su cuna. Bien alimentada, cuidada y feliz, espera a que la cojan en brazos. En la cocina de esa misma casa hay tres cadáveres en estado de descomposición. Junto a ellos, una nota escrita con urgencia. Veinticinco años después, Libby, esa bebé a quien encontraron con vida, regresa a una casa que esconde su origen familiar y el más oscuro de los secretos. Ten cuidado con a quién dejas entrar. Hay personas que nunca se irán.",
+      "publisherId": 3,
+      "publisherName": "Sudamericana",
+      "isbn": "9788408267546",
+      "pageAmount": 368,
+      "language": "Español",
+      "genre": [
+        "ficcion",
+        "suspenso",
+        "misterio"
+      ],
+      "releaseDate": "2023",
+      "stock": 20,
+      "totalSold": 16,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "El viento conoce mi nombre",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/el-viento-conoce-mi-nombre.jpg",
+      "price": 19.999,
+      "sinopsis": "Viena, 1938. Samuel Adler es un niño judío de seis años cuyo padre desaparece durante la Noche de los Cristales Rotos, en la que su familia lo pierde todo. Su madre, desesperada, le consigue una plaza en un tren que le llevará desde la Austria nazi hasta Inglaterra. Samuel emprende una nueva etapa con su fiel violín y con el peso de la soledad y la incertidumbre, que lo acompañarán siempre en su dilatada vida.",
+      "publisherId": 4,
+      "publisherName": "Urano",
+      "isbn": "9788401032004",
+      "pageAmount": 352,
+      "language": "Español",
+      "genre": [
+        "ficcion"
+      ],
+      "releaseDate": "2023",
+      "stock": 10,
+      "totalSold": 5,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Hija de la fortuna",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/hija-de-la-fortuna.jpg",
+      "price": 19.999,
+      "sinopsis": "Eliza Sommers es una joven chilena que vive en Valparaíso en 1849, el  año en que se descubre oro en California. Su amante, Joaquín Andieta,  parte hacia el norte decidido a encontrar fortuna, y ella decide  seguirlo. El viaje infernal, escondida en la cala de un velero, y la  búsqueda de su amante en una tierra de hombres solos y prostitutas  atraídos por la fiebre del oro, transforman a la joven inocente en una  mujer fuera de lo común. Eliza recibe ayuda y afecto de Tao Chi'en, un  médico chino, quien la conducirá de la mano en un itinerario memorable  por los misterios y contradicciones de la condición humana.",
+      "publisherId": 6,
+      "publisherName": "Grigalbo",
+      "isbn": "9788466360685",
+      "pageAmount": 448,
+      "language": "Español",
+      "genre": [
+        "novela rosa"
+      ],
+      "releaseDate": "2022",
+      "stock": 17,
+      "totalSold": 9,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "La casa de los espiritus",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/la-casa-de-los-espiritus.jpg",
+      "price": 6.999,
+      "sinopsis": "El despótico patriarca Esteban Trueba ha construido con mano de hierro un imperio privado que empieza a tambalearse con el paso del tiempo y un entorno social explosivo. Finalmente, la decadencia personal del patriarca arrastrará a los Trueba a una dolorosa desintegración. Atrapados en unas dramáticas relaciones familiares, los personajes de esta poderosa novela encarnan las tensiones sociales y espirituales de una época que abarca gran parte del siglo XX.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466362085",
+      "pageAmount": 464,
+      "language": "Español",
+      "genre": [
+        "novela"
+      ],
+      "releaseDate": "2022",
+      "stock": 40,
+      "totalSold": 9,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Amor",
+      "authorId": 3,
+      "authorName": "Isabel Allende",
+      "img": "./assets/img/book-cover/amor.jpg",
+      "price": 8.899,
+      "sinopsis": " 'Mi vida sexual comenzó temprano, más o menos a los cinco años, en el  kindergarten de las monjas ursulinas, en Santiago de Chile.'' Con estas  palabras, Isabel Allende inicia este compendio sobre amor y eros  compuesto por fragmentos escogidos de sus obras, que esbozan a traves de sus personajes la propia trayectoria vital de la autora.",
+      "publisherId": 14,
+      "publisherName": "DEBOLSILLO",
+      "isbn": "9788466360678",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": [
+        "ficcion",
+        "novela rosa"
+      ],
+      "releaseDate": "2023",
+      "stock": 12,
+      "totalSold": 1,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Esperando al diluvio",
+      "authorId": 17,
+      "authorName": "Dolores redondo",
+      "img": "./assets/img/book-cover/retrato-en-sepia.jpg",
+      "price": 6.999,
+      "sinopsis": "Un salvaje asesino en serie. Una búsqueda hasta el último latido. Una ciudad amenazada por un diluvio. Entre los años 1968 y 1969, el asesino al que la prensa bautizaría como John Biblia mató a tres mujeres en Glasgow. Nunca fue identificado y el caso todavía sigue abierto hoy en día. En esta novela, a principios de los años ochenta, el investigador de policía escocés Noah Scott Sherrington logra llegar hasta John Biblia, pero un fallo en su corazón en el último momento le impide arrestarlo. A pesar de su frágil estado de salud, y contra los consejos médicos y la negativa de sus superiores para que continúe con la persecución del asesino en serie, Noah sigue una corazonada que lo llevará hasta el Bilbao de 1983. Justo unos días antes de que un verdadero diluvio arrase la ciudad.",
+      "publisherId": 8,
+      "publisherName": "Shinka",
+      "isbn": "9788423362479",
+      "pageAmount": 576,
+      "language": "Español",
+      "genre": [
+        "ficcion",
+        "misterio",
+        "suspenso"
+      ],
+      "releaseDate": "2022",
+      "stock": 33,
+      "totalSold": 8,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Hasta que te rindas",
+      "authorId": 11,
+      "authorName": "Victoria Vilchez",
+      "img": "./assets/img/book-cover/hasta-que-te-rindas.gif",
+      "price": 7.295,
+      "sinopsis": "Una fiesta y un bar es todo lo que creen necesitar las amigas de Elizabeth para empujarla a superar su reciente ruptura amorosa. Solo que la cosa va a írseles un poco de las manos... Y cuando se dé cuenta de en dónde se ha metido es probable que ya sea demasiado tarde. Una intensa, divertida y romántica historia que te atrapará.",
+      "publisherId": 15,
+      "publisherName": "Kiwi",
+      "isbn": "9788417361099",
+      "pageAmount": 368,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2018",
+      "stock": 5,
+      "totalSold": 2,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Antes de que decidas dejarme",
+      "authorId": 11,
+      "authorName": "Victoria Vilchez",
+      "img": "./assets/img/book-cover/antes-de-que-decidas-dejarme.png",
+      "price": 7.995,
+      "sinopsis": "Becca es una chica temperamental que reniega del amor, aunque en el fondo anhela encontrar a alguien que la haga sentir única. Jota es arrogante, borde y descarado, y también su nuevo compañero de piso. Se tentarán y se provocarán, desafiándose una y otra vez, hasta que no les quede más remedio que enfrentarse a la innegable atracción que sienten el uno por el otro. Pero implicarse en una relación suele conllevar demasiados riesgos y, a veces, todo lo que puedes hacer es rendirte.",
+      "publisherId": 15,
+      "publisherName": "Kiwi",
+      "isbn": "9788494236365",
+      "pageAmount": 224,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2014",
+      "stock": 21,
+      "totalSold": 40,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Todo mi Otoño",
+      "authorId": 11,
+      "authorName": "Victoria Vilchez",
+      "img": "./assets/img/book-cover/todo-mi-otono.webp",
+      "price": 6.561,
+      "sinopsis": "Sean Donaldson tiene un gemelo que no podra ser ms diferente a l, una vida en la que no faltan chicas y su puesto como t itular en el equipo de ftbol de la universidad de California . Mucha diversin y pocas complicaciones. Hasta que una desco nocida se cuela en su piso y se atrinchera en su dormitorio huyendo de quin sabe qu. Desde ese momento, la chica aparece y desaparece a su antojo, metindole en un lo diferente cada vez que se presenta por sorpresa. Poco a poco, sin que apen as se d cuenta de ello, la curiosidad por descubrir quin es y por qu se muestra tan esquiva despertar otra clase de sent imientos en l. Mientras ella lucha por mantener una de sus p ocas reglas, la de no acercarse demasiado a nadie, Sean tend r que decidir si la deja entrar en su corazn.",
+      "publisherId": 15,
+      "publisherName": "Kiwi",
+      "isbn": "9788416384938",
+      "pageAmount": 368,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2018",
+      "stock": 0,
+      "totalSold": 2,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Siempre Será Invierno",
+      "authorId": 11,
+      "authorName": "Victoria Vilchez",
+      "img": "./assets/img/book-cover/siempre-sera-invierno.webp",
+      "price": 6.561,
+      "sinopsis": "El final del otoño dejó a la familia Donaldson sumida en la más profunda de las tristezas, y Cam Donaldson se enfrenta ahora al invierno más largo de su vida. Sin embargo, la llegada del frío trajo también consigo a alguien que Cam no había esperado volver a ver jamás: Maverick Parker, la primera chica de la que se enamoró y que desapareció siete años atrás sin decir adiós. Cam debe lidiar ahora con la pérdida y con la responsabilidad que está convencido que debe cargar a su espalda, pero también con el vacío que siente, ese que solo parece desaparecer cuando Maverick está cerca. El pasado a veces duele demasiado, pero tal vez sea la única esperanza de Cam para poder volver a sentir.",
+      "publisherId": 15,
+      "publisherName": "Kiwi",
+      "isbn": "9788417361242",
+      "pageAmount": 320,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2019",
+      "stock": 22,
+      "totalSold": 1,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Heist",
+      "authorId": 14,
+      "authorName": "Ariana Godoy",
+      "img": "./assets/img/book-cover/heist.webp",
+      "price": 6.929,
+      "sinopsis": "Una de las historias más exitosas de Wattpad con millones de lectores: una historia altamente adictiva de una de las autoras estrella de la plataforma, Ariana Godoy. El pueblo de Wilson es tranquilo, regido por unas costumbres y creencias religiosas muy estrictas, donde Leigh ha crecido, siguiendo cada regla y pauta como se le ha indicado. Un pueblo donde no se recibe con mucha gracia a los recién llegados, así que cuando los Steins se mudan a su lado, Leigh no puede evitar sentir curiosidad. Los Steins son adinerados, misteriosos y muy elegantes. Lucen como el retrato perfecto de una familia, pero ¿lo son? ¿Qué se esconde detrás de tanta perfección? Y cuando la muerte comienza a merodear el pueblo, nadie puede evitar preguntarse si tiene algo que ver con los nuevos miembros de la comunidad. Leigh es la única que puede indagar para descubrir la verdad, la única que puede acercarse al hijo mayor de la familia, el infame, arrogante y frío Heist.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789874924773",
+      "pageAmount": 448,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
+      "releaseDate": "2021",
+      "stock": 70,
+      "totalSold": 1,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "A Través de la Lluvia",
+      "authorId": 14,
+      "authorName": "Ariana Godoy",
+      "img": "./assets/img/book-cover/a-traves-de-la-lluvia.webp",
+      "price": 5.076,
+      "sinopsis": "La lluvia será el comienzo de todo. Apolo Hidalgo está emocionado por enfrentarse a una nueva etapa de su vida: la universidad. Su sueño es estudiar psicología y ayudar a los demás. Sin embargo, esa ilusión se rompe cuando es atacado y golpeado en un callejón durante una noche lluviosa e, irónicamente, así es como la conoce a ella. A Rain. La chica del paraguas lo salva, y se le queda grabada en la memoria. Cuando finalmente se vuelven a encontrar, Apolo queda todavía más encantado de Rain y, a través de ella, conoce a Xan, el dueño del café donde pasan el rato. A medida que los tres se conocen, Apolo se dará cuenta de que Rain y Xan ocultan mucho más de lo que uno se puede imaginar. Apolo es un chico lleno de buenas intenciones, pero, en la vida, eso no es garantía de nada, especialmente en el amor.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789878940243",
+      "pageAmount": 288,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
+      "releaseDate": "2022",
+      "stock": 41,
+      "totalSold": 20,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Fleur",
+      "authorId": 14,
+      "authorName": "Ariana Godoy",
+      "img": "./assets/img/book-cover/fleur.webp",
+      "price": 14.299,
+      "sinopsis": "Llega la precuela del exitoso Heist con el que Ariana Godoy rompe todas las etiquetas de género en la literatura juvenil. Una noche es suficiente para cambiar tu vida, para destruirla. Después de sobrevivir al brutal asesinato de su familia, Fleur Dupont decide intentar resolver el problema. ¿Quién asesinaría de una manera tan fría? ¿Por qué no recordaba nada? Pero, sobre todo, ¿por qué solo ella sobrevivió? Un relato trepidante y lleno de giros inesperados.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9786124442483",
+      "pageAmount": 336,
+      "language": "Español",
+      "genre": [
+        "juvenil",
+        "romantico"
+      ],
+      "releaseDate": "2022",
+      "stock": 22,
+      "totalSold": 13,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "La Revelacion",
+      "authorId": 14,
+      "authorName": "Ariana Godoy",
+      "img": "./assets/img/book-cover/la-revelacion.webp",
+      "price": 12.080,
+      "sinopsis": "Ella es un vampiro convertido. Él es un vampiro purasangre. Ella aún se aferra a su humanidad, él es un asesino frío. Sus mundos son completamente diferentes, son enemigos naturales. ¿Qué pasará cuando sus caminos se crucen? ¿Y si para ella, él es la clave para descubrir la verdad?",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789566184324",
+      "pageAmount": 336,
+      "language": "Español",
+      "genre": [
+        "juvenil"
+      ],
+      "releaseDate": "2023",
+      "stock": 1,
+      "totalSold": 4,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "El Silmarillion",
+      "authorId": 18,
+      "authorName": "J.R.R Tolkien",
+      "img": "./assets/img/book-cover/el-silmarillion.jpg",
+      "price": 7.750,
+      "sinopsis": "El Silmarillion cuenta la historia de la Primera Edad; el antiguo drama del que hablan los personajes de El Señor de los Anillos; y en cuyos acontecimientos algunos de ellos tomaron parte; como Elrond y Galadriel. Una obra de auténtica imaginación; una visión inspirada; legendaria o mítica; del interminable conflicto entre el deseo de poder y la capacidad de crear.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9789505472611",
+      "pageAmount": 552,
+      "language": "Español",
+      "genre": [
+        "juvenil, ficcion"
+      ],
+      "releaseDate": "2023",
+      "stock": 10,
+      "totalSold": 2,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "El Hobbit",
+      "authorId": 18,
+      "authorName": "J.R.R Tolkien",
+      "img": "./assets/img/book-cover/el-hobbit.jpg",
+      "price": 4.95,
+      "sinopsis": "Smaug parecía profundamente dormido cuando Bilbo espió una vez más desde la entrada. ¡Pero fingía estar dormido! ¡Estaba vigilando la entrada del túnel!... Sacado de su cómodo agujero-hobbit por Gandalf y una banda de enanos, Bilbo se encuentra de pronto en medio de una conspiración que pretende apoderarse del tesoro de Smaug el Magnífico, un enorme y muy peligroso dragón.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9789566184324",
+      "pageAmount": 336,
+      "language": "Español",
+      "genre": [
+        "juvenil, ficcion"
+      ],
+      "releaseDate": "2023",
+      "stock": 50,
+      "totalSold": 20,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "El señor de los anillos I -La comunidad del anillo",
+      "authorId": 18,
+      "authorName": "J.R.R Tolkien",
+      "img": "./assets/img/book-cover/el-señor-de-los-anillos.jpg",
+      "price": 6.75,
+      "sinopsis": "Los Anillos de Poder fueron forjados en antiguos tiempos por los herreros Elfos, y Sauron, el Señor Oscuro, forjó el Anillo Único. Pero en una ocasión se lo quitaron, y aunque lo buscó por toda la Tierra Media nunca pudo encontrarlo. Al cabo de muchos años fue a caer casualmente en manos del hobbit Bilbo Bolsón. Desde la Torre Oscura de Mordor, el poder de Sauron se extendió alrededor. Llegó a reunir todos los Grandes Anillos, pero continuaba buscando el Anillo Único, que completaría el dominio de Mordor.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9788445000663",
+      "pageAmount": 560,
+      "language": "Español",
+      "genre": [
+        "juvenil, ficcion"
+      ],
+      "releaseDate": "2018",
+      "stock": 45,
+      "totalSold": 25,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "El señor de los anillos II -La comunidad del anillo",
+      "authorId": 18,
+      "authorName": "J.R.R Tolkien",
+      "img": "./assets/img/book-cover/el-señor-de-los-anillos-2.jpg",
+      "price": 7.75,
+      "sinopsis": "La Comunidad se ha disuelto y sus integrantes emprenden caminos separados. Frodo y Sam continúan solos su viaje a lo largo del río Anduin, perseguidos por la sombra misteriosa de un ser extraño que también ambiciona la posesión del Anillo. Mientras, hombres, elfos y enanos se preparan para la batalla final contra las fuerzas del Señor del Mal.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9789505470655",
+      "pageAmount": 464,
+      "language": "Español",
+      "genre": [
+        "juvenil, ficcion"
+      ],
+      "releaseDate": "2018",
+      "stock": 40,
+      "totalSold": 30,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "El señor de los anillos III -La comunidad del anillo",
+      "authorId": 18,
+      "authorName": "J.R.R Tolkien",
+      "img": "./assets/img/book-cover/el-señor-de-los-anillos-3.jpg",
+      "price": 7.75,
+      "sinopsis": "Los ejércitos del Señor Oscuro van extendiendo cada vez más su maléfica sombra por la Tierra Media. Hombres, elfos y enanos unen sus fuerzas para presentar batalla a Sauron y sus huestes. Ajenos a estos preparativos, Frodo y Sam siguen adentrándose en el país de Mordor en su heroico viaje para destruir el Anillo de Poder en las Grietas del Destino.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9789505470662",
+      "pageAmount": 416,
+      "language": "Español",
+      "genre": [
+        "juvenil, ficcion"
+      ],
+      "releaseDate": "2018",
+      "stock": 47,
+      "totalSold": 23,
+      "tags": [
+        "mas vendidos"
+      ]
+    },
+    {
+      "id": 39,
+      "title": "La llamada de Cthulhu",
+      "authorId": 19,
+      "authorName": "HP Lovecraft",
+      "img": "./assets/img/book-cover/la-llamada-de-cthulhu.jpg",
+      "price": 6.545,
+      "sinopsis": "Hay un culto oscuro más antiguo que la humanidad y que la Tierra. Sus integrantes esperan que las estrellas estén alineadas para que el Gran Cthulhu regrese desde las profundidades del océano y reclame su reino sobre el universo. Las estrellas se han alineado y los miembros del culto han escuchado su llamada.",
+      "publisherId": 17,
+      "publisherName": "Del Fondo",
+      "isbn": "9789878304625",
+      "pageAmount": 616,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2023",
+      "stock": 25,
+      "totalSold": 16,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 40,
+      "title": "En las montañas de la locura",
+      "authorId": 19,
+      "authorName": "HP Lovecraft",
+      "img": "./assets/img/book-cover/en-las-montañas-de-la-locura.jpg",
+      "price": 5.95,
+      "sinopsis": "En las montañas de la locura narra la expedición desastrosa que realizan unos grupo de expertos a la Antártida, en el que descubren unos seres biológicamente extraordinarios que llegaron a la tierra desde otro astro mucho antes de la aparición de la humanidad, y que fueron casi extinguidos por una especie de robots de su propia creación.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9788417430047",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2018",
+      "stock": 30,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Ciclo Onirico Randolf Carter",
+      "authorId": 19,
+      "authorName": "HP Lovecraft",
+      "img": "./assets/img/book-cover/ciclo-onirico.jpg",
+      "price": 6.83,
+      "sinopsis": "Nos describe las Tierras del Sueño con su proverbial terror cósmico en estado puro, pero le añade una sucesión de escenarios fantásticos a cuál más inolvidable. Dejemonos llevar, pues, por este alarde de imaginación y usemos la llave de plata que nos abre la puerta a ciudades de ensueño como Ulthar o Kadath y territorios míticos como la meseta de Leng; pero seamos precavidos, pues en el camino acechan dioses oscuros e innombrables.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9788418395376",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2022",
+      "stock": 15,
+      "totalSold": 5,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Dagon y otros relatos",
+      "authorId": 19,
+      "authorName": "HP Lovecraft",
+      "img": "./assets/img/book-cover/dagon.jpg",
+      "price": 7.095,
+      "sinopsis": "'Escribo esto bajo una fuerte tensión mental, ya que cuando llegue la noche habré dejado de existir'. Tras haber vivido una traumática experiencia, un marinero anónimo a principios de la Primera Guerra Mundial, cuenta lo que le ha sucedido antes de quitarse la vida.Todo comienza cuando siendo sobrecargo en un barco es prisionero por los alemanes, y logra escapar en un bote salvavidas. Después de varios días a la deriva, se cree destinado a morir, hasta que de repente su bote encalla en extrañas tierras desconocidas.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9788418008047",
+      "pageAmount": 240,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2023",
+      "stock": 15,
+      "totalSold": 5,
+      "tags": [
+        "novedades"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "HP Lovecraft Coleccion Completa",
+      "authorId": 19,
+      "authorName": "HP Lovecraft",
+      "img": "./assets/img/book-cover/complete-edition.jpg",
+      "price": 27.599,
+      "sinopsis": "Howard Phillips Lovecraft fue un autor estadounidense de terror; fantasía; y ciencia ficción; conocido entonces simplemente como ficción rara. Su principal inspiración e invención fue el horror cósmico: la idea de que la vida es incomprensible para la mente humana y que el universo es fundamentalmente extraño. Los que genuinamente razonan; como sus protagonistas; jugar con la cordura. Ha desarrollado seguidores de culto para sus Mitos de Cthulhu; una serie de ficciones vagamente interconectadas que presentan un panteón de entidades que anulan a los humanos; así como el Necronomicón; un grimorio ficticio de ritos mágicos y conocimientos prohibidos.",
+      "publisherId": 17,
+      "publisherName": "Del Fondo",
+      "isbn": "9789878354453",
+      "pageAmount": 2498,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2021",
+      "stock": 20,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "Julia Cameron"
+    },
+    {
+      "id": 2,
+      "name": "Elísabet Benavent"
+    },
+    {
+      "id": 3,
+      "name": "Isabel Allende"
+    },
+    {
+      "id": 4,
+      "name": "Le Yen Mai"
+    },
+    {
+      "id": 5,
+      "name": "Alice Oseman"
+    },
+    {
+      "id": 6,
+      "name": "Claudia Luchetti"
+    },
+    {
+      "id": 7,
+      "name": "Penelope Douglas"
+    },
+    {
+      "id": 8,
+      "name": "Roma Damned"
+    },
+    {
+      "id": 9,
+      "name": "Flor M. Salvador"
+    },
+    {
+      "id": 10,
+      "name": "Krystal Sutherland"
+    },
+    {
+      "id": 11,
+      "name": "Victoria Vilchez"
+    },
+    {
+      "id": 12,
+      "name": "Florencia Vercellone"
+    },
+    {
+      "id": 13,
+      "name": "Elizabeth Letts"
+    },
+    {
+      "id": 14,
+      "name": "Ariana Godoy"
+    },
+    {
+      "id": 15,
+      "name": "Sophie Gonzalez"
+    },
+    {
+      "id": 16,
+      "name": "Lisa Jewell"
+    },
+    {
+      "id": 17,
+      "name": "Dolores Redondo"
+    },
+    {
+      "id": 18,
+      "name": "J.R.R Tolkien"
+    },
+    {
+      "id": 19,
+      "name": "HP Lovecraft"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 1,
+      "name": "Ivrea"
+    },
+    {
+      "id": 2,
+      "name": "Aguilar"
+    },
+    {
+      "id": 3,
+      "name": "Sudamericana"
+    },
+    {
+      "id": 4,
+      "name": "Urano"
+    },
+    {
+      "id": 5,
+      "name": "Vrya"
+    },
+    {
+      "id": 6,
+      "name": "Grigalbo"
+    },
+    {
+      "id": 7,
+      "name": "CrossBooks Argentina"
+    },
+    {
+      "id": 8,
+      "name": "Shinka"
+    },
+    {
+      "id": 9,
+      "name": "Montena"
+    },
+    {
+      "id": 10,
+      "name": "Oceano Travesia"
+    },
+    {
+      "id": 11,
+      "name": "El Ateneo"
+    },
+    {
+      "id": 12,
+      "name": "Umbtriel Editores"
+    },
+    {
+      "id": 13,
+      "name": "SUMA"
+    },
+    {
+      "id": 14,
+      "name": "DEBOLSILLO"
+    },
+    {
+      "id": 15,
+      "name": "Kiwi"
+    },
+    {
+      "id": 16,
+      "name": "Minotauro"
+    },
+    {
+      "id": 17,
+      "name": "Del Fondo"
+    },
+    {
+      "id": 18,
+      "name": "Alma"
+    }
+  ],
+  "users": [
+    {
+      "email": "carla@gmail.com",
+      "password": "$2a$10$TmavgZy2Ej/ZD6IHQOIeOOMronArH1S30FBqI4bGG7uJGjAWAvp6e",
+      "name": "Carla Rios",
+      "areaCode": "11",
+      "telephone": "23432123",
+      "document": "34543212",
+      "location": "CABA",
+      "province": "CABA",
+      "address": "",
+      "roleId": 1,
+      "id": 1
+    },
+    {
+      "email": "jessica@gmail.com",
+      "password": "$2a$10$S7XwXE1HWDTt4BuxS5jdL.scu3.yvLNPldFElf.IL33.A13A8KJke",
+      "name": "Jessica",
+      "areaCode": "11",
+      "telephone": "234567544",
+      "document": "234567543",
+      "location": "Cordoba",
+      "province": "Cordoba",
+      "address": "",
+      "roleId": 1,
+      "id": 2
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "client"
+    },
+    {
+      "id": 2,
+      "name": "admin"
+    }
+  ],
+  "login": [
+    {
+      "email": "linero@gmail.com",
+      "password": "12345"
+    }
+  ]
+}
