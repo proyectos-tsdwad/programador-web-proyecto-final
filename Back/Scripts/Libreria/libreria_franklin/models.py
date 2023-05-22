@@ -56,22 +56,21 @@ class Book(models.Model):
         return self.isbn
     def __str__(self):
         return self.isbn
-    
-class Profile(models.Model):
-    id_profile = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50, blank=False)
-    last_name = models.CharField(max_length=50, blank=False)
-    telephone_number = models.CharField(max_length=50, blank=False)
-    telephone_area_code = models.CharField(max_length=50, blank=False)
-    document = models.PositiveIntegerField(blank=False)
-    address_province = models.CharField(max_length=50, blank=False)
-    address_location = models.CharField(max_length=50, blank=False)
-    password = models.CharField(max_length=50, blank=False)
+
+class Payment(models.Model):
+
+    id_payment = models.AutoField(primary_key=True)
+    card_association = models.IntegerField(max_value =45)
+    number = models. IntegerField(max_value=20)
+    cvv = models.IntegerField(max_value =4)
+    expiration = models.DateField(required=True)
+   
     class Meta:
-        db_table = 'Profile'
-        verbose_name = 'Users profile'
-        verbose_name_plural = 'Profiles'
+        db_table = 'Payment'
+        verbose_name =  'Payment'
+        verbose_name_plural =  'Payments'
     def __unicode__(self):
-        return self.name
-    def __str__(self):
-        return self.name
+        return self.card_association
+    def __unicode__(self):
+        return self.card_association
+
