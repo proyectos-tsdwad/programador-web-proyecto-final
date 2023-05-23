@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User, CreateUserDTO } from 'src/app/models/user/user-model';
 import { Observable } from 'rxjs';
+import { Purchase } from 'src/app/models/user/purchase-model';
 
 
 @Injectable({
@@ -27,5 +28,11 @@ export class UserService {
     const url = `${this.apiURL}/users/${id}`;
     console.log('URL:',url);
     return this.http.get<User>(url);
+  }
+
+  getPurchaseHistory(): Observable<Purchase[]> {
+    const url = `${this.apiURL}/purchases/`;
+    console.log('URL:', url);
+    return this.http.get<Purchase[]>(url);
   }
 }
