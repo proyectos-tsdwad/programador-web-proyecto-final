@@ -23,16 +23,19 @@
         {{personalData.province}}
       </div>
     </section>
-    <section>
+    <section *ngIf="purchaseData">
       <h2>Pedidos realizados</h2>
-      <div class="dataCard order">
+      <app-pedidos-item
+      [purchases]="purchaseData"></app-pedidos-item>
+
+      <!-- <div class="dataCard order">
+        <h3 class="orderTitle">Orden: {{item.orderNumber }}</h3>
+        <span>{{item.date }}</span>
+      </div> -->
+      <!-- <div class="dataCard order">
         <h3 class="orderTitle">Orden: #1233</h3>
         <span>23/04/2023</span>
-      </div>
-      <div class="dataCard order">
-        <h3 class="orderTitle">Orden: #1233</h3>
-        <span>23/04/2023</span>
-      </div>
+      </div> -->
     </section>
   </main>
 </div>
