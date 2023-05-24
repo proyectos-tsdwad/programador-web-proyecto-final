@@ -1210,5 +1210,44 @@
       "email": "linero@gmail.com",
       "password": "12345"
     }
+  ],
+
+  "purchases": [
+    {
+      "id": 1,
+      "orderNumber": 12345,
+      "date": "12/02/2020",
+      "products": [
+        { "name": "Cosmos", "price": 1500, "quantity": 3, "totalAmount": 4500 },
+        { "name": "Fahrenheit 451", "price": 2500, "quantity":5, "totalAmount": 12500 }
+      ]
+    },
+    {
+      "id": 2,
+      "orderNumber": 12344,
+      "date": "12/02/2022",
+      "products": [
+        {
+          "name": "Rayuela",
+          "price": 2500,
+          "quantity": 2,
+          "totalAmount": 5000
+        },
+        { "name": "Cosmos",
+          "price": 1500,
+          "quantity": 3,
+          "totalAmount": 4500
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "orderNumber": 45678,
+      "date": "03/07/2022",
+      "products": [
+        { "name": "Cosmos", "price": 1500, "quantity": 3, "totalAmount": 4500 },
+        { "name": "Fahrenheit 451", "price": 2500, "quantity":5, "totalAmount": 12500 }
+      ]
+    }
   ]
 }
