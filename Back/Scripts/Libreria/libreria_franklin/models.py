@@ -78,10 +78,10 @@ class Profile(models.Model):
 
 class Payment(models.Model):
     id_payment = models.AutoField(primary_key=True)
-    card_association = models.IntegerField(max_value =45)
-    number = models. IntegerField(max_value=20)
-    cvv = models.IntegerField(max_value =4)
-    expiration = models.DateField(required=True)
+    card_association = models.IntegerField()
+    number = models. IntegerField()
+    cvv = models.IntegerField()
+    expiration = models.DateField()
     class Meta:
         db_table = 'Payment'
         verbose_name =  'Payment'
