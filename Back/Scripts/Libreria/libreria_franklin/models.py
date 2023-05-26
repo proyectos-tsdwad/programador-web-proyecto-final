@@ -117,3 +117,26 @@ class Delivery(models.Model):
         return self.address
     def __str__(self):
         return self.address
+
+      
+class Sell (models.Model):
+  id_sell = models.CharField(primary_key=True)
+  orderNumber = models.IntegerField(blank=False) 
+  saleDate = models.DateField(blank=False)
+  products = models.CharField(max_length=100, blank=False)
+  deliveryType = models.CharField(max_length=50, blank=False)
+  paymentType = models.CharField(max_length=50, blank=False)
+  totalQuantity = models.DecimalField(decimal_places=2, blank=False)
+  totalCost = models.DecimalField(decimal_places=2, blank=False)
+  profile = models.ForeignKey(Profile, to_field= "id_profile", related_name="profile",on_delete=models.CASCADE)
+  delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
+  payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
+  book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
+  class Meta:
+        db_table = 'Sell'
+        verbose_name = 'Sell'
+        verbose_name_plural = 'Sells'
+  def __unicode__(self):
+        return self.isbn
+  def __str__(self):
+        return self.isbn
