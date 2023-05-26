@@ -104,3 +104,16 @@ class Rol(models.Model):
         return self.name
 
 
+class Delivery(models.Model):
+    id_delivery = models.AutoField(primary_key=True)
+    postal_code = models.PositiveIntegerField()
+    address = models.CharField(max_length=50, blank=False)
+    state = models.CharField()
+    class Meta:
+        db_table = 'Delivery'
+        verbose_name = 'Product sale delivery'
+        verbose_name_plural = 'Delivery'
+    def __unicode__(self):
+        return self.address
+    def __str__(self):
+        return self.address
