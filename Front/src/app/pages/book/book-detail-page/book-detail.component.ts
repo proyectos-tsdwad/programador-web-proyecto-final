@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BookService } from 'src/app/services/book/book.service';
 import { CartService } from 'src/app/services/cart/cart.service';
 
+
 @Component({
   selector: 'app-book-detail',
   templateUrl: './book-detail.component.html',
@@ -18,7 +19,7 @@ export class BookDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
-    private cartService: CartService
+    private cartService: CartService,
   ) { }
 
   ngOnInit(): void {
