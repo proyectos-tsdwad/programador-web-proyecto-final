@@ -9,6 +9,5 @@ import { PedidosItemComponent } from './pedidos-item/pedidos-item.component';
     PedidosItemComponent
   ],
   imports: [CommonModule],
-  exports: [],
 })
-export class AccountModule {}
+export class AccountModule { }

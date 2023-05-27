@@ -14,12 +14,10 @@ export class SearchComponent {
   constructor(
     private navigationService: NavigationService,
     private bookService: BookService
-  ) {}
+  ) { }
 
   onClickSearch() {
-    // this.bookService.searchTitle = this.title;
     this.bookService.getSearchResults(this.title);
-    this.navigationService.navigateToCatalogue();
-    // console.log('funciona', this.title);
+    this.navigationService.navigateToSearchBook();
   }
 }

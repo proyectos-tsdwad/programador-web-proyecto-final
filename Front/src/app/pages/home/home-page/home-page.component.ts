@@ -18,7 +18,10 @@ export class HomePageComponent implements OnInit {
   newAtBooks: Book[] = [];
   topSellingBooks: Book[] = [];
 
-  constructor(bookService: BookService, private navigationService: NavigationService) {
+  constructor(
+    bookService: BookService,
+    private navigationService: NavigationService,
+  ) {
     this.bookService = bookService;
   }
 

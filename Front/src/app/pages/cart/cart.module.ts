@@ -14,7 +14,9 @@ import { DeliveryHelperComponent } from './delivery-helper/delivery-helper.compo
     CartDetailPageComponent,
     DeliveryHelperComponent,
   ],
-  imports: [CommonModule, FormsModule],
-  exports: [CartDetailPageComponent],
+  imports: [
+    CommonModule,
+    FormsModule
+  ]
 })
-export class CartModule {}
+export class CartModule { }

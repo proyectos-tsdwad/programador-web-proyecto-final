@@ -6,45 +6,39 @@ import { Router } from "@angular/router";
 })
 export class NavigationService {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router
+  ) { }
 
   navigateToHome() {
-    this.scrollTop();
     this.router.navigate(['/home']);
   }
 
   navigateToBookDetail(isbn: string) {
-    this.scrollTop();
     this.router.navigate(['/book-detail', isbn]);
   }
 
   navigateToBookDashBoard() {
-    this.scrollTop();
     this.router.navigate(['/book-dashboard']);
   }
 
   navigateToCheckout() {
-    this.scrollTop();
     this.router.navigate(['/checkout']);
   }
 
   navigateToCatalogue() {
-    this.scrollTop();
     this.router.navigate(['catalogue']);
   }
 
   navigateToCartDetail() {
-    this.scrollTop();
     this.router.navigate(['cart-detail']);
   }
 
   navigateToProfile() {
-    this.scrollTop();
     this.router.navigate(['profile']);
   }
 
-  scrollTop() {
-    window.scroll(0, 0);
+  navigateToSearchBook() {
+    this.router.navigate(['book-search']);
   }
-
 }
