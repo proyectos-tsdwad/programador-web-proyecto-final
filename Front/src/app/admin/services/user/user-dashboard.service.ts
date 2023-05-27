@@ -4,7 +4,7 @@ import { User } from 'src/app/models/user/user-model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
-export class ClientService {
+export class UserDashboardService {
 
   private apiURL = `${environment.API_URL}`;
 

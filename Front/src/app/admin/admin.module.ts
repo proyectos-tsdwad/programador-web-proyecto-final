@@ -5,10 +5,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { BookDashboardPageComponent } from './pages/book-dashboard-page/book-dashboard-page.component';
 import { ClientDashboardPageComponent } from './pages/client-dashboard-page/client-dashboard-page.component';
 import { AuthorDashboardPageComponent } from './pages/author-dashboard-page/author-dashboard-page.component';
-
-import { AuthorDashboardService } from './services/author/author-dashboard.service';
-import { ClientService } from './services/client/client.service';
 import { PublisherDashboardPageComponent } from './pages/publisher-dashboard-page/publisher-dashboard-page.component';
+
+import { UserDashboardService } from './services/user/user-dashboard.service';
+import { AuthorDashboardService } from './services/author/author-dashboard.service';
+import { PublisherDashboardService } from './services/publisher/publisher-dashboard.service';
 
 
 
@@ -29,8 +30,9 @@ import { PublisherDashboardPageComponent } from './pages/publisher-dashboard-pag
     AuthorDashboardPageComponent
   ],
   providers: [
-    ClientService,
-    AuthorDashboardService
+    UserDashboardService,
+    AuthorDashboardService,
+    PublisherDashboardService
   ]
 })
 export class AdminModule { }

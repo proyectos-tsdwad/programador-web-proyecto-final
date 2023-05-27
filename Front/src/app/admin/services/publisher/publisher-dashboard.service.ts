@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { Publisher } from 'src/app/models/publisher/publisher-model';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PublisherDashboardService {
 
   private apiURL = `${environment.API_URL}`;

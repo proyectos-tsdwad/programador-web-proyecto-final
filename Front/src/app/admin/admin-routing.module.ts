@@ -4,12 +4,14 @@ import { BookDashboardPageComponent } from "./pages/book-dashboard-page/book-das
 import { ClientDashboardPageComponent } from "./pages/client-dashboard-page/client-dashboard-page.component";
 import { AuthorDashboardPageComponent } from "./pages/author-dashboard-page/author-dashboard-page.component";
 import { PublisherDashboardPageComponent } from "./pages/publisher-dashboard-page/publisher-dashboard-page.component";
+import { SalesDashboardPageComponent } from "./pages/sales-dashboard-page/sales-dashboard-page.component";
 
 const routes: Routes = [
   { path: 'book-dashboard', component: BookDashboardPageComponent },
   { path: 'client-dashboard', component: ClientDashboardPageComponent },
   { path: 'author-dashboard', component: AuthorDashboardPageComponent },
-  { path: 'publisher-dashboard', component: PublisherDashboardPageComponent }
+  { path: 'publisher-dashboard', component: PublisherDashboardPageComponent },
+  { path: 'sale-dashboard', component: SalesDashboardPageComponent }
 ];
 
 @NgModule({

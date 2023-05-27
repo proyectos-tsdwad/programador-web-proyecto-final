@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Sale } from 'src/app/models/sale/sale-model';
 
 @Component({
   selector: 'app-sales-dashboard-page',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class SalesDashboardPageComponent {
 
+  sales: Sale[] = [];
 }

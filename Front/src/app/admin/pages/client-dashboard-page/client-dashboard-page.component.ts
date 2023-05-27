@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user/user-model';
-import { ClientService } from '../../services/client/client.service';
+import { UserDashboardService } from '../../services/user/user-dashboard.service';
 
 @Component({
   selector: 'app-client-dashboard-page',
@@ -12,11 +12,11 @@ export class ClientDashboardPageComponent implements OnInit {
   users: User[] = [];
 
   constructor(
-    private clientService: ClientService
+    private UserService: UserDashboardService
   ) { }
 
   ngOnInit(): void {
-    this.clientService.getUsers()
+    this.UserService.getUsers()
       .subscribe((result: User[]) => {
         this.users = result;
       });
