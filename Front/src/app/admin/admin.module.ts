@@ -4,6 +4,9 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 import { BookDashboardPageComponent } from './pages/book-dashboard-page/book-dashboard-page.component';
 import { ClientDashboardPageComponent } from './pages/client-dashboard-page/client-dashboard-page.component';
+import { AuthorDashboardPageComponent } from './pages/author-dashboard-page/author-dashboard-page.component';
+
+import { AuthorDashboardService } from './services/author/author-dashboard.service';
 import { ClientService } from './services/client/client.service';
 
 
@@ -11,7 +14,8 @@ import { ClientService } from './services/client/client.service';
 @NgModule({
   declarations: [
     BookDashboardPageComponent,
-    ClientDashboardPageComponent
+    ClientDashboardPageComponent,
+    AuthorDashboardPageComponent
   ],
   imports: [
     CommonModule,
@@ -19,10 +23,12 @@ import { ClientService } from './services/client/client.service';
   ],
   exports: [
     BookDashboardPageComponent,
-    ClientDashboardPageComponent
+    ClientDashboardPageComponent,
+    AuthorDashboardPageComponent
   ],
   providers: [
-    ClientService
+    ClientService,
+    AuthorDashboardService
   ]
 })
 export class AdminModule { }

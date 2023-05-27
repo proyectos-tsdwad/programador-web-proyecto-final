@@ -8,9 +8,9 @@ import { BookService } from 'src/app/services/book/book.service';
   styleUrls: ['./book-dashboard-page.component.css']
 })
 export class BookDashboardPageComponent implements OnInit {
-  bookService: BookService;
 
   books: Book[] = [];
+  bookService: BookService;
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
