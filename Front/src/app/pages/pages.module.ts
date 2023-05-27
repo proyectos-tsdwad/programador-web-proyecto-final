@@ -6,10 +6,10 @@ import { CheckoutModule } from './checkout/checkout.module';
 import { BookDetailModule } from './book/book-detail.module';
 import { CartModule } from './cart/cart.module';
 import { AccountModule } from './account/account.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     HomeModule,
