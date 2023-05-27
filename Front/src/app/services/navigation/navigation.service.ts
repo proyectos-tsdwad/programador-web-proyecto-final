@@ -37,4 +37,8 @@ export class NavigationService {
   navigateToProfile() {
     this.router.navigate(['profile']);
   }
+
+  navigateToSearchBook() {
+    this.router.navigate(['book-search']);
+  }
 }

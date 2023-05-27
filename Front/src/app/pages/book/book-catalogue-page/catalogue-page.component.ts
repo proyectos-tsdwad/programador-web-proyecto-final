@@ -10,7 +10,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./catalogue-page.component.css'],
 })
 export class BookCataloguePageComponent implements OnInit, OnDestroy {
-  searchSub!: Subscription;
   bookService: BookService;
   books: Book[] = [];
   genre = GENRE;
@@ -21,27 +20,11 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // this.bookService.getSearchResults();
-    this.getSearchBooks();
-    // if (!this.books.length) {
-    //   this.getAllBooks();
-    // }
+    this.getAllBooks();
   }
 
   ngOnDestroy() {
     this.bookService.clearSearchResults();
-    this.searchSub.unsubscribe();
-  }
-  getSearchBooks() {
-    this.selectedGenre = 'libros encontrados';
-    this.searchSub = this.bookService
-      .getBookSearchListener()
-      .subscribe((result: Book[]) => {
-        this.books = result;
-        if (!this.books.length) {
-          this.getAllBooks();
-        }
-      });
   }
 
   getAllBooks() {

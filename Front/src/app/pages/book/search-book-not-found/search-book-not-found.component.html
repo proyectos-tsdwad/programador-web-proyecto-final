@@ -11,9 +11,16 @@
       <div class="row gy-4">
         <h6 class="col-12 fc-basic-6 font-bold fs-lg-2">Lo sentimos :(</h6>
 
-        <div class="col-12 col-md-8 fc-secondary font-medium fs-lg">
+        <div class="col-12 col-md-8 fc-secondary font-medium fs-lg" *ngIf="!this.title; else withTitle">
           <p>No encontramos el libro que estas buscando</p>
         </div>
+
+        <ng-template #withTitle>
+          <div class="col-12 fc-secondary font-medium fs-lg">
+            <p>No encontramos el libro con el título '<span class="fc-basic-6">{{ title }}</span>' que estas buscando
+            </p>
+          </div>
+        </ng-template>
 
         <div class="col-12">
           <button type="button" class="col-6 secondary-button text-sm-center fs-sm-2 font-bold"

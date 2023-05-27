@@ -13,9 +13,6 @@ import { BookCardModule } from '../../modules/book/book-card.module';
   imports: [
     CommonModule,
     BookCardModule
-  ],
-  exports: [
-    HomePageComponent,
   ]
 })
 export class HomeModule { }

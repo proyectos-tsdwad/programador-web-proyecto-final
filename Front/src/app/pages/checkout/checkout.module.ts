@@ -23,11 +23,6 @@ import { MatDividerModule } from '@angular/material/divider';
     MatIconModule,
     MatRadioModule,
     MatDividerModule,
-  ],
-
-  exports: [
-    CheckoutPageComponent
   ]
-
 })
 export class CheckoutModule { }

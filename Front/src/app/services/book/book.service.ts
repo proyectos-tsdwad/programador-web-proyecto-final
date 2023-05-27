@@ -15,7 +15,7 @@ export class BookService {
   private apiUrl = environment.API_URL;
   private booksFound: Book[] = [];
   private booksFoundUpdated = new BehaviorSubject<Book[]>([]);
-  searchTitle = '';
+  private searchTitleUpdated = new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient) { }
 
@@ -25,17 +25,16 @@ export class BookService {
 
   getSearchResults(title: string) {
     this.http
-      .get<Book[]>(
-        `${this.apiUrl}/books?_expand=author&_expand=publisher&title_like=${title}`
-      )
+      .get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&title_like=${title}`)
       .subscribe((result: Book[]) => {
         this.booksFound = result;
         this.booksFoundUpdated.next([...this.booksFound]);
-        console.log('libros encontrados', this.booksFound);
+        this.searchTitleUpdated.next(title);
       });
-    console.log(
-      `${this.apiUrl}/books?_expand=author&_expand=publisher&title_like=${title}`
-    );
+  }
+
+  searchTitleListener() {
+    return this.searchTitleUpdated.asObservable();
   }
 
   clearSearchResults() {

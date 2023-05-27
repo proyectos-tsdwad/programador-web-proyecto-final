@@ -59,21 +59,26 @@
     </table>
   </div>
 </section>
-<section *ngIf="!bookFound">
-  <p>No se encontró ningun libro</p>
+
+<section *ngIf="bookFound">
+  <div class="mt-5 pt-5 bookRow">
+    <div class="container-fluid px-md-5">
+      <div class="row px-4 index-book-title">
+        <!-- <p class="col-6 col-md-12 fc-primary font-bold fs-md text-uppercase"></p> -->
+        <p class="col-10 d-none d-md-block font-medium fc-primary-light fs-md">
+          Te pueden interesar
+        </p>
+        <!-- <div class="col-2">
+          <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
+        </div> -->
+      </div>
+    </div>
+    <app-books-row-cards [books]="recomendedBooks"></app-books-row-cards>
+  </div>
 </section>
 
-<div class="mt-5 pt-5 bookRow">
-  <div class="container-fluid px-md-5">
-    <div class="row px-4 index-book-title">
-      <!-- <p class="col-6 col-md-12 fc-primary font-bold fs-md text-uppercase"></p> -->
-      <p class="col-10 d-none d-md-block font-medium fc-primary-light fs-md">
-        Te pueden interesar
-      </p>
-      <!-- <div class="col-2">
-        <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
-      </div> -->
-    </div>
-  </div>
-  <app-books-row-cards [books]="recomendedBooks"></app-books-row-cards>
-</div>
+
+
+<section *ngIf="!bookFound">
+  <app-selected-book-not-found></app-selected-book-not-found>
+</section>
