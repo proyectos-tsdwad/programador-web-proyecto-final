@@ -1013,6 +1013,471 @@
       "tags": [
         "recomendados"
       ]
+    },
+    {
+      "id": 44,
+      "title": "Cuento De Hadas",
+      "authorId": 20,
+      "authorName": "Stephen King",
+      "img": "./assets/img/book-cover/cuento-de-hadas.webp",
+      "price": 9.500,
+      "sinopsis": "Estoy seguro de que puedo contar esta historia. También estoy seguro de que nadie se la creerá. Eso me da igual. Me basta con contarla. Para mí -y está claro que para muchos escritores, no solo los novatos como yo-, el problema es decidir por dónde empezar. (...) Y ahora, mientras pienso en esas cosas, veo un claro hilo que conduce a lo largo de los años hasta el señor Bowditch y el cobertizo cerrado con candado detrás de su vieja y ruinosa casa victoriana. Aunque un hilo puede romperse fácilmente. Por tanto, no un hilo, sino una cadena. Una cadena sólida. Y yo era el chico con el grillete en torno a la muñeca.",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789506446437",
+      "pageAmount": 759,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2021",
+      "stock": 20,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "La Cupula",
+      "authorId": 20,
+      "authorName": "Stephen King",
+      "img": "./assets/img/book-cover/la-cupula.webp",
+      "price": 10.299,
+      "sinopsis": "El libro que inspiró la serie televisiva Under the dome. Un día de octubre la pequeña ciudad americana de Chester's Mill se encuentra totalmente aislada por una cúpula transparente e impenetrable. Nadie sabe de dónde ha salido ni por qué está allí. Sólo saben que poco a poco se agotarán las provisiones y hasta el oxígeno que respiran... El ejército pone a Barbie a cargo de la situación, pero Big Jim Rennie, el hombre que tiene un pie en todos los negocios sucios de la ciudad, no está de acuerdo: la cúpula podría ser la respuesta a sus plegarias. A medida que la comida, la electricidad y el agua escasean, los niños comienzan a tener premoniciones escalofriantes. El tiempo se acaba para aquellos que viven bajo la cúpula. ¿Podrán averiguar qué ha creado tan terrorífica prisión antes de que sea demasiado tarde?.",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789875669093",
+      "pageAmount": 478,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2021",
+      "stock": 20,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Billy Summers",
+      "authorId": 20,
+      "authorName": "Stephen King",
+      "img": "./assets/img/book-cover/billy-summers.webp",
+      "price": 11.899,
+      "sinopsis": "Billy Summers es un asesino a sueldo y el mejor en lo suyo, pero tiene una norma: solo acepta un encargo si su objetivo es realmente mala persona. Ahora Billy quiere dejarlo, pero todavía le queda un último golpe. Y siendo uno de los mejores francotiradores del mundo, un veterano condecorado de la guerra de Irak, un auténtico Houdini cuando toca desaparecer después de finiquitar un trabajo, ¿qué podría salirle mal? Todo. La crítica ha dicho...: «Billy Summers es un excelente relato de redención que engancha y conmueve.» La Razón «No hay asesinato más criminal ni caos más entretenido. Otra lectura adictiva de un maestro de mente proteica.» Kirkus «Otra novedad excepcional de un escritor que siempre les da a los lectores mucho más de lo que esperan.» Publishers Weekly «Ver al indiscutido Rey del Terror adentrarse en el territorio de los thrillers noir es la prueba de que Stephen King todavía es capaz de sorprendernos y dejarnos sin palabras.» Esquire «A King nunca se le ha dado mejor envolver a sus lectores en una narrativa impelente y con muchos tentáculos que se completa con un final emocionante y perfectamente orquestado.» Booklist «No importa lo que escriba: Stephen King siempre será considerado un escritor de terror. Es inevitable, pues demasiadas pesadillas que rondan la cultura popular son responsabilidad suya. Sin embargo, en Billy Summers no hay elementos sobrenaturales (salvo una referencia oculta a cierto hotel embrujado). En lugar de eso, se pone en modo noir y nos cuenta el relato de un asesino a sueldo con un último trabajo por delante. Divaga, ignora en su justa medida las reglas de la estructura narrativa, se ceba con estereotipos y con una descarada crítica política... Y es su mejor libro en años.» The Guardian «Billy Summers está tan plagada de monstruos como sus anteriores novelas. Pero no son de los paranormales que solemos asociar al maestro del terror.",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789506445843",
+      "pageAmount": 648,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2021",
+      "stock": 20,
+      "totalSold": 10,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 47,
+      "title": "Mr. Mercedes",
+      "authorId": 20,
+      "authorName": "Stephen King",
+      "img": "./assets/img/book-cover/mr-mercedes.webp",
+      "price": 9.799,
+      "sinopsis": "Justo antes del amanecer, en una decadente ciudad americana, cientos de desocupados esperan la apertura de la oficina de empleo para reclamar uno de los mil puestos de trabajo que se anunciaron. Han hecho cola durante toda la noche. De pronto, invisible hasta que lo tienen prácticamente encima, un Mercedes surge de la fría niebla de la madrugada. Su conductor atropella y aplasta a todos los que encuentra a su paso. Acto seguido, el automóvil da marcha atrás y vuelve a arremeter contra ellos. El asesino huye dejando atrás ocho muertos y quince heridos. Meses después, Bill Hodges, un policía jubilado que sigue obsesionado con este caso sin resolver, recibe una carta anónima de alguien que se declara culpable de la masacre..",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789506443214",
+      "pageAmount": 496,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2014",
+      "stock": 15,
+      "totalSold": 35,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 48,
+      "title": "Revival",
+      "authorId": 20,
+      "authorName": "Stephen King",
+      "img": "./assets/img/book-cover/revival.webp",
+      "price": 9.799,
+      "sinopsis": "Preparate para el final más oscuro, inquietante e inolvidable de cuantos ha escrito Stephen King.",
+      "publisherId": 11,
+      "publisherName": "El Ateneo",
+      "isbn": "9789506443559",
+      "pageAmount": 416,
+      "language": "Español",
+      "genre": [
+        "terror, ficcion"
+      ],
+      "releaseDate": "2015",
+      "stock": 15,
+      "totalSold": 35,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "Memoria De Mis Putas Tristes",
+      "authorId": 21,
+      "authorName": "Gabriel Garcia Marquez",
+      "img": "./assets/img/book-cover/memoria-de-mis-putas-tristes.webp",
+      "price": 3.199,
+      "sinopsis": "Un viejo periodista decide festejar sus noventa años a lo grande, dándose un regalo que le hará sentir que todavía está vivo: una jo vencita virgen, y con ella «el principio de una nueva vida a una edad en que la mayoría de los mortales están muertos». En el prostíbulo llega el momento en el que ve a la mujer de espaldas, completamente desnuda. Ese acontecimiento cambia su vida radicalmente. Ahora que conoce a esta jovencita se encuentra a punto de morir, pero no por viejo, sino de amor. Así, Memoria de mis putas tristes cuenta la vida de este anciano solitario, un apasionado de la música clásica, nada aficionado a las mascotas y lleno de manías. Por él sabremos cómo en todas sus aventuras sexuales (que no fueron pocas) siempre dio a cambio algo de dinero, pero nunca imaginó que de ese modo encontraría el verdadero amor.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789875661967",
+      "pageAmount": 112,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2006",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "El Amor En Los Tiempos Del Colera",
+      "authorId": 21,
+      "authorName": "Gabriel Garcia Marquez",
+      "img": "./assets/img/book-cover/el-amor-en-los-tiempos-del-colera.webp",
+      "price": 8.399,
+      "sinopsis": "Dos historias hay en este libro. Una de ellas, apenas esbozada, es la de un amor secreto que culmina en la muerte elegida por un hombre que ha querido ponerse a salvo 'de los tormentos de la memoria'. La otra historia es la de un amor que hace de esos tormentos su alimento. Un amor acechado por los enemigos: el deterioro físico, la vejez, la muerte, pero que es capaz, no solo de resistirlos, si no también de transformarlos en el ímpetu del deseo. Una muchacha de dieciocho años rechaz aal hombre de quien ha estado enamorada y con quien ha podido unirse. Mas de cincuenta años después, cuando ha muerto otro hombre con quien se ha casado para vivir un lapso de sucedáneos desdeñables, se reúne con aquel primer amor suyo a bordo de un barco que se llama Nueva Fidelidad. La exacerbación del deseo se alía a la muerte y a la enfermedad porque se les parece: 'Los síntomas del amor son los mismos del cólera'. En este relato infinitamente seductor, Gabriel García Márquez narra la obsesión del deseo con un arrebato que lo aparta de sus grandes novelas anteriores y a la vez lo acerca a ellas. A la circularidad del tiempo en Macondo, al enclaustramiento del tirano aislado en su poder demencial, sucede ahora la vigencia imbatible del deseo ahincado en si mismo. Un deseo que avanza hacia su origen en un movimiento del barco Nueva Fidelidad, que seguirá yendo y viniendo 'toda la vida'. Son las palabras que cierran, reanudándola, esta historia de amor.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789500726085",
+      "pageAmount": 496,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2005",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 51,
+      "title": "Cuentos Ilustrados",
+      "authorId": 21,
+      "authorName": "Gabriel Garcia Marquez",
+      "img": "./assets/img/book-cover/cuentos-ilustrados.webp",
+      "price": 6.799,
+      "sinopsis": "Gabriel García Márquez siempre recordaba cómo su abuela le transmitió la pasión por las historias contándole cuentos cuando era pequeño y vivía con ella. Estos seis relatos, unidos por la presencia de un niño, contienen todo el imaginario del gran autor colombiano. Una mujer y su hija llegan a un pueblo desierto para velar a un familiar difunto sin interrumpir la siesta de los habitantes. Un hombre con unas enormes alas de pájaro se precipita desde el cielo, asombrando a todo el vecindario. Dos niños consiguen inundar de luz la ciudad de Madrid. Y en Barcelona, una prostituta que va entrando en la vejez adiestra a su perro para llorar ante la tumba que ha escogido para sí misma. Estas conmovedoras historias están acompañadas por la obra de la pintora Carme Solé Vendrell, premio Nacional de Ilustración, que tiene el honor de ser la única persona que dio vida a los cuentos de García Márquez con el permiso del autor. Fieles a la magia de su prosa, las imágenes iluminan las delicadas reflexiones del premio Nobel sobre la infancia en estos relatos que tanto pequeños como mayores recordarán para siempre.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789877690491",
+      "pageAmount": 148,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2019",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 52,
+      "title": "La Hojarasca",
+      "authorId": 21,
+      "authorName": "Gabriel Garcia Marquez",
+      "img": "./assets/img/book-cover/la-hojarasca.webp",
+      "price": 4.499,
+      "sinopsis": "En Macondo transcurre la historia de un entierro imposible. Ha muerto un personaje extraño, un antiguo médico odiado por el pueblo, y un viejo coronel retirado, para cumplir una promesa, se ha empeñado en enterrarle ante la oposición de todo el pueblo y sus autoridades. Como en una tragedia griega -el libro lleva como lema una cita de Antígona que recuerda la prohibición de enterrar el cuerpo del Polinices-, el viejo coronel, su hija y su nieto van a cumplir la ominosa tarea. La acción, compuesta por la descripción de los preparativos para el entierro -una media hora- y los recuerdos de un cuarto de siglo de la historia de Macondo, de 1905 a 1928, se narra a través de los pensamientos de estos tres personajes. «De pronto como si un remolino hubiera echado raíces en el centro del pueblo, llegó la compañía bananera perseguida por la hojarasca. Era una hojarasca revuelta, alborotada, formada por los desperdicios humanos y materiales de los otros pueblos: rastrojos de una guerra civil que cada vez parecía más remota e inverosímil.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9500700875",
+      "pageAmount": 192,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "1999",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 53,
+      "title": "Todos Los Cuentos",
+      "authorId": 21,
+      "authorName": "Gabriel Garcia Marquez",
+      "img": "./assets/img/book-cover/todos-los-cuentos.webp",
+      "price": 5.899,
+      "sinopsis": "El lector encontrará los relatos tempranos de García Márquez recogidos bajo el título Ojos de perro azul, donde se incluye «Monólogo de Isabel viendo llover en Macondo», célebre texto que puso los cimientos del gigantesco edificio, tan imaginario como real, de lo que acabaría siendo el espacio literario más poderoso de las letras universales de nuestro tiempo: Macondo. Con Macondo se inauguraron los años del realismo mágico y de los personajes inmersos en el mundo denso y frutal del Caribe americano. De esta etapa, en plena madurez del autor, son sus siguientes libros de cuentos: Los funerales de la Mamá Grande, donde se narran las fastuosas exequias de la auténtica soberana de Macondo, y La increíble y triste historia de la cándida Eréndira y de su abuela desalmada.",
+      "publisherId": 9,
+      "publisherName": "Montena",
+      "isbn": "9789875669840",
+      "pageAmount": 528,
+      "language": "Español",
+      "genre": [
+        "romantico"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 54,
+      "title": "Cianuro Espumoso",
+      "authorId": 22,
+      "authorName": "Agatha Christie",
+      "img": "./assets/img/book-cover/cianuro-espumoso.webp",
+      "price": 3.510,
+      "sinopsis": "La historia donde aparece la única mujer de la que Poirot se ha enamorado. En el reservado de un selecto restaurante, seis personas se reúnen alrededor de una mesa preparada para siete comensales. Ante el asiento vacío hay un ramillete de romero en memoria de Rosemary Burton, fallecida en aquel mismo escenario un año atrás después de haber ingerido cianuro disuelto en su copa. En aquel momento todo el mundo pensó que se trataba de un suicidio. Hoy ya no. Ahora existen sospechas fundadas de que en realidad Rosemary fue asesinada. Y lo que en un principio parecía una cena organizada en homenaje a la difunta se va a convertir en otra cosa muy distinta. Una peligrosa conmemoración que puede volver a acabar en tragedia cuando, al alzar la copa para brindar en recuerdo de la fallecida, uno de los comensales se desploma en su silla.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9789878435770",
+      "pageAmount": 216,
+      "language": "Español",
+      "genre": [
+        "suspenso"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 55,
+      "title": "Los Cuatro Grandes",
+      "authorId": 22,
+      "authorName": "Agatha Christie",
+      "img": "./assets/img/book-cover/los-cuatro-grandes.webp",
+      "price": 3.422,
+      "sinopsis": "Hércules Poirot se enfrenta con unos criminales fuera de lo común. No son vulgares asesinos ni simples estafadores. Son líderes organizados a escala internacional que mueven los hilos de cuanto sucede en el mundo. Se los conoce como «Los Cuatro Grandes» y el detective tendrá que descubrir su identidad antes de que sea demasiado tarde para la humanidad. La primera misión de la banda consiste en deshacerse de su principal enemigo: precisamente, Hércules Poirot. El célebre detective es la única persona capaz de adelantarse a los planes urdidos por los cuatro villanos para apoderarse del mundo, y por ello se convierte en blanco de un sinfín de estratagemas destinadas a eliminarlo, a lo largo de una lucha a muerte salpicada de episodios tan sorprendentes como apasionantes.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9786070789625",
+      "pageAmount": 256,
+      "language": "Español",
+      "genre": [
+        "suspenso"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 56,
+      "title": "Pasajero Para Frankfurt",
+      "authorId": 22,
+      "authorName": "Agatha Christie",
+      "img": "./assets/img/book-cover/pasajero-para-frankfurt.webp",
+      "price": 3.900,
+      "sinopsis": "Sir Stanford Nye; un diplomático peculiar; vuela con destino a Londres cuando; por causas climáticas; el avión es forzado a aterrizar en Frankfurt. Ahí; una misteriosa chica que dice estar en peligro de muerte; le pide prestada su capa y su pasaporte. Tiempo después; el documento llega por correo a Londres y le hace pensar que el capítulo ha sido cerrado; pero está muy equivocado.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9789878435183",
+      "pageAmount": 232,
+      "language": "Español",
+      "genre": [
+        "suspenso"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 57,
+      "title": "El Espejo Roto",
+      "authorId": 22,
+      "authorName": "Agatha Christie",
+      "img": "./assets/img/book-cover/el-espejo-roto.webp",
+      "price": 3.440,
+      "sinopsis": "Miss Marple ya está viejita, Saint Mary Mead continúa creciendo y mucha gente nueva llega para radicarse en la pequeña ciudad. Una de las nuevas moradoras de la ciudad es la famosa actriz de cine Marina Gregg, que recientemente había comprado y reformado Gossington Hall, la mansión donde se produjeran los acontecimientos de Un cadáver en la biblioteca.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9789504916185",
+      "pageAmount": 215,
+      "language": "Español",
+      "genre": [
+        "suspenso"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 58,
+      "title": "Se Anuncia un Asesinato",
+      "authorId": 22,
+      "authorName": "Agatha Christie",
+      "img": "./assets/img/book-cover/se-anuncia-un-asesinato.webp",
+      "price": 3.483,
+      "sinopsis": "Los habitantes del pequeño y apacible pueblo de Chipping Cleghorn ven alterada su vida cotidiana ante un anuncio en el periódico local que reza: «Se anuncia un asesinato que tendrá lugar el viernes; 29 de octubre; en Little Paddocks; a las seis y media de la tarde». Incapaz de resistir la curiosidad; una multitud acude al domicilio de la víctima de esa muerte anunciada en el día y la hora señalados. Cuando el reloj marca las seis y media; las luces se apagan y se oye un disparo¿ Los allí congregados comprobarán que lo que en apariencia no era más que una extravagancia se convierte en un asesinato que sólo Miss Marple podrá desentrañar.",
+      "publisherId": 18,
+      "publisherName": "Alma",
+      "isbn": "9789878317717",
+      "pageAmount": 264,
+      "language": "Español",
+      "genre": [
+        "suspenso"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 59,
+      "title": "Nuestra Parte de Noche",
+      "authorId": 23,
+      "authorName": "Mariana Enriquez",
+      "img": "./assets/img/book-cover/nuestra-parte-de-noche.webp",
+      "price": 19.469,
+      "sinopsis": "El legado, el deseo de vivir, la paternidad, el horror, lo íntimo y lo político. El terror sobrenatural se entrelaza con terrores muy reales en esta osada y perturbadora novela. Un padre y su hijo atraviesan Argentina por carretera, desde Buenos Aires hacia las cataratas de Iguazú, en la frontera norte con Brasil. Son los años de la junta militar, hay controles de soldados armados y tensión en el ambiente. El padre de Gaspar trata de protegerlo del destino que le ha sido asignado después de que su madre muriese en circunstancias poco claras; en un accidente que acaso no lo fue. Como su padre, Gaspar está llamado a ser un médium en una sociedad secreta, la Orden, que contacta con la Oscuridad en busca de la vida eterna mediante atroces rituales. Para ellos es vital disponer de un médium, pero el destino de estos seres dotados de poderes especiales es cruel, y el desgaste físico y mental es rápido e implacable. Los orígenes de la Orden, regida por la poderosa familia de la madre de Gaspar, se remontan a siglos atrás, cuando el conocimiento de la Oscuridad llegó desde el corazón de África a Inglaterra y desde allí se extendió hasta Argentina. El lector emprenderá un viaje entre la represión de la dictadura militar argentina y el Londres psicodélico de los años sesenta, donde la madre de Gaspar conoció a un joven cantante de aire andrógino llamado David; descubrirá casas cuyo interior muta, pasadizos que esconden monstruos inimaginables, rituales con fieros sacrificios humanos, enigmáticas liturgias sexuales y la carga de una herencia atroz.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9780593312452",
+      "pageAmount": 667,
+      "language": "Español",
+      "genre": [
+        "suspenso",
+        "terror"
+      ],
+      "releaseDate": "2014",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 60,
+      "title": "Los peligros de fumar en la cama",
+      "authorId": 23,
+      "authorName": "Mariana Enriquez",
+      "img": "./assets/img/book-cover/los-peligros-de-fumar-en-la-cama.webp",
+      "price": 5.286,
+      "sinopsis": "Una niña desentierra en el jardín unos huesos que resultan no ser de un animal; la bucólica escena veraniega de unas chicas que se bañan en un paraje natural acaba convertida en un infierno de celos de inquietantes consecuencias; un mendigo despreciado siembra la desgracia en un barrio pudiente; Barcelona se transforma en un escenario perturbador, marcado por la culpa y del que es imposible escapar; una presencia fantasmal busca un sacrificio en un balneario; una chica siente una atracción fetichista por los corazones enfermos; un rockero fallecido de un modo atroz recibe un homenaje de sus fans que va más allá de lo imaginable; un chico que filma clandestinamente a parejas haciendo el amor y a mujeres con tacones altos caminando por las calles recibe una propuesta que le cambiará la vida... En los doce soberbios cuentos que componen este volumen Mariana Enriquez despliega todo un repertorio de recursos del relato clásico de terror: apariciones espectrales, brujas, sesiones de espiritismo, grutas, visiones, muertos que vuelven a la vida... Pero, lejos de proponer una mera revisitación arqueológica del género, reelabora ese material con una voz propia y radicalmente moderna. Tirando del hilo de la mejor tradición, la lleva un paso más allá, con historias que indagan en lo siniestro que se agazapa en lo cotidiano, despliegan un turbio erotismo y crean imágenes poderosísimas que dejan una huella indeleble.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9788433998248",
+      "pageAmount": 208,
+      "language": "Español",
+      "genre": [
+        "suspenso",
+        "terror"
+      ],
+      "releaseDate": "2018",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 61,
+      "title": "Las cosas que perdimos en el fuego",
+      "authorId": 23,
+      "authorName": "Mariana Enriquez",
+      "img": "./assets/img/book-cover/las-cosas-que-perdimos-en-el-fuego.webp",
+      "price": 5.950,
+      "sinopsis": "El mundo de Mariana Enriquez no tiene por qué ser el nuestro, y, sin embargo, lo termina siendo. Bastan pocas frases para pisarlo, respirarlo y no olvidarlo gracias a una viveza emocional insólita. Con la cotidianidad hecha pesadilla, el lector se despierta abatido, perturbado por historias e imágenes que jamás conseguirá sacarse de la cabeza. Las autodenominadas «mujeres ardientes», que protestan contra una forma extrema de violencia doméstica que se ha vuelto viral; una estudiante que se arranca las uñas y las pestañas, y otra que intenta ayudarla; los años de apagones dictados por el gobierno durante los cuales se intoxican tres amigas que lo serán hasta que la muerte las separe; el famoso asesino en serie llamado Petiso Orejudo, que sólo tenía nueve años; hikikomori, magia negra, los celos, el desamor, supersticiones rurales, edificios abandonados o encantados... En estos once cuentos el lector se ve obligado a olvidarse de sí mismo para seguir las peripecias e investigaciones de cuerpos que desaparecen o bien reaparecen en el momento menos esperado. Ya sea una trabajadora social, una policía o un guía turístico, los protagonistas luchan por apadrinar a seres socialmente invisibles, indagando así en el peso de la culpa, la compasión, la crueldad, las dificultades de la convivencia, y en un terror tan hondo como verosímil.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9788433998064",
+      "pageAmount": 208,
+      "language": "Español",
+      "genre": [
+        "suspenso",
+        "terror"
+      ],
+      "releaseDate": "2018",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 62,
+      "title": "La Hermana Menor",
+      "authorId": 23,
+      "authorName": "Mariana Enriquez",
+      "img": "./assets/img/book-cover/la-hermana-menor.webp",
+      "price": 15.316,
+      "sinopsis": "La escritora argentina Silvina Ocampo es una de las figuras mas exquisitas; talentosas y extranas de la literatura en espanol. Hija de una familia aristocratica; autora de libros que; al decir de Roberto Bolano; parecen provenir de ´una limpia cocina literaria´; en torno a ella se han urdido mitos que envuelven no solo su obra; revalorizada con entusiasmo en los ultimos anos; sino tambien su vida privada: la particular relacion que tenia con su marido; Adolfo Bioy Casares; su cambiante y chismosa amistad con Jorge Luis Borges; que cenaba cada noche en su casa; sus presuntos romances con mujeres; como la poeta Alejandra Pizarnik o la madre del propio Bioy; sus perturbadoras premoniciones; sus ambiguos conflictos con la olimpica Victoria Ocampo; su hermana mayor. En este libro; Mariana Enriquez; a traves de una enorme cantidad de fuentes bibliograficas y testimonios de amigos; criticos; parientes y albaceas de Silvina Ocampo; cuestiona los mitos; descorre el velo sobre los secretos y mira con una intensidad unica la vida de quien vivio con el afan de permanecer oculta.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9788433908063",
+      "pageAmount": 192,
+      "language": "Español",
+      "genre": [
+        "suspenso",
+        "terror"
+      ],
+      "releaseDate": "2018",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
+    },
+    {
+      "id": 63,
+      "title": "La Hermana Menor",
+      "authorId": 23,
+      "authorName": "Mariana Enriquez",
+      "img": "./assets/img/book-cover/alguien-camina-sobre-tu-tumba.webp",
+      "price": 13.052,
+      "sinopsis": "Ampliamente reconocida por sus relatos de terror, Mariana Enriquez (Buenos Aires, 1973) ha tenido una larga y apasionada relación con los cementerios. En Alguien camina sobre tu tumba relata, al modo de crónicas de viaje, su paso por más de una decena de ellos alrededor del mundo: Frankfurt, Nueva Orleans, Genova, la Patagonia argentina, entre otros lugares. Porque los cementerios ocultan misterios, teorías conspirativas, especulaciones morbosas sobre la vida y la muerte. Y si bien un aire gótico atraviesa todos los textos, de pronto estos toman rumbos inesperados, como esa fiesta en La Habana en que la autora termina declarándole su amor al guitarrista de Manic Street Preachers. “Como todo cementerio abandonado, es tristemente hermoso”, nos dice sobre uno israelita en Entre Ríos, Argentina. Y esa belleza es la que recorre las páginas de este libro, con el aliento de una prosa limpia y fresca como la brisa que baja por una colina llena de cruces de madera.",
+      "publisherId": 16,
+      "publisherName": "Minotauro",
+      "isbn": "9789569398223",
+      "pageAmount": 280,
+      "language": "Español",
+      "genre": [
+        "suspenso",
+        "terror"
+      ],
+      "releaseDate": "2018",
+      "stock": 57,
+      "totalSold": 86,
+      "tags": [
+        "recomendados"
+      ]
     }
   ],
   "authors": [
@@ -1091,6 +1556,22 @@
     {
       "id": 19,
       "name": "HP Lovecraft"
+    },
+    {
+      "id": 20,
+      "name": "Stephen King"
+    },
+    {
+      "id": 21,
+      "name": "Gabriel Garcia Marquez"
+    },
+    {
+      "id": 22,
+      "name": "Agatha Christie"
+    },
+    {
+      "id": 23,
+      "name": "Mariana Enriquez"
     }
   ],
   "publishers": [
@@ -1211,15 +1692,24 @@
       "password": "12345"
     }
   ],
-
   "purchases": [
     {
       "id": 1,
       "orderNumber": 12345,
       "date": "12/02/2020",
       "products": [
-        { "name": "Cosmos", "price": 1500, "quantity": 3, "totalAmount": 4500 },
-        { "name": "Fahrenheit 451", "price": 2500, "quantity":5, "totalAmount": 12500 }
+        {
+          "name": "Cosmos",
+          "price": 1500,
+          "quantity": 3,
+          "totalAmount": 4500
+        },
+        {
+          "name": "Fahrenheit 451",
+          "price": 2500,
+          "quantity": 5,
+          "totalAmount": 12500
+        }
       ]
     },
     {
@@ -1233,7 +1723,8 @@
           "quantity": 2,
           "totalAmount": 5000
         },
-        { "name": "Cosmos",
+        {
+          "name": "Cosmos",
           "price": 1500,
           "quantity": 3,
           "totalAmount": 4500
@@ -1245,8 +1736,18 @@
       "orderNumber": 45678,
       "date": "03/07/2022",
       "products": [
-        { "name": "Cosmos", "price": 1500, "quantity": 3, "totalAmount": 4500 },
-        { "name": "Fahrenheit 451", "price": 2500, "quantity":5, "totalAmount": 12500 }
+        {
+          "name": "Cosmos",
+          "price": 1500,
+          "quantity": 3,
+          "totalAmount": 4500
+        },
+        {
+          "name": "Fahrenheit 451",
+          "price": 2500,
+          "quantity": 5,
+          "totalAmount": 12500
+        }
       ]
     }
   ]

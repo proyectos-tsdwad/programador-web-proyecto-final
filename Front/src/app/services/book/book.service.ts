@@ -17,7 +17,7 @@ export class BookService {
   private booksFoundUpdated = new BehaviorSubject<Book[]>([]);
   searchTitle = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getBookSearchListener() {
     return this.booksFoundUpdated.asObservable();
@@ -45,13 +45,13 @@ export class BookService {
 
   getAllBooks() {
     return this.http.get<Book[]>(
-      `${this.apiUrl}/books?_expand=author&_expand=publisher`
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc`
     );
   }
 
   getBooksByGenre(genre: string): Observable<Book[]> {
     return this.http.get<Book[]>(
-      `${this.apiUrl}/books?_expand=author&_expand=publisher&genre_like=${genre}`
+      `${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&genre_like=${genre}`
     );
   }
 
