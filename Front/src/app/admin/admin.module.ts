@@ -8,6 +8,7 @@ import { AuthorDashboardPageComponent } from './pages/author-dashboard-page/auth
 
 import { AuthorDashboardService } from './services/author/author-dashboard.service';
 import { ClientService } from './services/client/client.service';
+import { PublisherDashboardPageComponent } from './pages/publisher-dashboard-page/publisher-dashboard-page.component';
 
 
 
@@ -15,7 +16,8 @@ import { ClientService } from './services/client/client.service';
   declarations: [
     BookDashboardPageComponent,
     ClientDashboardPageComponent,
-    AuthorDashboardPageComponent
+    AuthorDashboardPageComponent,
+    PublisherDashboardPageComponent
   ],
   imports: [
     CommonModule,
