@@ -25,13 +25,11 @@ export class UserService {
 
   getPersonalData(id: number): Observable<User> {
     const url = `${this.apiURL}/users/${id}`;
-    console.log('URL:', url);
     return this.http.get<User>(url);
   }
 
   getPurchaseHistory(): Observable<Purchase[]> {
-    const url = `${this.apiURL}/purchases/`;
-    console.log('URL:', url);
+    const url = `${this.apiURL}/sales/`;
     return this.http.get<Purchase[]>(url);
   }
 }
