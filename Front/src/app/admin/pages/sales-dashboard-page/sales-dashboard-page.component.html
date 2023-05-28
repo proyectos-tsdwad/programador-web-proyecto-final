@@ -17,9 +17,9 @@
     </div>
   </section>
 
-  <div class="row item-list bg-light" *ngFor="let sale of sales">
+  <div class="row item-list bg-color py-4" *ngFor="let sale of sales">
     <div class="col item-content">
-      <div class="row d-flex align-items-end">
+      <div class="row d-flex align-items-end pb-2 fs-sm-1 fc-secondary font-bold">
         <div class="col">Orden</div>
         <div class="col">Fecha</div>
         <div class="col">Cliente</div>
@@ -28,16 +28,16 @@
         <div class="col">Total</div>
         <div class="col">Estado</div>
       </div>
-      <div class="row d-flex align-items-center">
+      <div class="row d-flex align-items-center fs-sm-1 font-semi-bold fc-primary">
         <div class="col">{{sale.orderNumber}}</div>
-        <div class="col">10/020/2020</div>
-        <div class="col">Maria Perez</div>
-        <div class="col-2">Correo argentino</div>
-        <div class="col">5</div>
-        <div class="col">$820,00</div>
+        <div class="col">{{sale.date}}</div>
+        <div class="col">{{sale.user.name}}</div>
+        <div class="col-2">{{sale.deliveryType}}</div>
+        <div class="col">{{sale.totalItems}}</div>
+        <div class="col">${{sale.totalCost}}</div>
         <div class="col">
           <ul class="status-list align-left">
-            <li class="status-text bullet-inprocess">En proceso</li>
+            <li class="status-text bullet-{{sale.shipment.status}}">{{sale.shipment.status}}</li>
           </ul>
         </div>
       </div>
