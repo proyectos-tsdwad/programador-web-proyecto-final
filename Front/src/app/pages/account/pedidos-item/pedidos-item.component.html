@@ -1,26 +1,15 @@
-<div class="accordion p-2" id="accordionPedidos" *ngFor="let item of purchases">
+<!-- <div class="accordion p-2" [id]="item.orderNumber" *ngFor="let item of purchases">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
-      <button
-        class="accordion-button"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        Order#{{item.orderNumber }}
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+        aria-expanded="true" aria-controls="collapseOne">
+        Order#{{item.orderNumber}}
         <span class="fechas">{{item.date}}</span>
       </button>
     </h2>
-    <div
-      id="collapseOne"
-      class="accordion-collapse collapse"
-      aria-labelledby="headingOne"
-      data-bs-parent="#accordionPedidos"
-    >
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="{{}}">
       <div class="accordion-body">
-        <table class="table" >
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">Producto</th>
@@ -43,4 +32,47 @@
     </div>
   </div>
 
+</div> -->
+
+<div ngbAccordion>
+  <div ngbAccordionItem *ngFor="let purchase of purchases">
+    <h2 ngbAccordionHeader>
+      <button ngbAccordionButton class="accordion-button">
+        <div class="col">
+          <span class="fc-secondary font-bold fs-sm-2">
+            Orden: #{{purchase.orderNumber}}
+          </span>
+        </div>
+        <div class="text-end col">
+          <span class="font-semi-bold fc-primary fs-sm-2 pe-4">
+            {{purchase.date}}
+          </span>
+        </div>
+      </button>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        <ng-template>
+          <table class="table">
+            <thead>
+              <tr class="fc-primary font-bold fs-sm-1">
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let product of purchase.products">
+              <tr class="fc-primary font-medium fs-sm-1">
+                <th class="fc-primary font-medium fs-sm-1">{{product.name}}</th>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.totalAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </div>
+    </div>
+  </div>
 </div>

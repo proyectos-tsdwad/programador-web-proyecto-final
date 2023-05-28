@@ -1766,9 +1766,9 @@
       "areaCode": "11",
       "telephone": "234567544",
       "document": "234567543",
-      "location": "Cordoba",
+      "location": "Cordoba Capital",
       "province": "Cordoba",
-      "address": "",
+      "address": "Colon 445",
       "roleId": 1,
       "id": 2
     },
