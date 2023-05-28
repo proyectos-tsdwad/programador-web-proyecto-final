@@ -10,6 +10,8 @@ import { PublisherDashboardPageComponent } from './pages/publisher-dashboard-pag
 import { UserDashboardService } from './services/user/user-dashboard.service';
 import { AuthorDashboardService } from './services/author/author-dashboard.service';
 import { PublisherDashboardService } from './services/publisher/publisher-dashboard.service';
+import { SaleDashboardService } from './services/sale/sale-dashboard.service';
+import { SalesDashboardPageComponent } from './pages/sales-dashboard-page/sales-dashboard-page.component';
 
 
 
@@ -18,21 +20,18 @@ import { PublisherDashboardService } from './services/publisher/publisher-dashbo
     BookDashboardPageComponent,
     ClientDashboardPageComponent,
     AuthorDashboardPageComponent,
-    PublisherDashboardPageComponent
+    PublisherDashboardPageComponent,
+    SalesDashboardPageComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule
   ],
-  exports: [
-    BookDashboardPageComponent,
-    ClientDashboardPageComponent,
-    AuthorDashboardPageComponent
-  ],
   providers: [
     UserDashboardService,
     AuthorDashboardService,
-    PublisherDashboardService
+    PublisherDashboardService,
+    SaleDashboardService
   ]
 })
 export class AdminModule { }

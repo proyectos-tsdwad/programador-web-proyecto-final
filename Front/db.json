@@ -1648,11 +1648,17 @@
       "name": "Alma"
     }
   ],
-  "purchases": [
+  "sales": [
     {
       "id": 1,
       "orderNumber": 12345,
       "date": "12/02/2020",
+      "userId": 1,
+      "shipmentId": 1,
+      "totalCost": 26.000,
+      "totalItems": 8,
+      "paymentType": "efectivo",
+      "deliveryType": "sucursal",
       "products": [
         {
           "name": "Cosmos",
@@ -1672,6 +1678,12 @@
       "id": 2,
       "orderNumber": 12344,
       "date": "12/02/2022",
+      "userId": 2,
+      "shipmentId": 2,
+      "totalCost": 5000,
+      "totalItems": 8,
+      "paymentType": "efectivo",
+      "deliveryType": "Correo Argentino",
       "products": [
         {
           "name": "Rayuela",
@@ -1691,6 +1703,12 @@
       "id": 3,
       "orderNumber": 45678,
       "date": "03/07/2022",
+      "userId": 3,
+      "shipmentId": 3,
+      "totalCost": 17000,
+      "totalItems": 8,
+      "paymentType": "efectivo",
+      "deliveryType": "Correo Argentino",
       "products": [
         {
           "name": "Cosmos",
@@ -1705,6 +1723,26 @@
           "totalAmount": 12500
         }
       ]
+    }
+  ],
+  "shipments": [
+    {
+      "id": 1,
+      "address": "Colon 1234",
+      "postalCode": 4322,
+      "status": "entregado"
+    },
+    {
+      "id": 2,
+      "address": "Chacabuco 1234",
+      "postalCode": 6332,
+      "status": "enviado"
+    },
+    {
+      "id": 3,
+      "address": "Independencia 1234",
+      "postalCode": 7324,
+      "status": "preparando"
     }
   ],
   "users": [
