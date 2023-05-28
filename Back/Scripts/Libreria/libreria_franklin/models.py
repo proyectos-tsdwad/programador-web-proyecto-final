@@ -45,9 +45,9 @@ class Book(models.Model):
     release_year = models.PositiveSmallIntegerField(blank=False)
     synopsis = models.TextField(max_length=1000, blank=False)
     price = models.DecimalField(max_length=100, decimal_places=2, max_digits=50,blank=False)
-    author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
-    publisher = models.ForeignKey(Publisher, to_field='id_publisher',related_name="publisher", on_delete=models.CASCADE)
-    genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
+    id_author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
+    id_publisher = models.ForeignKey(Publisher, to_field='id_publisher',related_name="publisher", on_delete=models.CASCADE)
+    id_genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
     class Meta:
         db_table = 'Book'
         verbose_name = 'Book'
@@ -108,7 +108,7 @@ class Delivery(models.Model):
     id_delivery = models.AutoField(primary_key=True)
     postal_code = models.PositiveIntegerField()
     address = models.CharField(max_length=50, blank=False)
-    state = models.CharField()
+    state = models.CharField(max_length=50)
     class Meta:
         db_table = 'Delivery'
         verbose_name = 'Product sale delivery'
@@ -120,18 +120,18 @@ class Delivery(models.Model):
 
       
 class Sell (models.Model):
-  id_sell = models.CharField(primary_key=True)
+  id_sell = models.CharField(primary_key=True, max_length=50)
   orderNumber = models.IntegerField(blank=False) 
   saleDate = models.DateField(blank=False)
   products = models.CharField(max_length=100, blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)
-  totalQuantity = models.DecimalField(decimal_places=2, blank=False)
-  totalCost = models.DecimalField(decimal_places=2, blank=False)
+  totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+  totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
   profile = models.ForeignKey(Profile, to_field= "id_profile", related_name="profile",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
   payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
-  book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
+  book= models.ForeignKey(Book, to_field="isbn", related_name="book", on_delete=models.CASCADE)
   class Meta:
         db_table = 'Sell'
         verbose_name = 'Sell'
