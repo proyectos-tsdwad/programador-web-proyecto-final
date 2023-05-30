@@ -137,6 +137,6 @@ class Sell (models.Model):
         verbose_name = 'Sell'
         verbose_name_plural = 'Sells'
   def __unicode__(self):
-        return self.isbn
+        return self.id_sell
   def __str__(self):
-        return self.isbn
+        return self.id_sell
