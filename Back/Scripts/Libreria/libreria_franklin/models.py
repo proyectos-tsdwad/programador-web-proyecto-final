@@ -126,8 +126,10 @@ class Sell (models.Model):
   products = models.CharField(max_length=100, blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)
-  totalQuantity = models.DecimalField(decimal_places=2, blank=False,max_digits=50)
-  totalCost = models.DecimalField(decimal_places=2, blank=False,max_digits=50)
+
+  totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+  totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+
   profile = models.ForeignKey(Profile, to_field= "id_profile", related_name="profile",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
   payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
