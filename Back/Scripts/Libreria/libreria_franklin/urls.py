@@ -7,5 +7,6 @@ router.register('api/books', BookViewSet, 'books')
 router.register('api/authors', AuthorViewSet, 'authors')
 router.register('api/publishers', PublisherViewSet, 'publishers')
 router.register('api/genres', GenreViewSet, 'genres')
+router.register('api/sells', SellViewSet, 'Sells')
 
 urlpatterns = router.urls
