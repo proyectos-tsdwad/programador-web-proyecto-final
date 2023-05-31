@@ -142,3 +142,15 @@ class Sell (models.Model):
         return self.id_sell
   def __str__(self):
         return self.id_sell
+      
+class Store():
+  street_number = models.CharField(max_length = 50)
+  province = models.CharField(max_length = 30)
+  locality = models.CharField(max_length = 30)
+  telephone = models.CharField(max_length=20)
+  class Meta:
+      db_table = 'Store'
+      verbose_name = 'Store'
+      verbose_name_plural = 'Stores'
+  def __str__(self):
+    return f"{self.street_number}, {self.locality}"
