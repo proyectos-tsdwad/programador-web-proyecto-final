@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Book, Author, Publisher, Genre
+from .models import Book, Author, Publisher, Genre, Sell
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,4 +25,10 @@ class BookSerializer(serializers.ModelSerializer):
     genre = GenreSerializer()
     class Meta:
         model = Book
+        fields = '__all__'
+
+class SellSerializer(serializers.ModelSerializer):
+    book = BookSerializer()
+    class Meta:
+        model = Sell
         fields = '__all__'
