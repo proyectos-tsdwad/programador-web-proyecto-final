@@ -1,3 +1,4 @@
+from ast import Store
 from django.contrib import admin
 from .models import Author
 from .models import Publisher
@@ -8,6 +9,7 @@ from .models import Profile
 from .models import Rol
 from .models import Delivery
 from .models import Sell
+from .models import Store
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('id_author', 'name')
@@ -27,6 +29,8 @@ class RolAdmin(admin.ModelAdmin):
     list_display = ('id_rol', 'name')  
 class SellAdmin(admin.ModelAdmin):
     list_display = ('id_sell', 'orderNumber', 'saleDate', 'products', 'deliveryType', 'paymentType', 'totalQuantity', 'totalCost', 'profile', 'delivery', 'payment', 'book')    
+class StoreAdmin(admin.ModelAdmin):
+  list_display = ('id_store','street_number','province','locality','telephone')
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Publisher, PublisherAdmin)
@@ -37,3 +41,4 @@ admin.site.register(Payment, PaymentAdmin)
 admin.site.register(Delivery, DeliveryAdmin)
 admin.site.register(Rol, RolAdmin)
 admin.site.register(Sell, SellAdmin)
+admin.site.register(Store,StoreAdmin)

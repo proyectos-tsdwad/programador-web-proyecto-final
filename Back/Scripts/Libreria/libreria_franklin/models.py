@@ -143,7 +143,8 @@ class Sell (models.Model):
   def __str__(self):
         return self.id_sell
       
-class Store():
+class Store(models.Model):
+  id_store = models.AutoField(primary_key=True)
   street_number = models.CharField(max_length = 50)
   province = models.CharField(max_length = 30)
   locality = models.CharField(max_length = 30)
