@@ -37,7 +37,7 @@ class Genre(models.Model):
         return self.name
 
 class Book(models.Model):
-    isbn = models.CharField(primary_key=True, max_length=13)
+    isbn = models.CharField(primary_key=True, max_length=13, blank=False)
     title = models.CharField(max_length=50, blank=False)
     pages = models.PositiveIntegerField(blank=False)
     book_cover = models.CharField(max_length=100)
