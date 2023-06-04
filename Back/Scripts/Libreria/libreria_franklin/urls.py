@@ -4,13 +4,13 @@ from .api import BookViewSet, AuthorViewSet, PublisherViewSet, GenreViewSet,Sell
 
 router = routers.DefaultRouter()
 
-router.register('api/books', BookViewSet, 'books')
-router.register('api/authors', AuthorViewSet, 'authors')
-router.register('api/publishers', PublisherViewSet, 'publishers')
-router.register('api/genres', GenreViewSet, 'genres')
-router.register('api/deliverys', DeliveryViewSet, 'deliverys')
-router.register('api/sells', SellViewSet, 'Sells')
-router.register("api/store",StoreViewSet,"stores")
-router.register("api/payments",PaymentViewSet,"payments")
+router.register('api/v1/books', BookViewSet, 'books')
+router.register('api/v1/authors', AuthorViewSet, 'authors')
+router.register('api/v1/publishers', PublisherViewSet, 'publishers')
+router.register('api/v1/genres', GenreViewSet, 'genres')
+router.register('api/v1/deliverys', DeliveryViewSet, 'deliverys')
+router.register('api/v1/sells', SellViewSet, 'Sells')
+router.register("api/v1/store",StoreViewSet,"stores")
+router.register("api/v1/payments",PaymentViewSet,"payments")
 
 urlpatterns = router.urls

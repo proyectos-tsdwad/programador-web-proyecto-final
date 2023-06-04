@@ -14,8 +14,8 @@ import { TAG } from 'src/app/utils/enums/book.enum';
 export class HomePageComponent implements OnInit {
 
   bookService: BookService;
-  recomendedBooks: Book[] = [];
   newAtBooks: Book[] = [];
+  recomendedBooks: Book[] = [];
   topSellingBooks: Book[] = [];
 
   constructor(

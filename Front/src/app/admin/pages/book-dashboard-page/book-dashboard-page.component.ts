@@ -23,7 +23,7 @@ export class BookDashboardPageComponent implements OnInit {
   getBooks() {
     this.bookService.getAllBooks()
       .subscribe((result: Book[]) => {
-        this.books = result;
+        this.books = this.bookService.oderBooksByAuthorNameAsc(result);
       });
   }
 }

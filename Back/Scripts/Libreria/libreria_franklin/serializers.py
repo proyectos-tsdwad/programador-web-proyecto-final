@@ -16,6 +16,12 @@ class PublisherSerializer(serializers.ModelSerializer):
         read_only_fields = ('id_publisher', )
 
 class GenreSerializer(serializers.ModelSerializer):
+    books = serializers.SerializerMethodField()
+
+    def get_books(self, genre):
+        books = genre.book_set.all()
+        serializer = BookSerializer(books, many=True)
+        return serializer.data
     class Meta:
         model = Genre
         fields = '__all__'
@@ -24,7 +30,7 @@ class GenreSerializer(serializers.ModelSerializer):
 class BookSerializer(serializers.ModelSerializer):
     author = AuthorSerializer(read_only=True)
     publisher = PublisherSerializer(read_only=True)
-    genres = GenreSerializer(read_only=True, many=True)
+    # genres = GenreSerializer(read_only=True, many=True)
 
     author_id = serializers.PrimaryKeyRelatedField(
         queryset=Author.objects.all(),
@@ -64,6 +70,18 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = '__all__' 
 
+class GenreSerializer(serializers.ModelSerializer):
+    books = serializers.SerializerMethodField()
+
+    def get_books(self, obj):
+        books = Book.objects.filter(genres=obj)
+        serializer = BookSerializer(books, many=True)
+        return serializer.data
+    class Meta:
+        model = Genre
+        fields = '__all__'
+        read_only_fields = ('id_genre', )  
+        
 class DeliverySerializer(serializers.ModelSerializer):
     class Meta:
         model = Delivery

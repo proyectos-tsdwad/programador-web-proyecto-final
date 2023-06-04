@@ -1,25 +1,23 @@
 import { Author } from '../author/author-model';
+import { Genre } from '../genre/genre-model';
 import { Publisher } from '../publisher/publisher-model';
 
 export interface Book {
-  id: number;
-  title: string;
-  author: Author;
-  img: string;
-  price: number;
-  sinopsis: string;
-  publisher: Publisher;
   isbn: string;
-  pageAmount: number;
-  language: string;
-  genre: string[];
-  releaseDate: string;
+  author: Author;
+  publisher: Publisher;
+  genres: number[];
+  title: string;
+  page_amount: number;
+  book_cover: string;
   stock: number;
-  totalSold: number;
-  tags: string[];
+  release_year: number;
+  synopsis: string;
+  price: string;
+  tags: string;
 }
 
 export interface SelectedBookDto
-  extends Pick<Book, 'id' | 'title' | 'author' | 'img' | 'price' | 'isbn'> {
+  extends Pick<Book, 'isbn' | 'title' | 'author' | 'book_cover' | 'price'> {
   selectedAmount: number;
 }
