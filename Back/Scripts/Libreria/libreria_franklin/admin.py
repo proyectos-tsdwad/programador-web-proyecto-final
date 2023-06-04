@@ -10,6 +10,8 @@ from .models import Rol
 from .models import Delivery
 from .models import Sell
 from .models import Store
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('id_author', 'name')
@@ -31,6 +33,10 @@ class SellAdmin(admin.ModelAdmin):
     list_display = ('id_sell', 'orderNumber', 'saleDate', 'products', 'deliveryType', 'paymentType', 'totalQuantity', 'totalCost', 'profile', 'delivery', 'payment', 'book')    
 class StoreAdmin(admin.ModelAdmin):
   list_display = ('id_store','street_number','province','locality','telephone')
+
+@admin.register(get_user_model())
+class CustomUserAdmin(UserAdmin):
+    pass
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Publisher, PublisherAdmin)
