@@ -9,6 +9,7 @@ export interface User {
     location: string,
     province: string,
     address: string,
+    postalCode: number,
     roleId: number
 }
 
