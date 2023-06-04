@@ -38,8 +38,6 @@ export class HomePageComponent implements OnInit {
   getRecomendedBooks() {
     this.bookService.getBooksByTag(TAG.RECOMENDADOS)
       .subscribe((result: Book[]) => {
-        console.log('resultado rec', result);
-
         this.recomendedBooks = this.sortAndLimit(result);
       })
   }
@@ -54,8 +52,6 @@ export class HomePageComponent implements OnInit {
   getTopSellerBooks() {
     this.bookService.getBooksByTag(TAG.TOP_VENDIDOS)
       .subscribe((result: Book[]) => {
-        console.log('resultado mas vendido', result);
-
         this.topSellingBooks = this.sortAndLimit(result);
       })
   }

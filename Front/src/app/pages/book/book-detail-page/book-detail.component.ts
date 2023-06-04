@@ -38,7 +38,6 @@ export class BookDetailComponent implements OnInit {
     this.bookService.getBookByIsbn(this.isbn)
       .subscribe((result: Book) => {
         this.book = result;
-        console.log('book', this.book);
 
         if (this.book) {
           this.bookFound = true;
@@ -49,9 +48,8 @@ export class BookDetailComponent implements OnInit {
   }
 
   getRecomendations() {
-    this.bookService.getBooksByGenre(this.book.genres[0].id_genre)
+    this.bookService.getBooksByGenre(this.book.genres[0])
       .subscribe((result: Book[]) => {
-        console.log('resultado', result);
 
         result = result.sort(() => Math.random() - 0.5).slice(0, 5);
         this.recomendedBooks = result;

@@ -6,7 +6,7 @@ export interface Book {
   isbn: string;
   author: Author;
   publisher: Publisher;
-  genres: Genre[];
+  genres: number[];
   title: string;
   page_amount: number;
   book_cover: string;

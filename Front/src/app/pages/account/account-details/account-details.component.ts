@@ -31,7 +31,6 @@ export class AccountDetailsComponent implements OnInit {
   getUserData(id: number) {
     this.userService.getPersonalData(id).subscribe(data => {
       this.personalData = data;
-      console.log(this.personalData);
     });
 
   }
