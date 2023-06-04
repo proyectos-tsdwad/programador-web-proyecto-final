@@ -1,7 +1,8 @@
 from rest_framework import viewsets, permissions
 from rest_framework.generics import RetrieveUpdateAPIView
-from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, SellSerializer, StoreSerializer, PaymentSerializer
-from .models import Book, Author, Publisher, Genre, Sell, Store, Payment
+from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, SellSerializer, StoreSerializer, PaymentSerializer, DeliverySerializer
+from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery
+
 
 
 class BookViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
@@ -27,7 +28,13 @@ class GenreViewSet(viewsets.ModelViewSet):
 class SellViewSet(viewsets.ModelViewSet):
    queryset = Sell.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = SellSerializer      
+   serializer_class = GenreSerializer         
+
+class DeliveryViewSet(viewsets.ModelViewSet):
+   queryset = Delivery.objects.all()
+   permission_classes = [permissions.AllowAny]
+   serializer_class = DeliverySerializer
+      
    
 class StoreViewSet(viewsets.ModelViewSet):
     queryset =Store.objects.all()
