@@ -1,6 +1,6 @@
 from ast import Store
 from rest_framework import serializers
-from .models import Book, Author, Publisher, Genre, Sell, Store
+from .models import Book, Author, Publisher, Genre, Sell, Store, Payment
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -75,4 +75,7 @@ class StoreSerializer (serializers.ModelSerializer):
     fields = "__all__"
     read_only_fields = ('id_store', )
     
-
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = '__all__'

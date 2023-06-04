@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterPageComponent } from '../register-page/register-page.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services//auth/auth.service';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { tap, catchError} from 'rxjs/operators';
+import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
 
 
 
@@ -17,6 +18,18 @@ import { tap, catchError} from 'rxjs/operators';
 export class LoginPageComponent {
 
   loginForm!: FormGroup;
+
+  errorMessages = {
+    email: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
+      { type: 'pattern', message: 'Ingresa un email válido.' }
+    ],
+    password: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'pattern', message: 'Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres'}
+    ],
+  }
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -32,35 +45,55 @@ export class LoginPageComponent {
   
     createForm() {
       this.loginForm = this.formBuilder.group({
-        email: [''],
-        password: [''],
+        email: ['', [Validators.required, Validators.maxLength(80), Validators.pattern(regExEmail)]],
+        password: ['', [Validators.required, Validators.pattern(regExPassword)]],
       });
     }
   
-    loginUser(){
-      const credentials = this.getCredencials();
-      this.authService.loginAndGet(credentials)
-      .pipe(
-        tap(response => {
-          console.log('Usuario logueado', response);
-          this.authService.updateProfileListener(response);
-          this.onClickLogIn();
-        }),
-        catchError(error => {
-          console.log('Error al ingresar', error);
-          throw error;
-        })
-      )
-      .subscribe();
+  //   loginUser(){
+  //     const credentials = this.getCredencials();
+  //     this.authService.loginAndGet(credentials)
+  //     .pipe(
+  //       tap(response => {
+  //         console.log('Usuario logueado', response);
+  //         this.authService.updateProfileListener(response);
+  //         this.onClickLogIn();
+  //       }),
+  //       catchError(error => {
+  //         console.log('Error al ingresar', error);
+  //         throw error;
+  //       })
+  //     )
+  //     .subscribe();
      
+  // }
+
+  loginUser(event: Event){
+    event.preventDefault;
+  
+  if(this.loginForm.valid){
+    console.log('valido');
+    
+  } else{
+
+    this.loginForm.markAllAsTouched
+  }
   }
   
   
-    getCredencials(): Credentials  {
-      return {
-        email: this.loginForm.value.email,
-        password: this.loginForm.value.password,
-      };
+    // getCredencials(): Credentials  {
+    //   return {
+    //     email: this.loginForm.value.email,
+    //     password: this.loginForm.value.password,
+    //   };
+    // }
+
+    get email() {
+      return this.loginForm.get('email');
+    }
+    
+    get password() {
+      return this.loginForm.get('password');
     }
 
   onClickLogIn() {
