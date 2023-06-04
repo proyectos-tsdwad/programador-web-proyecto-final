@@ -37,17 +37,19 @@ class Genre(models.Model):
         return self.name
 
 class Book(models.Model):
-    isbn = models.CharField(primary_key=True, max_length=13, blank=False)
-    title = models.CharField(max_length=50, blank=False)
-    pages = models.PositiveIntegerField(blank=False)
-    book_cover = models.CharField(max_length=100)
+    isbn = models.CharField(primary_key=True, max_length=20, blank=False)
+    title = models.CharField(max_length=200, blank=False)
+    page_amount = models.PositiveIntegerField(blank=False)
+    book_cover = models.CharField(max_length=300)
     stock= models.PositiveIntegerField(blank=False, default=0)
     release_year = models.PositiveSmallIntegerField(blank=False)
-    synopsis = models.TextField(max_length=1000, blank=False)
-    price = models.DecimalField(max_length=100, decimal_places=2, max_digits=50,blank=False)
+    synopsis = models.TextField(max_length=3000, blank=False)
+    price = models.DecimalField(max_length=200, decimal_places=2, max_digits=50,blank=False)
+    tags = models.CharField(max_length=300,  blank=False)
     author = models.ForeignKey(Author, to_field='id_author',related_name="author", on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, to_field='id_publisher',related_name="publisher", on_delete=models.CASCADE)
-    genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
+    # genre = models.ForeignKey(Genre, to_field='id_genre',related_name="genre", on_delete=models.CASCADE)
+    genres = models.ManyToManyField(Genre, null=True)
     class Meta:
         db_table = 'Book'
         verbose_name = 'Book'
