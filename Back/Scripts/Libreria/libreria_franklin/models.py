@@ -67,8 +67,8 @@ class Profile(models.Model):
     telephone = models.CharField(max_length=50, blank=False)
     areaCode = models.CharField(max_length=50, blank=False)
     document = models.PositiveIntegerField(blank=False)
-    address_province = models.CharField(max_length=50, blank=False)
-    address_location = models.CharField(max_length=50, blank=False)
+    province = models.CharField(max_length=50, blank=False)
+    location = models.CharField(max_length=50, blank=False)
     password = models.CharField(max_length=50, blank=False)
     class Meta:
         db_table = 'Profile'
