@@ -99,6 +99,6 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ('email', 'username', 'password')
+        fields = '__all__'
     def validate_password(self, value):
         return make_password(value)
