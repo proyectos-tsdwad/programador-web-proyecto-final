@@ -64,6 +64,7 @@ class DeliverySerializer(serializers.ModelSerializer):
         model = Delivery
         fields = '__all__'
         read_only_fields = ('id_delivery', )   
+        
 class SellSerializer(serializers.ModelSerializer):
     book = BookSerializer()
     class Meta:

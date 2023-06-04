@@ -33,8 +33,8 @@ class SellViewSet(viewsets.ModelViewSet):
 class DeliveryViewSet(viewsets.ModelViewSet):
    queryset = Delivery.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = DeliverySerializer     
-   serializer_class = SellSerializer      
+   serializer_class = DeliverySerializer
+      
    
 class StoreViewSet(viewsets.ModelViewSet):
     queryset =Store.objects.all()
