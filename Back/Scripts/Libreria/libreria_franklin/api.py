@@ -28,7 +28,7 @@ class GenreViewSet(viewsets.ModelViewSet):
 class SellViewSet(viewsets.ModelViewSet):
    queryset = Sell.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = GenreSerializer         
+   serializer_class = SellSerializer         
 
 class DeliveryViewSet(viewsets.ModelViewSet):
    queryset = Delivery.objects.all()
