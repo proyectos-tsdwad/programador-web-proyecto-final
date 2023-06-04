@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { allBooks } from './book-simulation-data';
-import { selectedBooks } from './book-simulation-data';
+// import { allBooks } from './book-simulation-data';
+// import { selectedBooks } from './book-simulation-data';
 import { TAG } from 'src/app/utils/enums/book.enum';
 import { Book } from 'src/app/models/book/book-model';
 import { HttpClient } from '@angular/common/http';
@@ -48,7 +48,7 @@ export class BookService {
     );
   }
 
-  getBooksByGenre(genre: string): Observable<Book[]> {
+  getBooksByGenre(genre: number): Observable<Book[]> {
     return this.http.get<Book[]>(
       `${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&genre_like=${genre}`
     );

@@ -13,7 +13,7 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   bookService: BookService;
   books: Book[] = [];
   genre = GENRE;
-  selectedGenre: string = '';
+  selectedGenre: number = 0;
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
@@ -28,20 +28,20 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   }
 
   getAllBooks() {
-    this.selectedGenre = '';
+    this.selectedGenre = 0;
     this.bookService.getAllBooks().subscribe((result: Book[]) => {
       this.books = result;
     });
   }
 
-  onBookGenre(genre: string) {
+  onBookGenre(genre: GENRE) {
     this.selectedGenre = genre;
     this.bookService.getBooksByGenre(genre).subscribe((result: Book[]) => {
       this.books = result;
     });
   }
 
-  isActive(navGenre: string) {
+  isActive(navGenre: number) {
     return this.selectedGenre === navGenre;
   }
 }
