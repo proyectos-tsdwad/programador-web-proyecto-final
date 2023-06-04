@@ -24,7 +24,7 @@ export class UserService {
 
 
   getPersonalData(id: number): Observable<User> {
-    const url = `${this.apiURL}/users/${id}`;
+    const url = `${this.apiURL}/profiles/${id}`;
     return this.http.get<User>(url);
   }
 

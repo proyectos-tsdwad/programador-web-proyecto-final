@@ -62,12 +62,13 @@ class Book(models.Model):
 class Profile(models.Model):
     id_profile = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, blank=False)
+    email = models.EmailField(max_length=50, blank=False, null=True)
     last_name = models.CharField(max_length=50, blank=False)
-    telephone_number = models.CharField(max_length=50, blank=False)
-    telephone_area_code = models.CharField(max_length=50, blank=False)
+    telephone = models.CharField(max_length=50, blank=False)
+    areaCode = models.CharField(max_length=50, blank=False)
     document = models.PositiveIntegerField(blank=False)
-    address_province = models.CharField(max_length=50, blank=False)
-    address_location = models.CharField(max_length=50, blank=False)
+    province = models.CharField(max_length=50, blank=False)
+    location = models.CharField(max_length=50, blank=False)
     password = models.CharField(max_length=50, blank=False)
     class Meta:
         db_table = 'Profile'

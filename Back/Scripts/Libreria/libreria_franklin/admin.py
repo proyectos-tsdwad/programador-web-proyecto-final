@@ -22,11 +22,11 @@ class BookAdmin(admin.ModelAdmin):
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ('id_payment', 'card_association', 'number', 'cvv', 'expiration')    
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('id_profile', 'name', 'last_name', 'telephone_number', 'telephone_area_code', 'document', 'address_province', 'address_location', 'password')
+    list_display = ('id_profile', 'name', 'email', 'last_name', 'telephone', 'areaCode', 'document', 'province', 'location', 'password')
 class DeliveryAdmin(admin.ModelAdmin):
     list_display = ('id_delivery', 'address')  
 class RolAdmin(admin.ModelAdmin):
-    list_display = ('id_rol', 'name')  
+    list_display = ('id_rol', 'name')   
 class SellAdmin(admin.ModelAdmin):
     list_display = ('id_sell', 'orderNumber', 'saleDate', 'products', 'deliveryType', 'paymentType', 'totalQuantity', 'totalCost', 'profile', 'delivery', 'payment', 'book')    
 class StoreAdmin(admin.ModelAdmin):
