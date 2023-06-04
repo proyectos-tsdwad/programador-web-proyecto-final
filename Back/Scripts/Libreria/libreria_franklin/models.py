@@ -62,6 +62,7 @@ class Book(models.Model):
 class Profile(models.Model):
     id_profile = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, blank=False)
+    email = models.EmailField(max_length=50, blank=False, null=True)
     last_name = models.CharField(max_length=50, blank=False)
     telephone_number = models.CharField(max_length=50, blank=False)
     telephone_area_code = models.CharField(max_length=50, blank=False)
