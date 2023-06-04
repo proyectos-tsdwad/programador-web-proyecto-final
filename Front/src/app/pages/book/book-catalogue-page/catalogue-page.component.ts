@@ -30,7 +30,7 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   getAllBooks() {
     this.selectedGenre = 0;
     this.bookService.getAllBooks().subscribe((result: Book[]) => {
-      this.books = result;
+      this.books = this.bookService.oderBooksByAuthorNameAsc(result);
     });
   }
 
