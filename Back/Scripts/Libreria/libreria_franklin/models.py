@@ -37,7 +37,7 @@ class Genre(models.Model):
         return self.name
 
 class Book(models.Model):
-    isbn = models.CharField(primary_key=True, max_length=13)
+    isbn = models.CharField(primary_key=True, max_length=13, blank=False)
     title = models.CharField(max_length=50, blank=False)
     pages = models.PositiveIntegerField(blank=False)
     book_cover = models.CharField(max_length=100)
@@ -126,8 +126,10 @@ class Sell (models.Model):
   products = models.CharField(max_length=100, blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)
+
   totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
   totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+
   profile = models.ForeignKey(Profile, to_field= "id_profile", related_name="profile",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
   payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
@@ -137,6 +139,19 @@ class Sell (models.Model):
         verbose_name = 'Sell'
         verbose_name_plural = 'Sells'
   def __unicode__(self):
-        return self.isbn
+        return self.id_sell
   def __str__(self):
-        return self.isbn
+        return self.id_sell
+      
+class Store(models.Model):
+  id_store = models.AutoField(primary_key=True)
+  street_number = models.CharField(max_length = 50)
+  province = models.CharField(max_length = 30)
+  locality = models.CharField(max_length = 30)
+  telephone = models.CharField(max_length=20)
+  class Meta:
+      db_table = 'Store'
+      verbose_name = 'Store'
+      verbose_name_plural = 'Stores'
+  def __str__(self):
+    return f"{self.street_number}, {self.locality}"
