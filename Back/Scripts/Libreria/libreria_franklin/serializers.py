@@ -1,6 +1,7 @@
 from ast import Store
 from rest_framework import serializers
-from .models import Book, Author, Publisher, Genre, Sell, Store, Payment
+from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery
+
 
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -80,6 +81,12 @@ class GenreSerializer(serializers.ModelSerializer):
         model = Genre
         fields = '__all__'
         read_only_fields = ('id_genre', )  
+        
+class DeliverySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Delivery
+        fields = '__all__'
+        read_only_fields = ('id_delivery', )   
         
 class SellSerializer(serializers.ModelSerializer):
     book = BookSerializer()
