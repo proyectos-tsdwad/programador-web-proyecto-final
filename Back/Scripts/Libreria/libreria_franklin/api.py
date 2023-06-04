@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
-from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer
-from .models import Book, Author, Publisher, Genre
+from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, DeliverySerializer
+from .models import Book, Author, Publisher, Genre, Delivery 
 
 
 class BookViewSet(viewsets.ModelViewSet):
@@ -22,3 +22,8 @@ class GenreViewSet(viewsets.ModelViewSet):
    queryset = Genre.objects.all()
    permission_classes = [permissions.AllowAny]
    serializer_class = GenreSerializer         
+
+class DeliveryViewSet(viewsets.ModelViewSet):
+   queryset = Delivery.objects.all()
+   permission_classes = [permissions.AllowAny]
+   serializer_class = DeliverySerializer     
