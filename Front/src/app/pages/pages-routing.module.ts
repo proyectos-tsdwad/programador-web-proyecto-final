@@ -7,15 +7,18 @@ import { CheckoutPageComponent } from "./checkout/checkout-page/checkout-page.co
 import { BookCataloguePageComponent } from "./book/book-catalogue-page/catalogue-page.component";
 import { CartDetailPageComponent } from "./cart/cart-detail-page/cart-detail-page.component";
 import { AccountDetailsComponent } from "./account/account-details/account-details.component";
+import { SearchBookPageComponent } from "./book/search-book-page/search-book-page.component";
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'home', component: HomePageComponent },
   { path: 'book-detail/:isbn', component: BookDetailComponent },
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'checkout', component: CheckoutPageComponent },
   { path: 'catalogue', component: BookCataloguePageComponent },
   { path: 'cart-detail', component: CartDetailPageComponent },
-  { path: 'profile', component: AccountDetailsComponent }
+  { path: 'profile', component: AccountDetailsComponent },
+  { path: 'book-search', component: SearchBookPageComponent }
 ];
 
 @NgModule({

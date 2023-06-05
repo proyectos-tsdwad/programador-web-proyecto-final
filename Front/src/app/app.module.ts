@@ -22,7 +22,7 @@ import { AdminModule } from './admin/admin.module';
     PagesModule,
     AdminModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
 
   providers: [],

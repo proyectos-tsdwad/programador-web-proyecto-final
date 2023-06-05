@@ -61,19 +61,20 @@ a:hover {
   font-size: 26px;
 }
 
-.fs-lg {
-  font-size: 32px;
+.fs-lg-3 {
+  font-size: 30px;
 }
 
-.fs-lg-1 {
-  font-size: 48px;
+.fs-lg {
+  font-size: 32px;
 }
 
 .fs-lg-2 {
   font-size: 40px;
 }
-.fs-lg-3 {
-  font-size: 30px;
+
+.fs-lg-1 {
+  font-size: 48px;
 }
 
 /* Font Colors */
@@ -127,6 +128,7 @@ a:hover {
   --primary-white: #F5F5F5;
   --secondary-white: #FFFFFF;
   --primary-red: #A02A44;
+  --alternative-red: #d54f4f;
   --secondary-red: #E35352;
 }
 

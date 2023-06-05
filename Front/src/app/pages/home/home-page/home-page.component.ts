@@ -14,11 +14,14 @@ import { TAG } from 'src/app/utils/enums/book.enum';
 export class HomePageComponent implements OnInit {
 
   bookService: BookService;
-  recomendedBooks: Book[] = [];
   newAtBooks: Book[] = [];
+  recomendedBooks: Book[] = [];
   topSellingBooks: Book[] = [];
 
-  constructor(bookService: BookService, private navigationService: NavigationService) {
+  constructor(
+    bookService: BookService,
+    private navigationService: NavigationService,
+  ) {
     this.bookService = bookService;
   }
 

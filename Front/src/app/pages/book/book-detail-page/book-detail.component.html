@@ -1,6 +1,6 @@
 <section class="container-fluid row p-4 p-md-5 m-0 detail" *ngIf="bookFound">
   <div class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-    <img [src]="book.img" class="img-fluid" alt="..." />
+    <img [src]="book.book_cover" class="img-fluid" alt="..." />
   </div>
 
   <div class="col-12 col-lg-7 col-xl-8 py-5 py-lg-0 ps-lg-5">
@@ -21,7 +21,9 @@
       </p>
       <div class="row">
         <div class="col-md-12 d-md-flex justify-content-between align-items-center">
-          <p class="fs-md-2 font-bold fc-secondary">${{ book.price }}</p>
+
+          <p class="fs-md-2 font-bold fc-secondary pt-4">${{ book.price }}</p>
+
           <button type="button" class="col-6 secondary-button text-sm-center fs-sm-2 font-bold" (click)="onAddBook()">
             Agregar al carrito
           </button>
@@ -29,7 +31,7 @@
       </div>
 
       <div class="col-md-12 py-2 fs-sm-2 fc-primary">
-        <p><b>Sinopsis:</b> {{ book.sinopsis }}</p>
+        <p><b>Sinopsis:</b> {{ book.synopsis }}</p>
       </div>
     </div>
 
@@ -45,35 +47,36 @@
         </tr>
         <tr>
           <th scope="row">Páginas</th>
-          <td class="ps-5 fc-secondary">{{ book.pageAmount }}</td>
+          <td class="ps-5 fc-secondary">{{ book.page_amount }}</td>
         </tr>
         <tr>
           <th scope="row">Clasificación</th>
-          <td class="ps-5 fc-secondary">{{ book.genre }}</td>
+          <td class="ps-5 fc-secondary">{{ book.genres[0] }}</td>
         </tr>
         <tr>
           <th scope="row">Publicación</th>
-          <td class="ps-5 fc-secondary">{{ book.releaseDate }}</td>
+          <td class="ps-5 fc-secondary">{{ book.release_year }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
-<section *ngIf="!bookFound">
-  <p>No se encontró ningun libro</p>
-</section>
 
-<div class="mt-5 pt-5 bookRow">
-  <div class="container-fluid px-md-5">
-    <div class="row px-4 index-book-title">
-      <!-- <p class="col-6 col-md-12 fc-primary font-bold fs-md text-uppercase"></p> -->
-      <p class="col-10 d-none d-md-block font-medium fc-primary-light fs-md">
-        Te pueden interesar
-      </p>
-      <!-- <div class="col-2">
-        <a class="font-medium fc-secondary fs-md-1 ps-4" href="#">Ver todos <span class="fs-sm-2">></span></a>
-      </div> -->
+<section *ngIf="bookFound">
+  <div class="mt-5 pt-5">
+    <div class="container-fluid px-md-5">
+      <div class="row px-4 index-book-title">
+        <p class="col-10 d-none d-md-block font-medium fc-primary-light fs-md ps-3">
+          Te pueden interesar
+        </p>
+      </div>
+      <app-books-row-cards [books]="recomendedBooks"></app-books-row-cards>
     </div>
   </div>
-  <app-books-row-cards [books]="recomendedBooks"></app-books-row-cards>
-</div>
+</section>
+
+
+
+<section *ngIf="!bookFound">
+  <app-selected-book-not-found></app-selected-book-not-found>
+</section>

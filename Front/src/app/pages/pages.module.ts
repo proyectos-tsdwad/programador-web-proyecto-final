@@ -7,9 +7,7 @@ import { BookDetailModule } from './book/book-detail.module';
 import { CartModule } from './cart/cart.module';
 import { AccountModule } from './account/account.module';
 
-
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     HomeModule,

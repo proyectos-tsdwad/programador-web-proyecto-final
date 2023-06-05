@@ -1,97 +1,41 @@
-<div class="accordion" id="accordionPedidos">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button
-        class="accordion-button"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        Order#1232
-        <span class="fechas">23/04/2023</span>
+<div ngbAccordion>
+  <div ngbAccordionItem *ngFor="let purchase of purchases">
+    <h2 ngbAccordionHeader>
+      <button ngbAccordionButton class="accordion-button">
+        <div class="col">
+          <span class="fc-secondary font-bold fs-sm-2">
+            Orden: #{{purchase.orderNumber}}
+          </span>
+        </div>
+        <div class="text-end col">
+          <span class="font-semi-bold fc-primary fs-sm-2 pe-4">
+            {{purchase.date}}
+          </span>
+        </div>
       </button>
     </h2>
-    <div
-      id="collapseOne"
-      class="accordion-collapse collapse"
-      aria-labelledby="headingOne"
-      data-bs-parent="#accordionPedidos"
-    >
-      <div class="accordion-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">La teoría de lo perfecto</th>
-              <td>4.699,00</td>
-              <td>1</td>
-              <td>4.699,00</td>
-            </tr>
-            <tr>
-              <th scope="row">Sigue mi voz</th>
-              <td>5.799,00</td>
-              <td>1</td>
-              <td>5.799,00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button
-        class="accordion-button"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseTwo"
-        aria-expanded="true"
-        aria-controls="#collapseTwo"
-      >
-        Order#1233
-        <span class="fechas">30/04/2023</span>
-      </button>
-    </h2>
-    <div
-      id="collapseTwo"
-      class="accordion-collapse collapse"
-      aria-labelledby="headingTwo"
-      data-bs-parent="#accordionPedidos"
-    >
-      <div class="accordion-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Heartstopper</th>
-              <td>10.499,00</td>
-              <td>1</td>
-              <td>10.499,00</td>
-            </tr>
-            <tr>
-              <th scope="row">Un Cuento Perfecto</th>
-              <td>4.999,00</td>
-              <td>1</td>
-              <td>4.999,00</td>
-            </tr>
-          </tbody>
-        </table>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        <ng-template>
+          <table class="table">
+            <thead>
+              <tr class="fc-primary font-bold fs-sm-1">
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let product of purchase.products">
+              <tr class="fc-primary font-medium fs-sm-1">
+                <th class="fc-primary font-medium fs-sm-1">{{product.name}}</th>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.totalAmount}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-template>
       </div>
     </div>
   </div>

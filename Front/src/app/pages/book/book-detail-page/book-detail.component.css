@@ -7,12 +7,19 @@
   background-color: var(--secondary-red);
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: var(--alternative-red);
+}
+
+.secondary-button:active {
+  transform: translateY(4px);
 }
 
 .detail {
   border-bottom: 1px solid rgba(165, 165, 165, 0.49);
-}
-
-.bookRow {
-  margin-bottom: 300px;
 }

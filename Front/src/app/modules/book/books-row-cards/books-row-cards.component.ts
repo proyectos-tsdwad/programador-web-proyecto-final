@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
 
 @Component({
@@ -6,8 +6,13 @@ import { Book } from 'src/app/models/book/book-model';
   templateUrl: './books-row-cards.component.html',
   styleUrls: ['./books-row-cards.component.css'],
 })
-export class BooksRowCardsComponent {
+export class BooksRowCardsComponent implements OnInit {
+
   @Input() books: Book[] = [];
   @Input() showPrice = true;
-  @Input() justify: 'evenly' | 'center' | 'start' = 'evenly';
+  @Input() justify: 'evenly' | 'center' | 'start' = 'start';
+
+  ngOnInit(): void {
+
+  }
 }

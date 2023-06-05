@@ -10,55 +10,38 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./catalogue-page.component.css'],
 })
 export class BookCataloguePageComponent implements OnInit, OnDestroy {
-  searchSub!: Subscription;
   bookService: BookService;
   books: Book[] = [];
   genre = GENRE;
-  selectedGenre: string = '';
+  selectedGenre: number = 0;
 
   constructor(bookService: BookService) {
     this.bookService = bookService;
   }
 
   ngOnInit() {
-    // this.bookService.getSearchResults();
-    this.getSearchBooks();
-    // if (!this.books.length) {
-    //   this.getAllBooks();
-    // }
+    this.getAllBooks();
   }
 
   ngOnDestroy() {
     this.bookService.clearSearchResults();
-    this.searchSub.unsubscribe();
-  }
-  getSearchBooks() {
-    this.selectedGenre = 'libros encontrados';
-    this.searchSub = this.bookService
-      .getBookSearchListener()
-      .subscribe((result: Book[]) => {
-        this.books = result;
-        if (!this.books.length) {
-          this.getAllBooks();
-        }
-      });
   }
 
   getAllBooks() {
-    this.selectedGenre = '';
+    this.selectedGenre = 0;
     this.bookService.getAllBooks().subscribe((result: Book[]) => {
-      this.books = result;
+      this.books = this.bookService.oderBooksByAuthorNameAsc(result);
     });
   }
 
-  onBookGenre(genre: string) {
+  onBookGenre(genre: GENRE) {
     this.selectedGenre = genre;
     this.bookService.getBooksByGenre(genre).subscribe((result: Book[]) => {
       this.books = result;
     });
   }
 
-  isActive(navGenre: string) {
+  isActive(navGenre: number) {
     return this.selectedGenre === navGenre;
   }
 }

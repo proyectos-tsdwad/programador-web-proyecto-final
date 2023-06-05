@@ -1,241 +1,36 @@
 <div class="wrapper">
-  <h1>Mi cuenta</h1>
+  <h1 class="font-bold fs-md-2 fc-primary">Mi cuenta</h1>
   <main>
     <section *ngIf="personalData">
-      <h2>Datos</h2>
+      <h2 class="font-bold fs-md-2 fc-primary">Datos</h2>
       <div class="dataCard">
         <div class="title">
-          <h3>Datos personales</h3>
-          <img src="../../../../assets/edit.png" alt="Editar" />
+          <h3 class="fs-sm-2 font-semi-bold fc-primary">Datos personales</h3>
+          <button type="button" (click)="onEditPersonalData()">
+            <img src="/assets/icons/actions/edit.png" alt="Editar datos personales" />
+          </button>
         </div>
-        {{personalData.name}}<br />
-        {{personalData.document}}<br />
-        {{personalData.email}}<br />
-        {{personalData.telephone}}
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.username}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.document}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.email}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.telephone_number}}</span>
       </div>
       <div class="dataCard">
         <div class="title">
-          <h3>Dirección</h3>
-          <img src="../../../../assets/edit.png" alt="Editar" />
+          <h3 class="font-semi-bold fs-sm-2 fc-primary">Dirección</h3>
+          <button type="button" (click)="onEditAddress()">
+            <img src="/assets/icons/actions/edit.png" alt="Editar dirección" />
+          </button>
         </div>
-        {{personalData.address}}<br />
-        {{personalData.location}}<br />
-        {{personalData.province}}
+        <!-- <span class="font-bold fs-sm-2 fc-primary">{{personalData.address}}</span> -->
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.address_province}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.address_location}}</span>
+
       </div>
     </section>
-    <section>
+    <section *ngIf="purchaseData" class="col-6">
       <h2>Pedidos realizados</h2>
-      <div class="dataCard order">
-        <h3 class="orderTitle">Orden: #1233</h3>
-        <span>23/04/2023</span>
-      </div>
-      <div class="dataCard order">
-        <h3 class="orderTitle">Orden: #1233</h3>
-        <span>23/04/2023</span>
-      </div>
+      <app-pedidos-item [purchases]="purchaseData"></app-pedidos-item>
     </section>
   </main>
-</div>
-
-<!--Test Button trigger Modal Edit Personal information
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#personalModal">
-  Editar informacion personal
-</button>-->
-
-<!-- Modal Edit Personal information -->
-<div
-  class="modal fade"
-  id="personalModal"
-  data-bs-backdrop="static"
-  tabindex="-1"
-  aria-labelledby="personalModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Editar datos personales
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="row mb-3">
-            <label
-              for="inputEmail3"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Nombre y apellido</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                id="inputEmail3"
-                placeholder="Nombre y apellido"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label
-              for="inputPassword3"
-              class="col-sm-2 col-form-label visually-hidden"
-              >DNI</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="number"
-                class="form-control"
-                id="inputPassword3"
-                placeholder="Documento de identidad"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-sm-5">
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Código de área"
-                aria-label="Codigo de area"
-              />
-            </div>
-            <div class="col-sm-7">
-              <input
-                type="tel"
-                class="form-control"
-                placeholder="Número"
-                aria-label="Numero"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label
-              for="inputEmail"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Email</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="email"
-                class="form-control"
-                id="inputEmail"
-                placeholder="Correo electrónico"
-              />
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-danger">Guardar cambios</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Button trigger Modal Edit Address
-<button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#addressModal">
-  Editar Direccion
-</button>-->
-
-<!-- Modal Edit Address-->
-<div
-  class="modal fade"
-  id="addressModal"
-  data-bs-backdrop="static"
-  tabindex="-1"
-  aria-labelledby="addressModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar dirección</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="row mb-3">
-            <label
-              for="inputAddress"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Calle y numero</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                id="inputAddress"
-                placeholder="Calle y número"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label
-              for="inputZip"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Codigo postal</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="number"
-                class="form-control"
-                id="inputZip"
-                placeholder="Código postal"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label
-              for="inputLocality"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Localidad</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                id="inputLocality"
-                placeholder="Localidad"
-              />
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label
-              for="inputProvince"
-              class="col-sm-2 col-form-label visually-hidden"
-              >Provincia</label
-            >
-            <div class="col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                id="inputProvince"
-                placeholder="Provincia"
-              />
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-danger">Guardar cambios</button>
-      </div>
-    </div>
-  </div>
 </div>

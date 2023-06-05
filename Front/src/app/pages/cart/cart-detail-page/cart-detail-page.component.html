@@ -12,7 +12,7 @@
           <button class="trash-icon-button" (click)="onClearCart()">
             <div class="row">
               <div class="col-1">
-                <img src="./assets/icons/actions/trash.svg" alt="trash icon" />
+                <img src="./assets/icons/actions/trash.png" alt="trash icon" />
               </div>
 
               <span class="col-auto ps-3 pt-1">Vaciar carrito</span>
@@ -45,9 +45,7 @@
                 </div>
 
                 <div class="col-6">
-                  <span class="fs-md-1 font-bold fc-primary"
-                    >$ {{ totalCost }}</span
-                  >
+                  <span class="fs-md-1 font-bold fc-primary">$ {{ totalCost }}</span>
                 </div>
               </div>
             </div>
@@ -55,17 +53,11 @@
             <div class="col-12 mt-5">
               <div class="row align-items-center">
                 <div class="col-6">
-                  <a type="button" class="font-light fs-sm-2 fc-primary"
-                    >Seguir comprando</a
-                  >
+                  <a type="button" class="font-light fs-sm-2 fc-primary">Seguir comprando</a>
                 </div>
 
                 <div class="col-6">
-                  <button
-                    type="button"
-                    class="font-bold fs-md p-3 purchase-button"
-                    (click)="onClickConfirmPurchase()"
-                  >
+                  <button type="button" class="font-bold fs-md p-3 purchase-button" (click)="onClickConfirmPurchase()">
                     iniciar compra
                   </button>
                 </div>
