@@ -13,6 +13,24 @@ export class PublisherDashboardService {
   ) { }
 
   getAllPublishers() {
-    return this.http.get<Publisher[]>(`${this.apiURL}/publishers?_sort=name&_order=asc`);
+    const url = `${this.apiURL}/publishers/`;
+    return this.http.get<Publisher[]>(url);
+  }
+
+  oderPublishersByAuthorNameAsc(publisher: Publisher[]) {
+    publisher.sort((a, b) => {
+      const nameA = a.name.toLowerCase();
+      const nameB = b.name.toLowerCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return publisher;
   }
 }

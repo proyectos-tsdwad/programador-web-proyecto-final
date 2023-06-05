@@ -18,10 +18,6 @@ export class NavigationService {
     this.router.navigate(['/book-detail', isbn]);
   }
 
-  navigateToBookDashBoard() {
-    this.router.navigate(['/book-dashboard']);
-  }
-
   navigateToCheckout() {
     this.router.navigate(['/checkout']);
   }

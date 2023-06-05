@@ -7,11 +7,17 @@ import { PublisherDashboardPageComponent } from "./pages/publisher-dashboard-pag
 import { SalesDashboardPageComponent } from "./pages/sales-dashboard-page/sales-dashboard-page.component";
 
 const routes: Routes = [
-  { path: 'book-dashboard', component: BookDashboardPageComponent },
-  { path: 'client-dashboard', component: ClientDashboardPageComponent },
-  { path: 'author-dashboard', component: AuthorDashboardPageComponent },
-  { path: 'publisher-dashboard', component: PublisherDashboardPageComponent },
-  { path: 'sale-dashboard', component: SalesDashboardPageComponent }
+
+  {
+    path: 'admin', component: BookDashboardPageComponent,
+    children: [
+      { path: 'book-dashboard', component: BookDashboardPageComponent },
+      { path: 'client-dashboard', component: ClientDashboardPageComponent },
+      { path: 'author-dashboard', component: AuthorDashboardPageComponent },
+      { path: 'publisher-dashboard', component: PublisherDashboardPageComponent },
+      { path: 'sale-dashboard', component: SalesDashboardPageComponent }
+    ]
+  }
 ];
 
 @NgModule({

@@ -16,7 +16,8 @@
       </div>
 
       <div class="col-12 col-lg-2 text-end">
-        <button type="button" role="button" class="primary-button-outline py-2 px-3 col-12 ">Agregar stock</button>
+        <button type="button" role="button" class="primary-button-outline py-2 px-3 col-12"
+          (click)="onCreateBook()">Agregar stock</button>
       </div>
     </div>
   </section>
@@ -56,12 +57,12 @@
         <td>
           <div class="row">
             <div class="col">
-              <button class="edit-btn" type="button" title="ver detalle">
+              <button class="edit-btn" type="button" title="ver detalle" (click)="onViewBook(book.isbn)">
                 <img src="./assets/icons/actions/eye.png" alt="" class="img-fluid">
               </button>
             </div>
             <div class="col">
-              <button class="trash-btn" type="button" title="editar">
+              <button class="trash-btn" type="button" title="editar" (click)="onEditBook(book.isbn)">
                 <img src="./assets/icons/actions/edit.png" alt="" class="img-fluid">
               </button>
             </div>
