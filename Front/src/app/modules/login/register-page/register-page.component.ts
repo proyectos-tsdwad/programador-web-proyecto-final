@@ -99,34 +99,40 @@ export class RegisterPageComponent implements OnInit {
     });
   }
 
-//   registerUser(){
-//     const userDto = this.getUserDto();
-//     this.userService.createUser(userDto)
-//     .pipe(
-//       tap(response => {
-//         console.log('Usuario registrado', response);
-//         this.onClickRegister();
-//       }),
-//       catchError(error => {
-//         console.log('Error al registrar', error);
-//         throw error;
-//       })
-//     )
-//     .subscribe();
+  registerUser(){
+    if(this.registerForm.valid){
+      console.log('valido');
+
+      const userDto = this.getUserDto();
+      this.userService.createUser(userDto)
+      .pipe(
+        tap(response => {
+          console.log('Usuario registrado', response);
+          this.onClickRegister();
+        }),
+        catchError(error => {
+          console.log('Error al registrar', error);
+          throw error;
+        })
+      )
+      .subscribe();
+    } else{
+      this.registerForm.markAllAsTouched;
+    }
    
-// }
-
-registerUser(event: Event){
-  event.preventDefault;
-  
-  if(this.registerForm.valid){
-    console.log('valido');
-    
-  } else{
-
-    this.registerForm.markAllAsTouched
-  }
 }
+
+// registerUser(event: Event){
+//   event.preventDefault;
+  
+//   if(this.registerForm.valid){
+//     console.log('valido');
+    
+//   } else{
+
+//     this.registerForm.markAllAsTouched
+//   }
+// }
 
 get name() {
   return this.registerForm.get('name');
@@ -169,21 +175,23 @@ get password() {
 }
 
 
-  // getUserDto(): CreateUserDTO  {
-  //   return {
-  //     name: this.registerForm.value.name,
-  //     email: this.registerForm.value.email,
-  //     password: this.registerForm.value.password,
-  //     areaCode: this.registerForm.value.areaCode,
-  //     telephone: this.registerForm.value.telephone,
-  //     document: this.registerForm.value.document,
-  //     location: this.registerForm.value.location,
-  //     province: this.registerForm.value.province,
-  //     address: this.registerForm.value.address,
-  //     postalCode: this.registerForm.value.postalCode,
-  //     roleId: ROLE.CLIENT
-  //   };
-  // }
+  getUserDto(): CreateUserDTO  {
+    return {
+      username: this.registerForm.value.name,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+      telephone_area_code: this.registerForm.value.areaCode,
+      telephone_number: this.registerForm.value.telephone,
+      document: this.registerForm.value.document,
+      address_location: this.registerForm.value.location,
+      address_province: this.registerForm.value.province,
+      address_street: this.registerForm.value.address,
+      postal_code: this.registerForm.value.postalCode,
+    };
+  }
+
+  
+
 
   onClickRegister() {
     this.activeModal.close();

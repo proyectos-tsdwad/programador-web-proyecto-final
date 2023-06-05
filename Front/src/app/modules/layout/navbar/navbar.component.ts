@@ -61,6 +61,16 @@ export class NavbarComponent implements OnInit{
     this.navigationService.navigateToHome();
   }
 
+  logout() {
+    this.authService.logoutUser().subscribe((response: boolean)=>{
+      if(!response){
+        return 
+      }
+      this.authService.clearProfile();
+
+    })
+  }
+
 
 }
 
