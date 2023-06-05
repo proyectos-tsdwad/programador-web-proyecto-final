@@ -21,3 +21,10 @@ export interface SelectedBookDto
   extends Pick<Book, 'isbn' | 'title' | 'author' | 'book_cover' | 'price'> {
   selectedAmount: number;
 }
+
+export interface CreateBookDto
+  extends Omit<Book, 'author' | 'publisher' | 'genres'> {
+  author_id: number;
+  publisher_id: number;
+  genre_ids: number[];
+}

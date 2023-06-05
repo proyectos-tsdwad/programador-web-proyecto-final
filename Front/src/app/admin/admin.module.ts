@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BookDashboardPageComponent } from './pages/book-dashboard-page/book-dashboard-page.component';
 import { ClientDashboardPageComponent } from './pages/client-dashboard-page/client-dashboard-page.component';
@@ -12,6 +13,9 @@ import { AuthorDashboardService } from './services/author/author-dashboard.servi
 import { PublisherDashboardService } from './services/publisher/publisher-dashboard.service';
 import { SaleDashboardService } from './services/sale/sale-dashboard.service';
 import { SalesDashboardPageComponent } from './pages/sales-dashboard-page/sales-dashboard-page.component';
+import { BookFormComponent } from './pages/book-dashboard-page/book-form/book-form.component';
+import { BookDashboardService } from './services/book/book-dashboard.service';
+import { GenreDashboardService } from './services/genre/genre-dashboard.service';
 
 
 
@@ -21,17 +25,22 @@ import { SalesDashboardPageComponent } from './pages/sales-dashboard-page/sales-
     ClientDashboardPageComponent,
     AuthorDashboardPageComponent,
     PublisherDashboardPageComponent,
-    SalesDashboardPageComponent
+    SalesDashboardPageComponent,
+    BookFormComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserDashboardService,
     AuthorDashboardService,
     PublisherDashboardService,
-    SaleDashboardService
+    SaleDashboardService,
+    BookDashboardService,
+    GenreDashboardService
   ]
 })
 export class AdminModule { }

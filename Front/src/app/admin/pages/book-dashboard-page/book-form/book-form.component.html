@@ -1,0 +1,119 @@
+<div class="modal-body p-0 m-0">
+  <div class="container">
+
+    <div class="row">
+      <div class="text-end pt-4 pe-3">
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()">
+        </button>
+      </div>
+
+      <div class="row justify-content-start">
+        <div class="col-12 mb-2">
+          <h4 class="font-medium fs-md-1 fc-primary">Agregar Libro</h4>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="bookForm" (ngSubmit)="onSave($event)">
+      <div class="row mb-3">
+        <label for="isbn" class="col-sm-2 col-form-label visually-hidden">ISBN</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="isbn" placeholder="ISBN" formControlName="isbn" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="titulo" class="col-sm-2 col-form-label visually-hidden">Título</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="titulo" placeholder="Título" formControlName="title" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="paginas" class="col-sm-2 col-form-label visually-hidden">Cantidad de páginas</label>
+        <div class="col-sm-12">
+          <input type="number" class="form-control" id="paginas" placeholder="Cantidad de páginas"
+            formControlName="pageAmount" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="portada" class="col-sm-2 col-form-label visually-hidden">Imagen de portada</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="portada" placeholder="Imagen de portada"
+            formControlName="bookCover" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="stock" class="col-sm-2 col-form-label visually-hidden">Stock</label>
+        <div class="col-sm-12">
+          <input type="number" class="form-control" id="stock" placeholder="Stock" formControlName="stock" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="precio" class="col-sm-2 col-form-label visually-hidden">Precio</label>
+        <div class="col-sm-12">
+          <input type="number" class="form-control" id="precio" placeholder="Precio" formControlName="price" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="fecha" class="col-sm-2 col-form-label visually-hidden">Año de lanzamiento</label>
+        <div class="col-sm-12">
+          <input type="number" min="1900" max="2099" step="1" class="form-control" id="fecha"
+            placeholder="Año de lanzamiento" formControlName="releaseYear" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="autor" class="col-sm-2 col-form-label visually-hidden">Autor</label>
+        <div class="col-sm-12">
+          <!-- <input type="text" class="form-control" id="autor" placeholder="Autor" /> -->
+          <select id="autor" class="form-select" aria-label="Autor" formControlName="author">
+            <option selected value="">Seleccione un autor</option>
+            <option *ngFor="let author of authors" [value]="author.id_author">{{author.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="editorial" class="col-sm-2 col-form-label visually-hidden">Editorial</label>
+        <div class="col-sm-12">
+          <select id="editorial" class="form-select" aria-label="Publisher" formControlName="publisher">
+            <option selected value="">Seleccione una editorial</option>
+            <option *ngFor="let publisher of publishers" [value]="publisher.id_publisher">{{publisher.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="genero" class="col-sm-2 col-form-label visually-hidden">Genero</label>
+        <div class="col-sm-12">
+          <select id="genre" class="form-select" aria-label="Genre" formControlName="genre">
+            <option selected value="">Seleccione una genero</option>
+            <option *ngFor="let genre of genres" [value]="genre.id_genre">{{genre.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="tag" class="col-sm-2 col-form-label visually-hidden">Tag</label>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="tag" placeholder="Tag" formControlName="tags" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="synopsis" class="col-sm-2 col-form-label visually-hidden">Sinopsis</label>
+        <div class="col-sm-12">
+          <textarea class="form-control" placeholder="Sinopsis" id="synopsis" style="height: 100px"
+            formControlName="synopsis"></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div>
+          <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
+            Cancelar
+          </button>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-danger">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
-import { BookService } from 'src/app/services/book/book.service';
+
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BookFormComponent } from './book-form/book-form.component';
+import { BookDashboardService } from '../../services/book/book-dashboard.service';
+
 
 @Component({
   selector: 'app-book-dashboard-page',
@@ -10,11 +14,11 @@ import { BookService } from 'src/app/services/book/book.service';
 export class BookDashboardPageComponent implements OnInit {
 
   books: Book[] = [];
-  bookService: BookService;
 
-  constructor(bookService: BookService) {
-    this.bookService = bookService;
-  }
+  constructor(
+    private bookService: BookDashboardService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
     this.getBooks();
@@ -24,6 +28,19 @@ export class BookDashboardPageComponent implements OnInit {
     this.bookService.getAllBooks()
       .subscribe((result: Book[]) => {
         this.books = this.bookService.oderBooksByAuthorNameAsc(result);
+      });
+  }
+
+  onCreateBook() {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true })
+      .result.then((result: boolean) => {
+        console.log('res', result);
+        if (!result) {
+          return;
+        }
+        this.getBooks();
+      }, () => {
+        return;
       });
   }
 }

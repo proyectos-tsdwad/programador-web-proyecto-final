@@ -1,24 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Author } from 'src/app/models/author/author-model';
+import { Genre } from 'src/app/models/genre/genre-model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
-export class AuthorDashboardService {
+export class GenreDashboardService {
 
-  private apiURL = `${environment.API_URL}`;
+  private apiUrl = environment.API_URL;
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getAllAuthors() {
-    const url = `${this.apiURL}/authors/`;
-    return this.http.get<Author[]>(url);
+  getAllGenres() {
+    const url = `${this.apiUrl}/genres/`;
+    return this.http.get<Genre[]>(url);
   }
 
-  oderAuthorsByAuthorNameAsc(author: Author[]) {
-    author.sort((a, b) => {
+  oderGenresByAuthorNameAsc(genre: Genre[]) {
+    genre.sort((a, b) => {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();
 
@@ -31,6 +31,6 @@ export class AuthorDashboardService {
       return 0;
     });
 
-    return author;
+    return genre;
   }
 }
