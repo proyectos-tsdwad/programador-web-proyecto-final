@@ -1,7 +1,7 @@
 from rest_framework import viewsets, permissions
 from rest_framework.generics import RetrieveUpdateAPIView
 from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, SellSerializer, StoreSerializer, PaymentSerializer, DeliverySerializer
-from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery
+from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery, CustomUser
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from django.contrib.auth import authenticate, login, logout
@@ -64,7 +64,7 @@ class GenreViewSet(viewsets.ModelViewSet):
 class SellViewSet(viewsets.ModelViewSet):
    queryset = Sell.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = GenreSerializer         
+   serializer_class = SellSerializer         
 
 class DeliveryViewSet(viewsets.ModelViewSet):
    queryset = Delivery.objects.all()
@@ -81,3 +81,8 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
     permissions_classes = [permissions.AllowAny]
     serializer_class = PaymentSerializer
+
+class ProfileViewSet(viewsets.ModelViewSet):
+   queryset = CustomUser.objects.all()
+   permission_classes = [permissions.AllowAny]
+   serializer_class = ProfileSerializer

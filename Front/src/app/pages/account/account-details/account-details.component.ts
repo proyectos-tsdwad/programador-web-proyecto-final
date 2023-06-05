@@ -23,7 +23,7 @@ export class AccountDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = 2; // Reemplaza con el email del usuario del que deseas obtener los datos personales
+    const id = 1; // Reemplaza con el email del usuario del que deseas obtener los datos personales
     this.getUserData(id);
     this.getPurchaseData();
   }
@@ -31,7 +31,6 @@ export class AccountDetailsComponent implements OnInit {
   getUserData(id: number) {
     this.userService.getPersonalData(id).subscribe(data => {
       this.personalData = data;
-      console.log(this.personalData);
     });
 
   }

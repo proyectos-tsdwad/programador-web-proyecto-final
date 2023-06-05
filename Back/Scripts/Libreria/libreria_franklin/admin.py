@@ -26,7 +26,7 @@ class PaymentAdmin(admin.ModelAdmin):
 class DeliveryAdmin(admin.ModelAdmin):
     list_display = ('id_delivery', 'address')  
 class RolAdmin(admin.ModelAdmin):
-    list_display = ('id_rol', 'name')  
+    list_display = ('id_rol', 'name')   
 class SellAdmin(admin.ModelAdmin):
     list_display = ('id_sell', 'orderNumber', 'saleDate', 'products', 'deliveryType', 'paymentType', 'totalQuantity', 'totalCost', 'profile', 'delivery', 'payment', 'book')    
 class StoreAdmin(admin.ModelAdmin):

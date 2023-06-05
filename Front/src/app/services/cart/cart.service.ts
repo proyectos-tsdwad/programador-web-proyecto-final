@@ -15,17 +15,16 @@ export class CartService {
 
   addBook(book: Book | SelectedBookDto) {
     let selectedBook: SelectedBookDto = {
-      id: book.id,
-      author: book.author,
-      img: book.img,
       isbn: book.isbn,
-      price: book.price,
       title: book.title,
+      author: book.author,
+      book_cover: book.book_cover,
+      price: book.price,
       selectedAmount: 0,
     };
 
     selectedBook =
-      this.cart.find((item) => item.id === book.id) || selectedBook;
+      this.cart.find((item) => item.isbn === book.isbn) || selectedBook;
 
     if (selectedBook.selectedAmount > 0) {
       selectedBook.selectedAmount += 1;
@@ -39,8 +38,8 @@ export class CartService {
     this.cartUpdated.next([...this.cart]);
   }
 
-  removeCopy(bookId: number) {
-    let selectedBook = this.cart.find((item) => item.id === bookId);
+  removeCopy(isbn: string) {
+    let selectedBook = this.cart.find((item) => item.isbn === isbn);
 
     if (!selectedBook) {
       return;
@@ -49,21 +48,21 @@ export class CartService {
     selectedBook.selectedAmount -= 1;
 
     if (!selectedBook.selectedAmount) {
-      this.cart = this.cart.filter((item) => item.id !== bookId);
+      this.cart = this.cart.filter((item) => item.isbn !== isbn);
     }
     this.updatetTotalQuantity();
     this.updatedTotalCost();
     this.cartUpdated.next([...this.cart]);
   }
 
-  removeBook(bookId: number) {
-    let selectedBook = this.cart.find((item) => item.id === bookId);
+  removeBook(isbn: string) {
+    let selectedBook = this.cart.find((item) => item.isbn === isbn);
 
     if (!selectedBook) {
       return;
     }
 
-    this.cart = this.cart.filter((item) => item.id !== bookId);
+    this.cart = this.cart.filter((item) => item.isbn !== isbn);
 
     this.updatetTotalQuantity();
     this.updatedTotalCost();
@@ -87,7 +86,7 @@ export class CartService {
 
   updatedTotalCost() {
     this.totalCost = parseFloat(this.cart.reduce((partialSum, book) => {
-      return partialSum + book.price * book.selectedAmount;
+      return partialSum + Number(book.price) * book.selectedAmount;
     }, 0).toFixed(3));
 
     this.totalCostUpdated.next(this.totalCost);

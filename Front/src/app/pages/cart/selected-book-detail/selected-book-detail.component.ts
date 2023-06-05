@@ -18,11 +18,11 @@ export class SelectedBookDetailComponent {
   }
 
   onRemoveCopy() {
-    this.CartService.removeCopy(this.book.id);
+    this.CartService.removeCopy(this.book.isbn);
   }
 
   onRemoveBook() {
-    this.CartService.removeBook(this.book.id);
+    this.CartService.removeBook(this.book.isbn);
   }
 
 }
