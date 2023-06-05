@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Purchase } from 'src/app/models/user/purchase-model';
-import { User } from 'src/app/models/user/user-model';
+import { CreateUserDTO } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddressFormComponent } from '../address-form/address-form.component';
@@ -14,7 +14,7 @@ import { PersonalDataFormComponent } from '../personal-data-form/personal-data-f
 
 
 export class AccountDetailsComponent implements OnInit {
-  personalData!: User;
+  personalData!: CreateUserDTO;
   purchaseData!: Purchase[];
 
   constructor(
@@ -23,7 +23,7 @@ export class AccountDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = 2; // Reemplaza con el email del usuario del que deseas obtener los datos personales
+    const id = 1; // Reemplaza con el email del usuario del que deseas obtener los datos personales
     this.getUserData(id);
     this.getPurchaseData();
   }

@@ -10,10 +10,10 @@
             <img src="/assets/icons/actions/edit.png" alt="Editar datos personales" />
           </button>
         </div>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.name}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.username}}</span>
         <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.document}}</span>
         <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.email}}</span>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.telephone}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.telephone_number}}</span>
       </div>
       <div class="dataCard">
         <div class="title">
@@ -22,9 +22,10 @@
             <img src="/assets/icons/actions/edit.png" alt="Editar dirección" />
           </button>
         </div>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.address}}</span>
-        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.location}}</span>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.province}}</span>
+        <!-- <span class="font-bold fs-sm-2 fc-primary">{{personalData.address}}</span> -->
+        <span class="font-bold fs-sm-2 fc-primary">{{personalData.address_province}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.address_location}}</span>
+
       </div>
     </section>
     <section *ngIf="purchaseData" class="col-6">

@@ -1,6 +1,8 @@
 from ast import Store
 from rest_framework import serializers
-from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery
+from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery, CustomUser
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import get_user_model
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -104,3 +106,23 @@ class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment
         fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(
+        required=True)
+    username = serializers.CharField(
+        required=True)
+    password = serializers.CharField(
+        min_length=8)
+
+    class Meta:
+        model = get_user_model()
+        fields = '__all__'
+    def validate_password(self, value):
+        return make_password(value)
+    
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'
+        read_only_fields = ('__all__',)

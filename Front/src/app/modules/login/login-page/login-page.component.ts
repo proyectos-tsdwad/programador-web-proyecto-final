@@ -50,43 +50,67 @@ export class LoginPageComponent {
       });
     }
   
-  //   loginUser(){
-  //     const credentials = this.getCredencials();
-  //     this.authService.loginAndGet(credentials)
-  //     .pipe(
-  //       tap(response => {
-  //         console.log('Usuario logueado', response);
-  //         this.authService.updateProfileListener(response);
-  //         this.onClickLogIn();
-  //       }),
-  //       catchError(error => {
-  //         console.log('Error al ingresar', error);
-  //         throw error;
-  //       })
-  //     )
-  //     .subscribe();
-     
-  // }
+    loginUser(){
 
-  loginUser(event: Event){
-    event.preventDefault;
-  
-  if(this.loginForm.valid){
-    console.log('valido');
+      if(this.loginForm.valid){
+        console.log('login valido');
+        const credentials = this.getCredencials();
+      this.authService.loginUser(credentials)
+      .pipe(
+        tap(response => {
+          console.log('Usuario logueado', response);
+          this.authService.updateProfileListener(response);
+          this.onClickLogIn();
+        }),
+        catchError(error => {
+          console.log('Error al ingresar', error);
+          throw error;
+        })
+      )
+      .subscribe();
+      this.activeModal.close();
+      } else{
     
-  } else{
+        this.loginForm.markAllAsTouched
+      }
+      
+     
+  }
 
-    this.loginForm.markAllAsTouched
-  }
-  }
+//   loginUser(){
+
+//     if(this.loginForm.valid){
+//       console.log('login valido');
+//       const credentials = this.getCredencials();
+//     this.authService.loginAndGet(credentials)
+//     .pipe(
+//       tap(response => {
+//         console.log('Usuario logueado', response);
+//         this.authService.updateProfileListener(response);
+//         this.onClickLogIn();
+//       }),
+//       catchError(error => {
+//         console.log('Error al ingresar', error);
+//         throw error;
+//       })
+//     )
+//     .subscribe();
+//     this.activeModal.close();
+//     } else{
+  
+//       this.loginForm.markAllAsTouched
+//     }
+    
+   
+// }
   
   
-    // getCredencials(): Credentials  {
-    //   return {
-    //     email: this.loginForm.value.email,
-    //     password: this.loginForm.value.password,
-    //   };
-    // }
+    getCredencials(): Credentials  {
+      return {
+        email: this.loginForm.value.email,
+        password: this.loginForm.value.password,
+      };
+    }
 
     get email() {
       return this.loginForm.get('email');

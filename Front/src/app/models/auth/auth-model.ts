@@ -1,5 +1,5 @@
 export interface Auth {
-    id?: string;
+    id?: number;
     access_token: string;
     user: { id: number };
   }

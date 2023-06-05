@@ -1,4 +1,17 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    email = models.EmailField(max_length=150, unique=True)
+    telephone_number = models.CharField(max_length=50, blank=False)
+    telephone_area_code = models.CharField(max_length=50, blank=False)
+    document = models.PositiveIntegerField(blank=False)
+    address_province = models.CharField(max_length=50, blank=False)
+    address_location = models.CharField(max_length=50, blank=False)
+    address_street = models.CharField(max_length=50, blank=False)
+    postal_code = models.CharField(max_length=50, blank=False)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username', 'password']
 
 class Author(models.Model):
     id_author = models.AutoField(primary_key=True)
@@ -59,24 +72,6 @@ class Book(models.Model):
     def __str__(self):
         return self.isbn
 
-class Profile(models.Model):
-    id_profile = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=50, blank=False)
-    last_name = models.CharField(max_length=50, blank=False)
-    telephone_number = models.CharField(max_length=50, blank=False)
-    telephone_area_code = models.CharField(max_length=50, blank=False)
-    document = models.PositiveIntegerField(blank=False)
-    address_province = models.CharField(max_length=50, blank=False)
-    address_location = models.CharField(max_length=50, blank=False)
-    password = models.CharField(max_length=50, blank=False)
-    class Meta:
-        db_table = 'Profile'
-        verbose_name = 'Users profile'
-        verbose_name_plural = 'Profiles'
-    def __unicode__(self):
-        return self.name
-    def __str__(self):
-        return self.name
 
 class Payment(models.Model):
     id_payment = models.AutoField(primary_key=True)
@@ -132,7 +127,7 @@ class Sell (models.Model):
   totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
   totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
 
-  profile = models.ForeignKey(Profile, to_field= "id_profile", related_name="profile",on_delete=models.CASCADE)
+  profile = models.ForeignKey(CustomUser, to_field= "id", related_name="profile",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
   payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
   book= models.ForeignKey(Book, to_field="isbn", related_name="book", on_delete=models.CASCADE)
