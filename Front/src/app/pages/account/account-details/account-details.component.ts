@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Purchase } from 'src/app/models/user/purchase-model';
-import { User } from 'src/app/models/user/user-model';
+import { CreateUserDTO } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddressFormComponent } from '../address-form/address-form.component';
@@ -14,7 +14,7 @@ import { PersonalDataFormComponent } from '../personal-data-form/personal-data-f
 
 
 export class AccountDetailsComponent implements OnInit {
-  personalData!: User;
+  personalData!: CreateUserDTO;
   purchaseData!: Purchase[];
 
   constructor(
