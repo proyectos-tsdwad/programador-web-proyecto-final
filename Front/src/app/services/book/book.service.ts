@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { map, filter } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import { Genre } from 'src/app/models/genre/genre-model';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Book, CreateBookDto } from 'src/app/models/book/book-model';
@@ -9,6 +9,8 @@ import { AuthorDashboardService } from 'src/app/admin/services/author/author-das
 import { PublisherDashboardService } from 'src/app/admin/services/publisher/publisher-dashboard.service';
 import { GenreDashboardService } from 'src/app/admin/services/genre/genre-dashboard.service';
 import { Genre } from 'src/app/models/genre/genre-model';
+import { map } from 'rxjs/operators'
+
 
 
 @Component({
@@ -18,12 +20,18 @@ import { Genre } from 'src/app/models/genre/genre-model';
 })
 export class BookFormComponent implements OnInit {
 
+  @Input() bookIsbn: string = '';
+  @Input() action: 'view' | 'create' | 'edit' = 'create';
+
   book!: CreateBookDto;
   bookForm!: FormGroup;
   selectedGenres: number[] = [];
   authors: Author[] = [];
   publishers: Publisher[] = [];
   genres: Genre[] = [];
+
+  formEnable: boolean = true;
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,10 +43,35 @@ export class BookFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.formEnable = this.action !== 'view';
+
     this.createForm();
     this.getAuthors();
     this.getPublishers();
     this.getGenres();
+
+
+    if (this.bookIsbn) {
+      this.getByIsbn();
+    }
+  }
+
+  getByIsbn() {
+    this.bookService.getBookByIsbn(this.bookIsbn)
+      .pipe(map((result: Book) => {
+        this.bookForm.get('isbn')?.setValue(result.isbn);
+        this.bookForm.get('title')?.setValue(result.title);
+        this.bookForm.get('pageAmount')?.setValue(result.page_amount);
+        this.bookForm.get('bookCover')?.setValue(result.book_cover);
+        this.bookForm.get('stock')?.setValue(result.stock);
+        this.bookForm.get('releaseYear')?.setValue(result.release_year);
+        this.bookForm.get('synopsis')?.setValue(result.synopsis);
+        this.bookForm.get('price')?.setValue(result.price);
+        this.bookForm.get('tags')?.setValue(result.tags);
+        this.bookForm.get('author')?.setValue(result.author.id_author);
+        this.bookForm.get('publisher')?.setValue(result.publisher.id_publisher);
+        this.bookForm.get('genre')?.setValue(result.genres[0]);
+      })).subscribe();
   }
 
   getGenres() {
@@ -99,18 +132,18 @@ export class BookFormComponent implements OnInit {
 
   createForm() {
     this.bookForm = this.formBuilder.group({
-      isbn: ['', [Validators.required]],
-      title: ['', [Validators.required]],
-      pageAmount: ['', [Validators.required]],
-      bookCover: ['', [Validators.required]],
-      stock: ['', [Validators.required]],
-      releaseYear: ['', [Validators.required]],
-      synopsis: ['', [Validators.required]],
-      price: ['', [Validators.required]],
-      tags: ['', [Validators.required]],
-      author: ['', [Validators.required]],
-      publisher: ['', [Validators.required]],
-      genre: ['', [Validators.required]],
+      isbn: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      title: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      pageAmount: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      bookCover: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      stock: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      releaseYear: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      synopsis: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      price: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      tags: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      author: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      publisher: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      genre: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
     });
   }
 

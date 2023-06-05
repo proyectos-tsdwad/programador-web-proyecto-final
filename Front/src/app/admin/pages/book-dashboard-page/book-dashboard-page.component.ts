@@ -43,5 +43,17 @@ export class BookDashboardPageComponent implements OnInit {
         return;
       });
   }
+
+  onViewBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
+    modalRef.componentInstance.action = 'view';
+    modalRef.componentInstance.bookIsbn = isbn;
+  }
+
+  onEditBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
+    modalRef.componentInstance.action = 'edit';
+    modalRef.componentInstance.bookIsbn = isbn;
+  }
 }
 

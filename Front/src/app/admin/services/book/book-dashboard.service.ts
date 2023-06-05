@@ -21,6 +21,11 @@ export class BookDashboardService {
     return this.http.get<Book[]>(url);
   }
 
+  getBookByIsbn(isbn: string) {
+    const url = `${this.apiUrl}/books/${isbn}`;
+    return this.http.get<Book>(url);
+  }
+
   saveBook(book: CreateBookDto) {
     const url = `${this.apiUrl}/books/`;
     console.log('book', book);
