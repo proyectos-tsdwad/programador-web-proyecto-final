@@ -44,15 +44,39 @@ export class BookDashboardPageComponent implements OnInit {
       });
   }
 
+  onEditBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true })
+    modalRef.componentInstance.action = 'edit';
+    modalRef.componentInstance.bookIsbn = isbn;
+
+    modalRef.result.then((result: boolean) => {
+      if (!result) {
+        return;
+      }
+      this.getBooks();
+    }, () => {
+      return;
+    });
+  }
+
+  onDeleteBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'md', centered: true })
+    modalRef.componentInstance.action = 'delete';
+    modalRef.componentInstance.bookIsbn = isbn;
+
+    modalRef.result.then((result: boolean) => {
+      if (!result) {
+        return;
+      }
+      this.getBooks();
+    }, () => {
+      return;
+    });
+  }
+
   onViewBook(isbn: string) {
     const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
     modalRef.componentInstance.action = 'view';
-    modalRef.componentInstance.bookIsbn = isbn;
-  }
-
-  onEditBook(isbn: string) {
-    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
-    modalRef.componentInstance.action = 'edit';
     modalRef.componentInstance.bookIsbn = isbn;
   }
 }

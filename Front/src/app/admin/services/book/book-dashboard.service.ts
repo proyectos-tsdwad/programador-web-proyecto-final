@@ -28,9 +28,17 @@ export class BookDashboardService {
 
   saveBook(book: CreateBookDto) {
     const url = `${this.apiUrl}/books/`;
-    console.log('book', book);
-
     return this.http.post<Book>(url, book);
+  }
+
+  updateBook(book: CreateBookDto) {
+    const url = `${this.apiUrl}/books/${book.isbn}/`;
+    return this.http.put<Book>(url, book);
+  }
+
+  deleteBook(isbn: string) {
+    const url = `${this.apiUrl}/books/${isbn}/`;
+    return this.http.delete<Book>(url);
   }
 
   oderBooksByAuthorNameAsc(books: Book[]) {

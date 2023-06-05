@@ -59,6 +59,7 @@ class PublisherViewSet(viewsets.ModelViewSet):
 
 class GenreViewSet(viewsets.ModelViewSet):
    queryset = Genre.objects.all()
+   permission_classes = [permissions.AllowAny]
    serializer_class = GenreSerializer     
 
 class SellViewSet(viewsets.ModelViewSet):
