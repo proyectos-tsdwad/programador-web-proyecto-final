@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 from rest_framework.generics import RetrieveUpdateAPIView
-from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, SellSerializer, StoreSerializer, PaymentSerializer, DeliverySerializer
+from .serializers import BookSerializer, AuthorSerializer, PublisherSerializer, GenreSerializer, SellSerializer, StoreSerializer, PaymentSerializer, DeliverySerializer, ProfileSerializer
 from .models import Book, Author, Publisher, Genre, Sell, Store, Payment, Delivery, CustomUser
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
