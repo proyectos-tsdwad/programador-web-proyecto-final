@@ -21,7 +21,7 @@ import { map } from 'rxjs/operators'
 export class BookFormComponent implements OnInit {
 
   @Input() bookIsbn: string = '';
-  @Input() action: 'view' | 'create' | 'edit' = 'create';
+  @Input() action: 'view' | 'create' | 'edit' | 'delete' = 'create';
 
   book!: CreateBookDto;
   bookForm!: FormGroup;
@@ -31,6 +31,7 @@ export class BookFormComponent implements OnInit {
   genres: Genre[] = [];
 
   formEnable: boolean = true;
+  isDeleteForm: boolean = false
 
 
   constructor(
@@ -44,6 +45,7 @@ export class BookFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.formEnable = this.action !== 'view';
+    this.isDeleteForm = this.action === 'delete';
 
     this.createForm();
     this.getAuthors();
@@ -95,8 +97,20 @@ export class BookFormComponent implements OnInit {
       });
   }
 
-  onSave(event: Event) {
+  onSaveHandle(event: Event) {
     event.preventDefault;
+
+    if (this.action === 'create') {
+      this.saveNewBook();
+    }
+
+    if (this.action === 'edit') {
+      this.saveUpdateBook();
+    }
+
+  }
+
+  saveNewBook() {
 
     this.book = {
       isbn: this.isbn,
@@ -120,6 +134,41 @@ export class BookFormComponent implements OnInit {
         if (book) {
           this.activeModal.close(true);
         }
+      });
+  }
+
+  saveUpdateBook() {
+
+    this.book = {
+      isbn: this.isbn,
+      title: this.title,
+      page_amount: this.pageAmount,
+      book_cover: this.bookCover,
+      stock: this.stock,
+      release_year: this.releaseYear,
+      synopsis: this.synopsis,
+      price: this.price,
+      tags: this.tags,
+      author_id: this.author,
+      publisher_id: this.publisher,
+      genre_ids: [this.genre]
+    }
+
+    this.bookService.updateBook(this.book)
+      .subscribe((result: Book) => {
+        let book: Book = result;
+
+        if (book) {
+          this.activeModal.close(true);
+        }
+      });
+  }
+
+  onConfirmDelete() {
+    this.bookService.deleteBook(this.bookIsbn)
+      .subscribe(() => {
+        this.activeModal.close(true);
+
       });
 
   }
