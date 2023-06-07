@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Purchase } from 'src/app/models/user/purchase-model';
-import { CreateUserDTO } from 'src/app/models/user/user-model';
+import { CreateUserDTO, User } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddressFormComponent } from '../address-form/address-form.component';
 import { PersonalDataFormComponent } from '../personal-data-form/personal-data-form.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-details',
@@ -13,27 +15,37 @@ import { PersonalDataFormComponent } from '../personal-data-form/personal-data-f
 })
 
 
-export class AccountDetailsComponent implements OnInit {
+export class AccountDetailsComponent implements OnInit, OnDestroy {
   personalData!: CreateUserDTO;
   purchaseData!: Purchase[];
+  profile: User | null = null;
+  userDataSub!: Subscription
 
   constructor(
     private userService: UserService,
     private modalService: NgbModal,
+    private authService: AuthService
+
   ) { }
+  
 
   ngOnInit() {
-    const id = 1; // Reemplaza con el email del usuario del que deseas obtener los datos personales
-    this.getUserData(id);
+    this.getUserData();
     this.getPurchaseData();
   }
 
-  getUserData(id: number) {
-    this.userService.getPersonalData(id).subscribe(data => {
-      this.personalData = data;
-    });
-
+  ngOnDestroy(): void {
+    this.userDataSub.unsubscribe();
   }
+
+  getUserData() {
+    this.userDataSub = this.authService.getProfileListener()
+    .subscribe(user => {
+      console.log('usuario', user)
+      this.profile = user;
+    });
+  }
+
 
   getPurchaseData() {
     this.userService.getPurchaseHistory().subscribe(data => {

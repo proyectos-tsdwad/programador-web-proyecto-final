@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpResponse } from '@angu
 import { environment } from 'src/environments/environment';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
-import { Observable, Subject, map, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, switchMap, tap } from 'rxjs';
 import { CreateUserDTO, User } from 'src/app/models/user/user-model';
 
 
@@ -16,7 +16,7 @@ export class AuthService {
   private authApiUrl = `${environment.AUTH_API_URL}`;
   private currentUser!: Auth;
   private profile!: User | null;
-  private profileListener = new Subject<User | null>();
+  private profileListener = new BehaviorSubject<User | null>(null);
 
   constructor(
     private http: HttpClient
