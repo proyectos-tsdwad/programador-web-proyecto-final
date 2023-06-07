@@ -87,3 +87,31 @@ class ProfileViewSet(viewsets.ModelViewSet):
    queryset = CustomUser.objects.all()
    permission_classes = [permissions.AllowAny]
    serializer_class = ProfileSerializer
+
+
+class ProfileView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated] #Solo usuarios logueados pueden ver.
+    serializer_class = UserSerializer
+    def get_object(self):
+        if self.request.user.is_authenticated:
+            return self.request.user
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+    def perform_update(self, serializer):
+        serializer.save()
+
+class UserList(generics.ListCreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+    http_method_names = ['get']
+    permission_classes = [IsAdminUser]
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = UserSerializer(queryset, many=True)
+        if self.request.user.is_authenticated:
+            return Response(serializer.data)
