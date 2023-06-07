@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=150, unique=True)),
                 ('telephone_number', models.CharField(max_length=50)),
                 ('telephone_area_code', models.CharField(max_length=50)),
-                ('document', models.PositiveIntegerField()),
+                ('document', models.PositiveIntegerField(blank=True, null=True)),
                 ('address_province', models.CharField(max_length=50)),
                 ('address_location', models.CharField(max_length=50)),
                 ('address_street', models.CharField(max_length=50)),
