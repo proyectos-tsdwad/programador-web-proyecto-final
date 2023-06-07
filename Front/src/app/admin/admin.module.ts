@@ -16,6 +16,7 @@ import { SalesDashboardPageComponent } from './pages/sales-dashboard-page/sales-
 import { BookFormComponent } from './pages/book-dashboard-page/book-form/book-form.component';
 import { BookDashboardService } from './services/book/book-dashboard.service';
 import { GenreDashboardService } from './services/genre/genre-dashboard.service';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 
 
@@ -26,7 +27,8 @@ import { GenreDashboardService } from './services/genre/genre-dashboard.service'
     AuthorDashboardPageComponent,
     PublisherDashboardPageComponent,
     SalesDashboardPageComponent,
-    BookFormComponent
+    BookFormComponent,
+    AdminPageComponent
   ],
   imports: [
     CommonModule,

@@ -6,13 +6,15 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class UserDashboardService {
 
-  private apiURL = `${environment.API_URL}`;
+  private apiURL = `${environment.BASE_URL}`;
 
   constructor(
     private http: HttpClient
   ) { }
 
   getUsers() {
-    return this.http.get<User[]>(`${this.apiURL}/users?_sort=authorName&_order=asc`)
+    const url = `${this.apiURL}/users`
+    // const url = `${this.apiURL}/users?_sort=authorName&_order=asc`;
+    return this.http.get<User[]>(url);
   }
 }
