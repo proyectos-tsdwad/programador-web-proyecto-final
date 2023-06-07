@@ -187,6 +187,7 @@ get password() {
       address_province: this.registerForm.value.province,
       address_street: this.registerForm.value.address,
       postal_code: this.registerForm.value.postalCode,
+      role: ROLE.CLIENT
     };
   }
 

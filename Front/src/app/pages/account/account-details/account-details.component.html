@@ -1,7 +1,8 @@
-<div class="wrapper">
+
+<div *ngIf="profile; else loginRequired" class="wrapper">
   <h1 class="font-bold fs-md-2 fc-primary">Mi cuenta</h1>
   <main>
-    <section *ngIf="personalData">
+    <section>
       <h2 class="font-bold fs-md-2 fc-primary">Datos</h2>
       <div class="dataCard">
         <div class="title">
@@ -10,10 +11,10 @@
             <img src="/assets/icons/actions/edit.png" alt="Editar datos personales" />
           </button>
         </div>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.username}}</span>
-        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.document}}</span>
-        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.email}}</span>
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.telephone_number}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{profile.username}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{profile.document}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{profile.email}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{profile.telephone_number}}</span>
       </div>
       <div class="dataCard">
         <div class="title">
@@ -23,8 +24,8 @@
           </button>
         </div>
         <!-- <span class="font-bold fs-sm-2 fc-primary">{{personalData.address}}</span> -->
-        <span class="font-bold fs-sm-2 fc-primary">{{personalData.address_province}}</span>
-        <span class="font-semi-bold fs-sm-2 fc-primary">{{personalData.address_location}}</span>
+        <span class="font-bold fs-sm-2 fc-primary">{{profile.address_province}}</span>
+        <span class="font-semi-bold fs-sm-2 fc-primary">{{profile.address_location}}</span>
 
       </div>
     </section>
@@ -34,3 +35,7 @@
     </section>
   </main>
 </div>
+
+<ng-template #loginRequired>
+  <p>No hay usuario logueado</p>
+</ng-template>

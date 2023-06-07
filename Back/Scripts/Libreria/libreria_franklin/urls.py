@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .api import BookViewSet, AuthorViewSet, PublisherViewSet, GenreViewSet,SellViewSet, StoreViewSet, PaymentViewSet, DeliveryViewSet, LoginView, LogoutView, SignupView, ProfileViewSet
+from .api import BookViewSet, AuthorViewSet, PublisherViewSet, GenreViewSet,SellViewSet, StoreViewSet, PaymentViewSet, DeliveryViewSet, LoginView, LogoutView, SignupView, ProfileView, UserList, ProfileViewSet
 from django.urls import path, include
 
 
@@ -22,7 +22,9 @@ urlpatterns = [
     path('auth/login/',LoginView.as_view(), name='auth_login'),
     path('auth/logout/', LogoutView.as_view(), name='auth_logout'),
     path('auth/reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
-    path('auth/register/', SignupView.as_view(), name='auth_signup')
+    path('auth/register/', SignupView.as_view(), name='auth_signup'),
+    path('user/profile/', ProfileView.as_view(), name='user_profile'),
+    path('users/',UserList.as_view(), name='listar_usuarios')
     
 ]
 

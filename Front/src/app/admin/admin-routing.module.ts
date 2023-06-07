@@ -5,14 +5,14 @@ import { ClientDashboardPageComponent } from "./pages/client-dashboard-page/clie
 import { AuthorDashboardPageComponent } from "./pages/author-dashboard-page/author-dashboard-page.component";
 import { PublisherDashboardPageComponent } from "./pages/publisher-dashboard-page/publisher-dashboard-page.component";
 import { SalesDashboardPageComponent } from "./pages/sales-dashboard-page/sales-dashboard-page.component";
+import { AdminPageComponent } from "./pages/admin-page/admin-page.component";
 
 const routes: Routes = [
-
   {
-    path: 'admin', component: BookDashboardPageComponent,
+    path: 'admin', component: AdminPageComponent,
     children: [
-      { path: 'book-dashboard', component: BookDashboardPageComponent },
       { path: 'client-dashboard', component: ClientDashboardPageComponent },
+      { path: 'book-dashboard', component: BookDashboardPageComponent },
       { path: 'author-dashboard', component: AuthorDashboardPageComponent },
       { path: 'publisher-dashboard', component: PublisherDashboardPageComponent },
       { path: 'sale-dashboard', component: SalesDashboardPageComponent }

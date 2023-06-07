@@ -1,3 +1,5 @@
+import { ROLE } from "src/app/utils/enums/user.enum";
+
 export interface User {
     id:number;
     password: string;
@@ -19,6 +21,7 @@ export interface User {
     postal_code: string;
     groups: any[];
     user_permissions: any[];
+    role: ROLE
 }
 
 export interface CreateUserDTO extends Omit<User, 'id' | 'last_login' | 'is_superuser'  | 'first_name' | 'last_name' | 'is_staff' | 'is_active' | 'date_joined' | 'groups' | 'user_permissions'> {}

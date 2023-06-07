@@ -10,6 +10,7 @@ class CustomUser(AbstractUser):
     address_location = models.CharField(max_length=50, blank=False)
     address_street = models.CharField(max_length=50, blank=False)
     postal_code = models.CharField(max_length=50, blank=False)
+    role = models.CharField(max_length=50, blank=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'password']
 
