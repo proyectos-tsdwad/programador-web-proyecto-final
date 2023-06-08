@@ -104,17 +104,24 @@ class Rol(models.Model):
 
 class Delivery(models.Model):
     id_delivery = models.AutoField(primary_key=True)
-    postal_code = models.PositiveIntegerField()
-    address = models.CharField(max_length=50, blank=False)
+    name = models.CharField(max_length=50, blank=False)
+    email = models.EmailField(max_length=150, unique=True)
+    telephone_number = models.CharField(max_length=50, blank=False)
+    telephone_area_code = models.CharField(max_length=50, blank=False)
+    document = models.PositiveIntegerField(blank=True, null=True)
+    address_province = models.CharField(max_length=50, blank=False) 
+    address_location = models.CharField(max_length=50, blank=False)
+    address_street = models.CharField(max_length=50, blank=False)
+    postal_code = models.CharField(max_length=50, blank=False)
     state = models.CharField(max_length=50)
     class Meta:
         db_table = 'Delivery'
         verbose_name = 'Product sale delivery'
         verbose_name_plural = 'Delivery'
     def __unicode__(self):
-        return self.address
+        return self.address_street
     def __str__(self):
-        return self.address
+        return self.address_street
 
       
 class Sell (models.Model):
