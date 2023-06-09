@@ -7,6 +7,27 @@ class Command(BaseCommand):
     help = 'Insert default data if table is empty'
 
     def handle(self, *args, **options):
+        file_path = os.path.abspath('libreria_franklin/default data/publisher_data.json')
+        if not Publisher.objects.exists():
+            with open(file_path) as file:
+                data = json.load(file)
+
+            for publisher_data in data:
+                name = publisher_data['name']
+                Publisher.objects.create(name = name)
+
+            self.stdout.write(self.style.SUCCESS('Default publishers inserted successfully.'))
+        else:
+            self.stdout.write('The Publisher table is not empty.')
+
+        file_path = os.path.abspath('libreria_franklin/default data/author_data.json')
+        if not Author.objects.exists():
+            with open(file_path) as file:
+                data = json.load(file)
+
+            for author_data in data:
+                name = author_data['name']
+                Author.objects.create(name = name)
 
         file_path = os.path.abspath('libreria_franklin/default data/publisher_data.json')
         if not Publisher.objects.exists():
@@ -58,7 +79,6 @@ class Command(BaseCommand):
                 author = Author.objects.get(id_author = book_data['authorId'])
                 publisher = Publisher.objects.get(id_publisher = book_data['publisherId'])
                 genres = Genre.objects.filter(id_genre__in = book_data['genres'])
-
                 book  = Book.objects.create( isbn = isbn, title = title, page_amount = pageAmount, 
                                     book_cover = book_cover, stock= stock, release_year = release_year, 
                                     synopsis = synopsis, price = price, tags = tag, author = author, 
