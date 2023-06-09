@@ -1,0 +1,170 @@
+<div class="modal-body p-0 m-0" [class.pb-5]="!formEnable" *ngIf="!isDeleteForm">
+  <div class="container">
+
+    <div class="row">
+      <div class="text-end pt-4 pe-3">
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()">
+        </button>
+      </div>
+
+      <div class="row justify-content-start">
+        <div class="col-12 mb-2">
+          <h4 class="font-medium fs-md-1 fc-primary">Agregar Libro</h4>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="bookForm" (ngSubmit)="onSaveHandle($event)">
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="isbn" placeholder="ISBN" formControlName="isbn" />
+            <label for="isbn">ISBN</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="text" class="form-control " id="titulo" placeholder="titulo" formControlName="title" />
+            <label for="titulo">Título</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="paginas" placeholder="Cantidad de páginas"
+              formControlName="pageAmount" />
+            <label for="paginas">Cantidad de páginas</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="portada" placeholder="Imagen de portada"
+              formControlName="bookCover" />
+            <label for="portada">Imagen de portada</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="stock" placeholder="Stock" formControlName="stock" />
+            <label for="stock">Stock</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="precio" placeholder="Precio" formControlName="price" />
+            <label for="precio">Precio</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="number" min="1900" max="2099" step="1" class="form-control" id="fecha"
+              placeholder="Año de lanzamiento" formControlName="releaseYear" />
+            <label for="fecha">Año de lanzamiento</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <select id="autor" class="form-select" aria-label="Autor" formControlName="author">
+              <option selected value="">Seleccione un autor</option>
+              <option *ngFor="let author of authors" [value]="author.id_author">{{author.name}}</option>
+            </select>
+            <label for="autor">Autor</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <select id="editorial" class="form-select" aria-label="Publisher" formControlName="publisher">
+              <option selected value="">Seleccione una editorial</option>
+              <option *ngFor="let publisher of publishers" [value]="publisher.id_publisher">{{publisher.name}}</option>
+            </select>
+            <label for="editorial">Editorial</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <select id="genre" class="form-select" aria-label="Genre" formControlName="genre">
+              <option selected value="">Seleccione una genero</option>
+              <option *ngFor="let genre of genres" [value]="genre.id_genre">{{genre.name}}</option>
+            </select>
+            <label for="genero">Genero</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="tag" placeholder="Tag" formControlName="tags" />
+            <label for="tag">Tag</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Sinopsis" id="synopsis" style="height: 100px"
+              formControlName="synopsis">
+          </textarea>
+            <label for="synopsis">Sinopsis</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer" *ngIf="formEnable">
+        <div>
+          <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
+            Cancelar
+          </button>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-danger">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-body p-0 m-0" [class.pb-5]="!formEnable" *ngIf="isDeleteForm">
+  <div class="container">
+
+    <div class="row py-5">
+
+      <div class="row justify-content-center">
+        <div class="col-12 mb-1 text-center">
+          <h4 class="font-medium fs-md-1 fc-primary">¿Desea eliminar el libro? </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer" *ngIf="formEnable">
+      <div>
+        <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
+          Cancelar
+        </button>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-danger" (click)="onConfirmDelete()">
+          Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

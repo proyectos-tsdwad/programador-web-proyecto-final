@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book/book-model';
-import { BookService } from 'src/app/services/book/book.service';
+
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BookFormComponent } from './book-form/book-form.component';
+import { BookDashboardService } from '../../services/book/book-dashboard.service';
+
 
 @Component({
   selector: 'app-book-dashboard-page',
@@ -8,13 +12,13 @@ import { BookService } from 'src/app/services/book/book.service';
   styleUrls: ['./book-dashboard-page.component.css']
 })
 export class BookDashboardPageComponent implements OnInit {
-  bookService: BookService;
 
   books: Book[] = [];
 
-  constructor(bookService: BookService) {
-    this.bookService = bookService;
-  }
+  constructor(
+    private bookService: BookDashboardService,
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit() {
     this.getBooks();
@@ -23,8 +27,57 @@ export class BookDashboardPageComponent implements OnInit {
   getBooks() {
     this.bookService.getAllBooks()
       .subscribe((result: Book[]) => {
-        this.books = result;
+        this.books = this.bookService.oderBooksByAuthorNameAsc(result);
       });
+  }
+
+  onCreateBook() {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true })
+      .result.then((result: boolean) => {
+        console.log('res', result);
+        if (!result) {
+          return;
+        }
+        this.getBooks();
+      }, () => {
+        return;
+      });
+  }
+
+  onEditBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true })
+    modalRef.componentInstance.action = 'edit';
+    modalRef.componentInstance.bookIsbn = isbn;
+
+    modalRef.result.then((result: boolean) => {
+      if (!result) {
+        return;
+      }
+      this.getBooks();
+    }, () => {
+      return;
+    });
+  }
+
+  onDeleteBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'md', centered: true })
+    modalRef.componentInstance.action = 'delete';
+    modalRef.componentInstance.bookIsbn = isbn;
+
+    modalRef.result.then((result: boolean) => {
+      if (!result) {
+        return;
+      }
+      this.getBooks();
+    }, () => {
+      return;
+    });
+  }
+
+  onViewBook(isbn: string) {
+    const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
+    modalRef.componentInstance.action = 'view';
+    modalRef.componentInstance.bookIsbn = isbn;
   }
 }
 

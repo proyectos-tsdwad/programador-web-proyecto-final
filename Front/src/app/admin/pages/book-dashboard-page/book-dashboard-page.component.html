@@ -9,15 +9,15 @@
       <div class="col-12 col-lg-6">
         <div class="input-group">
           <input type="text" class="form-control rounded-1 px-4 py-3" placeholder="Buscá por ISBN, título, autor">
-          <button type="submit" class="btn btn-outline-secondary"> <img src="./assets/icons/extra/lupa.png" alt="">
+          <button type="button" class="btn btn-outline-secondary"> <img src="./assets/icons/extra/lupa.png" alt="">
             <i class="bi bi-search"></i>
           </button>
         </div>
       </div>
 
       <div class="col-12 col-lg-2 text-end">
-        <button type="button" role="button" class="primary-button-outline px-3 col-12 " data-bs-toggle="modal"
-          data-bs-target="#agregarLibroModal">Agregar stock</button>
+        <button type="button" role="button" class="primary-button-outline py-2 px-3 col-12"
+          (click)="onCreateBook()">Agregar stock</button>
       </div>
     </div>
   </section>
@@ -26,7 +26,7 @@
 
     <thead>
       <tr>
-        <th scope="col" class="th1">Libro</th>
+        <th class="col-5" scope="col">Libro</th>
         <th scope="col">Autor</th>
         <th scope="col">Precio</th>
         <th scope="col">Stock</th>
@@ -37,36 +37,38 @@
     <tbody>
 
       <tr *ngFor="let book of books">
+
         <td>
           <div class="row">
-            <div class="col-8 col-lg-2">
-              <img [src]="book.img" alt="imagen de portada de el libro {{book.title}}" class="img-fluid">
+            <div class="col-7 col-lg-2">
+              <img [src]="book.book_cover" alt="imagen de portada de el libro {{book.title}}" class="img-fluid">
             </div>
             <div class="col-12 col-lg-5 align-self-center">
               <span>{{book.title}}</span>
             </div>
           </div>
         </td>
-        <td>{{book.author.name}}</td>
-        <td>{{book.price}}</td>
-        <td>{{book.stock}}</td>
+
+        <td class="ps-3">{{book.author.name}}</td>
+        <td class="ps-4">{{book.price}}</td>
+        <td class="ps-4">{{book.stock}}</td>
 
 
         <td>
           <div class="row">
-            <div class="col-3">
-              <button class="edit-btn" type="button" role="button" title="ver detalle">
-                <img src="./assets/eye.png" alt="" class="img-fluid">
+            <div class="col">
+              <button class="edit-btn" type="button" title="ver detalle" (click)="onViewBook(book.isbn)">
+                <img src="./assets/icons/actions/eye.png" alt="" class="img-fluid">
               </button>
             </div>
-            <div class="col-3">
-              <button class="trash-btn" type="button" role="button" title="editar">
-                <img src="./assets/edit.png" alt="" class="img-fluid">
+            <div class="col">
+              <button class="trash-btn" type="button" title="editar" (click)="onEditBook(book.isbn)">
+                <img src="./assets/icons/actions/edit.png" alt="" class="img-fluid">
               </button>
             </div>
-            <div class="col-3">
-              <button class="trash-btn" type="button" role="button" title="eliminar">
-                <img src="./assets/trash.png" alt="" class="img-fluid">
+            <div class="col">
+              <button class="trash-btn" type="button" title="eliminar" (click)="onDeleteBook(book.isbn)">
+                <img src="./assets/icons/actions/trash.png" alt="" class="img-fluid">
               </button>
             </div>
           </div>

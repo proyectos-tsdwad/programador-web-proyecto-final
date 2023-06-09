@@ -1,0 +1,94 @@
+<div class="modal-body p-0 m-0">
+  <div class="container">
+    <div class="row">
+      <div class="text-end pt-4 pe-3">
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()"></button>
+      </div>
+
+      <div class="row justify-content-start">
+        <div class="col-12 mb-2">
+          <h4 class="font-medium fs-md-1 fc-primary">
+            Editar datos personales
+          </h4>
+        </div>
+      </div>
+    </div>
+    <form [formGroup]="formUser">
+      <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label visually-hidden">Nombre y apellido</label>
+        <div class="col-sm-12">
+          <input type="text" formControlName="nombre" class="form-control" id="inputEmail3"
+            placeholder="Nombre y apellido" />
+          <small class="text-danger mt-2" [hidden]="nombre.valid || nombre.pristine">
+            <span *ngIf="nombre.errors?.['required']">
+              El campo "Nombre y apellido"es obligatorio
+            </span>
+            <span *ngIf="nombre.errors?.['minlength']">
+              Minimo de 5 caracteres
+            </span>
+
+          </small>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputPassword3" class="col-sm-2 col-form-label visually-hidden">DNI</label>
+        <div class="col-sm-12">
+          <input type="number" formControlName="dni" class="form-control" id="inputPassword3"
+            placeholder="Documento de identidad" />
+          <small class="text-danger mt-2" [hidden]="dni.valid || dni.pristine">
+
+            <span *ngIf="dni.errors?.['required']">
+              El campo "Documento de identidad" es obligatorio
+            </span>
+            <span *ngIf="dni.errors?.['pattern']">
+              El "DNI" debe ser válido
+            </span>
+
+          </small>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-5">
+          <input type="number" formControlName="area" class="form-control" placeholder="Código de área"
+            aria-label="Codigo de area" />
+          <small class="text-danger mt-2" [hidden]="area.valid || area.pristine">
+            El campo "Código de área" es obligatorio
+          </small>
+        </div>
+        <div class="col-sm-7">
+          <input type="tel" formControlName="telef" class="form-control" placeholder="Número" aria-label="Numero" />
+          <small class="text-danger mt-2" [hidden]="telef.valid || telef.pristine">
+            El campo "Número" es obligatorio
+          </small>c
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputEmail" class="col-sm-2 col-form-label visually-hidden">Email</label>
+        <div class="col-sm-12">
+          <input type="email" formControlName="email" class="form-control" id="inputEmail"
+            placeholder="Correo electrónico" />
+          <small class="text-danger mt-2" [hidden]="email.valid || email.pristine">
+            <span *ngIf="email.errors?.['required']">
+              El email es obligatorio
+            </span>
+            <span *ngIf="email.errors?.['email']">
+              El email debe ser válido
+            </span>
+          </small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div>
+          <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
+            Cancelar
+          </button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger" (click)="guardar()" [disabled]="formUser.invalid">
+            Guardar cambios
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

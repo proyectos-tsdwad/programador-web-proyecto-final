@@ -128,6 +128,7 @@ a:hover {
   --primary-white: #F5F5F5;
   --secondary-white: #FFFFFF;
   --primary-red: #A02A44;
+  --alternative-red: #d54f4f;
   --secondary-red: #E35352;
 }
 
@@ -151,4 +152,12 @@ a:hover {
 
 .font-extra-bold {
   font-weight: 800;
+}
+
+.ng-valid:not(form).ng-touched{
+  border-left: 5px solid var(--primary-green);
+}
+
+.ng-invalid:not(form).ng-touched{
+  border-left: 5px solid var(--secondary-red);
 }

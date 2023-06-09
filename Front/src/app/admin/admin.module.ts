@@ -1,21 +1,48 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BookDashboardPageComponent } from './pages/book-dashboard-page/book-dashboard-page.component';
+import { ClientDashboardPageComponent } from './pages/client-dashboard-page/client-dashboard-page.component';
+import { AuthorDashboardPageComponent } from './pages/author-dashboard-page/author-dashboard-page.component';
+import { PublisherDashboardPageComponent } from './pages/publisher-dashboard-page/publisher-dashboard-page.component';
+
+import { UserDashboardService } from './services/user/user-dashboard.service';
+import { AuthorDashboardService } from './services/author/author-dashboard.service';
+import { PublisherDashboardService } from './services/publisher/publisher-dashboard.service';
+import { SaleDashboardService } from './services/sale/sale-dashboard.service';
+import { SalesDashboardPageComponent } from './pages/sales-dashboard-page/sales-dashboard-page.component';
+import { BookFormComponent } from './pages/book-dashboard-page/book-form/book-form.component';
+import { BookDashboardService } from './services/book/book-dashboard.service';
+import { GenreDashboardService } from './services/genre/genre-dashboard.service';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 
 
 @NgModule({
   declarations: [
-    BookDashboardPageComponent
+    BookDashboardPageComponent,
+    ClientDashboardPageComponent,
+    AuthorDashboardPageComponent,
+    PublisherDashboardPageComponent,
+    SalesDashboardPageComponent,
+    BookFormComponent,
+    AdminPageComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports: [
-    BookDashboardPageComponent
+  providers: [
+    UserDashboardService,
+    AuthorDashboardService,
+    PublisherDashboardService,
+    SaleDashboardService,
+    BookDashboardService,
+    GenreDashboardService
   ]
 })
 export class AdminModule { }

@@ -10,29 +10,26 @@ import { Purchase } from 'src/app/models/user/purchase-model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiURL =`${environment.API_URL}`;
+  private apiURL = `${environment.API_URL}`;
 
-  private apiUrl = `${environment.API_URL}/registers`;
+  private authApiUrl = `${environment.AUTH_API_URL}/register/`;
 
   constructor(
-    private http: HttpClient,
-
+    private http: HttpClient
   ) { }
 
-  createUser(dto: CreateUserDTO): Observable<User>{
-    return this.http.post<User>(this.apiUrl, dto);
+  createUser(dto: CreateUserDTO): Observable<CreateUserDTO> {
+    return this.http.post<CreateUserDTO>(this.authApiUrl, dto);
   }
 
 
-  getPersonalData(id: number): Observable<User> {
-    const url = `${this.apiURL}/users/${id}`;
-    console.log('URL:',url);
-    return this.http.get<User>(url);
+  getPersonalData(id: number): Observable<CreateUserDTO> {
+    const url = `${this.apiURL}/profiles/${id}`;
+    return this.http.get<CreateUserDTO>(url);
   }
 
   getPurchaseHistory(): Observable<Purchase[]> {
-    const url = `${this.apiURL}/purchases/`;
-    console.log('URL:', url);
+    const url = `${this.apiURL}/sales/`;
     return this.http.get<Purchase[]>(url);
   }
 }

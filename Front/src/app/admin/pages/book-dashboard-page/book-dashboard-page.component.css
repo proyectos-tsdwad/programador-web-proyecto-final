@@ -13,10 +13,6 @@
 
 .primary-button-outline {
   box-sizing: border-box;
-  width: 156px;
-  height: 45px;
-  left: 1160px;
-  top: 285px;
   border: 1px solid #E35352;
   border-radius: 15px;
 }
@@ -31,9 +27,9 @@
 
 }
 
-.th1 {
+/* .th1 {
   padding: 20px, 100px, 60px, 60px;
-}
+} */
 
 th {
   padding: 20px;
@@ -59,23 +55,6 @@ th {
   border-radius: 18px;
 }
 
-.catalog-menu a {
-  text-decoration: none;
-  color: var(--primary-grey);
-}
-
-.catalog-menu a.active {
-  font-weight: 700;
-  color: var(--secondary-red);
-  text-decoration: underline;
-}
-
-.catalog-menu a:hover {
-  font-weight: 700;
-  color: #E35352;
-  text-decoration: underline;
-}
-
 a.active {
   font-weight: 700;
   color: var(--secondary-red);
@@ -85,4 +64,16 @@ a.active {
 button {
   border: none;
   background-color: transparent;
+}
+
+.trash-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--secondary-red);
+}
+
+.edit-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-blue);
 }

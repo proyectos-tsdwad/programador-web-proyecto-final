@@ -26,8 +26,8 @@
 
             <a class="nav-link" (click)="onProfile()" *ngIf="profile">
               <img src="./assets/img/navbar/user.png" alt="perfil" /> Hola
-              {{ profile.name }}</a>
-          <a class="nav-link" (click)="onLogout()" *ngIf="profile">| Cerrar sesión</a>
+              {{ profile.username }}</a>
+          <a class="nav-link" (click)="logout()" *ngIf="profile">| Cerrar sesión</a>
        
 
         <app-button-cart></app-button-cart>

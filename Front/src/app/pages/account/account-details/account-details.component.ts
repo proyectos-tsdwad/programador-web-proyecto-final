@@ -1,8 +1,12 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Purchase } from 'src/app/models/user/purchase-model';
-import { User } from 'src/app/models/user/user-model';
-import { UserService} from 'src/app/services/user/user.service';
-
+import { CreateUserDTO, User } from 'src/app/models/user/user-model';
+import { UserService } from 'src/app/services/user/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddressFormComponent } from '../address-form/address-form.component';
+import { PersonalDataFormComponent } from '../personal-data-form/personal-data-form.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-details',
@@ -11,32 +15,51 @@ import { UserService} from 'src/app/services/user/user.service';
 })
 
 
-export class AccountDetailsComponent implements OnInit{
-  personalData!: User;
+export class AccountDetailsComponent implements OnInit, OnDestroy {
+  personalData!: CreateUserDTO;
   purchaseData!: Purchase[];
+  profile: User | null = null;
+  userDataSub!: Subscription
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private modalService: NgbModal,
+    private authService: AuthService
+
+  ) { }
+  
 
   ngOnInit() {
-    const id = 2; // Reemplaza con el email del usuario del que deseas obtener los datos personales
-    this.getUserData(id);
+    this.getUserData();
     this.getPurchaseData();
   }
 
-  getUserData(id: number) {
-    this.userService.getPersonalData(id).subscribe(data => {
-      this.personalData = data;
-     console.log(this.personalData);
-    });
-
+  ngOnDestroy(): void {
+    this.userDataSub.unsubscribe();
   }
 
-  getPurchaseData(){
-    this.userService.getPurchaseHistory().subscribe(data =>{
-      this.purchaseData =data ;
+  getUserData() {
+    this.userDataSub = this.authService.getProfileListener()
+    .subscribe(user => {
+      console.log('usuario', user)
+      this.profile = user;
+    });
+  }
+
+
+  getPurchaseData() {
+    this.userService.getPurchaseHistory().subscribe(data => {
+      this.purchaseData = data;
       console.log(this.purchaseData);
     });
   }
 
+  onEditAddress() {
+    const modalRef = this.modalService.open(AddressFormComponent, { size: 'lg', centered: true });
+  }
+
+  onEditPersonalData() {
+    const modalRef = this.modalService.open(PersonalDataFormComponent, { size: 'lg', centered: true });
+  }
 
 }

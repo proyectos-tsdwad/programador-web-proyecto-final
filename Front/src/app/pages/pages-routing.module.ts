@@ -10,6 +10,7 @@ import { AccountDetailsComponent } from "./account/account-details/account-detai
 import { SearchBookPageComponent } from "./book/search-book-page/search-book-page.component";
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent },
   { path: 'home', component: HomePageComponent },
   { path: 'book-detail/:isbn', component: BookDetailComponent },
   { path: 'book-detail', component: BookDetailComponent },
