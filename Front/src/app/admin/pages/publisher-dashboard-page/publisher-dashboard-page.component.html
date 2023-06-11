@@ -16,7 +16,9 @@
       </div>
 
       <div class="col-12 col-lg-2 text-end">
-        <button type="button" role="button" class="primary-button-outline col-12 py-2">Agregar editorial</button>
+        <button type="button" role="button" class="primary-button-outline col-12 py-2" (click)="onCreatePublisher()">
+          Agregar editorial
+        </button>
       </div>
     </div>
   </section>
@@ -38,18 +40,14 @@
 
         <td>
           <div class="row">
-            <!-- <div class="col-2">
-              <button class="edit-btn" type="button" title="ver detalle">
-                <img src="./assets/icons/actions/eye.png" alt="" class="img-fluid">
-              </button>
-            </div> -->
             <div class="col-2">
-              <button class="trash-btn" type="button" title="editar">
+              <button class="trash-btn" type="button" title="editar" (click)="onEditPublisher(publisher.id_publisher)">
                 <img src="./assets/icons/actions/edit.png" alt="" class="img-fluid">
               </button>
             </div>
             <div class="col-2">
-              <button class="trash-btn" type="button" title="eliminar">
+              <button class="trash-btn" type="button" title="eliminar"
+                (click)="onDeletePublisher(publisher.id_publisher)">
                 <img src="./assets/icons/actions/trash.png" alt="" class="img-fluid">
               </button>
             </div>

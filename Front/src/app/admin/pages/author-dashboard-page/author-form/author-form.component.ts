@@ -109,5 +109,4 @@ export class AuthorFormComponent {
   get name() {
     return this.auhtorForm.value.name as string;
   }
-
 }
