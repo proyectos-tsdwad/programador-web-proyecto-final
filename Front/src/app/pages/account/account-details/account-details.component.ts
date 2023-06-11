@@ -27,11 +27,16 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
     private authService: AuthService
 
   ) { }
-  
+
 
   ngOnInit() {
     this.getUserData();
     this.getPurchaseData();
+    this.authService.getProfileListener().subscribe((profile: User | null) => {
+      if (profile) {
+        this.profile = { ...profile };
+      }
+    });
   }
 
   ngOnDestroy(): void {
@@ -41,7 +46,7 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
   getUserData() {
     this.userDataSub = this.authService.getProfileListener()
     .subscribe(user => {
-      console.log('usuario', user)
+      console.log('Get usuario', user)
       this.profile = user;
     });
   }
@@ -56,10 +61,27 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
 
   onEditAddress() {
     const modalRef = this.modalService.open(AddressFormComponent, { size: 'lg', centered: true });
+    modalRef.componentInstance.addressData = { ...this.profile };
+    console.log('Addres form',this.profile)
+    modalRef.componentInstance.addressUpdated.subscribe((updateData: User) => {
+      this.profile = { ...updateData };
+      console.log('Put address usuario', this.profile)
+      this.authService.updateProfileListener(this.profile);
+    });
   }
 
   onEditPersonalData() {
-    const modalRef = this.modalService.open(PersonalDataFormComponent, { size: 'lg', centered: true });
+    const modalRef = this.modalService.open(PersonalDataFormComponent, {
+      size: 'lg',
+      centered: true,
+    });
+    console.log(this.profile);
+    modalRef.componentInstance.Data = { ...this.profile };
+    modalRef.componentInstance.dataUpdated.subscribe((updateData: User) => {
+      this.profile = { ...updateData };
+      console.log('Put usuario', this.profile)
+      this.authService.updateProfileListener(this.profile);
+    });
   }
 
 }
