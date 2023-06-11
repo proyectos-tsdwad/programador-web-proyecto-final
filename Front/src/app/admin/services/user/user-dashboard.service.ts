@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from 'src/app/models/user/user-model';
+import { User, UserBasicInfoDTO } from 'src/app/models/user/user-model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -15,6 +15,6 @@ export class UserDashboardService {
   getUsers() {
     const url = `${this.apiURL}/users`
     // const url = `${this.apiURL}/users?_sort=authorName&_order=asc`;
-    return this.http.get<User[]>(url);
+    return this.http.get<UserBasicInfoDTO[]>(url);
   }
 }
