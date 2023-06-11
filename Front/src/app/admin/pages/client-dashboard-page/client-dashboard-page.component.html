@@ -24,7 +24,6 @@
         <th scope="col">Nombre</th>
         <th scope="col">Correo Electrónico</th>
         <th scope="col">Teléfono</th>
-        <th scope="col">Acciones</th>
       </tr>
     </thead>
 
@@ -34,22 +33,7 @@
 
         <td class="ps-4">{{user.username}}</td>
         <td class="ps-4">{{user.email}}</td>
-        <td class="ps-4">{{user.telephone_number}}</td>
-
-        <td>
-          <div class="row">
-            <div class="col-3">
-              <button class="edit-btn" type="button" title="ver detalle">
-                <img src="./assets/icons/actions/eye.png" alt="" class="img-fluid">
-              </button>
-            </div>
-            <div class="col-3">
-              <button class="trash-btn" type="button" title="editar">
-                <img src="./assets/icons/actions/view-record.png" alt="" class="img-fluid">
-              </button>
-            </div>
-          </div>
-        </td>
+        <td class="ps-4">{{user.telephone_area_code}}{{user.telephone_number}}</td>
       </tr>
 
     </tbody>

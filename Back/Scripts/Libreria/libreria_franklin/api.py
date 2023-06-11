@@ -109,9 +109,10 @@ class UserList(generics.ListCreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
     http_method_names = ['get']
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     def list(self, request):
         queryset = self.get_queryset()
         serializer = UserSerializer(queryset, many=True)
-        if self.request.user.is_authenticated:
-            return Response(serializer.data)
+        return Response(serializer.data)
+        # if self.request.user.is_authenticated:
+        #     return Response(serializer.data)
