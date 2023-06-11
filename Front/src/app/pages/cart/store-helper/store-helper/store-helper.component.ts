@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'app-store-helper',
@@ -7,18 +9,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./store-helper.component.css'],
 })
 export class StoreHelperComponent implements OnInit {
-  stores: any[] = []; // Array para almacenar las tiendas
+  stores: any[] = [];
+  private apiUrl = environment.API_URL;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private storeService: StoreService) {}
 
   ngOnInit(): void {
-    this.getStores();
+    this.getAllStores();
   }
 
-  getStores(): void {
-    this.http.get<any[]>('/api/v1/store/').subscribe(
+  getAllStores(): void {
+    this.http.get<any[]>(`${this.apiUrl}/store/`).subscribe(
       (response) => {
-        this.stores = response; // Almacena la lista de tiendas en el array
+        this.stores = response;
       },
       (error) => {
         console.error(error);

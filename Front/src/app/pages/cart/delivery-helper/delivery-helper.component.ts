@@ -14,7 +14,7 @@ export class DeliveryHelperComponent {
   constructor(private deliveryService: DeliveryService) {
     this.postalCode = '';
     this.shippingCost = 0;
-    this.postalCodeError = false;
+    this.postalCodeError = true;
   }
 
   calcularEnvio() {
