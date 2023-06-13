@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { StoreService } from 'src/app/services/store/store.service';
+import { Store } from 'src/app/models/store/store-models';
 
 @Component({
   selector: 'app-store-helper',
@@ -9,7 +10,8 @@ import { StoreService } from 'src/app/services/store/store.service';
   styleUrls: ['./store-helper.component.css'],
 })
 export class StoreHelperComponent implements OnInit {
-  stores: any[] = [];
+  stores: Store[] = []; // Variable para almacenar la lista de tiendas
+
   private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient, private storeService: StoreService) {}
@@ -18,14 +20,9 @@ export class StoreHelperComponent implements OnInit {
     this.getAllStores();
   }
 
-  getAllStores(): void {
-    this.http.get<any[]>(`${this.apiUrl}/store/`).subscribe(
-      (response) => {
-        this.stores = response;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  getAllStores() {
+    this.storeService.getAllStores().subscribe((result: Store[]) => {
+      this.stores = result;
+    });
   }
 }
