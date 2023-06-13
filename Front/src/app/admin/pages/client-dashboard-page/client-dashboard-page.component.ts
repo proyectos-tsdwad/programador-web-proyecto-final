@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user/user-model';
+import { UserBasicInfoDTO } from 'src/app/models/user/user-model';
 import { UserDashboardService } from '../../services/user/user-dashboard.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserDashboardService } from '../../services/user/user-dashboard.service
 })
 export class ClientDashboardPageComponent implements OnInit {
 
-  users: User[] = [];
+  users: UserBasicInfoDTO[] = [];
 
   constructor(
     private UserService: UserDashboardService
@@ -17,7 +17,7 @@ export class ClientDashboardPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.UserService.getUsers()
-      .subscribe((result: User[]) => {
+      .subscribe((result: UserBasicInfoDTO[]) => {
         this.users = result;
       });
   }

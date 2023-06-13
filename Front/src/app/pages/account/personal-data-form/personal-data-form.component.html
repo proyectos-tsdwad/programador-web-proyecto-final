@@ -13,17 +13,17 @@
         </div>
       </div>
     </div>
-    <form [formGroup]="formUser">
+    <form [formGroup]="formUser" (submit)="updateUserData()">
       <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label visually-hidden">Nombre y apellido</label>
         <div class="col-sm-12">
-          <input type="text" formControlName="nombre" class="form-control" id="inputEmail3"
+          <input type="text" formControlName="username" class="form-control" id="inputEmail3"
             placeholder="Nombre y apellido" />
-          <small class="text-danger mt-2" [hidden]="nombre.valid || nombre.pristine">
-            <span *ngIf="nombre.errors?.['required']">
+          <small class="text-danger mt-2" [hidden]="username.valid || username.pristine">
+            <span *ngIf="username.errors?.['required']">
               El campo "Nombre y apellido"es obligatorio
             </span>
-            <span *ngIf="nombre.errors?.['minlength']">
+            <span *ngIf="username.errors?.['minlength']">
               Minimo de 5 caracteres
             </span>
 
@@ -33,14 +33,14 @@
       <div class="row mb-3">
         <label for="inputPassword3" class="col-sm-2 col-form-label visually-hidden">DNI</label>
         <div class="col-sm-12">
-          <input type="number" formControlName="dni" class="form-control" id="inputPassword3"
+          <input type="number" formControlName="document" class="form-control" id="inputPassword3"
             placeholder="Documento de identidad" />
-          <small class="text-danger mt-2" [hidden]="dni.valid || dni.pristine">
+          <small class="text-danger mt-2" [hidden]="document.valid || document.pristine">
 
-            <span *ngIf="dni.errors?.['required']">
+            <span *ngIf="document.errors?.['required']">
               El campo "Documento de identidad" es obligatorio
             </span>
-            <span *ngIf="dni.errors?.['pattern']">
+            <span *ngIf="document.errors?.['pattern']">
               El "DNI" debe ser válido
             </span>
 
@@ -49,17 +49,17 @@
       </div>
       <div class="row mb-3">
         <div class="col-sm-5">
-          <input type="number" formControlName="area" class="form-control" placeholder="Código de área"
+          <input type="number" formControlName="telephone_area_code" class="form-control" placeholder="Código de área"
             aria-label="Codigo de area" />
-          <small class="text-danger mt-2" [hidden]="area.valid || area.pristine">
+          <small class="text-danger mt-2" [hidden]="telephone_area_code.valid || telephone_area_code.pristine">
             El campo "Código de área" es obligatorio
           </small>
         </div>
         <div class="col-sm-7">
-          <input type="tel" formControlName="telef" class="form-control" placeholder="Número" aria-label="Numero" />
-          <small class="text-danger mt-2" [hidden]="telef.valid || telef.pristine">
+          <input type="tel" formControlName="telephone_number" class="form-control" placeholder="Número" aria-label="Numero" />
+          <small class="text-danger mt-2" [hidden]="telephone_number.valid || telephone_number.pristine">
             El campo "Número" es obligatorio
-          </small>c
+          </small>
         </div>
       </div>
       <div class="row mb-3">
@@ -84,7 +84,7 @@
           </button>
         </div>
         <div>
-          <button type="button" class="btn btn-danger" (click)="guardar()" [disabled]="formUser.invalid">
+          <button type="submit" class="btn btn-danger" [disabled]="formUser.invalid">
             Guardar cambios
           </button>
         </div>
