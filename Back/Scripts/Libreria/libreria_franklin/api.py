@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.response import Response
 from .serializers import UserSerializer
 from rest_framework import status, generics
+from django.db.models import Q
 
 class LoginView(APIView):
     permission_classes = [AllowAny] 
@@ -46,6 +47,17 @@ class BookViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
    permission_classes = [permissions.AllowAny]
    serializer_class = BookSerializer
    lookup_field = 'isbn'
+
+   def get_queryset(self):
+        search_query = self.request.GET.get('search', '')
+        queryset = Book.objects.filter(
+            Q(title__icontains=search_query) |
+            Q(isbn__icontains=search_query) |
+            Q(author__icontains=search_query) |
+            Q(editorial__icontains=search_query)
+        )
+
+        return queryset
 
 class AuthorViewSet(viewsets.ModelViewSet):
    queryset = Author.objects.all()

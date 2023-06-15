@@ -26,8 +26,8 @@ export class BookService {
   }
 
   getSearchResults(title: string) {
-    this.http
-      .get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&title_like=${title}`)
+    const url = `${this.apiUrl}/books/?search=${title}`;
+    this.http.get<Book[]>(url)
       .subscribe((result: Book[]) => {
         this.booksFound = result;
         this.booksFoundUpdated.next([...this.booksFound]);
