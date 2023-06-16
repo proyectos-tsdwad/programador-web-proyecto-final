@@ -75,12 +75,12 @@ class DeliveryViewSet(viewsets.ModelViewSet):
    
 class StoreViewSet(viewsets.ModelViewSet):
     queryset =Store.objects.all()
-    permissions_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]
     serializer_class = StoreSerializer
 
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
-    permissions_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]
     serializer_class = PaymentSerializer
 
 class ProfileViewSet(viewsets.ModelViewSet):
