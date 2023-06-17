@@ -134,7 +134,7 @@ class UserList(generics.ListCreateAPIView):
 class ProcessPayment(APIView):
     permission_classes = [permissions.AllowAny]
     def post(self, request):
-        return Response({"respuesta": "aprobado"})        
+        return Response({"status": "ok"})        
 
 # class ProcessPaymentA(APIView):
 #     def post(self, request):
