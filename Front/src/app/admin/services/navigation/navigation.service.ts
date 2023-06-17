@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class NavigationService {
+export class AdminNavigationService {
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router
-  ) { }
-
-  navigateToBookDashBoard() {
+  navigateToBookDashboard() {
     this.router.navigate(['/admin/book-dashboard']);
+  }
+  navigateToSalesDashboard() {
+    this.router.navigate(['/admin/sales-dashboard']);
+    console.log('navigate service');
+  }
+  navigateToClientDashboard() {
+    this.router.navigate(['/admin/client-dashboard']);
   }
 }

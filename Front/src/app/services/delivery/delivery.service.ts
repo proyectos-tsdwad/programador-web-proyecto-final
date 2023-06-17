@@ -1,10 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Store } from 'src/app/models/store/store-models';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DeliveryService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   calculateShippingCost(postalCode: number): number {
     const insideFederalCapital = 1000;
@@ -16,5 +19,13 @@ export class DeliveryService {
         : outsideOfFederalCapital;
 
     return cost;
+  }
+  private apiUrl = environment.API_URL;
+  private stores: Store[] = [];
+
+  getAllStores() {
+    const url = `${this.apiUrl}/store/`;
+
+    return this.http.get<Store[]>(url);
   }
 }
