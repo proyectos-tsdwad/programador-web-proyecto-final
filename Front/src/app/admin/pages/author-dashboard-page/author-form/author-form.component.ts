@@ -54,6 +54,7 @@ export class AuthorFormComponent {
 
   onSaveHandle(event: Event) {
     event.preventDefault;
+    this.authorForm.markAllAsTouched();
 
     if (this.action === 'create') {
       this.saveNewAuthor();
