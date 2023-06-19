@@ -27,7 +27,7 @@
           <div class="col-12 col-lg-11 col-xl-9">
 
             <div class="col-12 pb-3">
-              <input minlength="3" formControlName="name" type="text" class="form-control fw-300 py-3" placeholder="Nombre y apellido" />
+              <input minlength="3" formControlName="name" type="text" class="form-control fw-300 py-3 formInput" placeholder="Nombre y apellido" />
                 <div *ngIf="name?.errors && name?.touched">
                   <ng-container *ngFor="let error of errorMessages.name">
                     <div class="text-danger" *ngIf="name?.hasError(error.type)">
@@ -38,7 +38,7 @@
             </div>
 
             <div class="col-12 py-3">
-              <input formControlName="document" type="text" class="form-control fw-300 py-3" placeholder="Documento de identidad" />
+              <input formControlName="document" type="text" class="form-control fw-300 py-3 formInput" placeholder="Documento de identidad" />
               <div *ngIf="document?.errors && document?.touched">
                 <ng-container *ngFor="let error of errorMessages.document">
                   <div class="text-danger" *ngIf="document?.hasError(error.type)">
@@ -50,7 +50,7 @@
 
             <div class="row">
               <div class="col-4 py-3">
-                <input formControlName="areaCode" type="text" class="form-control fw-300 py-3" placeholder="Código de área" />
+                <input formControlName="areaCode" type="text" class="form-control fw-300 py-3 formInput" placeholder="Código de área" />
                 <div *ngIf="areaCode?.errors && areaCode?.touched">
                   <ng-container *ngFor="let error of errorMessages.areaCode">
                     <div class="text-danger" *ngIf="areaCode?.hasError(error.type)">
@@ -61,7 +61,7 @@
               </div>
 
               <div class="col-8 py-3">
-                <input formControlName="telephone" type="tel" class="form-control fw-300 py-3" placeholder="Número de teléfono" />
+                <input formControlName="telephone" type="tel" class="form-control fw-300 py-3 formInput" placeholder="Número de teléfono" />
                   <div *ngIf="telephone?.errors && telephone?.touched">
                     <ng-container *ngFor="let error of errorMessages.telephone">
                       <div class="text-danger" *ngIf="telephone?.hasError(error.type)">
@@ -74,7 +74,7 @@
 
             <div class="row">
               <div class="col-9 py-3">
-                <input formControlName="address" type="text" class="form-control fw-300 py-3" placeholder="Calle y número" />
+                <input formControlName="address" type="text" class="form-control fw-300 py-3 formInput" placeholder="Calle y número" />
                   <div *ngIf="address?.errors && address?.touched">
                     <ng-container *ngFor="let error of errorMessages.address">
                       <div class="text-danger" *ngIf="address?.hasError(error.type)">
@@ -85,7 +85,7 @@
               </div>
 
               <div class="col-3 py-3">
-                <input formControlName="postalCode" type="tel" class="form-control fw-300 py-3" placeholder="Código postal" />
+                <input formControlName="postalCode" type="tel" class="form-control fw-300 py-3 formInput" placeholder="Código postal" />
                   <div *ngIf="postalCode?.errors && postalCode?.touched">
                     <ng-container *ngFor="let error of errorMessages.postalCode">
                       <div class="text-danger" *ngIf="postalCode?.hasError(error.type)">
@@ -99,7 +99,7 @@
 
             <div class="row">
               <div class="col-6 py-3">
-                <input formControlName="location" type="text" class="form-control fw-300 py-3" placeholder="Localidad" />
+                <input formControlName="location" type="text" class="form-control fw-300 py-3 formInput" placeholder="Localidad" />
                   <div *ngIf="location?.errors && location?.touched">
                     <ng-container *ngFor="let error of errorMessages.location">
                       <div class="text-danger" *ngIf="location?.hasError(error.type)">
@@ -110,7 +110,7 @@
               </div>
 
               <div class="col-6 py-3">
-                <input formControlName="province" type="text" class="form-control fw-300 py-3" placeholder="Provincia" />
+                <input formControlName="province" type="text" class="form-control fw-300 py-3 formInput" placeholder="Provincia" />
                   <div *ngIf="province?.errors && province?.touched">
                     <ng-container *ngFor="let error of errorMessages.province">
                       <div class="text-danger" *ngIf="province?.hasError(error.type)">
@@ -122,7 +122,7 @@
             </div>
 
             <div class="col-12 py-3">
-              <input formControlName="email" type="email" class="form-control fw-300 py-3" placeholder="Correo electronico" />
+              <input formControlName="email" type="email" class="form-control fw-300 py-3 formInput" placeholder="Correo electronico" />
                 <div *ngIf="email?.errors && email?.touched">
                   <ng-container *ngFor="let error of errorMessages.email">
                     <div class="text-danger" *ngIf="email?.hasError(error.type)">
@@ -133,7 +133,7 @@
             </div>
 
             <div class="col-12 py-3">
-              <input formControlName="password" type="password" class="form-control fw-300 py-3" placeholder="Contraseña" required />
+              <input formControlName="password" type="password" class="form-control fw-300 py-3 formInput" placeholder="Contraseña" required />
                 <div *ngIf="password?.errors && password?.touched">
                   <ng-container *ngFor="let error of errorMessages.password">
                     <div class="text-danger" *ngIf="password?.hasError(error.type)">

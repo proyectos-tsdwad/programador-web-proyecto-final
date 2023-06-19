@@ -100,6 +100,7 @@ export class RegisterPageComponent implements OnInit {
   }
 
   registerUser(){
+    this.registerForm.markAllAsTouched();
     if(this.registerForm.valid){
       console.log('valido');
 
@@ -116,8 +117,6 @@ export class RegisterPageComponent implements OnInit {
         })
       )
       .subscribe();
-    } else{
-      this.registerForm.markAllAsTouched;
     }
    
 }
