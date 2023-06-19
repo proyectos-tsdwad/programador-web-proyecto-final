@@ -5,6 +5,8 @@ import { Auth } from 'src/app/models/auth/auth-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { BehaviorSubject, Observable, Subject, map, switchMap, tap } from 'rxjs';
 import { CreateUserDTO, User } from 'src/app/models/user/user-model';
+import { Purchase } from 'src/app/models/user/purchase-model';
+
 
 
 @Injectable({
@@ -56,12 +58,17 @@ export class AuthService {
 
   logoutUser(): Observable<boolean> {
     console.log('logout');
-      
+
     return this.http.post(`${this.authApiUrl}/logout/`, {}, { observe: 'response' }).pipe(
       map((response: HttpResponse<any>) => {
         return response.status === 200;
       })
     );
+  }
+
+  getBookPurchases(userId: number): Observable<Purchase[]> {
+    const url = `${this.apiUrl}/sells?userId=${userId}`; // Ajusta la URL para obtener las compras del usuario específico
+    return this.http.get<Purchase[]>(url);
   }
 
 }
