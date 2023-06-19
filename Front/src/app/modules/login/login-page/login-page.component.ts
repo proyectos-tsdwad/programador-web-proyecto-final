@@ -51,7 +51,7 @@ export class LoginPageComponent {
     }
   
     loginUser(){
-
+      this.loginForm.markAllAsTouched();
       if(this.loginForm.valid){
         console.log('login valido');
         const credentials = this.getCredencials();
@@ -69,10 +69,7 @@ export class LoginPageComponent {
       )
       .subscribe();
       this.activeModal.close();
-      } else{
-    
-        this.loginForm.markAllAsTouched
-      }
+      } 
       
      
   }

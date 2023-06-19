@@ -2,6 +2,7 @@
 
 
   <mat-step [stepControl]="firstFormGroup" label="">
+    <div [formGroup]="firstFormGroup">
 
     <div class="container-fluid pt-5">
       <div class="row">
@@ -13,29 +14,63 @@
           </div>
 
           <div class="col-12 pb-3">
-            <input type="text" class="form-control fw-300 py-3" title="Sólo acepta letras y espacios en blanco"
+            <input formControlName="name" type="text" class="form-control fw-300 py-3 formInput"
               placeholder="Nombre y apellido" />
+              <div *ngIf="name?.errors && name?.touched">
+                <ng-container *ngFor="let error of errorMessages.name">
+                  <div class="text-danger" *ngIf="name?.hasError(error.type)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
           </div>
 
           <div class="col-12 py-3">
-            <input type="text" class="form-control fw-300 py-3" title="DNI debe tener 7-8 dígitos (con o sin puntos)"
+            <input formControlName="document" type="text" class="form-control fw-300 py-3 formInput"
               placeholder="Documento de identidad" />
+              <div *ngIf="document?.errors && document?.touched">
+                <ng-container *ngFor="let error of errorMessages.document">
+                  <div class="text-danger" *ngIf="document?.hasError(error.type)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
           </div>
 
           <div class="row">
             <div class="col-4 py-3">
-              <input type="text" class="form-control fw-300 py-3" title="Solo acepta números"
+              <input formControlName="areaCode" type="text" class="form-control fw-300 py-3 formInput" 
                 placeholder="Código de área" />
+                <div *ngIf="areaCode?.errors && areaCode?.touched">
+                  <ng-container *ngFor="let error of errorMessages.areaCode">
+                    <div class="text-danger" *ngIf="areaCode?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
             </div>
             <div class="col-8 py-3">
-              <input type="tel" class="form-control fw-300 py-3" title="Solo acepta números"
+              <input formControlName="telephone" type="tel" class="form-control fw-300 py-3 formInput" 
                 placeholder="Número de teléfono" />
+                <div *ngIf="telephone?.errors && telephone?.touched">
+                  <ng-container *ngFor="let error of errorMessages.telephone">
+                    <div class="text-danger" *ngIf="telephone?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
             </div>
           </div>
 
           <div class="col-12 py-3">
-            <input type="email" class="form-control fw-300 py-3" title="Ingrese un correo válido"
-              placeholder="Correo electronico" />
+            <input formControlName="email" type="email" class="form-control fw-300 py-3 formInput" placeholder="Correo electronico" />
+            <div *ngIf="email?.errors && email?.touched">
+              <ng-container *ngFor="let error of errorMessages.email">
+                <div class="text-danger" *ngIf="email?.hasError(error.type)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
           </div>
         </div>
 
@@ -56,25 +91,53 @@
 
             </div>
             <div class="col-12 pb-3">
-              <input type="text" class="form-control fw-300 py-3" title="Acepta letras, números y espacios en blanco"
+              <input formControlName="address" type="text" class="form-control fw-300 py-3 formInput"
                 placeholder="Calle y número" />
+                <div *ngIf="address?.errors && address?.touched">
+                  <ng-container *ngFor="let error of errorMessages.address">
+                    <div class="text-danger" *ngIf="address?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
             </div>
 
             <div class="row">
               <div class="col-6 py-3">
-                <input type="text" class="form-control fw-300 py-3" title="Solo acepta letras"
+                <input formControlName="location" type="text" class="form-control fw-300 py-3 formInput"
                   placeholder="Localidad" />
+                  <div *ngIf="location?.errors && location?.touched">
+                    <ng-container *ngFor="let error of errorMessages.location">
+                      <div class="text-danger" *ngIf="location?.hasError(error.type)">
+                        {{ error.message }}
+                      </div>
+                    </ng-container>
+                  </div>
               </div>
 
               <div class="col-6 py-3">
-                <input type="text" class="form-control fw-300 py-3" title="Solo acepta letras"
+                <input formControlName="province" type="text" class="form-control fw-300 py-3 formInput" 
                   placeholder="Provincia" />
+                  <div *ngIf="province?.errors && province?.touched">
+                    <ng-container *ngFor="let error of errorMessages.province">
+                      <div class="text-danger" *ngIf="province?.hasError(error.type)">
+                        {{ error.message }}
+                      </div>
+                    </ng-container>
+                  </div>
               </div>
             </div>
 
             <div class="col-8 py-3">
-              <input type="number" class="form-control fw-300 py-3" title="Solo acepta números"
+              <input formControlName="postalCode" type="text" class="form-control fw-300 py-3 formInput" 
                 placeholder="Código postal" />
+                <div *ngIf="postalCode?.errors && postalCode?.touched">
+                  <ng-container *ngFor="let error of errorMessages.postalCode">
+                    <div class="text-danger" *ngIf="postalCode?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
             </div>
 
             <div class="mt-3">
@@ -102,10 +165,12 @@
         </div>
       </div>
     </div>
+  </div>
 
   </mat-step>
 
   <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
     <mat-radio-group>
       <div class="container-fluid pt-5">
         <div class="row">
@@ -132,19 +197,47 @@
             </div>
 
             <div class="col-12 pb-3 pt-3">
-              <input type="text" class="form-control fw-300 py-3" placeholder="Nombre como figura en la tarjeta" />
+              <input formControlName="cardName" type="text" class="form-control fw-300 py-3 formInput" placeholder="Nombre como figura en la tarjeta" />
+              <div *ngIf="cardName?.errors && cardName?.touched">
+                <ng-container *ngFor="let error of errorMessages.cardName">
+                  <div class="text-danger" *ngIf="cardName?.hasError(error.type)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
             </div>
 
             <div class="col-12 py-3">
-              <input type="text" class="form-control fw-300 py-3" placeholder="Número de tarjeta" />
+              <input formControlName="cardNumber" type="text" class="form-control fw-300 py-3 formInput" placeholder="Número de tarjeta" />
+              <div *ngIf="cardNumber?.errors && cardNumber?.touched">
+                <ng-container *ngFor="let error of errorMessages.cardNumber">
+                  <div class="text-danger" *ngIf="cardNumber?.hasError(error.type)">
+                    {{ error.message }}
+                  </div>
+                </ng-container>
+              </div>
             </div>
 
             <div class="row">
               <div class="col-4 py-3">
-                <input type="date" class="form-control fw-300 py-3" placeholder="Fecha de expiración" />
+                <input formControlName="expirationDate" type="text" class="form-control fw-300 py-3 formInput" placeholder="MM/AA" />
+                <div *ngIf="expirationDate?.errors && expirationDate?.touched">
+                  <ng-container *ngFor="let error of errorMessages.expirationDate">
+                    <div class="text-danger" *ngIf="expirationDate?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
               </div>
               <div class="col-8 py-3">
-                <input type="tel" class="form-control fw-300 py-3" placeholder="CVV" />
+                <input formControlName="cvv" type="text" class="form-control fw-300 py-3 formInput" placeholder="CVV" />
+                <div *ngIf="cvv?.errors && cvv?.touched">
+                  <ng-container *ngFor="let error of errorMessages.cvv">
+                    <div class="text-danger" *ngIf="cvv?.hasError(error.type)">
+                      {{ error.message }}
+                    </div>
+                  </ng-container>
+                </div>
               </div>
             </div>
 
@@ -195,7 +288,7 @@
         </div>
       </div>
     </mat-radio-group>
-
+  </form>
   </mat-step>
 
   <mat-step>
