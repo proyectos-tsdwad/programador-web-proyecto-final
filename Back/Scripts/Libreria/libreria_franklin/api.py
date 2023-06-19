@@ -48,7 +48,7 @@ class BookViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
    queryset = Book.objects.all()
    permission_classes = [permissions.AllowAny]
    serializer_class = BookSerializer
-   lookup_field = 'isbn'
+   lookup_field = 'id_book'
 
 #    def get_queryset(self):
 #         search_query = self.request.GET.get('search', '')

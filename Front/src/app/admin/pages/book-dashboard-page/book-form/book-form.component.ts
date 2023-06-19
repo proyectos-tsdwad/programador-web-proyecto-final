@@ -21,7 +21,7 @@ import { regExOnlyNumbers } from 'src/app/utils/regex/regex';
 })
 export class BookFormComponent implements OnInit {
 
-  @Input() bookIsbn: string = '';
+  @Input() bookId!: number;
   @Input() action: 'view' | 'create' | 'edit' | 'delete' = 'create';
 
   book!: CreateBookDto;
@@ -98,13 +98,13 @@ export class BookFormComponent implements OnInit {
     this.getGenres();
 
 
-    if (this.bookIsbn) {
-      this.getByIsbn();
+    if (typeof this.bookId !== 'undefined') {
+      this.getById();
     }
   }
 
-  getByIsbn() {
-    this.bookService.getBookByIsbn(this.bookIsbn)
+  getById() {
+    this.bookService.getBookById(this.bookId)
       .pipe(map((result: Book) => {
         this.bookForm.get('isbn')?.setValue(result.isbn);
         this.bookForm.get('title')?.setValue(result.title);
@@ -200,7 +200,7 @@ export class BookFormComponent implements OnInit {
       genre_ids: [this.bookForm.value.genre as number]
     }
 
-    this.bookService.updateBook(this.book)
+    this.bookService.updateBook(this.bookId, this.book)
       .subscribe((result: Book) => {
         let book: Book = result;
 
@@ -211,7 +211,7 @@ export class BookFormComponent implements OnInit {
   }
 
   onConfirmDelete() {
-    this.bookService.deleteBook(this.bookIsbn)
+    this.bookService.deleteBook(this.bookId)
       .subscribe(() => {
         this.activeModal.close(true);
 

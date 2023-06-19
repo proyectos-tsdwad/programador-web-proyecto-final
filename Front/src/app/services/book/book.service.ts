@@ -59,8 +59,8 @@ export class BookService {
       }));
   }
 
-  getBookByIsbn(isbn: string) {
-    const url = `${this.apiUrl}/books/${isbn}/`
+  getBookById(id: number) {
+    const url = `${this.apiUrl}/books/${id}/`
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`
     return this.http.get<Book>(url);
   }
