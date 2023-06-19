@@ -25,23 +25,21 @@ export class StoreFormComponent {
   errorMessages = {
     address: [
       { type: 'required', message: 'Campo requerido.' },
-      // { type: 'minlength', message: 'Mínimo 10 dígitos' },
-      // { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
     ],
     province: [
       { type: 'required', message: 'Campo requerido.' },
-      // { type: 'minlength', message: 'Mínimo 10 dígitos' },
-      // { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 50 caracteres.' }
     ],
     locality: [
       { type: 'required', message: 'Campo requerido.' },
-      // { type: 'minlength', message: 'Mínimo 10 dígitos' },
-      // { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 50 caracteres.' }
     ],
     telephone: [
       { type: 'required', message: 'Campo requerido.' },
-      // { type: 'minlength', message: 'Mínimo 10 dígitos' },
-      // { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+      { type: 'minlength', message: 'Mínimo 10 dígitos' },
+      { type: 'maxlength', message: 'Máximo 10 dígitos.' },
+      { type: 'pattern', message: 'Ingresa sólo números.' }
     ],
   };
 
@@ -140,10 +138,10 @@ export class StoreFormComponent {
 
   createForm() {
     this.storeForm = this.formBuilder.group({
-      address: ['', [Validators.required]],
-      province: ['', [Validators.required]],
-      locality: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
+      address: ['', [Validators.required, Validators.maxLength(80)]],
+      province: ['', [Validators.required, Validators.maxLength(50)]],
+      locality: ['', [Validators.required, Validators.maxLength(50)]],
+      telephone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern(regExOnlyNumbers)]],
 
     });
   }
