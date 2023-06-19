@@ -1,13 +1,12 @@
+import { Book } from "../book/book-model"
+
 export interface Purchase {
   orderNumber: number,
   date: string,
-  products: Product[]
+  price: number,
+  totalQuantity: number,
+  totalCost: number,
+  book: Book
 }
 
-export interface Product {
-  name: string,
-  price: number,
-  quantity: number,
-  totalAmount: number
-}
 

@@ -78,7 +78,7 @@ class Book(models.Model):
 class Payment(models.Model):
     id_payment = models.AutoField(primary_key=True)
     card_association = models.IntegerField()
-    number = models. IntegerField()
+    number = models.BigIntegerField()
     cvv = models.IntegerField()
     expiration = models.DateField()
     class Meta:

@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from libreria_franklin.models import Book, Author, Publisher, Genre, Store
+from libreria_franklin.models import Book, Author, Publisher, Genre, Store, Sell, CustomUser, Delivery, Payment
 import json
 import os
 
