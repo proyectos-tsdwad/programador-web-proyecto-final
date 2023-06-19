@@ -17,14 +17,14 @@ export class PublisherDashboardService {
     return this.http.get<Publisher[]>(url);
   }
 
-  savePublisher(author: createPublisherDTO) {
+  savePublisher(publisher: createPublisherDTO) {
     const url = `${this.apiUrl}/publishers/`;
-    return this.http.post<Publisher>(url, author);
+    return this.http.post<Publisher>(url, publisher);
   }
 
-  updatePublisher(author: Publisher) {
-    const url = `${this.apiUrl}/publishers/${author.id_publisher}/`;
-    return this.http.put<Publisher>(url, author);
+  updatePublisher(publisher: Publisher) {
+    const url = `${this.apiUrl}/publishers/${publisher.id_publisher}/`;
+    return this.http.put<Publisher>(url, publisher);
   }
 
   getPublisherById(id: string | number) {
