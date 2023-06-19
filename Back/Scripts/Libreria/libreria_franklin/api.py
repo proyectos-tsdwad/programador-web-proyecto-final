@@ -87,10 +87,11 @@ class DeliveryViewSet(viewsets.ModelViewSet):
    serializer_class = DeliverySerializer
       
    
-class StoreViewSet(viewsets.ModelViewSet):
+class StoreViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
     queryset =Store.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = StoreSerializer
+    lookup_field = 'id_store'
 
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
