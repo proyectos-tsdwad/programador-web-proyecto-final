@@ -41,7 +41,7 @@ export class CheckoutPageComponent {
     areaCode: [
       { type: 'required', message: 'Campo requerido.' },
       { type: 'minlength', message: 'Mínimo 2 dígitos' },
-      { type: 'maxlength', message: 'Máximo 5 dígitos.' },
+      { type: 'maxlength', message: 'Máximo 4 dígitos.' },
       { type: 'pattern', message: 'Ingresa sólo números.' }
     ],
     telephone: [
@@ -116,7 +116,7 @@ export class CheckoutPageComponent {
     this.firstFormGroup = this._formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(80)]],
       email: ['', [Validators.required, Validators.maxLength(80), Validators.pattern(regExEmail)]],
-      areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(5), Validators.pattern(regExOnlyNumbers)]],
+      areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
       telephone: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
       document: ['',[ Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
       location: ['', [Validators.required, Validators.maxLength(50)]],
