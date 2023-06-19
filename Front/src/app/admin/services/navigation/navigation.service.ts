@@ -5,14 +5,23 @@ import { Router } from '@angular/router';
 export class AdminNavigationService {
   constructor(private router: Router) { }
 
+  navigateToAdminHomePage() {
+    this.router.navigate(['/admin']);
+  }
+
   navigateToBookDashboard() {
     this.router.navigate(['/admin/book-dashboard']);
   }
+
   navigateToSalesDashboard() {
     this.router.navigate(['/admin/sales-dashboard']);
-    console.log('navigate service');
   }
+
   navigateToClientDashboard() {
     this.router.navigate(['/admin/client-dashboard']);
+  }
+
+  navigateToStoreDashboard() {
+    this.router.navigate(['/admin/store-dashboard']);
   }
 }

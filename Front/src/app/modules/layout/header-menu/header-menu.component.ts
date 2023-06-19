@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AdminNavigationService } from 'src/app/admin/services/navigation/navigation.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
@@ -8,9 +9,19 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 })
 export class HeaderMenuComponent {
 
-  constructor(private navigationService: NavigationService) { }
+  @Input() isAdmin = false;
+
+  constructor(
+    private navigationService: NavigationService,
+    private adminNavigationService: AdminNavigationService
+  ) { }
 
   onClickNavigateToHome() {
+    if (this.isAdmin) {
+      this.adminNavigationService.navigateToAdminHomePage();
+      return;
+    }
+
     this.navigationService.navigateToHome();
   }
 

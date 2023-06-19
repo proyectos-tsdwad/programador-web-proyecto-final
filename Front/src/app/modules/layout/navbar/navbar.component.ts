@@ -21,9 +21,9 @@ export class NavbarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private navigationService: NavigationService,
-    private AdminNavigationService: AdminNavigationService,
+    private adminNavigationService: AdminNavigationService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getProfile();
@@ -50,15 +50,19 @@ export class NavbarComponent implements OnInit {
   }
 
   onClickNavigateToBookDashboard() {
-    this.AdminNavigationService.navigateToBookDashboard();
+    this.adminNavigationService.navigateToBookDashboard();
   }
 
   onClickNavigateToSalesDashboard() {
-    this.AdminNavigationService.navigateToSalesDashboard();
+    this.adminNavigationService.navigateToSalesDashboard();
+  }
+
+  navigateToStoreDashboard() {
+    this.adminNavigationService.navigateToStoreDashboard();
   }
 
   onClickNavigateToClientDashboard() {
-    this.AdminNavigationService.navigateToClientDashboard();
+    this.adminNavigationService.navigateToClientDashboard();
   }
 
   getProfile() {
