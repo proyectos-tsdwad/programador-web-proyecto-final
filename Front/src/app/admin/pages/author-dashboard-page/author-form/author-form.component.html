@@ -16,12 +16,19 @@
       </div>
     </div>
 
-    <form [formGroup]="auhtorForm" (ngSubmit)="onSaveHandle($event)">
+    <form [formGroup]="authorForm" (ngSubmit)="onSaveHandle($event)">
       <div class="row mb-3">
         <div class="col-sm-12">
           <div class="form-floating">
-            <input type="text" class="form-control" id="isbn" placeholder="ISBN" formControlName="name" />
+            <input type="text" class="form-control formInput" id="isbn" placeholder="ISBN" formControlName="name" />
             <label for="isbn">Nombre</label>
+            <div *ngIf="name?.errors && name?.touched">
+              <ng-container *ngFor="let error of errorMessages.name">
+                <div class="text-danger" *ngIf="name?.hasError(error.type)">
+                  {{ error.message }}
+                </div>
+              </ng-container>
+            </div>
           </div>
         </div>
       </div>
