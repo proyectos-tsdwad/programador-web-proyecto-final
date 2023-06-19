@@ -26,8 +26,8 @@ export class BookService {
   }
 
   getSearchResults(title: string) {
-    this.http
-      .get<Book[]>(`${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&title_like=${title}`)
+    const url = `${this.apiUrl}/books/?search=${title}`;
+    this.http.get<Book[]>(url)
       .subscribe((result: Book[]) => {
         this.booksFound = result;
         this.booksFoundUpdated.next([...this.booksFound]);
@@ -59,8 +59,8 @@ export class BookService {
       }));
   }
 
-  getBookByIsbn(isbn: string) {
-    const url = `${this.apiUrl}/books/${isbn}/`
+  getBookById(id: number) {
+    const url = `${this.apiUrl}/books/${id}/`
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`
     return this.http.get<Book>(url);
   }

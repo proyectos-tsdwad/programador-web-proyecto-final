@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
 })
 export class BookDetailComponent implements OnInit {
   book!: Book;
-  isbn: string = '';
+  id: string = '';
   bookFound = false;
   recomendedBooks: Book[] = [];
 
@@ -24,7 +24,7 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
-      this.isbn = paramMap.get('isbn') as string;
+      this.id = paramMap.get('id') as string;
 
       this.getBook();
     });
@@ -35,7 +35,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   getBook() {
-    this.bookService.getBookByIsbn(this.isbn)
+    this.bookService.getBookById(Number(this.id))
       .subscribe((result: Book) => {
         this.book = result;
 

@@ -44,10 +44,10 @@ export class BookDashboardPageComponent implements OnInit {
       });
   }
 
-  onEditBook(isbn: string) {
+  onEditBook(id: number) {
     const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true })
     modalRef.componentInstance.action = 'edit';
-    modalRef.componentInstance.bookIsbn = isbn;
+    modalRef.componentInstance.bookId = id;
 
     modalRef.result.then((result: boolean) => {
       if (!result) {
@@ -59,10 +59,10 @@ export class BookDashboardPageComponent implements OnInit {
     });
   }
 
-  onDeleteBook(isbn: string) {
+  onDeleteBook(id: number) {
     const modalRef = this.modalService.open(BookFormComponent, { size: 'md', centered: true })
     modalRef.componentInstance.action = 'delete';
-    modalRef.componentInstance.bookIsbn = isbn;
+    modalRef.componentInstance.bookId = id;
 
     modalRef.result.then((result: boolean) => {
       if (!result) {
@@ -74,10 +74,10 @@ export class BookDashboardPageComponent implements OnInit {
     });
   }
 
-  onViewBook(isbn: string) {
+  onViewBook(id: number) {
     const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
     modalRef.componentInstance.action = 'view';
-    modalRef.componentInstance.bookIsbn = isbn;
+    modalRef.componentInstance.bookId = id;
   }
 }
 

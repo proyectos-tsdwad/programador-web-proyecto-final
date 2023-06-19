@@ -12,7 +12,7 @@ import { SearchBookPageComponent } from "./book/search-book-page/search-book-pag
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'home', component: HomePageComponent },
-  { path: 'book-detail/:isbn', component: BookDetailComponent },
+  { path: 'book-detail/:id', component: BookDetailComponent },
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'checkout', component: CheckoutPageComponent },
   { path: 'catalogue', component: BookCataloguePageComponent },

@@ -19,7 +19,13 @@ export class PublisherFormComponent {
   publisherForm!: FormGroup;
   publisher!: Publisher;
 
-  isDeleteForm: boolean = false
+  isDeleteForm: boolean = false;
+
+  errorMessages = {
+    name: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
+    ],}
 
 
   constructor(
@@ -48,6 +54,7 @@ export class PublisherFormComponent {
 
   onSaveHandle(event: Event) {
     event.preventDefault;
+    this.publisherForm.markAllAsTouched();
 
     if (this.action === 'create') {
       this.saveNewPublisher();
@@ -61,7 +68,7 @@ export class PublisherFormComponent {
   saveNewPublisher() {
 
     this.newPublisher = {
-      name: this.name,
+      name: this.publisherForm.value.name as string,
     }
 
     this.publisherService.savePublisher(this.newPublisher)
@@ -76,7 +83,7 @@ export class PublisherFormComponent {
 
   saveUpdatePublisher() {
 
-    this.publisher.name = this.name;
+    this.publisher.name = this.publisherForm.value.name as string;
 
     this.publisherService.updatePublisher(this.publisher)
       .subscribe((result: Publisher) => {
@@ -102,11 +109,11 @@ export class PublisherFormComponent {
 
   createForm() {
     this.publisherForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, Validators.maxLength(80)]],
     });
   }
 
   get name() {
-    return this.publisherForm.value.name as string;
+    return this.publisherForm.get('name');
   }
 }
