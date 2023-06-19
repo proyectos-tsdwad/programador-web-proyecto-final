@@ -26,7 +26,7 @@
           <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="row justify-content-center">
   
             <div class="col-12 col-lg-11 col-xl-9 form-register pb-4 pt-4">
-              <input formControlName="email" type="email" class="form-control fw-300 py-3" placeholder="Correo electronico" />
+              <input formControlName="email" type="email" class="form-control fw-300 py-3 formInput" placeholder="Correo electronico" />
               <div *ngIf="email?.errors && email?.touched">
                 <ng-container *ngFor="let error of errorMessages.email">
                   <div class="text-danger" *ngIf="email?.hasError(error.type)">
@@ -37,7 +37,7 @@
             </div>
   
             <div class="col-12 col-lg-11 col-xl-9 pb-4">
-              <input formControlName="password" type="password" class="form-control fw-300 py-3" placeholder="Contraseña" />
+              <input formControlName="password" type="password" class="form-control fw-300 py-3 formInput" placeholder="Contraseña" />
               <div *ngIf="password?.errors && password?.touched">
                 <ng-container *ngFor="let error of errorMessages.password">
                   <div class="text-danger" *ngIf="password?.hasError(error.type)">
