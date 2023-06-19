@@ -107,9 +107,9 @@ class Command(BaseCommand):
 
             self.stdout.write(self.style.SUCCESS('Default store inserted successfully.'))
         else:
-            self.stdout.write('The Store tabe is not empty.')               
-
-
+            self.stdout.write('The Store tabe is not empty.')
+            
+        
         # Insertar instancias de Delivery
         file_path = os.path.abspath('libreria_franklin/default data/delivery_data.json')
         if not Delivery.objects.exists():
