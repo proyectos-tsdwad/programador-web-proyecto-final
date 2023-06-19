@@ -13,7 +13,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
-import { regExEmail, regExOnlyNumbers } from 'src/app/utils/regex/regex';
+import { regExEmail, regExExpirationDate, regExOnlyNumbers } from 'src/app/utils/regex/regex';
 
 @Component({
   selector: 'app-checkout-page',
@@ -22,7 +22,7 @@ import { regExEmail, regExOnlyNumbers } from 'src/app/utils/regex/regex';
 })
 export class CheckoutPageComponent {
   firstFormGroup!: FormGroup;
-  secondFormGroup: FormGroup;
+  secondFormGroup!: FormGroup;
   thirdFormGroup: FormGroup;
   stepperOrientation: Observable<StepperOrientation>;
   icons = ['./assets/img/stepper/Camion.png', 'icono-2', 'icono-3'];
@@ -72,7 +72,25 @@ export class CheckoutPageComponent {
       { type: 'required', message: 'Campo requerido.' },
       { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
       { type: 'pattern', message: 'Ingresa un email válido.' }
-    ]
+    ],
+    cardName: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
+    ],
+    cardNumber: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'minlength', message: 'Mínimo 13 dígitos' },
+      { type: 'maxlength', message: 'Máximo 18 dígitos' }
+    ],
+    expirationDate: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'pattern', message: 'Ingresa una fecha válida.' }
+    ],
+    cvv: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'minlength', message: 'Mínimo 3 dígitos' },
+      { type: 'maxlength', message: 'Máximo 4 dígitos' }
+    ],
   };
 
   constructor(
@@ -85,10 +103,9 @@ export class CheckoutPageComponent {
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
 
     this.createFirstForm();
+    this.createSecondForm();
 
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
+    
 
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required],
@@ -108,6 +125,29 @@ export class CheckoutPageComponent {
       postalCode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]]
     });
   }
+
+  createSecondForm(){
+    this.secondFormGroup = this._formBuilder.group({
+      cardName: ['', [Validators.required, Validators.maxLength(80)]],
+      cardNumber: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(18)]],
+      expirationDate: ['', [Validators.required, Validators.pattern(regExExpirationDate)]],
+      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]],
+    });
+  }
+
+  checkoutFormValid(event: Event){
+  event.preventDefault;
+  
+  if(!this.firstFormGroup.valid || !this.secondFormGroup.valid){
+    
+    this.firstFormGroup.markAllAsTouched();
+    this.secondFormGroup.markAllAsTouched();
+    return
+  }
+
+
+
+}
 
   get name() {
     return this.firstFormGroup.get('name');
@@ -143,6 +183,22 @@ export class CheckoutPageComponent {
   
   get email() {
     return this.firstFormGroup.get('email');
+  }
+
+  get cardName() {
+    return this.secondFormGroup.get('cardName');
+  }
+  
+  get cardNumber() {
+    return this.secondFormGroup.get('cardNumber');
+  }
+  
+  get expirationDate() {
+    return this.secondFormGroup.get('expirationDate');
+  }
+
+  get cvv() {
+    return this.secondFormGroup.get('cvv');
   }
   
 
