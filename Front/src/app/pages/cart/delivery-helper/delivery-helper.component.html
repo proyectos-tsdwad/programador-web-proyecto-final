@@ -8,7 +8,6 @@
         <div class="col-5">
           <input type="text" class="form-control" placeholder="Código postal" [(ngModel)]="postalCode"
             (input)="validatePostalCode()" required />
-
         </div>
         <div class="col-auto">
           <button type="button" class="font-light" (click)="calcularEnvio()" [disabled]="postalCodeError">Calcular
@@ -23,8 +22,13 @@
       <span class="fs-sm-2 font-semi-bold fc-primary-light">Retirá gratis en nuestro local</span>
     </div>
     <div class="col-12">
-      <a type="button" class="btn btn-link">Elegir local</a>
-      <app-store-helper></app-store-helper>
+      <a type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#storeModal">Ver locales</a>
     </div>
   </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="storeModal" tabindex="-1" aria-labelledby="storeModalLabel" aria-hidden="true">
+  <app-store-helper></app-store-helper>
 </div>
