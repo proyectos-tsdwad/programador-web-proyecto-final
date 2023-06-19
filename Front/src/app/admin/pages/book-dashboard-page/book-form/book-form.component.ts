@@ -10,6 +10,7 @@ import { PublisherDashboardService } from 'src/app/admin/services/publisher/publ
 import { GenreDashboardService } from 'src/app/admin/services/genre/genre-dashboard.service';
 import { Genre } from 'src/app/models/genre/genre-model';
 import { map } from 'rxjs/operators'
+import { regExOnlyNumbers } from 'src/app/utils/regex/regex';
 
 
 
@@ -20,7 +21,7 @@ import { map } from 'rxjs/operators'
 })
 export class BookFormComponent implements OnInit {
 
-  @Input() bookIsbn: string = '';
+  @Input() bookId!: number;
   @Input() action: 'view' | 'create' | 'edit' | 'delete' = 'create';
 
   book!: CreateBookDto;
@@ -32,6 +33,50 @@ export class BookFormComponent implements OnInit {
 
   formEnable: boolean = true;
   isDeleteForm: boolean = false
+
+  errorMessages = {
+    isbn: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'minlength', message: 'Mínimo 10 dígitos' },
+      { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+    ],
+    title: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
+    ],
+    pageAmount: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'pattern', message: 'Ingresa sólo números.' }
+    ],
+    bookCover: [
+      { type: 'required', message: 'Campo requerido.' }
+    ],
+    stock: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'pattern', message: 'Ingresa sólo números.' }
+    ],
+    releaseYear: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    synopsis: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    price: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    tags: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    author: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    publisher: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+    genre: [
+      { type: 'required', message: 'Campo requerido.' },
+    ],
+  };
 
 
   constructor(
@@ -53,13 +98,13 @@ export class BookFormComponent implements OnInit {
     this.getGenres();
 
 
-    if (this.bookIsbn) {
-      this.getByIsbn();
+    if (typeof this.bookId !== 'undefined') {
+      this.getById();
     }
   }
 
-  getByIsbn() {
-    this.bookService.getBookByIsbn(this.bookIsbn)
+  getById() {
+    this.bookService.getBookById(this.bookId)
       .pipe(map((result: Book) => {
         this.bookForm.get('isbn')?.setValue(result.isbn);
         this.bookForm.get('title')?.setValue(result.title);
@@ -99,6 +144,7 @@ export class BookFormComponent implements OnInit {
 
   onSaveHandle(event: Event) {
     event.preventDefault;
+    this.bookForm.markAllAsTouched();
 
     if (this.action === 'create') {
       this.saveNewBook();
@@ -113,18 +159,18 @@ export class BookFormComponent implements OnInit {
   saveNewBook() {
 
     this.book = {
-      isbn: this.isbn,
-      title: this.title,
-      page_amount: this.pageAmount,
-      book_cover: this.bookCover,
-      stock: this.stock,
-      release_year: this.releaseYear,
-      synopsis: this.synopsis,
-      price: this.price,
-      tags: this.tags,
-      author_id: this.author,
-      publisher_id: this.publisher,
-      genre_ids: [this.genre]
+      isbn: this.bookForm.value.isbn as string,
+      title: this.bookForm.value.title as string,
+      page_amount: this.bookForm.value.pageAmount as number,
+      book_cover: this.bookForm.value.bookCover as string,
+      stock: this.bookForm.value.stock as number,
+      release_year: this.bookForm.value.releaseYear as number,
+      synopsis: this.bookForm.value.synopsis as string,
+      price: this.bookForm.value.price as string,
+      tags: this.bookForm.value.tags as string,
+      author_id: this.bookForm.value.author as number,
+      publisher_id: this.bookForm.value.publisher as number,
+      genre_ids: [this.bookForm.value.genre as number]
     }
 
     this.bookService.saveBook(this.book)
@@ -140,21 +186,21 @@ export class BookFormComponent implements OnInit {
   saveUpdateBook() {
 
     this.book = {
-      isbn: this.isbn,
-      title: this.title,
-      page_amount: this.pageAmount,
-      book_cover: this.bookCover,
-      stock: this.stock,
-      release_year: this.releaseYear,
-      synopsis: this.synopsis,
-      price: this.price,
-      tags: this.tags,
-      author_id: this.author,
-      publisher_id: this.publisher,
-      genre_ids: [this.genre]
+      isbn: this.bookForm.value.isbn as string,
+      title: this.bookForm.value.title as string,
+      page_amount: this.bookForm.value.pageAmount as number,
+      book_cover: this.bookForm.value.bookCover as string,
+      stock: this.bookForm.value.stock as number,
+      release_year: this.bookForm.value.releaseYear as number,
+      synopsis: this.bookForm.value.synopsis as string,
+      price: this.bookForm.value.price as string,
+      tags: this.bookForm.value.tags as string,
+      author_id: this.bookForm.value.author as number,
+      publisher_id: this.bookForm.value.publisher as number,
+      genre_ids: [this.bookForm.value.genre as number]
     }
 
-    this.bookService.updateBook(this.book)
+    this.bookService.updateBook(this.bookId, this.book)
       .subscribe((result: Book) => {
         let book: Book = result;
 
@@ -165,7 +211,7 @@ export class BookFormComponent implements OnInit {
   }
 
   onConfirmDelete() {
-    this.bookService.deleteBook(this.bookIsbn)
+    this.bookService.deleteBook(this.bookId)
       .subscribe(() => {
         this.activeModal.close(true);
 
@@ -181,11 +227,11 @@ export class BookFormComponent implements OnInit {
 
   createForm() {
     this.bookForm = this.formBuilder.group({
-      isbn: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
-      title: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
-      pageAmount: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      isbn: [{ value: '', disabled: !this.formEnable }, [Validators.required, Validators.minLength(10), Validators.maxLength(13)]],
+      title: [{ value: '', disabled: !this.formEnable }, [Validators.required, Validators.maxLength(80)]],
+      pageAmount: [{ value: '', disabled: !this.formEnable }, [Validators.required, Validators.pattern(regExOnlyNumbers)]],
       bookCover: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
-      stock: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
+      stock: [{ value: '', disabled: !this.formEnable }, [Validators.required, Validators.pattern(regExOnlyNumbers)]],
       releaseYear: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
       synopsis: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
       price: [{ value: '', disabled: !this.formEnable }, [Validators.required]],
@@ -197,51 +243,51 @@ export class BookFormComponent implements OnInit {
   }
 
   get isbn() {
-    return this.bookForm.value.isbn as string;
+    return this.bookForm.get('isbn');
   }
 
   get title() {
-    return this.bookForm.value.title as string;
+    return this.bookForm.get('title');
   }
 
   get pageAmount() {
-    return this.bookForm.value.pageAmount as number;
+    return this.bookForm.get('pageAmount');
   }
 
   get bookCover() {
-    return this.bookForm.value.bookCover as string;
+    return this.bookForm.get('bookCover');
   }
 
   get stock() {
-    return this.bookForm.value.stock as number;
+    return this.bookForm.get('stock');
   }
 
   get releaseYear() {
-    return this.bookForm.value.releaseYear as number;
+    return this.bookForm.get('releaseYear');
   }
 
   get synopsis() {
-    return this.bookForm.value.synopsis as string;
+    return this.bookForm.get('synopsis');
   }
 
   get price() {
-    return this.bookForm.value.price as string;
+    return this.bookForm.get('price');
   }
 
   get tags() {
-    return this.bookForm.value.tags as string;
+    return this.bookForm.get('tags');
   }
 
   get author() {
-    return this.bookForm.value.author as number;
+    return this.bookForm.get('author');
   }
 
   get publisher() {
-    return this.bookForm.value.publisher as number;
+    return this.bookForm.get('publisher');
   }
 
   get genre() {
-    return this.bookForm.value.genre as number;
+    return this.bookForm.get('genre');
   }
 
 }

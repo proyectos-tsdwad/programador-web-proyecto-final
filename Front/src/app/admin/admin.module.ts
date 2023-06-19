@@ -19,6 +19,9 @@ import { GenreDashboardService } from './services/genre/genre-dashboard.service'
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AuthorFormComponent } from './pages/author-dashboard-page/author-form/author-form.component';
 import { PublisherFormComponent } from './pages/publisher-dashboard-page/publisher-form/publisher-form.component';
+import { StoreDashboardPageComponent } from './pages/store-dashboard-page/store-dashboard-page.component';
+import { AdminNavigationService } from './services/navigation/navigation.service';
+import { StoreFormComponent } from './pages/store-dashboard-page/store-form/store-form.component';
 
 
 
@@ -32,7 +35,9 @@ import { PublisherFormComponent } from './pages/publisher-dashboard-page/publish
     BookFormComponent,
     AdminPageComponent,
     AuthorFormComponent,
-    PublisherFormComponent
+    PublisherFormComponent,
+    StoreDashboardPageComponent,
+    StoreFormComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +51,8 @@ import { PublisherFormComponent } from './pages/publisher-dashboard-page/publish
     PublisherDashboardService,
     SaleDashboardService,
     BookDashboardService,
-    GenreDashboardService
+    GenreDashboardService,
+    AdminNavigationService
   ]
 })
 export class AdminModule { }

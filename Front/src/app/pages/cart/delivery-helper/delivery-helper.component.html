@@ -1,15 +1,13 @@
 <div class="container-fluid">
   <div class="row gy-4 background p-3">
     <div class="col-12">
-      <span class="fs-sm-2 font-semi-bold fc-primary-light">Ingresá tu Código Postal de 4 cifras para calcular el costo
-        del envío </span>
+      <span class="fs-sm-2 font-semi-bold fc-primary-light">Ingresá tu código postal</span>
     </div>
     <div class="col-12 pb-3">
       <div class="row">
         <div class="col-5">
           <input type="text" class="form-control" placeholder="Código postal" [(ngModel)]="postalCode"
             (input)="validatePostalCode()" required />
-
         </div>
         <div class="col-auto">
           <button type="button" class="font-light" (click)="calcularEnvio()" [disabled]="postalCodeError">Calcular
@@ -24,8 +22,8 @@
       <span class="fs-sm-2 font-semi-bold fc-primary-light">Retirá gratis en nuestro local</span>
     </div>
     <div class="col-12">
-      <a type="button" class="btn btn-link">Elegir local</a>
-      <app-store-helper></app-store-helper>
+      <a type="button" class="btn btn-link" (click)="onWatchStores()">Ver sucursales</a>
     </div>
   </div>
+
 </div>

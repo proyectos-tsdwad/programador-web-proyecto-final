@@ -1,5 +1,5 @@
-<app-header-menu></app-header-menu>
-<app-navbar></app-navbar>
+<app-header-menu [isAdmin]="isAdmin"></app-header-menu>
+<app-navbar [isAdmin]="isAdmin"></app-navbar>
 <main>
   <router-outlet></router-outlet>
 </main>

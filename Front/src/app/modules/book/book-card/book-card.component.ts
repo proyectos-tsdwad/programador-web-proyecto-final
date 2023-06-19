@@ -18,7 +18,7 @@ export class BookCardComponent implements OnInit {
 
   }
 
-  navegar(isbn: string) {
-    this.navigationService.navigateToBookDetail(isbn);
+  navigate(id: number) {
+    this.navigationService.navigateToBookDetail(id);
   }
 }
