@@ -51,10 +51,11 @@ class Genre(models.Model):
         return self.name
 
 class Book(models.Model):
-    isbn = models.CharField(primary_key=True, max_length=20, blank=False)
+    id_book = models.AutoField(primary_key=True)
+    isbn = models.CharField( max_length=20, blank=False)
     title = models.CharField(max_length=200, blank=False)
     page_amount = models.PositiveIntegerField(blank=False)
-    book_cover = models.CharField(max_length=300)
+    book_cover = models.CharField(max_length=500)
     stock= models.PositiveIntegerField(blank=False, default=0)
     release_year = models.PositiveSmallIntegerField(blank=False)
     synopsis = models.TextField(max_length=3000, blank=False)
@@ -138,7 +139,7 @@ class Sell (models.Model):
   profile = models.ForeignKey(CustomUser, to_field= "id", related_name="profile",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
   payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
-  book= models.ForeignKey(Book, to_field="isbn", related_name="book", on_delete=models.CASCADE)
+  book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
   class Meta:
         db_table = 'Sell'
         verbose_name = 'Sell'

@@ -57,17 +57,17 @@
         <td>
           <div class="row">
             <div class="col">
-              <button class="edit-btn" type="button" title="ver detalle" (click)="onViewBook(book.isbn)">
+              <button class="edit-btn" type="button" title="ver detalle" (click)="onViewBook(book.id_book)">
                 <img src="./assets/icons/actions/eye.png" alt="" class="img-fluid">
               </button>
             </div>
             <div class="col">
-              <button class="trash-btn" type="button" title="editar" (click)="onEditBook(book.isbn)">
+              <button class="trash-btn" type="button" title="editar" (click)="onEditBook(book.id_book)">
                 <img src="./assets/icons/actions/edit.png" alt="" class="img-fluid">
               </button>
             </div>
             <div class="col">
-              <button class="trash-btn" type="button" title="eliminar" (click)="onDeleteBook(book.isbn)">
+              <button class="trash-btn" type="button" title="eliminar" (click)="onDeleteBook(book.id_book)">
                 <img src="./assets/icons/actions/trash.png" alt="" class="img-fluid">
               </button>
             </div>

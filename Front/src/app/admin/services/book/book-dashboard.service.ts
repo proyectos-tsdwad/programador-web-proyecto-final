@@ -21,8 +21,8 @@ export class BookDashboardService {
     return this.http.get<Book[]>(url);
   }
 
-  getBookByIsbn(isbn: string) {
-    const url = `${this.apiUrl}/books/${isbn}`;
+  getBookById(id: number) {
+    const url = `${this.apiUrl}/books/${id}`;
     return this.http.get<Book>(url);
   }
 
@@ -31,13 +31,13 @@ export class BookDashboardService {
     return this.http.post<Book>(url, book);
   }
 
-  updateBook(book: CreateBookDto) {
-    const url = `${this.apiUrl}/books/${book.isbn}/`;
+  updateBook(id: number, book: CreateBookDto) {
+    const url = `${this.apiUrl}/books/${id}/`;
     return this.http.put<Book>(url, book);
   }
 
-  deleteBook(isbn: string) {
-    const url = `${this.apiUrl}/books/${isbn}/`;
+  deleteBook(id: number) {
+    const url = `${this.apiUrl}/books/${id}/`;
     return this.http.delete<Book>(url);
   }
 
