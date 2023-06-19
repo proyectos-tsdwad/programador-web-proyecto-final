@@ -16,10 +16,16 @@ export class AuthorFormComponent {
   @Input() action: 'create' | 'edit' | 'delete' = 'create';
 
   newAuthor!: createAuthorDTO;
-  auhtorForm!: FormGroup;
+  authorForm!: FormGroup;
   author!: Author;
 
   isDeleteForm: boolean = false
+
+  errorMessages = {
+    name: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
+    ],}
 
 
   constructor(
@@ -42,12 +48,13 @@ export class AuthorFormComponent {
     this.authorService.getAuthorById(this.authorId)
       .subscribe((result: Author) => {
         this.author = result;
-        this.auhtorForm.get('name')?.setValue(this.author.name);
+        this.authorForm.get('name')?.setValue(this.author.name);
       });
   }
 
   onSaveHandle(event: Event) {
     event.preventDefault;
+    this.authorForm.markAllAsTouched();
 
     if (this.action === 'create') {
       this.saveNewAuthor();
@@ -61,7 +68,7 @@ export class AuthorFormComponent {
   saveNewAuthor() {
 
     this.newAuthor = {
-      name: this.name,
+      name: this.authorForm.value.name as string,
     }
 
     this.authorService.saveAuthor(this.newAuthor)
@@ -76,7 +83,7 @@ export class AuthorFormComponent {
 
   saveUpdateAuthor() {
 
-    this.author.name = this.name;
+    this.author.name = this.authorForm.value.name as string;
 
     this.authorService.updateAuthor(this.author)
       .subscribe((result: Author) => {
@@ -101,12 +108,12 @@ export class AuthorFormComponent {
   }
 
   createForm() {
-    this.auhtorForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
+    this.authorForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.maxLength(80)]]
     });
   }
 
   get name() {
-    return this.auhtorForm.value.name as string;
+    return this.authorForm.get('name');
   }
 }
