@@ -6,6 +6,7 @@ import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { BehaviorSubject, Observable, Subject, map, switchMap, tap } from 'rxjs';
 import { CreateUserDTO, User } from 'src/app/models/user/user-model';
 import { Purchase } from 'src/app/models/user/purchase-model';
+import { Sale } from 'src/app/models/sale/sale-model';
 
 
 
@@ -43,16 +44,16 @@ export class AuthService {
   //   );
   // }
 
-  updateProfileListener(profile: User){
+  updateProfileListener(profile: User) {
     this.profile = profile;
-     this.profileListener.next({...this.profile});
+    this.profileListener.next({ ...this.profile });
   }
 
-  clearProfile(){
+  clearProfile() {
     this.profileListener.next(null);
   }
 
-  getProfileListener(){
+  getProfileListener() {
     return this.profileListener.asObservable();
   }
 
@@ -66,9 +67,9 @@ export class AuthService {
     );
   }
 
-  getBookPurchases(userId: number): Observable<Purchase[]> {
+  getBookPurchases(userId: number): Observable<Sale[]> {
     const url = `${this.apiUrl}/sells?userId=${userId}`; // Ajusta la URL para obtener las compras del usuario específico
-    return this.http.get<Purchase[]>(url);
+    return this.http.get<Sale[]>(url);
   }
 
 }

@@ -5,6 +5,11 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import get_user_model
 
 
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = '__all__'
+        read_only_fields = ('id_user', )       
 class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
@@ -91,7 +96,27 @@ class DeliverySerializer(serializers.ModelSerializer):
         read_only_fields = ('id_delivery', )   
         
 class SellSerializer(serializers.ModelSerializer):
-    book = BookSerializer()
+    user = CustomUserSerializer(read_only=True)
+    delivery = DeliverySerializer(read_only=True)
+
+    user_id = serializers.PrimaryKeyRelatedField(
+        queryset=CustomUser.objects.all(),
+        source='user',
+        write_only=True
+    )
+
+    delivery_id = serializers.PrimaryKeyRelatedField(
+        queryset=Delivery.objects.all(),
+        source='delivery',
+        write_only=True
+    )
+
+    book_ids = serializers.PrimaryKeyRelatedField(
+        queryset=Book.objects.all(),
+        source='books',
+        write_only=True,
+        many=True
+    )
     class Meta:
         model = Sell
         fields = '__all__'        

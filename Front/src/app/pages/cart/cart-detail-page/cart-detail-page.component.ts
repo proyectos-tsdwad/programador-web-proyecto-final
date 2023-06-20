@@ -20,7 +20,7 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   constructor(
     private navigationService: NavigationService,
     private cartService: CartService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.cartSubscribe();
@@ -63,6 +63,9 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   }
 
   onClickConfirmPurchase() {
+    if (!this.books.length) {
+      return;
+    }
     this.navigationService.navigateToCheckout();
   }
 }
