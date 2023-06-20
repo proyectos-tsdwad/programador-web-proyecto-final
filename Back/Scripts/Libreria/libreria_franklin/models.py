@@ -127,7 +127,6 @@ class Delivery(models.Model):
       
 class Sell (models.Model):
   id_sell = models.AutoField(primary_key=True)
-  orderNumber = models.IntegerField(blank=False) 
   saleDate = models.DateField(blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)

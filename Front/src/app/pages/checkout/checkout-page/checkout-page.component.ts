@@ -14,9 +14,11 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 import { regExEmail, regExExpirationDate, regExOnlyNumbers } from 'src/app/utils/regex/regex';
-import { DELIVERY_STATUS, DELIVERY_TYPE } from 'src/app/utils/enums/sale.enum';
+import { DELIVERY_STATUS, DELIVERY_TYPE, PAYMENT_TYPE } from 'src/app/utils/enums/sale.enum';
 import { DeliveryService } from 'src/app/services/delivery/delivery.service';
 import { CreateDeliveryDto, Delivery } from 'src/app/models/sale/delivery-model';
+import { PaymentData } from 'src/app/models/sale/payment-model';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -30,6 +32,8 @@ export class CheckoutPageComponent {
   thirdFormGroup: FormGroup;
 
   deliveryTypes = DELIVERY_TYPE;
+  paymentTypes = PAYMENT_TYPE;
+  selectedPaymentType: string = this.paymentTypes.EFECTIVO;
   selectedDeliveryType: string = this.deliveryTypes.SUCURSAL;
   showDeliveryForm: boolean = false;
 
@@ -106,6 +110,7 @@ export class CheckoutPageComponent {
     private _formBuilder: FormBuilder,
     private navigationService: NavigationService,
     private deliveryService: DeliveryService,
+    private pyamentService: PaymentService,
     breakpointObserver: BreakpointObserver
   ) {
     this.stepperOrientation = breakpointObserver
@@ -127,34 +132,77 @@ export class CheckoutPageComponent {
       areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
       telephone: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
       document: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
-      location: ['', [Validators.nullValidator, Validators.maxLength(50)]],
-      province: ['', [Validators.nullValidator, Validators.maxLength(50)]],
-      address: ['', [Validators.nullValidator, Validators.maxLength(80)]],
-      postalCode: ['', [Validators.nullValidator, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
+      location: [''],
+      province: [''],
+      address: [''],
+      postalCode: ['']
     });
   }
 
   createSecondForm() {
     this.secondFormGroup = this._formBuilder.group({
-      cardName: ['', [Validators.required, Validators.maxLength(80)]],
-      cardNumber: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(18)]],
-      expirationDate: ['', [Validators.required, Validators.pattern(regExExpirationDate)]],
-      cvv: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]],
+      cardName: [''],
+      cardNumber: [''],
+      expirationDate: [''],
+      cvv: [''],
     });
   }
 
   setDeliveryRequire() {
-    let validator = this.showDeliveryForm ? Validators.required : Validators.nullValidator;
-    this.location?.setValidators([validator, Validators.maxLength(50)]);
-    this.province?.setValidators([validator, Validators.maxLength(50)]);
-    this.address?.setValidators([validator, Validators.maxLength(80)]);
-    this.postalCode?.setValidators([validator, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]);
+    if (!this.showDeliveryForm) {
+      this.location?.clearValidators();
+      this.location?.updateValueAndValidity();
+      this.province?.clearValidators();
+      this.province?.updateValueAndValidity();
+      this.address?.clearValidators();
+      this.address?.updateValueAndValidity();
+      this.postalCode?.clearValidators();
+      this.postalCode?.updateValueAndValidity();
+      return;
+    }
+
+    this.location?.setValidators([Validators.required, Validators.maxLength(50)]);
+    this.location?.updateValueAndValidity();
+    this.province?.setValidators([Validators.required, Validators.maxLength(50)]);
+    this.province?.updateValueAndValidity();
+    this.address?.setValidators([Validators.required, Validators.maxLength(80)]);
+    this.address?.updateValueAndValidity();
+    this.postalCode?.setValidators([Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]);
+    this.postalCode?.updateValueAndValidity();
+  }
+
+  setPaymentRequire() {
+    if (this.selectedPaymentType === this.paymentTypes.EFECTIVO) {
+      this.cardName?.clearValidators();
+      this.cardName?.updateValueAndValidity();
+      this.cardNumber?.clearValidators();
+      this.cardNumber?.updateValueAndValidity();
+      this.expirationDate?.clearValidators();
+      this.expirationDate?.updateValueAndValidity();
+      this.cvv?.clearValidators();
+      this.cvv?.updateValueAndValidity();
+      return;
+    }
+
+    this.cardName?.setValidators([Validators.required, Validators.maxLength(80)]);
+    this.cardName?.updateValueAndValidity();
+    this.cardNumber?.setValidators([Validators.required, Validators.minLength(13), Validators.maxLength(18)]);
+    this.cardNumber?.updateValueAndValidity();
+    this.expirationDate?.setValidators([Validators.required, Validators.pattern(regExExpirationDate)]);
+    this.expirationDate?.updateValueAndValidity();
+    this.cvv?.setValidators([Validators.required, Validators.minLength(3), Validators.maxLength(4)]);
+    this.cvv?.updateValueAndValidity();
   }
 
   selectDeliveryType(deliveryType: string) {
     this.selectedDeliveryType = deliveryType;
     this.showDeliveryForm = this.selectedDeliveryType !== this.deliveryTypes.SUCURSAL;
     this.setDeliveryRequire();
+  }
+
+  selectPaymentType(paymentType: string) {
+    this.selectedPaymentType = paymentType;
+    this.setPaymentRequire();
   }
 
   checkoutFormValid() {
@@ -178,23 +226,59 @@ export class CheckoutPageComponent {
     return deliveryData;
   }
 
+  getPaymentData() {
+    const paymentData: PaymentData = {
+      ownerName: this.secondFormGroup.value.cardName as string,
+      cardNumber: this.secondFormGroup.value.cardNumber as number,
+      expirationDate: this.secondFormGroup.value.expirationDate as string,
+      ccv: this.secondFormGroup.value.cvv as number,
+    }
+
+    return paymentData;
+  }
+
   confirmPurchase(event: Event) {
     event.preventDefault;
     this.firstFormGroup.markAllAsTouched();
     this.secondFormGroup.markAllAsTouched();
 
-    if (!this.checkoutFormValid()) {
-      return;
-    }
+    // if (!this.checkoutFormValid()) {
+    //   return;
+    // }
+
     this.processPurchase();
   }
 
-  processPurchase() {
-    let deliveryInfo = this.getDeliveryData();
-    this.deliveryService.saveDeliveryInfo(deliveryInfo)
-      .subscribe((result: Delivery) => {
-        console.log('delivery info', result);
-      });
+  processPayment(): Promise<boolean> {
+    return new Promise<boolean>((resolve) => {
+      let paymentData = this.getPaymentData();
+      this.pyamentService.processPayment(paymentData)
+        .subscribe((result: { status: string }) => {
+          resolve(result.status === 'ok');
+        });
+    });
+  }
+
+  saveDelivery(): Promise<Delivery> {
+    return new Promise<Delivery>((resolve) => {
+      let deliveryInfo = this.getDeliveryData();
+      this.deliveryService.saveDeliveryInfo(deliveryInfo)
+        .subscribe((result: Delivery) => {
+          resolve(result);
+        });
+    });
+  }
+
+  async processPurchase() {
+    let paymentStatus = await this.processPayment();
+
+    if (!paymentStatus) {
+      return
+    }
+
+    let deliveryInfo = await this.saveDelivery();
+
+
   }
 
   onClickBackToCart() {

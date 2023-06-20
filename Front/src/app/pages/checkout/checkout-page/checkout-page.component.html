@@ -87,8 +87,7 @@
 
             <mat-radio-group aria-label="Select an option">
               <div class="mb-3">
-                <mat-radio-button class="font-bold fs-md fc-primary"
-                  (click)="selectDeliveryType(deliveryTypes.CORREO_ARGENTINO)">
+                <mat-radio-button (click)="selectDeliveryType(deliveryTypes.CORREO_ARGENTINO)">
                   Correo argentino
                 </mat-radio-button>
 
@@ -146,7 +145,7 @@
               </div>
 
               <div class="mt-3">
-                <mat-radio-button selected (click)="selectDeliveryType(deliveryTypes.SUCURSAL)">
+                <mat-radio-button (click)="selectDeliveryType(deliveryTypes.SUCURSAL)">
                   Retiro por local
                 </mat-radio-button>
               </div>
@@ -187,9 +186,9 @@
             </div>
 
             <div class="col-5">
-
-
-              <mat-radio-button value="1" class="font-bold fs-md fc-primary ">Pago online</mat-radio-button>
+              <mat-radio-button (click)="selectPaymentType(paymentTypes.CREDITO)">
+                Pago online
+              </mat-radio-button>
 
               <div class="row py-4">
                 <div class="col-2">
@@ -259,7 +258,9 @@
             </div>
 
             <div class="col-5">
-              <mat-radio-button value="1" class="font-bold fs-md fc-primary ">Pago en local</mat-radio-button>
+              <mat-radio-button (click)="selectPaymentType(paymentTypes.EFECTIVO)">
+                Pago en local
+              </mat-radio-button>
 
               <section class="row gy-2 ps-4 mb-5 pb-5">
 
