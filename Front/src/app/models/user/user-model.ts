@@ -21,7 +21,6 @@ export interface User {
   postal_code: string;
   groups: any[];
   user_permissions: any[];
-  role: ROLE
 }
 
 export interface CreateUserDTO extends Omit

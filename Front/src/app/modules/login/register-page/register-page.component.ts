@@ -6,7 +6,6 @@ import { UserService } from 'src/app/services/user/user.service';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { CreateUserDTO } from 'src/app/models/user/user-model';
 import { tap, catchError } from 'rxjs/operators';
-import { ROLE } from 'src/app/utils/enums/user.enum';
 import { regExEmail, regExOnlyNumbers, regExPassword } from 'src/app/utils/regex/regex';
 
 @Component({
@@ -186,7 +185,6 @@ export class RegisterPageComponent implements OnInit {
       address_province: this.registerForm.value.province,
       address_street: this.registerForm.value.address,
       postal_code: this.registerForm.value.postalCode,
-      role: ROLE.CLIENT
     };
   }
 
