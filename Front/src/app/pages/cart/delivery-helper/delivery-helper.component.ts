@@ -35,6 +35,6 @@ export class DeliveryHelperComponent {
   }
 
   onWatchStores() {
-    const modalRef = this.modalService.open(StoreHelperComponent, { size: 'md', centered: true });
+    const modalRef = this.modalService.open(StoreHelperComponent, { size: 'lg', centered: true });
   }
 }

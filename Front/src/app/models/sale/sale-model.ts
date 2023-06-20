@@ -16,6 +16,6 @@ export interface Sale {
 
 export interface CreateSaleDto extends Omit<Sale, 'id_sell' | 'books' | 'user' | 'delivery'> {
   user_id: number,
-  delivery: number,
+  delivery_id: number,
   book_ids: number[]
 }

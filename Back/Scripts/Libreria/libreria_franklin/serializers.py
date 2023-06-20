@@ -105,6 +105,12 @@ class SellSerializer(serializers.ModelSerializer):
         write_only=True
     )
 
+    delivery_id = serializers.PrimaryKeyRelatedField(
+        queryset=Delivery.objects.all(),
+        source='delivery',
+        write_only=True
+    )
+
     book_ids = serializers.PrimaryKeyRelatedField(
         queryset=Book.objects.all(),
         source='books',

@@ -13,7 +13,7 @@
             envío</button>
         </div>
         <div *ngIf="shippingCost !== 0" class="delivery-cost">
-          Costo de envío: <span style="color: red;">{{ shippingCost }}$</span>
+          Costo de envío: <span>${{ shippingCost }}</span>
         </div>
       </div>
     </div>

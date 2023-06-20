@@ -316,7 +316,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     const formatedDate = date.toLocaleDateString('es-ES', dateConfig);
 
     let sellInfo: CreateSaleDto = {
-      delivery: deliveryInfo.id_delivery,
+      delivery_id: deliveryInfo.id_delivery,
       saleDate: formatedDate,
       paymentType: this.selectedPaymentType,
       deliveryType: this.selectedDeliveryType,
@@ -356,6 +356,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
       let deliveryInfo = this.getDeliveryData();
       this.deliveryService.saveDeliveryInfo(deliveryInfo)
         .subscribe((result: Delivery) => {
+
           resolve(result);
         });
     });
