@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -18,14 +18,20 @@ import { DELIVERY_STATUS, DELIVERY_TYPE, PAYMENT_TYPE } from 'src/app/utils/enum
 import { DeliveryService } from 'src/app/services/delivery/delivery.service';
 import { CreateDeliveryDto, Delivery } from 'src/app/models/sale/delivery-model';
 import { PaymentData } from 'src/app/models/sale/payment-model';
-import { PaymentService } from 'src/app/services/payment.service';
+import { PaymentService } from 'src/app/services/payment/payment.service';
+import { CreateSaleDto, Sale } from 'src/app/models/sale/sale-model';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { Subscription } from 'rxjs';
+import { SelectedBookDto } from 'src/app/models/book/book-model';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/models/user/user-model';
 
 @Component({
   selector: 'app-checkout-page',
   templateUrl: './checkout-page.component.html',
   styleUrls: ['./checkout-page.component.css'],
 })
-export class CheckoutPageComponent {
+export class CheckoutPageComponent implements OnInit, OnDestroy {
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -36,6 +42,17 @@ export class CheckoutPageComponent {
   selectedPaymentType: string = this.paymentTypes.EFECTIVO;
   selectedDeliveryType: string = this.deliveryTypes.SUCURSAL;
   showDeliveryForm: boolean = false;
+
+  profileSub!: Subscription;
+  cartSub!: Subscription;
+  totalItemSub!: Subscription;
+  totalCostSub!: Subscription;
+
+  books: SelectedBookDto[] = [];
+  totalItems: number = 0;
+  totalCost: number = 0;
+  profile: User | null = null;
+  orderNumber: number | string = '';
 
   stepperOrientation: Observable<StepperOrientation>;
   icons = ['./assets/img/stepper/Camion.png', 'icono-2', 'icono-3'];
@@ -110,7 +127,9 @@ export class CheckoutPageComponent {
     private _formBuilder: FormBuilder,
     private navigationService: NavigationService,
     private deliveryService: DeliveryService,
-    private pyamentService: PaymentService,
+    private paymentService: PaymentService,
+    private cartService: CartService,
+    private authService: AuthService,
     breakpointObserver: BreakpointObserver
   ) {
     this.stepperOrientation = breakpointObserver
@@ -123,6 +142,51 @@ export class CheckoutPageComponent {
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required],
     });
+  }
+
+  ngOnInit(): void {
+    this.profileSubscribe();
+    this.cartSubscribe();
+    this.totalItemSubscribe();
+    this.totalCostSubscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.cartSub.unsubscribe();
+    this.totalItemSub.unsubscribe();
+    this.totalCostSub.unsubscribe();
+    this.profileSub.unsubscribe();
+  }
+
+  profileSubscribe() {
+    this.profileSub = this.authService.getProfileListener()
+      .subscribe((user) => {
+        this.profile = user;
+      });
+  }
+
+  cartSubscribe() {
+    this.cartSub = this.cartService
+      .getcartUpdatedListener()
+      .subscribe((books: SelectedBookDto[]) => {
+        this.books = books;
+      });
+  }
+
+  totalItemSubscribe() {
+    this.totalItemSub = this.cartService
+      .getTotalItemsListener()
+      .subscribe((totalItems: number) => {
+        this.totalItems = totalItems;
+      });
+  }
+
+  totalCostSubscribe() {
+    this.totalCostSub = this.cartService
+      .getTotalCostListener()
+      .subscribe((totalCost: number) => {
+        this.totalCost = totalCost;
+      });
   }
 
   createFirstForm() {
@@ -232,9 +296,37 @@ export class CheckoutPageComponent {
       cardNumber: this.secondFormGroup.value.cardNumber as number,
       expirationDate: this.secondFormGroup.value.expirationDate as string,
       ccv: this.secondFormGroup.value.cvv as number,
+      totalAmount: this.totalCost
     }
 
     return paymentData;
+  }
+
+  async getSaleInfo() {
+    if (!this.books.length || !this.profile) {
+      return;
+    }
+
+    let deliveryInfo: Delivery = await this.saveDelivery();
+    let selectedBooks: number[] = [];
+    this.books.forEach(book => selectedBooks.push(book.id_book))
+
+    const date = new Date();
+    const dateConfig: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formatedDate = date.toLocaleDateString('es-ES', dateConfig);
+
+    let sellInfo: CreateSaleDto = {
+      delivery: deliveryInfo.id_delivery,
+      saleDate: formatedDate,
+      paymentType: this.selectedPaymentType,
+      deliveryType: this.selectedDeliveryType,
+      totalCost: this.totalCost,
+      totalQuantity: this.totalItems,
+      book_ids: selectedBooks,
+      user_id: this.profile.id_user
+    }
+
+    return sellInfo;;
   }
 
   confirmPurchase(event: Event) {
@@ -252,7 +344,7 @@ export class CheckoutPageComponent {
   processPayment(): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
       let paymentData = this.getPaymentData();
-      this.pyamentService.processPayment(paymentData)
+      this.paymentService.processPayment(paymentData)
         .subscribe((result: { status: string }) => {
           resolve(result.status === 'ok');
         });
@@ -276,9 +368,16 @@ export class CheckoutPageComponent {
       return
     }
 
-    let deliveryInfo = await this.saveDelivery();
+    let sellInfo: CreateSaleDto | undefined = await this.getSaleInfo();
 
+    if (!sellInfo) {
+      return;
+    }
 
+    this.paymentService.saveSell(sellInfo)
+      .subscribe((result: Sale) => {
+        this.orderNumber = result.id_sell;
+      });
   }
 
   onClickBackToCart() {

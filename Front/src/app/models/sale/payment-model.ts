@@ -3,4 +3,5 @@ export interface PaymentData {
   cardNumber: number,
   expirationDate: string,
   ccv: number,
+  totalAmount: number
 }

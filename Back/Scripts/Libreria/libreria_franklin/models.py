@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
+    id_user = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=150, unique=True)
     telephone_number = models.CharField(max_length=50, blank=False)
     telephone_area_code = models.CharField(max_length=50, blank=False)
@@ -106,7 +107,7 @@ class Rol(models.Model):
 class Delivery(models.Model):
     id_delivery = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, blank=False)
-    email = models.EmailField(max_length=150, unique=True)
+    email = models.EmailField(max_length=150, blank=False)
     telephone_number = models.CharField(max_length=50, blank=False)
     telephone_area_code = models.CharField(max_length=50, blank=False)
     document = models.PositiveIntegerField(blank=True, null=True)
@@ -127,16 +128,17 @@ class Delivery(models.Model):
       
 class Sell (models.Model):
   id_sell = models.AutoField(primary_key=True)
-  saleDate = models.DateField(blank=False)
+  saleDate = models.CharField(max_length=50, blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)
 
-  totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+  totalQuantity = models.IntegerField(blank=False)
   totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
 
-  profile = models.ForeignKey(CustomUser, to_field= "id", related_name="profile",on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, to_field= "id_user", related_name="user",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
-  book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
+  # book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
+  books = models.ManyToManyField(Book, null=True)
   class Meta:
         db_table = 'Sell'
         verbose_name = 'Sell'

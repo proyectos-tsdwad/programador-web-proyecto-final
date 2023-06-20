@@ -19,6 +19,11 @@ export class DeliveryHelperComponent {
   }
 
   calcularEnvio() {
+    this.validatePostalCode()
+    if (this.postalCodeError) {
+      return;
+    }
+
     this.shippingCost = this.deliveryService.calculateShippingCost(
       parseInt(this.postalCode, 10)
     );

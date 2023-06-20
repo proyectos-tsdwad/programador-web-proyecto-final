@@ -18,7 +18,7 @@ import { Purchase } from 'src/app/models/user/purchase-model';
 
 export class AccountDetailsComponent implements OnInit, OnDestroy {
   personalData!: CreateUserDTO;
-  purchaseData!: Purchase[];
+  purchaseData!: Sale[];
   profile: User | null = null;
   userDataSub!: Subscription
 
@@ -47,20 +47,20 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
 
   getUserData() {
     this.userDataSub = this.authService.getProfileListener()
-    .subscribe(user => {
-      console.log('Get usuario', user)
-      this.profile = user;
-    });
+      .subscribe(user => {
+        console.log('Get usuario', user)
+        this.profile = user;
+      });
   }
 
 
   loadUserPurchases() {
-    if(this.profile===null){
+    if (this.profile === null) {
       return
 
     }
-    this.authService.getBookPurchases(this.profile.id)
-      .subscribe((purchases: Purchase[]) => {
+    this.authService.getBookPurchases(this.profile.id_user)
+      .subscribe((purchases: Sale[]) => {
         this.purchaseData = purchases;
         console.log('Get purchase user', this.purchaseData)
       });
@@ -69,7 +69,7 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
   onEditAddress() {
     const modalRef = this.modalService.open(AddressFormComponent, { size: 'lg', centered: true });
     modalRef.componentInstance.addressData = { ...this.profile };
-    console.log('Addres form',this.profile)
+    console.log('Addres form', this.profile)
     modalRef.componentInstance.addressUpdated.subscribe((updateData: User) => {
       this.profile = { ...updateData };
       console.log('Put address usuario', this.profile)

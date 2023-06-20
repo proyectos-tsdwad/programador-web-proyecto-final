@@ -1,7 +1,7 @@
 import { ROLE } from "src/app/utils/enums/user.enum";
 
 export interface User {
-  id: number;
+  id_user: number;
   password: string;
   last_login: Date;
   is_superuser: boolean;
@@ -25,6 +25,6 @@ export interface User {
 }
 
 export interface CreateUserDTO extends Omit
-  <User, 'id' | 'last_login' | 'is_superuser' | 'first_name' | 'last_name' | 'is_staff' | 'is_active' | 'date_joined' | 'groups' | 'user_permissions'> { }
+  <User, 'id_user' | 'last_login' | 'is_superuser' | 'first_name' | 'last_name' | 'is_staff' | 'is_active' | 'date_joined' | 'groups' | 'user_permissions'> { }
 
 export interface UserBasicInfoDTO extends Pick<User, 'username' | 'email' | 'telephone_area_code' | 'telephone_number'> { }

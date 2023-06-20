@@ -6,11 +6,10 @@
     <div class="col-12 pb-3">
       <div class="row">
         <div class="col-5">
-          <input type="text" class="form-control" placeholder="Código postal" [(ngModel)]="postalCode"
-            (input)="validatePostalCode()" required />
+          <input type="text" class="form-control" placeholder="Código postal" [(ngModel)]="postalCode" />
         </div>
         <div class="col-auto">
-          <button type="button" class="font-light" (click)="calcularEnvio()" [disabled]="postalCodeError">Calcular
+          <button type="button" class="font-light" (click)="calcularEnvio()">Calcular
             envío</button>
         </div>
         <div *ngIf="shippingCost !== 0" class="delivery-cost">
