@@ -26,12 +26,12 @@
                 <th scope="col">Total</th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of purchase.products">
+            <tbody>
               <tr class="fc-primary font-medium fs-sm-1">
-                <th class="fc-primary font-medium fs-sm-1">{{product.name}}</th>
-                <td>{{product.price}}</td>
-                <td>{{product.quantity}}</td>
-                <td>{{product.totalAmount}}</td>
+                <td>{{purchase.book.title}}</td>
+                <td>{{purchase.book.price}}</td>
+                <td>{{purchase.totalQuantity}}</td>
+                <td>{{purchase.totalCost}}</td>
               </tr>
             </tbody>
           </table>

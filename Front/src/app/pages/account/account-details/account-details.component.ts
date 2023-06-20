@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Purchase } from 'src/app/models/user/purchase-model';
 import { CreateUserDTO, User } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -7,6 +6,8 @@ import { AddressFormComponent } from '../address-form/address-form.component';
 import { PersonalDataFormComponent } from '../personal-data-form/personal-data-form.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Subscription } from 'rxjs';
+import { Sale } from 'src/app/models/sale/sale-model';
+import { Purchase } from 'src/app/models/user/purchase-model';
 
 @Component({
   selector: 'app-account-details',
@@ -31,10 +32,11 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getUserData();
-    this.getPurchaseData();
     this.authService.getProfileListener().subscribe((profile: User | null) => {
       if (profile) {
         this.profile = { ...profile };
+        this.loadUserPurchases();
+
       }
     });
   }
@@ -52,11 +54,16 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
   }
 
 
-  getPurchaseData() {
-    this.userService.getPurchaseHistory().subscribe(data => {
-      this.purchaseData = data;
-      console.log(this.purchaseData);
-    });
+  loadUserPurchases() {
+    if(this.profile===null){
+      return
+
+    }
+    this.authService.getBookPurchases(this.profile.id)
+      .subscribe((purchases: Purchase[]) => {
+        this.purchaseData = purchases;
+        console.log('Get purchase user', this.purchaseData)
+      });
   }
 
   onEditAddress() {
@@ -83,5 +90,6 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
       this.authService.updateProfileListener(this.profile);
     });
   }
+
 
 }
