@@ -97,6 +97,7 @@ class DeliverySerializer(serializers.ModelSerializer):
         
 class SellSerializer(serializers.ModelSerializer):
     user = CustomUserSerializer(read_only=True)
+    delivery = DeliverySerializer(read_only=True)
 
     user_id = serializers.PrimaryKeyRelatedField(
         queryset=CustomUser.objects.all(),

@@ -23,6 +23,7 @@ export class SalesDashboardPageComponent implements OnInit {
     this.saleService.getAllSales()
       .subscribe((result: Sale[]) => {
         this.sales = result;
+        console.log('res', this.sales);
       })
   }
 }

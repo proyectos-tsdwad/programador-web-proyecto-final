@@ -86,7 +86,7 @@ ul {
   margin-bottom: 0px;
 }
 
-ul .bullet-entregado::before {
+ul .bullet-Entregado::before {
   content: "•";
   color: #45db66;
   font-size: 170%;
@@ -94,7 +94,7 @@ ul .bullet-entregado::before {
   padding-right: 5px;
 }
 
-ul .bullet-preparando::before {
+ul .bullet-Preparando::before {
   content: "•";
   color: #f45351;
   font-size: 170%;
@@ -102,7 +102,7 @@ ul .bullet-preparando::before {
   padding-right: 5px;
 }
 
-ul .bullet-enviado::before {
+ul .bullet-Enviado::before {
   content: "•";
   color: #041e41;
   font-size: 170%;
