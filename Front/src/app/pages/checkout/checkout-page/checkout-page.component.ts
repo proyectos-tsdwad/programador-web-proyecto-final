@@ -14,6 +14,9 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 import { regExEmail, regExExpirationDate, regExOnlyNumbers } from 'src/app/utils/regex/regex';
+import { DELIVERY_STATUS, DELIVERY_TYPE } from 'src/app/utils/enums/sale.enum';
+import { DeliveryService } from 'src/app/services/delivery/delivery.service';
+import { CreateDeliveryDto, Delivery } from 'src/app/models/sale/delivery-model';
 
 @Component({
   selector: 'app-checkout-page',
@@ -21,9 +24,15 @@ import { regExEmail, regExExpirationDate, regExOnlyNumbers } from 'src/app/utils
   styleUrls: ['./checkout-page.component.css'],
 })
 export class CheckoutPageComponent {
+
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   thirdFormGroup: FormGroup;
+
+  deliveryTypes = DELIVERY_TYPE;
+  selectedDeliveryType: string = this.deliveryTypes.SUCURSAL;
+  showDeliveryForm: boolean = false;
+
   stepperOrientation: Observable<StepperOrientation>;
   icons = ['./assets/img/stepper/Camion.png', 'icono-2', 'icono-3'];
 
@@ -96,6 +105,7 @@ export class CheckoutPageComponent {
   constructor(
     private _formBuilder: FormBuilder,
     private navigationService: NavigationService,
+    private deliveryService: DeliveryService,
     breakpointObserver: BreakpointObserver
   ) {
     this.stepperOrientation = breakpointObserver
@@ -105,28 +115,26 @@ export class CheckoutPageComponent {
     this.createFirstForm();
     this.createSecondForm();
 
-    
-
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required],
     });
   }
 
-  createFirstForm(){
+  createFirstForm() {
     this.firstFormGroup = this._formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(80)]],
       email: ['', [Validators.required, Validators.maxLength(80), Validators.pattern(regExEmail)]],
       areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
       telephone: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
-      document: ['',[ Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
-      location: ['', [Validators.required, Validators.maxLength(50)]],
-      province: ['', [Validators.required, Validators.maxLength(50)]],
-      address: ['', [Validators.required, Validators.maxLength(80)]],
-      postalCode: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]]
+      document: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
+      location: ['', [Validators.nullValidator, Validators.maxLength(50)]],
+      province: ['', [Validators.nullValidator, Validators.maxLength(50)]],
+      address: ['', [Validators.nullValidator, Validators.maxLength(80)]],
+      postalCode: ['', [Validators.nullValidator, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
     });
   }
 
-  createSecondForm(){
+  createSecondForm() {
     this.secondFormGroup = this._formBuilder.group({
       cardName: ['', [Validators.required, Validators.maxLength(80)]],
       cardNumber: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(18)]],
@@ -135,72 +143,59 @@ export class CheckoutPageComponent {
     });
   }
 
-  checkoutFormValid(event: Event){
-  event.preventDefault;
-  
-  if(!this.firstFormGroup.valid || !this.secondFormGroup.valid){
-    
+  setDeliveryRequire() {
+    let validator = this.showDeliveryForm ? Validators.required : Validators.nullValidator;
+    this.location?.setValidators([validator, Validators.maxLength(50)]);
+    this.province?.setValidators([validator, Validators.maxLength(50)]);
+    this.address?.setValidators([validator, Validators.maxLength(80)]);
+    this.postalCode?.setValidators([validator, Validators.minLength(4), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]);
+  }
+
+  selectDeliveryType(deliveryType: string) {
+    this.selectedDeliveryType = deliveryType;
+    this.showDeliveryForm = this.selectedDeliveryType !== this.deliveryTypes.SUCURSAL;
+    this.setDeliveryRequire();
+  }
+
+  checkoutFormValid() {
+    return this.firstFormGroup.valid && this.secondFormGroup.valid;
+  }
+
+  getDeliveryData() {
+    const deliveryData: CreateDeliveryDto = {
+      name: this.firstFormGroup.value.name as string,
+      document: this.firstFormGroup.value.document as number,
+      email: this.firstFormGroup.value.email as string,
+      telephone_area_code: this.firstFormGroup.value.areaCode as string,
+      telephone_number: this.firstFormGroup.value.telephone as string,
+      address_province: this.firstFormGroup.value.province as string,
+      address_location: this.firstFormGroup.value.location as string,
+      address_street: this.firstFormGroup.value.address as string,
+      postal_code: this.firstFormGroup.value.postalCode as string,
+      status: DELIVERY_STATUS.PREPARANDO
+    }
+
+    return deliveryData;
+  }
+
+  confirmPurchase(event: Event) {
+    event.preventDefault;
     this.firstFormGroup.markAllAsTouched();
     this.secondFormGroup.markAllAsTouched();
-    return
+
+    if (!this.checkoutFormValid()) {
+      return;
+    }
+    this.processPurchase();
   }
 
-
-
-}
-
-  get name() {
-    return this.firstFormGroup.get('name');
+  processPurchase() {
+    let deliveryInfo = this.getDeliveryData();
+    this.deliveryService.saveDeliveryInfo(deliveryInfo)
+      .subscribe((result: Delivery) => {
+        console.log('delivery info', result);
+      });
   }
-  
-  get document() {
-    return this.firstFormGroup.get('document');
-  }
-  
-  get areaCode() {
-    return this.firstFormGroup.get('areaCode');
-  }
-  
-  get telephone() {
-    return this.firstFormGroup.get('telephone');
-  }
-  
-  get location() {
-    return this.firstFormGroup.get('location');
-  }
-  
-  get province() {
-    return this.firstFormGroup.get('province');
-  }
-  
-  get address() {
-    return this.firstFormGroup.get('address');
-  }
-  
-  get postalCode() {
-    return this.firstFormGroup.get('postalCode');
-  }
-  
-  get email() {
-    return this.firstFormGroup.get('email');
-  }
-
-  get cardName() {
-    return this.secondFormGroup.get('cardName');
-  }
-  
-  get cardNumber() {
-    return this.secondFormGroup.get('cardNumber');
-  }
-  
-  get expirationDate() {
-    return this.secondFormGroup.get('expirationDate');
-  }
-
-  get cvv() {
-    return this.secondFormGroup.get('cvv');
-  }
-  
 
   onClickBackToCart() {
     this.navigationService.navigateToCartDetail();
@@ -209,4 +204,57 @@ export class CheckoutPageComponent {
   onClickBackToCatalogue() {
     this.navigationService.navigateToCatalogue();
   }
+
+  get name() {
+    return this.firstFormGroup.get('name');
+  }
+
+  get document() {
+    return this.firstFormGroup.get('document');
+  }
+
+  get areaCode() {
+    return this.firstFormGroup.get('areaCode');
+  }
+
+  get telephone() {
+    return this.firstFormGroup.get('telephone');
+  }
+
+  get location() {
+    return this.firstFormGroup.get('location');
+  }
+
+  get province() {
+    return this.firstFormGroup.get('province');
+  }
+
+  get address() {
+    return this.firstFormGroup.get('address');
+  }
+
+  get postalCode() {
+    return this.firstFormGroup.get('postalCode');
+  }
+
+  get email() {
+    return this.firstFormGroup.get('email');
+  }
+
+  get cardName() {
+    return this.secondFormGroup.get('cardName');
+  }
+
+  get cardNumber() {
+    return this.secondFormGroup.get('cardNumber');
+  }
+
+  get expirationDate() {
+    return this.secondFormGroup.get('expirationDate');
+  }
+
+  get cvv() {
+    return this.secondFormGroup.get('cvv');
+  }
+
 }
