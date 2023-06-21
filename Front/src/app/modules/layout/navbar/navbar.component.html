@@ -21,7 +21,17 @@
           <!-- NAV ADMIN -->
           <li class="nav-item">
             <a class="nav-link" aria-current="page" (click)="onClickNavigateToBookDashboard()" *ngIf="isAdmin">
-              Stock
+              Libros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="onClickNavigateToAuthorDashboard()" *ngIf="isAdmin">
+              Autores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="onClickNavigateToPublisherDashboard()" *ngIf="isAdmin">
+              Editoriales
             </a>
           </li>
           <li class="nav-item">

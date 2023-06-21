@@ -24,4 +24,12 @@ export class AdminNavigationService {
   navigateToStoreDashboard() {
     this.router.navigate(['/admin/store-dashboard']);
   }
+
+  navigateToAuthorDashboard() {
+    this.router.navigate(['/admin/author-dashboard']);
+  }
+
+  navigateToPublisherDashboard() {
+    this.router.navigate(['/admin/publisher-dashboard']);
+  }
 }
