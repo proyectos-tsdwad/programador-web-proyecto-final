@@ -378,6 +378,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     this.paymentService.saveSell(sellInfo)
       .subscribe((result: Sale) => {
         this.orderNumber = result.id_sell;
+        this.cartService.clearCart();
       });
   }
 
