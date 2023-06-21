@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
       .subscribe((user) => {
         this.profile = user;
         if (!this.profile) {
+          this.isAdmin = false;
           return;
         }
         this.isAdmin = this.profile.is_staff;
