@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { User } from 'src/app/models/user/user-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +23,8 @@ export class NavbarComponent implements OnInit {
     private modalService: NgbModal,
     private navigationService: NavigationService,
     private adminNavigationService: AdminNavigationService,
-    private authService: AuthService
+    private authService: AuthService,
+    private cartService: CartService,
   ) { }
 
   ngOnInit(): void {
@@ -65,6 +67,13 @@ export class NavbarComponent implements OnInit {
     this.adminNavigationService.navigateToClientDashboard();
   }
 
+  onClickNavigateToAuthorDashboard() {
+    this.adminNavigationService.navigateToAuthorDashboard();
+  }
+  onClickNavigateToPublisherDashboard() {
+    this.adminNavigationService.navigateToPublisherDashboard();
+  }
+
   getProfile() {
     this.authService.getProfileListener().subscribe((user) => {
       this.profile = user;
@@ -86,6 +95,8 @@ export class NavbarComponent implements OnInit {
         return;
       }
       this.authService.clearProfile();
+      this.cartService.clearCart();
+      this.navigationService.navigateToHome();
     });
   }
 }
