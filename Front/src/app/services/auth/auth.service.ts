@@ -68,7 +68,7 @@ export class AuthService {
   }
 
   getBookPurchases(userId: number): Observable<Sale[]> {
-    const url = `${this.apiUrl}/sells?userId=${userId}`; // Ajusta la URL para obtener las compras del usuario específico
+    const url = `${this.apiUrl}/sells?user_id=${userId}`; // Ajusta la URL para obtener las compras del usuario específico
     return this.http.get<Sale[]>(url);
   }
 

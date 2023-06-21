@@ -79,7 +79,14 @@ class GenreViewSet(viewsets.ModelViewSet):
 class SellViewSet(viewsets.ModelViewSet):
    queryset = Sell.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = SellSerializer         
+   serializer_class = SellSerializer
+
+   def get_queryset(self):
+        queryset = Sell.objects.all()
+        user_id = self.request.query_params.get('user_id')
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+        return queryset           
 
 class DeliveryViewSet(viewsets.ModelViewSet):
    queryset = Delivery.objects.all()
