@@ -14,8 +14,8 @@ export class NavigationService {
     this.router.navigate(['/home']);
   }
 
-  navigateToBookDetail(isbn: string) {
-    this.router.navigate(['/book-detail', isbn]);
+  navigateToBookDetail(id: number) {
+    this.router.navigate(['/book-detail', id]);
   }
 
   navigateToCheckout() {

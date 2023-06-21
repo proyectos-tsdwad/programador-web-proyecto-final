@@ -1,15 +1,15 @@
 export enum DELIVERY_STATUS {
-  ENTREGADO = 'entregado',
-  ENVIADO = 'enviado',
-  PREPARANDO = 'preparando'
+  ENTREGADO = 'Entregado',
+  ENVIADO = 'Enviado',
+  PREPARANDO = 'Preparando'
 }
 
 export enum PAYMENT_TYPE {
-  EFECTIVO = 'efectivo',
-  CREDITO = 'credito'
+  EFECTIVO = 'Efectivo',
+  CREDITO = 'Credito'
 }
 
 export enum DELIVERY_TYPE {
-  SUCURSAL = 'sucursal',
-  CORREO_ARGENTINO = 'correo argentino'
+  SUCURSAL = 'Sucursal',
+  CORREO_ARGENTINO = 'Correo Argentino'
 }

@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 from rest_framework.response import Response
 from .serializers import UserSerializer
 from rest_framework import status, generics
+from django.db.models import Q
+import json
+import mercadopago
 
 class LoginView(APIView):
     permission_classes = [AllowAny] 
@@ -45,7 +48,18 @@ class BookViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
    queryset = Book.objects.all()
    permission_classes = [permissions.AllowAny]
    serializer_class = BookSerializer
-   lookup_field = 'isbn'
+   lookup_field = 'id_book'
+
+#    def get_queryset(self):
+#         search_query = self.request.GET.get('search', '')
+#         queryset = Book.objects.filter(
+#             Q(title__icontains=search_query) |
+#             Q(isbn__icontains=search_query) |
+#             Q(author__icontains=search_query) |
+#             Q(editorial__icontains=search_query)
+#         )
+
+#         return queryset
 
 class AuthorViewSet(viewsets.ModelViewSet):
    queryset = Author.objects.all()
@@ -65,7 +79,14 @@ class GenreViewSet(viewsets.ModelViewSet):
 class SellViewSet(viewsets.ModelViewSet):
    queryset = Sell.objects.all()
    permission_classes = [permissions.AllowAny]
-   serializer_class = SellSerializer         
+   serializer_class = SellSerializer
+
+   def get_queryset(self):
+        queryset = Sell.objects.all()
+        user_id = self.request.query_params.get('user_id')
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+        return queryset           
 
 class DeliveryViewSet(viewsets.ModelViewSet):
    queryset = Delivery.objects.all()
@@ -73,17 +94,89 @@ class DeliveryViewSet(viewsets.ModelViewSet):
    serializer_class = DeliverySerializer
       
    
-class StoreViewSet(viewsets.ModelViewSet):
+class StoreViewSet(viewsets.ModelViewSet, RetrieveUpdateAPIView):
     queryset =Store.objects.all()
-    permissions_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]
     serializer_class = StoreSerializer
+    lookup_field = 'id_store'
 
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Store.objects.all()
-    permissions_classes = [permissions.AllowAny]
+    permission_classes = [permissions.AllowAny]
     serializer_class = PaymentSerializer
 
 class ProfileViewSet(viewsets.ModelViewSet):
    queryset = CustomUser.objects.all()
    permission_classes = [permissions.AllowAny]
    serializer_class = ProfileSerializer
+
+
+class ProfileView(generics.UpdateAPIView):
+    permission_classes = [IsAuthenticated] #Solo usuarios logueados pueden ver.
+    serializer_class = UserSerializer
+    def get_object(self):
+        if self.request.user.is_authenticated:
+            return self.request.user
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+    def perform_update(self, serializer):
+        serializer.save()
+
+class UserList(generics.ListCreateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = UserSerializer
+    http_method_names = ['get']
+    permission_classes = [AllowAny]
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = UserSerializer(queryset, many=True)
+        return Response(serializer.data)
+        # if self.request.user.is_authenticated:
+        #     return Response(serializer.data)
+
+class ProcessPayment(APIView):
+    permission_classes = [permissions.AllowAny]
+    def post(self, request):
+        return Response({"status": "ok"})        
+
+# class ProcessPaymentA(APIView):
+#     def post(self, request):
+#         try:
+#             request_values = json.loads(request.body)
+#             payment_data = {
+#                 "transaction_amount": float(request_values["transaction_amount"]),
+#                 "token": request_values["token"],
+#                 "installments": int(request_values["installments"]),
+#                 "payment_method_id": request_values["payment_method_id"],
+#                 "issuer_id": request_values["issuer_id"],
+#                 "payer": {
+#                     "email": request_values["payer"]["email"],
+#                     "identification": {
+#                         "type": request_values["payer"]["identification"]["type"],
+#                         "number": request_values["payer"]["identification"]["number"],
+#                     },
+#                 },
+#             }
+
+#             sdk = mercadopago.SDK("")
+
+#             payment_response = sdk.payment().create(payment_data)
+
+#             payment = payment_response["response"]
+#             status = {
+#                 "id": payment["id"],
+#                 "status": payment["status"],
+#                 "status_detail": payment["status_detail"],
+#             }
+
+#             return Response(data={"body": status, "statusCode": payment_response["status"]}, status=201)
+#         except Exception as e:
+#             return Response(data={"body": payment_response}, status=400)
+
+
+          

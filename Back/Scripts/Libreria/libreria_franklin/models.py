@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
+    id_user = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=150, unique=True)
     telephone_number = models.CharField(max_length=50, blank=False)
     telephone_area_code = models.CharField(max_length=50, blank=False)
-    document = models.PositiveIntegerField(blank=False)
-    address_province = models.CharField(max_length=50, blank=False)
+    document = models.PositiveIntegerField(blank=True, null=True)
+    address_province = models.CharField(max_length=50, blank=False) 
     address_location = models.CharField(max_length=50, blank=False)
     address_street = models.CharField(max_length=50, blank=False)
     postal_code = models.CharField(max_length=50, blank=False)
@@ -50,10 +51,11 @@ class Genre(models.Model):
         return self.name
 
 class Book(models.Model):
-    isbn = models.CharField(primary_key=True, max_length=20, blank=False)
+    id_book = models.AutoField(primary_key=True)
+    isbn = models.CharField( max_length=20, blank=False)
     title = models.CharField(max_length=200, blank=False)
     page_amount = models.PositiveIntegerField(blank=False)
-    book_cover = models.CharField(max_length=300)
+    book_cover = models.CharField(max_length=500)
     stock= models.PositiveIntegerField(blank=False, default=0)
     release_year = models.PositiveSmallIntegerField(blank=False)
     synopsis = models.TextField(max_length=3000, blank=False)
@@ -76,7 +78,7 @@ class Book(models.Model):
 class Payment(models.Model):
     id_payment = models.AutoField(primary_key=True)
     card_association = models.IntegerField()
-    number = models. IntegerField()
+    number = models.BigIntegerField()
     cvv = models.IntegerField()
     expiration = models.DateField()
     class Meta:
@@ -103,34 +105,39 @@ class Rol(models.Model):
 
 class Delivery(models.Model):
     id_delivery = models.AutoField(primary_key=True)
-    postal_code = models.PositiveIntegerField()
-    address = models.CharField(max_length=50, blank=False)
-    state = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=False)
+    email = models.EmailField(max_length=150, blank=False)
+    telephone_number = models.CharField(max_length=50, blank=False)
+    telephone_area_code = models.CharField(max_length=50, blank=False)
+    document = models.PositiveIntegerField(blank=True, null=True)
+    address_province = models.CharField(max_length=50, blank=False) 
+    address_location = models.CharField(max_length=50, blank=False)
+    address_street = models.CharField(max_length=50, blank=False)
+    postal_code = models.CharField(max_length=50, blank=False)
+    status = models.CharField(max_length=50)
     class Meta:
         db_table = 'Delivery'
         verbose_name = 'Product sale delivery'
         verbose_name_plural = 'Delivery'
     def __unicode__(self):
-        return self.address
+        return self.address_street
     def __str__(self):
-        return self.address
+        return self.address_street
 
       
 class Sell (models.Model):
-  id_sell = models.CharField(primary_key=True, max_length=50)
-  orderNumber = models.IntegerField(blank=False) 
-  saleDate = models.DateField(blank=False)
-  products = models.CharField(max_length=100, blank=False)
+  id_sell = models.AutoField(primary_key=True)
+  saleDate = models.CharField(max_length=50, blank=False)
   deliveryType = models.CharField(max_length=50, blank=False)
   paymentType = models.CharField(max_length=50, blank=False)
 
-  totalQuantity = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
+  totalQuantity = models.IntegerField(blank=False)
   totalCost = models.DecimalField(decimal_places=2, blank=False, max_digits=50)
 
-  profile = models.ForeignKey(CustomUser, to_field= "id", related_name="profile",on_delete=models.CASCADE)
+  user = models.ForeignKey(CustomUser, to_field= "id_user", related_name="user",on_delete=models.CASCADE)
   delivery= models.ForeignKey(Delivery, to_field="id_delivery", related_name="delivery", on_delete=models.CASCADE)
-  payment= models.ForeignKey(Payment, to_field="id_payment", related_name="payment", on_delete=models.CASCADE)
-  book= models.ForeignKey(Book, to_field="isbn", related_name="book", on_delete=models.CASCADE)
+  # book= models.ForeignKey(Book, to_field="id_book", related_name="book", on_delete=models.CASCADE)
+  books = models.ManyToManyField(Book, null=True)
   class Meta:
         db_table = 'Sell'
         verbose_name = 'Sell'
@@ -151,4 +158,4 @@ class Store(models.Model):
       verbose_name = 'Store'
       verbose_name_plural = 'Stores'
   def __str__(self):
-    return f"{self.street_number}, {self.locality}"
+    return "{self.street_number}, {self.locality}"

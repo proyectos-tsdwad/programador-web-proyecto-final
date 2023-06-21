@@ -3,8 +3,11 @@ import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpResponse } from '@angu
 import { environment } from 'src/environments/environment';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
-import { Observable, Subject, map, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, switchMap, tap } from 'rxjs';
 import { CreateUserDTO, User } from 'src/app/models/user/user-model';
+import { Purchase } from 'src/app/models/user/purchase-model';
+import { Sale } from 'src/app/models/sale/sale-model';
+
 
 
 @Injectable({
@@ -16,7 +19,7 @@ export class AuthService {
   private authApiUrl = `${environment.AUTH_API_URL}`;
   private currentUser!: Auth;
   private profile!: User | null;
-  private profileListener = new Subject<User | null>();
+  private profileListener = new BehaviorSubject<User | null>(null);
 
   constructor(
     private http: HttpClient
@@ -41,27 +44,32 @@ export class AuthService {
   //   );
   // }
 
-  updateProfileListener(profile: User){
+  updateProfileListener(profile: User) {
     this.profile = profile;
-     this.profileListener.next({...this.profile});
+    this.profileListener.next({ ...this.profile });
   }
 
-  clearProfile(){
+  clearProfile() {
     this.profileListener.next(null);
   }
 
-  getProfileListener(){
+  getProfileListener() {
     return this.profileListener.asObservable();
   }
 
   logoutUser(): Observable<boolean> {
     console.log('logout');
-      
+
     return this.http.post(`${this.authApiUrl}/logout/`, {}, { observe: 'response' }).pipe(
       map((response: HttpResponse<any>) => {
         return response.status === 200;
       })
     );
+  }
+
+  getBookPurchases(userId: number): Observable<Sale[]> {
+    const url = `${this.apiUrl}/sells?user_id=${userId}`; // Ajusta la URL para obtener las compras del usuario específico
+    return this.http.get<Sale[]>(url);
   }
 
 }

@@ -5,8 +5,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { UserService } from 'src/app/services/user/user.service';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { CreateUserDTO } from 'src/app/models/user/user-model';
-import { tap, catchError} from 'rxjs/operators';
-import { ROLE } from 'src/app/utils/enums/user.enum';
+import { tap, catchError } from 'rxjs/operators';
 import { regExEmail, regExOnlyNumbers, regExPassword } from 'src/app/utils/regex/regex';
 
 @Component({
@@ -32,7 +31,7 @@ export class RegisterPageComponent implements OnInit {
     areaCode: [
       { type: 'required', message: 'Campo requerido.' },
       { type: 'minlength', message: 'Mínimo 2 dígitos' },
-      { type: 'maxlength', message: 'Máximo 5 dígitos.' },
+      { type: 'maxlength', message: 'Máximo 4 dígitos.' },
       { type: 'pattern', message: 'Ingresa sólo números.' }
     ],
     telephone: [
@@ -66,7 +65,7 @@ export class RegisterPageComponent implements OnInit {
     ],
     password: [
       { type: 'required', message: 'Campo requerido.' },
-      { type: 'pattern', message: 'Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres'}
+      { type: 'pattern', message: 'Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres' }
     ],
   };
 
@@ -75,7 +74,7 @@ export class RegisterPageComponent implements OnInit {
     private modalService: NgbModal,
     private formBuilder: FormBuilder,
     private userService: UserService,
-  ) { 
+  ) {
 
   }
 
@@ -89,9 +88,9 @@ export class RegisterPageComponent implements OnInit {
       name: ['', [Validators.required, Validators.maxLength(80)]],
       email: ['', [Validators.required, Validators.maxLength(80), Validators.pattern(regExEmail)]],
       password: ['', [Validators.required, Validators.pattern(regExPassword)]],
-      areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(5), Validators.pattern(regExOnlyNumbers)]],
+      areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
       telephone: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
-      document: ['',[ Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
+      document: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(8), Validators.pattern(regExOnlyNumbers)]],
       location: ['', [Validators.required, Validators.maxLength(50)]],
       province: ['', [Validators.required, Validators.maxLength(50)]],
       address: ['', [Validators.required, Validators.maxLength(80)]],
@@ -99,83 +98,82 @@ export class RegisterPageComponent implements OnInit {
     });
   }
 
-  registerUser(){
-    if(this.registerForm.valid){
+  registerUser() {
+    this.registerForm.markAllAsTouched();
+    if (this.registerForm.valid) {
       console.log('valido');
 
       const userDto = this.getUserDto();
       this.userService.createUser(userDto)
-      .pipe(
-        tap(response => {
-          console.log('Usuario registrado', response);
-          this.onClickRegister();
-        }),
-        catchError(error => {
-          console.log('Error al registrar', error);
-          throw error;
-        })
-      )
-      .subscribe();
-    } else{
-      this.registerForm.markAllAsTouched;
+        .pipe(
+          tap(response => {
+            console.log('Usuario registrado', response);
+            this.onClickRegister();
+          }),
+          catchError(error => {
+            console.log('Error al registrar', error);
+            throw error;
+          })
+        )
+        .subscribe();
     }
-   
-}
 
-// registerUser(event: Event){
-//   event.preventDefault;
-  
-//   if(this.registerForm.valid){
-//     console.log('valido');
-    
-//   } else{
+  }
 
-//     this.registerForm.markAllAsTouched
-//   }
-// }
+  // registerUser(event: Event){
+  //   event.preventDefault;
 
-get name() {
-  return this.registerForm.get('name');
-}
+  //   if(this.registerForm.valid){
+  //     console.log('valido');
 
-get document() {
-  return this.registerForm.get('document');
-}
+  //   } else{
 
-get areaCode() {
-  return this.registerForm.get('areaCode');
-}
+  //     this.registerForm.markAllAsTouched
+  //   }
+  // }
 
-get telephone() {
-  return this.registerForm.get('telephone');
-}
+  get name() {
+    return this.registerForm.get('name');
+  }
 
-get location() {
-  return this.registerForm.get('location');
-}
+  get document() {
+    return this.registerForm.get('document');
+  }
 
-get province() {
-  return this.registerForm.get('province');
-}
+  get areaCode() {
+    return this.registerForm.get('areaCode');
+  }
 
-get address() {
-  return this.registerForm.get('address');
-}
+  get telephone() {
+    return this.registerForm.get('telephone');
+  }
 
-get postalCode() {
-  return this.registerForm.get('postalCode');
-}
+  get location() {
+    return this.registerForm.get('location');
+  }
 
-get email() {
-  return this.registerForm.get('email');
-}
+  get province() {
+    return this.registerForm.get('province');
+  }
 
-get password() {
-  return this.registerForm.get('password');
-}
+  get address() {
+    return this.registerForm.get('address');
+  }
+
+  get postalCode() {
+    return this.registerForm.get('postalCode');
+  }
+
+  get email() {
+    return this.registerForm.get('email');
+  }
+
+  get password() {
+    return this.registerForm.get('password');
+  }
 
 
-  getUserDto(): CreateUserDTO  {
+  getUserDto(): CreateUserDTO {
     return {
       username: this.registerForm.value.name,
       email: this.registerForm.value.email,
@@ -190,7 +188,7 @@ get password() {
     };
   }
 
-  
+
 
 
   onClickRegister() {

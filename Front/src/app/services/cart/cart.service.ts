@@ -15,6 +15,7 @@ export class CartService {
 
   addBook(book: Book | SelectedBookDto) {
     let selectedBook: SelectedBookDto = {
+      id_book: book.id_book,
       isbn: book.isbn,
       title: book.title,
       author: book.author,

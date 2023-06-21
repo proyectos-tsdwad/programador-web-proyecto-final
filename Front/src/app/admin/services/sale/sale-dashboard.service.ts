@@ -13,7 +13,8 @@ export class SaleDashboardService {
   ) { }
 
   getAllSales() {
-    return this.http.get<Sale[]>(`${this.apiURL}/sales?_expand=user&_expand=shipment`);
+    const url = `${this.apiURL}/sells`;
+    return this.http.get<Sale[]>(url);
   }
 
 }

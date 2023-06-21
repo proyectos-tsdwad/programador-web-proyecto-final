@@ -4,12 +4,12 @@
       <button ngbAccordionButton class="accordion-button">
         <div class="col">
           <span class="fc-secondary font-bold fs-sm-2">
-            Orden: #{{purchase.orderNumber}}
+            Orden: #{{purchase.id_sell}}
           </span>
         </div>
         <div class="text-end col">
           <span class="font-semi-bold fc-primary fs-sm-2 pe-4">
-            {{purchase.date}}
+            {{purchase.saleDate}}
           </span>
         </div>
       </button>
@@ -22,16 +22,27 @@
               <tr class="fc-primary font-bold fs-sm-1">
                 <th scope="col">Producto</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Total</th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of purchase.products">
+            <tbody>
+              <tr class="fc-primary font-medium fs-sm-1" *ngFor="let book of purchase.books">
+                <td>{{getBookTitle(book)}}</td>
+                <td>{{getBookPrice(book)}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table">
+            <thead>
+              <tr class="fc-primary font-bold fs-sm-1">
+                <th scope="col">Cantidad</th>
+                <th scope="col">total</th>
+              </tr>
+            </thead>
+            <tbody>
               <tr class="fc-primary font-medium fs-sm-1">
-                <th class="fc-primary font-medium fs-sm-1">{{product.name}}</th>
-                <td>{{product.price}}</td>
-                <td>{{product.quantity}}</td>
-                <td>{{product.totalAmount}}</td>
+                <td>{{purchase.totalQuantity}}</td>
+                <td>{{purchase.totalCost}}</td>
               </tr>
             </tbody>
           </table>

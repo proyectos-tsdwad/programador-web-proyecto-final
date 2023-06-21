@@ -16,7 +16,7 @@
       <p class="col-md-12 py-2 fc-primary fs-md mb-0">
         Disponibilidad:
         <b [ngClass]="{ 'fc-basic-5': book.stock, 'fc-basic-4': !book.stock }">
-          {{ book.stock > 0 ? "En existencia" : "No disponible" }}
+          {{ book.stock > 0 ? "En existencia" : "Sin stock" }}
         </b>
       </p>
       <div class="row">
@@ -24,7 +24,8 @@
 
           <p class="fs-md-2 font-bold fc-secondary pt-4">${{ book.price }}</p>
 
-          <button type="button" class="col-6 secondary-button text-sm-center fs-sm-2 font-bold" (click)="onAddBook()">
+          <button type="button" class="col-6 secondary-button text-sm-center fs-sm-2 font-bold" (click)="onAddBook()"
+            *ngIf=" book.stock > 0">
             Agregar al carrito
           </button>
         </div>

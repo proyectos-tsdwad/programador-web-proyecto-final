@@ -6,6 +6,7 @@ import { SelectedBooksComponent } from './selected-books/selected-books.componen
 import { SelectedBookDetailComponent } from './selected-book-detail/selected-book-detail.component';
 import { CartDetailPageComponent } from './cart-detail-page/cart-detail-page.component';
 import { DeliveryHelperComponent } from './delivery-helper/delivery-helper.component';
+import { StoreHelperComponent } from './store-helper/store-helper/store-helper.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,8 @@ import { DeliveryHelperComponent } from './delivery-helper/delivery-helper.compo
     SelectedBooksComponent,
     CartDetailPageComponent,
     DeliveryHelperComponent,
+    StoreHelperComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+  imports: [CommonModule, FormsModule],
 })
-export class CartModule { }
+export class CartModule {}
